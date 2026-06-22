@@ -1,0 +1,131 @@
+{
+  "meta": { "subject": "english", "grade": "primary", "name": "小学英语短文阅读", "version": "2024", "count": 8, "type": "reading" },
+  "passages": [
+    {
+      "id": "r_p01",
+      "title": "My Family",
+      "level": "grade3",
+      "word_count": 60,
+      "text": "My name is Tom. I am eight years old. I have a happy family. My father is a doctor. My mother is a teacher. I have one sister. Her name is Lily. She is six years old.\n\nWe have a dog. His name is Spot. He is white and black. We all love Spot very much. On weekends, we play in the park together.",
+      "vocabulary": ["family", "doctor", "teacher", "sister", "weekend"],
+      "comprehension_questions": [
+        { "q": "How old is Tom?", "a": "He is eight years old.", "type": "factual" },
+        { "q": "What does Tom's father do?", "a": "He is a doctor.", "type": "factual" },
+        { "q": "What is the dog's name?", "a": "His name is Spot.", "type": "factual" },
+        { "q": "What color is the dog?", "a": "He is white and black.", "type": "factual" }
+      ],
+      "speaking_practice": [
+        { "prompt": "Tell me about your family in English.", "hint": "Use: My father is..., My mother is..., I have..." }
+      ]
+    },
+    {
+      "id": "r_p02",
+      "title": "My School",
+      "level": "grade3",
+      "word_count": 70,
+      "text": "I go to Green Hill School. It is a big and beautiful school. There are 30 classrooms in my school. My classroom is on the second floor.\n\nI like my school very much. My teacher's name is Miss Li. She is kind and funny. We have English, Chinese, Math and PE classes. My favourite class is PE. I love playing football with my friends.",
+      "vocabulary": ["classroom", "floor", "favourite", "football", "favourite"],
+      "comprehension_questions": [
+        { "q": "How many classrooms are there?", "a": "There are 30 classrooms.", "type": "factual" },
+        { "q": "What is the teacher's name?", "a": "Her name is Miss Li.", "type": "factual" },
+        { "q": "What is the child's favourite class?", "a": "PE.", "type": "factual" },
+        { "q": "Why does the child like the teacher?", "a": "Because she is kind and funny.", "type": "inferential" }
+      ],
+      "speaking_practice": [
+        { "prompt": "Describe your school to me.", "hint": "Use: My school is..., There are..., My favourite class is..." }
+      ]
+    },
+    {
+      "id": "r_p03",
+      "title": "A Rainy Day",
+      "level": "grade4",
+      "word_count": 80,
+      "text": "Yesterday was a rainy day. The sky was grey and the wind was cold. I couldn't go outside to play.\n\nI stayed at home with my family. My mother made hot soup for us. My father read a book. My little brother and I played board games. We laughed a lot.\n\nAlthough I couldn't play outside, I had a wonderful time at home. Sometimes rainy days can be fun!",
+      "vocabulary": ["although", "wonderful", "stayed", "laughed", "board games"],
+      "comprehension_questions": [
+        { "q": "What was the weather like yesterday?", "a": "It was rainy, grey and cold.", "type": "factual" },
+        { "q": "What did the mother do?", "a": "She made hot soup.", "type": "factual" },
+        { "q": "What did the children do?", "a": "They played board games.", "type": "factual" },
+        { "q": "Did the child enjoy the day? Why?", "a": "Yes, because they had fun at home with family.", "type": "inferential" }
+      ],
+      "speaking_practice": [
+        { "prompt": "What do you do on a rainy day?", "hint": "Use: On a rainy day, I usually..., I like to..., I sometimes..." }
+      ]
+    },
+    {
+      "id": "r_p04",
+      "title": "Protecting Our Environment",
+      "level": "grade5",
+      "word_count": 100,
+      "text": "Our environment is in danger. Every day, factories produce smoke and waste that pollutes the air and water. People throw rubbish everywhere and cut down too many trees.\n\nWe must protect our environment. Here are some things we can do. First, we should recycle paper, glass and plastic. Second, we should save water and electricity. Third, we should plant more trees and flowers.\n\nIf everyone does a little bit, we can make a big difference. Let's work together to keep our planet clean and beautiful!",
+      "vocabulary": ["environment", "pollutes", "factories", "recycle", "planet"],
+      "comprehension_questions": [
+        { "q": "What are two things that harm the environment?", "a": "Factories produce smoke/waste; people cut down trees.", "type": "factual" },
+        { "q": "Name two things we can do to help.", "a": "Recycle; save water/electricity; plant trees (any two).", "type": "factual" },
+        { "q": "What does 'make a big difference' mean?", "a": "To have a great positive effect/change things a lot.", "type": "vocabulary" }
+      ],
+      "speaking_practice": [
+        { "prompt": "What do you do to protect the environment?", "hint": "Use: I always/sometimes..., I try to..., In my opinion, we should..." }
+      ]
+    },
+    {
+      "id": "r_p05",
+      "title": "The Story of Tea",
+      "level": "grade6",
+      "word_count": 110,
+      "text": "Tea is one of the most popular drinks in the world. It has a long history of over 4,000 years. Tea was first discovered in China.\n\nAccording to a legend, Emperor Shennong discovered tea when some tea leaves fell into his boiling water. He found the drink delicious and refreshing.\n\nToday, tea is grown in many countries, including China, India and Japan. There are different types of tea, such as green tea, black tea and oolong tea. Each type has its own special taste and health benefits.\n\nDrinking tea has many health benefits. It can help you relax and stay healthy.",
+      "vocabulary": ["discovered", "legend", "Emperor", "refreshing", "benefits"],
+      "comprehension_questions": [
+        { "q": "How many years of history does tea have?", "a": "Over 4,000 years.", "type": "factual" },
+        { "q": "How was tea discovered according to the legend?", "a": "Tea leaves fell into the Emperor's boiling water.", "type": "factual" },
+        { "q": "Name three types of tea mentioned.", "a": "Green tea, black tea and oolong tea.", "type": "factual" },
+        { "q": "Why is drinking tea good for you?", "a": "It has health benefits, helps you relax and stay healthy.", "type": "inferential" }
+      ],
+      "speaking_practice": [
+        { "prompt": "Tell me about a traditional food or drink from China.", "hint": "Use: ... has a long history..., It is made from..., People drink/eat it when..." }
+      ]
+    }
+  ],
+  "oral_scenarios": [
+    {
+      "id": "oral_p01", "level": "grade3", "category": "daily",
+      "title": "介绍自己",
+      "context": "第一次见到新同学",
+      "exchanges": [
+        { "cue": "Hi! I'm new here. What's your name?", "model": "Hi! My name is [name]. Nice to meet you!", "hint": "用 My name is... 介绍自己" },
+        { "cue": "How old are you?", "model": "I'm [age] years old. How about you?", "hint": "用 I'm... years old 说年龄" },
+        { "cue": "What's your favourite subject?", "model": "My favourite subject is English. I like it because it's fun!", "hint": "用 My favourite... is... 表达喜好" }
+      ]
+    },
+    {
+      "id": "oral_p02", "level": "grade4", "category": "shopping",
+      "title": "在商店购物",
+      "context": "去文具店买东西",
+      "exchanges": [
+        { "cue": "Hello! Can I help you?", "model": "Yes, please. I want to buy some pencils.", "hint": "用 I want to buy... 表达购物需求" },
+        { "cue": "How many do you want?", "model": "I'd like six pencils, please.", "hint": "用 I'd like... 更礼貌" },
+        { "cue": "That's five yuan. Here you are.", "model": "Thank you very much! Goodbye!", "hint": "付款后记得道谢" }
+      ]
+    },
+    {
+      "id": "oral_p03", "level": "grade5", "category": "directions",
+      "title": "问路指路",
+      "context": "在学校附近问路",
+      "exchanges": [
+        { "cue": "Excuse me. Is there a library near here?", "model": "Yes, there is. Go straight and turn left at the traffic lights.", "hint": "用 Go straight / Turn left/right 指路" },
+        { "cue": "How far is it?", "model": "It's about five minutes on foot.", "hint": "用 It's about... minutes 说距离" },
+        { "cue": "Thank you so much!", "model": "You're welcome! Have a nice day!", "hint": "礼貌回应" }
+      ]
+    },
+    {
+      "id": "oral_p04", "level": "grade6", "category": "health",
+      "title": "看医生",
+      "context": "去校医室看病",
+      "exchanges": [
+        { "cue": "What's the matter?", "model": "I have a headache and a sore throat. I feel terrible.", "hint": "用 I have a... 描述症状" },
+        { "cue": "How long have you felt this way?", "model": "Since this morning. I didn't sleep well last night.", "hint": "用 Since... 表达时间" },
+        { "cue": "You should rest and drink lots of water. Take this medicine.", "model": "Thank you, doctor. Should I go home?", "hint": "表达询问和感谢" }
+      ]
+    }
+  ]
+}

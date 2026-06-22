@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "subject": "english",
+    "name": "英语短文背诵（小学篇）",
+    "version": "2024",
+    "count": 40,
+    "description": "小学英语必背短文，适合3-6年级"
+  },
+  "passages": [
+    {
+      "id": "ep_001",
+      "title": "My Family",
+      "grade": "primary3",
+      "category": "生活",
+      "text": "I have a happy family. There are four people in my family: my father, my mother, my sister and me. My father is a doctor. He works in a hospital. My mother is a teacher. She teaches English in a school. My sister is a student. She is in Grade Two. I love my family very much.",
+      "translation": "我有一个幸福的家庭。我家有四口人：爸爸、妈妈、姐姐和我。爸爸是一名医生，在医院工作。妈妈是一名老师，在学校教英语。姐姐是一名学生，在二年级读书。我非常爱我的家人。",
+      "keywords": ["family", "doctor", "teacher", "student", "hospital"],
+      "key_points": ["family成员表达", "职业单词", "there are句型"]
+    },
+    {
+      "id": "ep_002",
+      "title": "My School",
+      "grade": "primary3",
+      "category": "校园",
+      "text": "My school is very beautiful. It has a big playground. There is a library in my school. We can read books there. There are thirty classrooms in my school. My classroom is on the third floor. I like my school very much.",
+      "translation": "我的学校非常美丽。它有一个大操场。学校里有一个图书馆，我们可以在那里读书。学校里有三十间教室。我的教室在三楼。我非常喜欢我的学校。",
+      "keywords": ["playground", "library", "classroom", "floor", "beautiful"],
+      "key_points": ["there is/are句型", "方位表达", "序数词third"]
+    },
+    {
+      "id": "ep_003",
+      "title": "My Favorite Season",
+      "grade": "primary4",
+      "category": "自然",
+      "text": "My favorite season is spring. In spring, the weather is warm and sunny. Flowers are everywhere. Trees turn green. Birds sing happily in the trees. Children like to fly kites in the park. I like to go for a walk with my parents. Spring is really beautiful.",
+      "translation": "我最喜欢的季节是春天。春天天气温暖晴朗，到处都是鲜花，树木变得绿油油的。小鸟在树上欢快地歌唱。孩子们喜欢在公园里放风筝。我喜欢和父母一起散步。春天真的很美丽。",
+      "keywords": ["season", "spring", "warm", "flowers", "kites"],
+      "key_points": ["季节表达", "天气描述", "turn + 形容词"]
+    },
+    {
+      "id": "ep_004",
+      "title": "A Trip to the Zoo",
+      "grade": "primary4",
+      "category": "动物",
+      "text": "Last Sunday, I went to the zoo with my parents. I saw many animals there. I saw lions, tigers, pandas and elephants. The pandas were my favorite. They were eating bamboo. There were also some monkeys. They were very funny. I had a great time at the zoo.",
+      "translation": "上周日，我和父母去了动物园。我在那里看到了很多动物，有狮子、老虎、熊猫和大象。熊猫是我最喜欢的，它们在吃竹子。还有一些猴子，它们非常有趣。我在动物园玩得很开心。",
+      "keywords": ["zoo", "lions", "tigers", "pandas", "bamboo"],
+      "key_points": ["过去时态", "动物词汇", "there were句型"]
+    },
+    {
+      "id": "ep_005",
+      "title": "My Daily Routine",
+      "grade": "primary3",
+      "category": "生活",
+      "text": "I get up at six thirty every morning. I wash my face and brush my teeth. Then I have breakfast with my family. I go to school at seven thirty. Classes start at eight o'clock. I have lunch at school. I come home at five o'clock. I do my homework after dinner. I go to bed at nine o'clock.",
+      "translation": "我每天早上六点半起床。我洗脸刷牙，然后和家人一起吃早餐。七点半去学校。八点开始上课。我在学校吃午饭。五点回家。晚饭后做作业。九点睡觉。",
+      "keywords": ["get up", "breakfast", "homework", "o'clock", "routine"],
+      "key_points": ["时间表达", "一般现在时", "日常动词"]
+    },
+    {
+      "id": "ep_006",
+      "title": "My Hobby",
+      "grade": "primary4",
+      "category": "爱好",
+      "text": "My hobby is reading books. I like to read storybooks and science books. I go to the library every weekend. There are many interesting books there. Reading makes me happy and smart. My parents say reading is very important. I want to read more books this year.",
+      "translation": "我的爱好是读书。我喜欢读故事书和科学书。我每个周末都去图书馆。那里有很多有趣的书。读书让我快乐又聪明。父母说读书非常重要。今年我想读更多的书。",
+      "keywords": ["hobby", "reading", "library", "storybooks", "important"],
+      "key_points": ["爱好表达like to do", "频率副词every", "形容词比较"]
+    },
+    {
+      "id": "ep_007",
+      "title": "The Four Seasons",
+      "grade": "primary4",
+      "category": "自然",
+      "text": "There are four seasons in a year: spring, summer, autumn and winter. Spring is warm. Summer is hot. We can swim in summer. Autumn is cool. Leaves turn yellow and red. Winter is cold. It often snows in winter. I like autumn best because the weather is comfortable.",
+      "translation": "一年有四个季节：春、夏、秋、冬。春天温暖，夏天炎热，夏天可以游泳。秋天凉爽，树叶变成黄色和红色。冬天寒冷，冬天经常下雪。我最喜欢秋天，因为天气很舒适。",
+      "keywords": ["seasons", "spring", "summer", "autumn", "winter"],
+      "key_points": ["四季词汇", "天气形容词", "because引导原因状语从句"]
+    },
+    {
+      "id": "ep_008",
+      "title": "My Best Friend",
+      "grade": "primary4",
+      "category": "人物",
+      "text": "My best friend is Tom. He is twelve years old. He is tall and strong. He has short black hair and big eyes. Tom is very kind and helpful. He always helps me with my homework. We play basketball together after school. Tom is a great friend. I am happy to have him as my friend.",
+      "translation": "我最好的朋友是汤姆。他十二岁，高大强壮，有一头短短的黑发和大眼睛。汤姆非常善良乐于助人，总是帮我做作业。放学后我们一起打篮球。汤姆是一个很棒的朋友，能有他这样的朋友我感到很高兴。",
+      "keywords": ["friend", "tall", "strong", "helpful", "basketball"],
+      "key_points": ["人物描述", "形容词搭配", "always频率副词"]
+    },
+    {
+      "id": "ep_009",
+      "title": "Our Earth",
+      "grade": "primary5",
+      "category": "科学",
+      "text": "The Earth is our home. It is the only planet with life in our solar system. The Earth has land and water. About seventy percent of the Earth is covered with water. We must protect our Earth. We should save water and electricity. We should not throw rubbish everywhere. Let's work together to keep our Earth clean.",
+      "translation": "地球是我们的家园，是太阳系中唯一有生命的星球。地球上有陆地和水，大约百分之七十的地球表面被水覆盖。我们必须保护地球，节约用水和用电，不乱扔垃圾。让我们共同努力，保持地球清洁。",
+      "keywords": ["Earth", "planet", "solar system", "protect", "rubbish"],
+      "key_points": ["百分比表达", "情态动词must/should", "环保主题词汇"]
+    },
+    {
+      "id": "ep_010",
+      "title": "A Rainy Day",
+      "grade": "primary3",
+      "category": "天气",
+      "text": "Today is a rainy day. It is raining heavily outside. I can't go out to play. I stay at home with my mother. We are reading books together. My mother is making soup in the kitchen. The soup smells good. I like rainy days because I can stay home and read books.",
+      "translation": "今天是一个下雨天。外面雨下得很大，我不能出去玩。我和妈妈待在家里一起读书。妈妈在厨房里做汤，汤的味道很香。我喜欢下雨天，因为我可以待在家里看书。",
+      "keywords": ["rainy", "heavily", "stay", "kitchen", "smell"],
+      "key_points": ["现在进行时", "天气表达", "感官动词smell"]
+    },
+    {
+      "id": "ep_011",
+      "title": "My Classroom",
+      "grade": "primary3",
+      "category": "校园",
+      "text": "My classroom is big and clean. There are forty desks and chairs in the classroom. There is a blackboard on the wall. My teacher writes on the blackboard every day. There are some pictures on the wall too. There is a bookshelf in the corner. We keep our books there. I like my classroom.",
+      "translation": "我的教室又大又干净。教室里有四十张桌子和椅子。墙上有一块黑板，老师每天在黑板上写字。墙上还有一些图画。角落里有一个书架，我们把书放在那里。我喜欢我的教室。",
+      "keywords": ["classroom", "blackboard", "bookshelf", "corner", "clean"],
+      "key_points": ["教室物品词汇", "there is/are句型", "方位介词in the corner"]
+    },
+    {
+      "id": "ep_012",
+      "title": "Chinese New Year",
+      "grade": "primary4",
+      "category": "文化",
+      "text": "Chinese New Year is the most important festival in China. People clean their houses before the festival. They put up red decorations everywhere. On New Year's Eve, families get together and have a big dinner. Children get red envelopes with money inside. People set off fireworks at midnight. I love Chinese New Year.",
+      "translation": "春节是中国最重要的节日。节前人们打扫房子，到处张贴红色装饰。除夕夜，家人团聚吃年夜饭。孩子们收到装有钱的红包。午夜时分人们燃放烟花。我爱春节。",
+      "keywords": ["festival", "decorations", "red envelopes", "fireworks", "midnight"],
+      "key_points": ["节日文化词汇", "最高级the most important", "时间表达on New Year's Eve"]
+    },
+    {
+      "id": "ep_013",
+      "title": "My Favorite Food",
+      "grade": "primary3",
+      "category": "生活",
+      "text": "My favorite food is dumplings. My grandmother makes the best dumplings. She puts meat and vegetables inside. We usually eat dumplings on special days. My mother likes noodles. My father likes rice. We have different favorite foods, but we always enjoy eating together. Food makes our family happy.",
+      "translation": "我最喜欢的食物是饺子。我奶奶做的饺子最好吃，里面有肉和蔬菜。我们通常在特殊的日子吃饺子。妈妈喜欢面条，爸爸喜欢米饭。我们喜欢的食物各不相同，但我们总是享受一起吃饭。食物让我们家庭幸福。",
+      "keywords": ["dumplings", "vegetables", "noodles", "special", "enjoy"],
+      "key_points": ["食物词汇", "最高级the best", "usually频率副词"]
+    },
+    {
+      "id": "ep_014",
+      "title": "Sports Day",
+      "grade": "primary5",
+      "category": "校园",
+      "text": "Last Friday was our school sports day. All the students took part in different events. I joined the running race. I ran very fast and came in second place. My classmate Li Lei won the long jump. Our class got many prizes. After the sports day, we were all tired but happy. Sports day is my favorite school activity.",
+      "translation": "上周五是我们学校的运动会。所有学生参加了不同的比赛项目。我参加了赛跑，跑得很快，得了第二名。我的同学李雷赢得了跳远比赛。我们班获得了很多奖项。运动会后，我们都很累但很快乐。运动会是我最喜欢的学校活动。",
+      "keywords": ["sports day", "events", "running race", "long jump", "prizes"],
+      "key_points": ["过去时态", "比赛词汇", "序数词second"]
+    },
+    {
+      "id": "ep_015",
+      "title": "Protecting Animals",
+      "grade": "primary5",
+      "category": "科学",
+      "text": "Animals are our friends. There are many kinds of animals in the world. Some animals are in danger now. Giant pandas are one example. People are working hard to protect them. We should not hunt wild animals. We should not buy products made from animals. Everyone can help protect animals. Let's be kind to animals.",
+      "translation": "动物是我们的朋友。世界上有很多种动物，有些动物现在处于危险之中。大熊猫就是一个例子。人们正在努力保护它们。我们不应该猎杀野生动物，不应该购买用动物制成的产品。每个人都可以帮助保护动物。让我们善待动物。",
+      "keywords": ["protect", "danger", "giant pandas", "wild", "hunt"],
+      "key_points": ["情态动词should/should not", "保护动物主题", "be in danger表达"]
+    },
+    {
+      "id": "ep_016",
+      "title": "My Weekend",
+      "grade": "primary4",
+      "category": "生活",
+      "text": "I usually have a busy weekend. On Saturday morning, I have piano lessons. In the afternoon, I play with my friends in the park. On Sunday, I help my parents clean the house. In the evening, I read books or watch TV. Sometimes my family goes to the supermarket together. I enjoy my weekends very much.",
+      "translation": "我的周末通常很充实。周六上午我上钢琴课，下午和朋友在公园玩耍。周日帮父母打扫房子，晚上读书或看电视。有时全家人一起去超市。我非常喜欢我的周末。",
+      "keywords": ["weekend", "piano", "supermarket", "clean", "enjoy"],
+      "key_points": ["周末活动词汇", "时间状语on Saturday", "频率副词usually/sometimes"]
+    },
+    {
+      "id": "ep_017",
+      "title": "The Internet",
+      "grade": "primary6",
+      "category": "科技",
+      "text": "The Internet is very useful in our daily life. We can find information on the Internet. We can also learn new things online. Many people shop and pay bills online. However, we should use the Internet carefully. We should not spend too much time on it. We should not talk to strangers online. The Internet is a tool. We must use it wisely.",
+      "translation": "互联网在我们日常生活中非常有用。我们可以在网上查找信息，也可以在线学习新知识。很多人在网上购物和缴费。但是，我们应该谨慎使用互联网，不要在上面花太多时间，不要和网上的陌生人交谈。互联网是一种工具，我们必须明智地使用它。",
+      "keywords": ["Internet", "information", "online", "strangers", "wisely"],
+      "key_points": ["however转折", "情态动词must/should", "科技词汇"]
+    },
+    {
+      "id": "ep_018",
+      "title": "My Dream Job",
+      "grade": "primary5",
+      "category": "梦想",
+      "text": "My dream job is to be a scientist. I am very interested in science. I want to invent useful things for people. Scientists work hard every day. They do experiments and make discoveries. I know I need to study hard to become a scientist. I will try my best. I believe dreams can come true.",
+      "translation": "我的梦想职业是成为一名科学家。我对科学非常感兴趣，想发明对人们有用的东西。科学家每天努力工作，做实验，有新发现。我知道要成为科学家需要努力学习。我会尽力而为，相信梦想能够成真。",
+      "keywords": ["scientist", "invent", "experiments", "discoveries", "dream"],
+      "key_points": ["dream job表达", "want to do", "情态动词will表将来"]
+    },
+    {
+      "id": "ep_019",
+      "title": "Healthy Eating",
+      "grade": "primary5",
+      "category": "健康",
+      "text": "Eating healthy food is very important. We should eat more vegetables and fruits. They give us vitamins and energy. We should drink plenty of water every day. We should eat less junk food like chips and candy. Junk food is bad for our health. A healthy diet helps us grow strong and stay fit. Let's eat well and be healthy.",
+      "translation": "吃健康的食物非常重要。我们应该多吃蔬菜和水果，它们给我们提供维生素和能量。我们每天应该喝足够的水，少吃薯片和糖果等垃圾食品，因为垃圾食品对健康有害。健康饮食有助于我们强壮成长、保持健康。让我们好好饮食，健康生活。",
+      "keywords": ["healthy", "vegetables", "vitamins", "junk food", "diet"],
+      "key_points": ["健康饮食词汇", "should/should not建议", "比较级more/less"]
+    },
+    {
+      "id": "ep_020",
+      "title": "A Visit to Beijing",
+      "grade": "primary6",
+      "category": "旅游",
+      "text": "Last summer, I visited Beijing with my family. Beijing is the capital of China. We visited the Great Wall. It is very long and magnificent. We also went to the Palace Museum. It is very old and beautiful. We tried Beijing duck. It was delicious. I took many photos. I will never forget this wonderful trip.",
+      "translation": "去年夏天，我和家人参观了北京。北京是中国的首都。我们游览了长城，它非常长而壮观。我们还去了故宫博物院，非常古老美丽。我们品尝了北京烤鸭，味道鲜美。我拍了很多照片。我永远不会忘记这次美好的旅行。",
+      "keywords": ["Beijing", "Great Wall", "Palace Museum", "magnificent", "delicious"],
+      "key_points": ["过去时态", "首都capital", "never forget句型"]
+    },
+    {
+      "id": "ep_021",
+      "title": "My Pet Dog",
+      "grade": "primary3",
+      "category": "动物",
+      "text": "I have a pet dog. His name is Doudou. He is white and fluffy. Doudou is very playful. He likes to run and jump. I feed him every morning. I take him for a walk after school. Doudou always wags his tail when he sees me. I love my dog very much. He is my best friend.",
+      "translation": "我有一只宠物狗，名叫豆豆。它是白色的，毛茸茸的。豆豆非常爱玩，喜欢跑跑跳跳。我每天早上喂它，放学后带它散步。豆豆看到我时总是摇尾巴。我非常爱我的狗，它是我最好的朋友。",
+      "keywords": ["pet", "fluffy", "playful", "feed", "wags tail"],
+      "key_points": ["宠物词汇", "动物行为描述", "一般现在时"]
+    },
+    {
+      "id": "ep_022",
+      "title": "The Supermarket",
+      "grade": "primary3",
+      "category": "生活",
+      "text": "I went to the supermarket with my mother yesterday. The supermarket is very big. There are many things to buy. We bought vegetables, fruit and milk. I helped my mother push the cart. We paid at the checkout. The supermarket was very busy. Many people were shopping there. I like going to the supermarket.",
+      "translation": "昨天我和妈妈去了超市。超市非常大，有很多东西可以买。我们买了蔬菜、水果和牛奶。我帮妈妈推购物车。我们在收银台付了款。超市非常繁忙，很多人在那里购物。我喜欢去超市。",
+      "keywords": ["supermarket", "cart", "checkout", "vegetables", "busy"],
+      "key_points": ["过去时态", "购物词汇", "help sb do sth"]
+    },
+    {
+      "id": "ep_023",
+      "title": "My School Library",
+      "grade": "primary4",
+      "category": "校园",
+      "text": "Our school has a wonderful library. It has thousands of books. There are books about history, science, art and stories. Students can borrow books for two weeks. I go to the library every week. The librarian is very kind. She helps me find good books to read. I have read over fifty books this year. Reading opens up a new world for me.",
+      "translation": "我们学校有一个很棒的图书馆，里面有数千本书，有历史、科学、艺术和故事类的书籍。学生可以借书两周。我每周都去图书馆，图书管理员非常友善，帮我找好书读。今年我已经读了五十多本书。阅读为我打开了新世界。",
+      "keywords": ["library", "borrow", "librarian", "thousands", "history"],
+      "key_points": ["图书馆词汇", "数量表达thousands of", "现在完成时have read"]
+    },
+    {
+      "id": "ep_024",
+      "title": "Helping at Home",
+      "grade": "primary4",
+      "category": "生活",
+      "text": "I like to help my parents at home. I make my bed every morning. I sweep the floor after school. On weekends, I wash the dishes after meals. Sometimes I water the flowers in the garden. My parents are always happy when I help them. They say I am a good child. Helping at home makes me feel proud.",
+      "translation": "我喜欢在家帮助父母。我每天早上整理床铺，放学后扫地。周末饭后洗碗，有时给花园里的花浇水。当我帮助他们时，父母总是很高兴，说我是个好孩子。在家帮忙让我感到自豪。",
+      "keywords": ["make bed", "sweep", "wash dishes", "water flowers", "proud"],
+      "key_points": ["家务词汇", "频率副词every/sometimes", "make sb feel句型"]
+    },
+    {
+      "id": "ep_025",
+      "title": "My Hometown",
+      "grade": "primary5",
+      "category": "家乡",
+      "text": "My hometown is a small town near the mountains. It is very quiet and peaceful. There is a beautiful river near the town. In spring, flowers bloom everywhere. In autumn, the mountains turn red and yellow. The air in my hometown is very fresh. People there are friendly and kind. I love my hometown very much.",
+      "translation": "我的家乡是一个靠近山区的小镇，非常安静祥和。镇子附近有一条美丽的河流。春天，鲜花盛开；秋天，山峦变成红黄两色。家乡的空气非常清新，那里的人们友善而热情。我非常爱我的家乡。",
+      "keywords": ["hometown", "mountains", "peaceful", "bloom", "fresh"],
+      "key_points": ["家乡描述", "季节变化", "turn + 颜色形容词"]
+    },
+    {
+      "id": "ep_026",
+      "title": "Traffic Rules",
+      "grade": "primary4",
+      "category": "安全",
+      "text": "We must obey traffic rules. When we cross the street, we should use the zebra crossing. We must wait for the green light. We should look left and right before crossing. We should not play on the road. Drivers must stop at red lights. Traffic rules keep everyone safe. Let's all follow the rules.",
+      "translation": "我们必须遵守交通规则。过马路时应该走斑马线，必须等绿灯，过马路前要看左右两边。不要在马路上玩耍。司机必须在红灯前停车。交通规则保障每个人的安全。让我们都遵守规则。",
+      "keywords": ["traffic rules", "zebra crossing", "green light", "safe", "obey"],
+      "key_points": ["情态动词must/should", "交通词汇", "祈使句Let's"]
+    },
+    {
+      "id": "ep_027",
+      "title": "The Sun and the Moon",
+      "grade": "primary4",
+      "category": "科学",
+      "text": "The sun is a star. It is very big and hot. The sun gives us light and heat. Without the sun, there would be no life on Earth. The moon is not a star. It goes around the Earth. The moon reflects light from the sun. We can see the moon at night. The sun and moon are important to us.",
+      "translation": "太阳是一颗恒星，它非常巨大炽热。太阳给我们光和热。没有太阳，地球上就不会有生命。月亮不是恒星，它围绕地球转动，反射太阳的光。我们在夜晚可以看到月亮。太阳和月亮对我们都很重要。",
+      "keywords": ["sun", "moon", "star", "heat", "reflects"],
+      "key_points": ["天文词汇", "without虚拟条件", "goes around表公转"]
+    },
+    {
+      "id": "ep_028",
+      "title": "My Favorite Sport",
+      "grade": "primary4",
+      "category": "运动",
+      "text": "My favorite sport is swimming. I learned to swim when I was six years old. I go swimming every Saturday. Swimming is good for my health. It makes my body strong. I can swim freestyle and backstroke. Last year, I won a prize in a swimming competition. I hope to swim even better next year.",
+      "translation": "我最喜欢的运动是游泳。我六岁就学会了游泳，每个周六去游泳。游泳对我的健康有益，让我的身体强壮。我会自由泳和仰泳。去年我在游泳比赛中获得了奖项。我希望明年游得更好。",
+      "keywords": ["swimming", "freestyle", "backstroke", "competition", "prize"],
+      "key_points": ["运动词汇", "when引导时间状语从句", "比较级even better"]
+    },
+    {
+      "id": "ep_029",
+      "title": "A Kind Act",
+      "grade": "primary5",
+      "category": "品德",
+      "text": "One day on the bus, I saw an old woman standing. She looked tired. I gave her my seat. She smiled and said thank you. I felt very happy. My mother told me that helping others is a good thing. Small acts of kindness can make the world a better place. We should always be ready to help others.",
+      "translation": "一天在公交车上，我看到一位老奶奶站着，她看起来很疲惫。我把座位让给了她，她微笑着说谢谢。我感到非常高兴。妈妈告诉我帮助他人是件好事。小小的善举可以让世界变得更美好。我们应该随时准备好帮助他人。",
+      "keywords": ["kind", "seat", "tired", "kindness", "better place"],
+      "key_points": ["品德词汇", "过去时态叙事", "make the world better句型"]
+    },
+    {
+      "id": "ep_030",
+      "title": "Water",
+      "grade": "primary5",
+      "category": "科学",
+      "text": "Water is very important for all living things. We need water to drink, cook and clean. Plants and animals also need water to survive. Most of the Earth is covered with water, but only a small amount is drinkable. We must save water. Turn off the tap when not using water. Every drop of water counts.",
+      "translation": "水对所有生命都非常重要。我们需要水来饮用、烹饪和清洁。植物和动物也需要水来生存。地球大部分被水覆盖，但只有少量是可饮用的。我们必须节约用水，不用水时关掉水龙头。每一滴水都很珍贵。",
+      "keywords": ["water", "survive", "drinkable", "tap", "drop"],
+      "key_points": ["情态动词must", "环保水资源词汇", "every drop counts句型"]
+    },
+    {
+      "id": "ep_031",
+      "title": "My Teacher",
+      "grade": "primary3",
+      "category": "人物",
+      "text": "My English teacher is Miss Wang. She is young and beautiful. She is very patient with us. She explains things clearly. When we don't understand, she explains again. She makes English class fun. We play games and sing songs in class. Miss Wang always encourages us. I like her very much. She is the best teacher.",
+      "translation": "我的英语老师是王老师，她年轻漂亮，对我们非常耐心，讲解清晰。当我们不理解时，她会再次解释。她让英语课变得有趣，我们在课上做游戏、唱歌。王老师总是鼓励我们，我非常喜欢她，她是最好的老师。",
+      "keywords": ["teacher", "patient", "explains", "encourages", "clearly"],
+      "key_points": ["人物品质描述", "makes sth fun句型", "副词clearly"]
+    },
+    {
+      "id": "ep_032",
+      "title": "A Picnic",
+      "grade": "primary4",
+      "category": "活动",
+      "text": "Last weekend, my family went on a picnic. We went to a park near our home. My mother made sandwiches and fruit salad. My father brought juice and water. We sat on the grass and ate our food. After lunch, we played frisbee. The weather was sunny and warm. It was a perfect day. We all had a wonderful time.",
+      "translation": "上周末，我们全家去野餐。我们去了家附近的一个公园。妈妈做了三明治和水果沙拉，爸爸带了果汁和水。我们坐在草地上吃东西。午饭后我们玩飞盘。天气晴朗温暖，是完美的一天。我们都玩得非常开心。",
+      "keywords": ["picnic", "sandwiches", "frisbee", "grass", "perfect"],
+      "key_points": ["过去时态", "野餐词汇", "It was a perfect day表感叹"]
+    },
+    {
+      "id": "ep_033",
+      "title": "Space Exploration",
+      "grade": "primary6",
+      "category": "科技",
+      "text": "Humans have always been curious about space. In 1969, people first landed on the moon. Since then, we have sent many spacecraft to explore space. China has also made great progress in space. Chinese astronauts have gone to space many times. Scientists are now working on a mission to Mars. Space exploration helps us understand the universe.",
+      "translation": "人类对太空始终充满好奇。1969年人类首次登上月球，此后我们发射了很多宇宙飞船探索太空。中国在航天领域也取得了很大进步，中国航天员多次进入太空。科学家们正在进行火星任务。太空探索帮助我们了解宇宙。",
+      "keywords": ["space", "astronauts", "spacecraft", "Mars", "universe"],
+      "key_points": ["现在完成时have sent", "中国航天词汇", "since then表从那以后"]
+    },
+    {
+      "id": "ep_034",
+      "title": "Keeping Fit",
+      "grade": "primary6",
+      "category": "健康",
+      "text": "Keeping fit is important for everyone. We should exercise regularly. Running, swimming and cycling are good exercises. We should also get enough sleep. Children need at least nine hours of sleep every night. We should eat balanced meals and drink enough water. Avoid spending too much time on screens. A healthy lifestyle makes us feel great.",
+      "translation": "保持健康对每个人都很重要。我们应该定期锻炼，跑步、游泳和骑自行车都是很好的锻炼方式。我们也应该保证充足的睡眠，孩子每晚至少需要九小时的睡眠。我们应该均衡饮食，喝足够的水，避免在屏幕前花太多时间。健康的生活方式让我们感觉良好。",
+      "keywords": ["fit", "exercise", "regularly", "balanced", "lifestyle"],
+      "key_points": ["健康词汇", "at least表至少", "avoid + doing"]
+    },
+    {
+      "id": "ep_035",
+      "title": "My Favorite Book",
+      "grade": "primary5",
+      "category": "阅读",
+      "text": "My favorite book is Charlotte's Web. It is a story about a pig named Wilbur and a spider named Charlotte. Charlotte helps Wilbur by writing words in her web. The story teaches us about friendship and kindness. I read this book three times. Every time I read it, I learn something new. Good books are our best friends.",
+      "translation": "我最喜欢的书是《夏洛特的网》。这是一个关于一头名叫威尔伯的猪和一只名叫夏洛特的蜘蛛的故事。夏洛特通过在网上织字来帮助威尔伯。这个故事教导我们友谊和善良的意义。我读了这本书三遍，每次阅读都有新的收获。好书是我们最好的朋友。",
+      "keywords": ["Charlotte's Web", "friendship", "spider", "kindness", "teaches"],
+      "key_points": ["书名引用", "teach sb about sth", "every time引导时间从句"]
+    },
+    {
+      "id": "ep_036",
+      "title": "Saving Energy",
+      "grade": "primary6",
+      "category": "环保",
+      "text": "Energy is very important in our lives. We use energy for lighting, heating and transport. However, energy resources are limited. We must save energy. Turn off lights when leaving a room. Use fans instead of air conditioners when possible. Walk or ride a bike instead of taking a car. Saving energy helps protect the environment. Small changes can make a big difference.",
+      "translation": "能源在我们生活中非常重要，用于照明、取暖和交通。然而，能源资源是有限的。我们必须节约能源：离开房间时关灯，在可能的情况下用风扇代替空调，步行或骑自行车代替乘车。节约能源有助于保护环境，小小的改变可以产生巨大的影响。",
+      "keywords": ["energy", "limited", "lighting", "environment", "difference"],
+      "key_points": ["能源词汇", "instead of表代替", "make a difference句型"]
+    },
+    {
+      "id": "ep_037",
+      "title": "The Monkey King",
+      "grade": "primary5",
+      "category": "文化",
+      "text": "The Monkey King is a famous character in Chinese culture. His real name is Sun Wukong. He appears in the classic novel Journey to the West. Sun Wukong is brave, clever and powerful. He can transform into seventy-two different forms. He protects his master Tang Sanzang on a long journey. The Monkey King is loved by people of all ages.",
+      "translation": "孙悟空是中国文化中著名的人物，他出现在经典小说《西游记》中。孙悟空勇敢、聪明、有力量，能变化七十二种形态，保护师父唐三藏踏上漫长的旅途。孙悟空深受各个年龄段人们的喜爱。",
+      "keywords": ["Monkey King", "Sun Wukong", "transform", "Journey to the West", "brave"],
+      "key_points": ["中国传统文化词汇", "人物描述形容词", "be loved by被动语态"]
+    },
+    {
+      "id": "ep_038",
+      "title": "My Morning Exercise",
+      "grade": "primary3",
+      "category": "健康",
+      "text": "I do morning exercises every day. I get up at six o'clock. I go to the park near my home. I run for twenty minutes. Then I do some stretching. The air in the morning is fresh and clean. I feel full of energy after exercise. Morning exercise is good for my health. I will keep doing it every day.",
+      "translation": "我每天都做早操。我六点起床，去家附近的公园跑步二十分钟，然后做一些伸展运动。早晨的空气清新洁净。锻炼后我感到精力充沛。早晨锻炼对我的健康有益。我会每天坚持。",
+      "keywords": ["exercise", "stretching", "fresh", "energy", "keep doing"],
+      "key_points": ["运动词汇", "feel full of energy", "keep doing坚持做"]
+    },
+    {
+      "id": "ep_039",
+      "title": "A Letter to My Pen Pal",
+      "grade": "primary6",
+      "category": "写作",
+      "text": "Dear Mike, How are you? I am writing to tell you about my city. I live in Chengdu, China. It is famous for giant pandas. The food here is very spicy and delicious. The most famous dish is Sichuan hotpot. The people here are very friendly. I hope you can visit Chengdu one day. Please write back soon. Your friend, Li Hua.",
+      "translation": "亲爱的迈克，你好吗？我写信告诉你关于我城市的情况。我住在中国成都，成都以大熊猫闻名。这里的食物非常辣又美味，最著名的菜肴是四川火锅。这里的人们非常友好。希望你有一天能来成都参观。请尽快回信。你的朋友，李华。",
+      "keywords": ["pen pal", "famous", "spicy", "hotpot", "friendly"],
+      "key_points": ["书信格式", "be famous for表以...闻名", "hope sb can do表希望"]
+    },
+    {
+      "id": "ep_040",
+      "title": "The Importance of Trees",
+      "grade": "primary6",
+      "category": "环保",
+      "text": "Trees are very important to our planet. They produce oxygen for us to breathe. Trees also absorb carbon dioxide and help reduce pollution. They provide homes for many animals and birds. Trees prevent soil erosion and flooding. In cities, trees make the environment more beautiful. We should plant more trees and protect forests. Trees are the lungs of the Earth.",
+      "translation": "树木对我们的星球非常重要。它们产生氧气供我们呼吸，吸收二氧化碳，帮助减少污染。树木为许多动物和鸟类提供栖息地，防止土壤侵蚀和洪涝。在城市里，树木让环境更美丽。我们应该种植更多树木，保护森林。树木是地球的肺。",
+      "keywords": ["oxygen", "carbon dioxide", "pollution", "erosion", "forests"],
+      "key_points": ["环保词汇", "provide homes for句型", "比喻the lungs of the Earth"]
+    }
+  ]
+}

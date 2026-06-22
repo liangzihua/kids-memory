@@ -1,0 +1,432 @@
+{
+  "meta": { "version": "2024", "total": 44, "description": "英语44个IPA音素完整学习数据" },
+  "vowels": [
+    {
+      "id": "v01", "ipa": "/iː/", "name": "长音 ee", "category": "long_vowel",
+      "articulation": "舌头前部抬高，嘴角向两侧拉开，嘴唇扁平",
+      "mouth_tip": "😁 像微笑一样，嘴角向两侧拉开，绷紧",
+      "tongue_tip": "舌尖抵下齿背，舌面前部隆起靠近硬腭",
+      "common_mistake": "中国学生常把它读成短音/ɪ/，注意要拉长",
+      "examples": ["see", "me", "tree", "free", "feel", "meet", "feet"],
+      "example_sentences": ["I can see the sea.", "She feels free."],
+      "minimal_pairs": [{"short": "ship /ɪ/", "long": "sheep /iː/"}, {"short": "bit /ɪ/", "long": "beat /iː/"}],
+      "common_spellings": ["ee → tree", "ea → meat", "e → me", "ie → field", "ey → key", "i → machine"]
+    },
+    {
+      "id": "v02", "ipa": "/ɪ/", "name": "短音 i", "category": "short_vowel",
+      "articulation": "舌头前部轻微抬起，嘴唇略微扁平，肌肉放松",
+      "mouth_tip": "😐 类似说【一】但更短促、放松",
+      "tongue_tip": "舌面前部稍向上，比/iː/低一些",
+      "common_mistake": "容易发成/iː/，记住要短促、放松",
+      "examples": ["sit", "bit", "fish", "big", "in", "it", "ship"],
+      "example_sentences": ["The fish is in the dish.", "Sit and knit a bit."],
+      "minimal_pairs": [{"short": "sit /ɪ/", "long": "seat /iː/"}, {"short": "live /ɪ/", "long": "leave /iː/"}],
+      "common_spellings": ["i → sit", "y → gym", "e → before suffix: naked"]
+    },
+    {
+      "id": "v03", "ipa": "/e/", "name": "短音 e", "category": "short_vowel",
+      "articulation": "嘴巴中等开口，舌头中前部轻微抬起",
+      "mouth_tip": "😮 嘴巴半开，比'啊'小，比'i'大",
+      "tongue_tip": "舌面中前部，介于/iː/和/æ/之间",
+      "common_mistake": "中国学生易与/æ/混淆，/e/嘴开口更小",
+      "examples": ["bed", "red", "met", "set", "ten", "pen", "head"],
+      "example_sentences": ["Ted has a red bed.", "Get the pen from the desk."],
+      "minimal_pairs": [{"a": "bed /e/", "b": "bad /æ/"}, {"a": "met /e/", "b": "mat /æ/"}],
+      "common_spellings": ["e → bed", "ea → head", "a → many"]
+    },
+    {
+      "id": "v04", "ipa": "/æ/", "name": "短音 a", "category": "short_vowel",
+      "articulation": "嘴巴大幅张开，舌头前部压低，嘴角略向两侧",
+      "mouth_tip": "😬 嘴大开，像去看牙医说'啊'，但嘴角拉向两侧",
+      "tongue_tip": "舌面前部压低，舌尖贴下齿",
+      "common_mistake": "中国学生易读成/e/，要把嘴巴开得更大",
+      "examples": ["cat", "bag", "man", "hat", "bad", "add", "black"],
+      "example_sentences": ["The black cat sat on the mat.", "That man has a bad habit."],
+      "minimal_pairs": [{"a": "bad /æ/", "b": "bed /e/"}, {"a": "pan /æ/", "b": "pen /e/"}],
+      "common_spellings": ["a → cat", "al → salmon (rare)"]
+    },
+    {
+      "id": "v05", "ipa": "/ɑː/", "name": "长音 ar", "category": "long_vowel",
+      "articulation": "嘴巴大开，舌头后部低平，下颌下垂",
+      "mouth_tip": "😮 嘴大开，下颌下沉，就像医生说'张嘴说啊'",
+      "tongue_tip": "舌头后部低平，舌根稍稍向后",
+      "common_mistake": "不要卷舌，英式英语/ɑː/不卷舌",
+      "examples": ["car", "far", "star", "park", "arm", "heart", "father"],
+      "example_sentences": ["The car is parked far away.", "My father has a scar on his arm."],
+      "minimal_pairs": [{"short": "cat /æ/", "long": "cart /ɑː/"}, {"short": "hat /æ/", "long": "heart /ɑː/"}],
+      "common_spellings": ["ar → car", "a → father", "al → calm", "ear → heart"]
+    },
+    {
+      "id": "v06", "ipa": "/ɔː/", "name": "长音 or", "category": "long_vowel",
+      "articulation": "嘴唇圆形向前突，嘴巴中等开口",
+      "mouth_tip": "🫦 嘴唇圆圆向前突出，像在吹口哨前",
+      "tongue_tip": "舌头后部轻微上抬",
+      "common_mistake": "嘴唇要圆要突，不能扁平",
+      "examples": ["door", "more", "floor", "law", "caught", "ball", "water"],
+      "example_sentences": ["Open the door, please.", "She caught the ball on the floor."],
+      "minimal_pairs": [{"a": "cot /ɒ/", "b": "caught /ɔː/"}, {"a": "not /ɒ/", "b": "naught /ɔː/"}],
+      "common_spellings": ["or → more", "oor → floor", "aw → law", "au → caught", "al → ball"]
+    },
+    {
+      "id": "v07", "ipa": "/uː/", "name": "长音 oo", "category": "long_vowel",
+      "articulation": "嘴唇圆形向前突出，嘴巴小开，舌后部上抬",
+      "mouth_tip": "😮 嘴唇圆小向前突，像说'哦'但更紧",
+      "tongue_tip": "舌头后部上抬，靠近软腭",
+      "common_mistake": "中国学生常不把嘴唇圆突，导致不地道",
+      "examples": ["food", "moon", "blue", "true", "shoe", "too", "you"],
+      "example_sentences": ["The moon shines on the blue pool.", "You too can do it."],
+      "minimal_pairs": [{"short": "full /ʊ/", "long": "fool /uː/"}, {"short": "pull /ʊ/", "long": "pool /uː/"}],
+      "common_spellings": ["oo → food", "u → rule", "ue → blue", "ew → flew", "ou → you"]
+    },
+    {
+      "id": "v08", "ipa": "/ʊ/", "name": "短音 oo", "category": "short_vowel",
+      "articulation": "嘴唇稍圆但不突出，比/uː/更放松、更短",
+      "mouth_tip": "😮 比/uː/放松，嘴唇圆但不拼命向前",
+      "tongue_tip": "舌后部上抬，但比/uː/低一些",
+      "common_mistake": "不要发成/uː/，要短促放松",
+      "examples": ["foot", "book", "look", "good", "would", "pull", "full"],
+      "example_sentences": ["Look at the good book.", "She would put her foot up."],
+      "minimal_pairs": [{"short": "look /ʊ/", "long": "Luke /uː/"}, {"short": "good /ʊ/", "long": "food /uː/"}],
+      "common_spellings": ["oo → book", "u → put", "ou → could", "o → wolf"]
+    },
+    {
+      "id": "v09", "ipa": "/ʌ/", "name": "短音 u", "category": "short_vowel",
+      "articulation": "嘴巴中等开口，舌头中部，肌肉放松",
+      "mouth_tip": "😶 嘴巴放松半开，像轻轻发'啊'",
+      "tongue_tip": "舌面中部，不向上也不向后",
+      "common_mistake": "类似中文'啊'但更短更放松，不要太用力",
+      "examples": ["cup", "but", "sun", "run", "fun", "duck", "love"],
+      "example_sentences": ["The sun runs up and up.", "I love a cup of butter."],
+      "minimal_pairs": [{"a": "cup /ʌ/", "b": "cap /æ/"}, {"a": "cut /ʌ/", "b": "cat /æ/"}],
+      "common_spellings": ["u → cup", "o → love", "ou → touch", "oo → blood"]
+    },
+    {
+      "id": "v10", "ipa": "/ɜː/", "name": "长音 er", "category": "long_vowel",
+      "articulation": "嘴巴中等开口，舌头中部，英式不卷舌，美式可卷舌",
+      "mouth_tip": "😐 嘴放松中开，舌头中部轻松，英式不卷舌",
+      "tongue_tip": "舌面中部，嘴唇完全不圆突",
+      "common_mistake": "嘴唇绝对不要圆，中国学生常把它发成/ə/或加汉语的'儿'音",
+      "examples": ["bird", "word", "turn", "first", "girl", "her", "work"],
+      "example_sentences": ["The early bird gets the worm.", "Her first word was 'girl'."],
+      "minimal_pairs": [{"a": "bird /ɜː/", "b": "bad /æ/"}],
+      "common_spellings": ["er → her", "ir → bird", "ur → turn", "or → word", "ear → learn"]
+    },
+    {
+      "id": "v11", "ipa": "/ə/", "name": "弱化元音 schwa", "category": "weak_vowel",
+      "articulation": "嘴巴最放松的开口，所有肌肉放松，最常见的英语元音",
+      "mouth_tip": "😶 完全放松，就是汉语'鹅'的韵母，短而模糊",
+      "tongue_tip": "舌头完全中立位置，无任何紧张",
+      "common_mistake": "这是英语最重要的音！弱读音节一定要用它，不能发清楚的元音",
+      "examples": ["about", "woman", "sofa", "problem", "cinema", "the"],
+      "example_sentences": ["The woman about the sofa.", "A problem with the cinema."],
+      "minimal_pairs": [],
+      "common_spellings": ["a → about", "e → problem", "o → today", "u → support", "i → animal"]
+    },
+    {
+      "id": "v12", "ipa": "/eɪ/", "name": "双元音 ay", "category": "diphthong",
+      "articulation": "从/e/滑向/ɪ/，嘴巴从半开到微张",
+      "mouth_tip": "😊 从'欸'到'一'的滑动，重音在前半",
+      "tongue_tip": "舌头从/e/位置向上滑动",
+      "common_mistake": "要有滑动过程，不要只发前半或后半",
+      "examples": ["day", "say", "make", "name", "late", "face", "cake"],
+      "example_sentences": ["They say it's a great day.", "Take a cake to the lake."],
+      "minimal_pairs": [{"a": "late /eɪ/", "b": "let /e/"}],
+      "common_spellings": ["ay → day", "ai → rain", "a_e → cake", "ey → they", "ea → great"]
+    },
+    {
+      "id": "v13", "ipa": "/aɪ/", "name": "双元音 I", "category": "diphthong",
+      "articulation": "从/ɑː/滑向/ɪ/，嘴巴从大开到微张",
+      "mouth_tip": "😮➡😐 从大开到微张，就像汉语'爱'",
+      "tongue_tip": "舌头从后低位向前高位滑动",
+      "common_mistake": "不要单发成汉语的'爱'，英语的/aɪ/起点更靠后下",
+      "examples": ["my", "time", "like", "fine", "night", "high", "try"],
+      "example_sentences": ["I like to fly kites at night.", "My life is fine and bright."],
+      "minimal_pairs": [{"a": "bite /aɪ/", "b": "bat /æ/"}],
+      "common_spellings": ["i_e → like", "igh → night", "y → my", "ie → tie", "i → find"]
+    },
+    {
+      "id": "v14", "ipa": "/ɔɪ/", "name": "双元音 oy", "category": "diphthong",
+      "articulation": "从/ɔː/滑向/ɪ/，嘴唇从圆到扁",
+      "mouth_tip": "🫦➡😐 嘴唇从圆突到扁平的滑动",
+      "tongue_tip": "舌头从后部上抬的/ɔː/向前位/ɪ/滑动",
+      "common_mistake": "要记住起点是圆嘴唇",
+      "examples": ["boy", "toy", "oil", "coin", "enjoy", "noise", "point"],
+      "example_sentences": ["The boy enjoys his toy coin.", "There's a lot of noise in this joint."],
+      "minimal_pairs": [],
+      "common_spellings": ["oy → boy", "oi → coin"]
+    },
+    {
+      "id": "v15", "ipa": "/əʊ/", "name": "双元音 oh", "category": "diphthong",
+      "articulation": "从/ə/滑向/ʊ/，嘴唇从放松到圆突",
+      "mouth_tip": "😶➡🫦 从放松到嘴唇圆突，就是说英文字母'O'",
+      "tongue_tip": "舌头从中部向后上方滑动",
+      "common_mistake": "中国学生常只发后半圆嘴音，起点要放松",
+      "examples": ["go", "home", "know", "old", "phone", "road", "bone"],
+      "example_sentences": ["Go home and phone the old man.", "I know the road to the stone."],
+      "minimal_pairs": [{"a": "coat /əʊ/", "b": "cut /ʌ/"}],
+      "common_spellings": ["o_e → home", "oa → road", "ow → know", "o → go", "oe → toe"]
+    },
+    {
+      "id": "v16", "ipa": "/aʊ/", "name": "双元音 ow", "category": "diphthong",
+      "articulation": "从/ɑː/滑向/ʊ/，嘴巴从大开到小圆",
+      "mouth_tip": "😮➡🫦 从大开到小圆，就是汉语'傲'",
+      "tongue_tip": "舌头从后低位向后高位滑动，嘴唇逐渐圆突",
+      "common_mistake": "起点要大开嘴，不能懒惰地只发圆嘴音",
+      "examples": ["now", "out", "how", "town", "down", "mouth", "cloud"],
+      "example_sentences": ["How now brown cow?", "The cloud moved down town."],
+      "minimal_pairs": [{"a": "crowd /aʊ/", "b": "cried /aɪ/"}],
+      "common_spellings": ["ow → now", "ou → out", "ough → bough"]
+    },
+    {
+      "id": "v17", "ipa": "/ɪə/", "name": "双元音 ear", "category": "diphthong",
+      "articulation": "从/ɪ/滑向/ə/，英式发音特有",
+      "mouth_tip": "😐➡😶 从'i'滑向放松的'ə'",
+      "tongue_tip": "舌头从前高位向中性位滑动",
+      "common_mistake": "美式英语常用卷舌音替代，英式要滑动",
+      "examples": ["ear", "here", "fear", "near", "beer", "idea", "real"],
+      "example_sentences": ["Can you hear me, my dear?", "The idea is clear."],
+      "minimal_pairs": [],
+      "common_spellings": ["ear → ear", "eer → beer", "ere → here", "ia → idea"]
+    }
+  ],
+  "consonants": [
+    {
+      "id": "c01", "ipa": "/p/", "name": "爆破音 p", "category": "plosive",
+      "articulation": "双唇合拢，气流在唇后积聚，然后爆破释放",
+      "mouth_tip": "💨 双唇紧闭后爆破，词首有明显送气",
+      "voiced": false,
+      "common_mistake": "词首/p/需要送气（put一个小纸片在嘴前会被吹动），中国学生常不送气",
+      "examples": ["pen", "park", "paper", "pay", "please", "cap", "map"],
+      "minimal_pairs": [{"voiced": "bat /b/", "voiceless": "pat /p/"}]
+    },
+    {
+      "id": "c02", "ipa": "/b/", "name": "爆破音 b", "category": "plosive",
+      "articulation": "双唇合拢，气流在唇后积聚，振动声带后爆破",
+      "mouth_tip": "唇型同/p/，但加上声带振动",
+      "voiced": true,
+      "common_mistake": "词尾/b/要完整发出（不能像汉语入声那样失去爆破），但声带振动幅度小",
+      "examples": ["big", "book", "ball", "bird", "boy", "job", "cab"],
+      "minimal_pairs": [{"voiced": "buy /b/", "voiceless": "pie /p/"}]
+    },
+    {
+      "id": "c03", "ipa": "/t/", "name": "爆破音 t", "category": "plosive",
+      "articulation": "舌尖抵上齿龈，气流积聚后爆破",
+      "mouth_tip": "👅 舌尖顶上门牙后的牙龈，然后弹开送气",
+      "voiced": false,
+      "common_mistake": "英语的/t/舌尖顶牙龈（不是牙齿），词首送气明显",
+      "examples": ["ten", "top", "time", "turn", "best", "coat", "butter"],
+      "minimal_pairs": [{"voiced": "do /d/", "voiceless": "to /t/"}]
+    },
+    {
+      "id": "c04", "ipa": "/d/", "name": "爆破音 d", "category": "plosive",
+      "articulation": "舌尖抵上齿龈，振动声带后爆破",
+      "mouth_tip": "舌型同/t/，但加声带振动",
+      "voiced": true,
+      "common_mistake": "注意词尾/d/要有声带振动，不能发成/t/",
+      "examples": ["dog", "day", "door", "dream", "and", "bird", "bad"],
+      "minimal_pairs": [{"voiced": "dip /d/", "voiceless": "tip /t/"}]
+    },
+    {
+      "id": "c05", "ipa": "/k/", "name": "爆破音 k", "category": "plosive",
+      "articulation": "舌根抵软腭，气流积聚后爆破",
+      "mouth_tip": "👅 舌头后部顶软腭（口腔后部），然后爆破送气",
+      "voiced": false,
+      "common_mistake": "词首/k/要明显送气，可以在嘴前放纸片测试",
+      "examples": ["cat", "key", "school", "black", "back", "cook", "clock"],
+      "minimal_pairs": [{"voiced": "gap /ɡ/", "voiceless": "cap /k/"}]
+    },
+    {
+      "id": "c06", "ipa": "/ɡ/", "name": "爆破音 g", "category": "plosive",
+      "articulation": "舌根抵软腭，振动声带后爆破",
+      "mouth_tip": "舌型同/k/，但加声带振动",
+      "voiced": true,
+      "common_mistake": "词尾/ɡ/要有声带振动，读'big'时结尾有声",
+      "examples": ["go", "get", "girl", "big", "dog", "bag", "green"],
+      "minimal_pairs": [{"voiced": "go /ɡ/", "voiceless": "co /k/"}]
+    },
+    {
+      "id": "c07", "ipa": "/f/", "name": "摩擦音 f", "category": "fricative",
+      "articulation": "上齿轻咬下唇，气流从唇齿间摩擦通过",
+      "mouth_tip": "🦷 上门牙轻放下唇，然后送气，产生摩擦声",
+      "voiced": false,
+      "common_mistake": "中国学生最常见错误：不咬唇，直接发成'f'但嘴型不对",
+      "examples": ["fish", "food", "feel", "phone", "off", "life", "leaf"],
+      "minimal_pairs": [{"voiced": "very /v/", "voiceless": "ferry /f/"}]
+    },
+    {
+      "id": "c08", "ipa": "/v/", "name": "摩擦音 v", "category": "fricative",
+      "articulation": "上齿轻咬下唇，振动声带，气流从唇齿间摩擦",
+      "mouth_tip": "🦷 同/f/但加声带振动，手放喉咙可感受振动",
+      "voiced": true,
+      "common_mistake": "中国学生最大难点！常发成/w/或汉语的'wěi'，必须上齿咬下唇",
+      "examples": ["very", "voice", "visit", "love", "have", "live", "verb"],
+      "minimal_pairs": [{"voiced": "vine /v/", "voiceless": "fine /f/"}, {"a": "van /v/", "b": "ban /b/"}]
+    },
+    {
+      "id": "c09", "ipa": "/θ/", "name": "清齿间音 th", "category": "fricative",
+      "articulation": "舌尖轻抵或伸出上下齿间，气流从舌齿间摩擦",
+      "mouth_tip": "👅 舌尖轻轻伸出牙齿之间，然后送气",
+      "voiced": false,
+      "common_mistake": "中国学生最常见错误：把th发成s或t，必须把舌尖放在齿间",
+      "examples": ["think", "three", "thank", "thick", "both", "teeth", "bath"],
+      "minimal_pairs": [{"a": "think /θ/", "b": "sink /s/"}, {"a": "thin /θ/", "b": "tin /t/"}]
+    },
+    {
+      "id": "c10", "ipa": "/ð/", "name": "浊齿间音 th", "category": "fricative",
+      "articulation": "舌尖轻抵或伸出上下齿间，振动声带",
+      "mouth_tip": "舌型同/θ/，但加声带振动，声音更'柔'",
+      "voiced": true,
+      "common_mistake": "常被发成/d/或/z/，要记得把舌伸出齿间",
+      "examples": ["the", "this", "that", "these", "those", "then", "with"],
+      "minimal_pairs": [{"a": "then /ð/", "b": "den /d/"}, {"a": "this /ð/", "b": "dis /d/"}]
+    },
+    {
+      "id": "c11", "ipa": "/s/", "name": "摩擦音 s", "category": "fricative",
+      "articulation": "舌尖靠近上齿龈但不接触，气流产生嘶嘶声",
+      "mouth_tip": "😬 牙齿略合拢，舌尖靠近但不触碰上牙龈，嘶嘶声",
+      "voiced": false,
+      "common_mistake": "不要把舌尖伸出（那是/θ/），舌尖在齿龈内侧",
+      "examples": ["sun", "six", "say", "see", "bus", "rice", "price"],
+      "minimal_pairs": [{"voiced": "zoo /z/", "voiceless": "sue /s/"}]
+    },
+    {
+      "id": "c12", "ipa": "/z/", "name": "摩擦音 z", "category": "fricative",
+      "articulation": "舌型同/s/，振动声带产生嗡嗡声",
+      "mouth_tip": "同/s/但加声带振动，就像蜜蜂的嗡嗡声",
+      "voiced": true,
+      "common_mistake": "词尾的/z/常被发成/s/，比如dogs应该结尾是/z/",
+      "examples": ["zoo", "zero", "zone", "buzz", "please", "dogs", "loves"],
+      "minimal_pairs": [{"voiced": "zoo /z/", "voiceless": "sue /s/"}]
+    },
+    {
+      "id": "c13", "ipa": "/ʃ/", "name": "摩擦音 sh", "category": "fricative",
+      "articulation": "舌面前部靠近上腭，嘴唇微圆突，气流产生嘘声",
+      "mouth_tip": "🤫 嘴唇略圆突，像'嘘'安静的手势",
+      "voiced": false,
+      "common_mistake": "嘴唇要圆突，比/s/更靠后",
+      "examples": ["she", "shoe", "shop", "fish", "wash", "sure", "nation"],
+      "minimal_pairs": [{"a": "ship /ʃ/", "b": "sip /s/"}]
+    },
+    {
+      "id": "c14", "ipa": "/ʒ/", "name": "摩擦音 zh", "category": "fricative",
+      "articulation": "舌型同/ʃ/，振动声带，更柔和",
+      "mouth_tip": "同/ʃ/但加声带振动，更柔和的嘘声",
+      "voiced": true,
+      "common_mistake": "这个音在英语中较少见，常见于法语借词",
+      "examples": ["vision", "measure", "treasure", "pleasure", "beige", "garage"],
+      "minimal_pairs": []
+    },
+    {
+      "id": "c15", "ipa": "/tʃ/", "name": "塞擦音 ch", "category": "affricate",
+      "articulation": "先形成/t/的爆破，然后立刻转为/ʃ/的摩擦",
+      "mouth_tip": "😁 先顶牙龈（t），然后立刻产生嘘声（sh）",
+      "voiced": false,
+      "common_mistake": "是两个音的组合，不能只发/ʃ/",
+      "examples": ["chair", "cheese", "chin", "rich", "watch", "match", "teach"],
+      "minimal_pairs": [{"a": "chin /tʃ/", "b": "shin /ʃ/"}]
+    },
+    {
+      "id": "c16", "ipa": "/dʒ/", "name": "塞擦音 j", "category": "affricate",
+      "articulation": "先形成/d/的爆破，然后立刻转为/ʒ/的摩擦",
+      "mouth_tip": "同/tʃ/但加声带振动",
+      "voiced": true,
+      "common_mistake": "注意与/tʃ/的区别就是有没有声带振动",
+      "examples": ["job", "jump", "jam", "age", "orange", "page", "bridge"],
+      "minimal_pairs": [{"voiced": "gin /dʒ/", "voiceless": "chin /tʃ/"}]
+    },
+    {
+      "id": "c17", "ipa": "/m/", "name": "鼻音 m", "category": "nasal",
+      "articulation": "双唇合拢，气流从鼻腔通过，振动声带",
+      "mouth_tip": "👄 双唇合拢，气流走鼻子，发'嗯'的鼻音",
+      "voiced": true,
+      "common_mistake": "词尾/m/要完整保持嘴闭合的鼻音，不要突然停止",
+      "examples": ["man", "me", "month", "come", "dream", "swim", "home"],
+      "minimal_pairs": [{"a": "mat /m/", "b": "bat /b/"}]
+    },
+    {
+      "id": "c18", "ipa": "/n/", "name": "鼻音 n", "category": "nasal",
+      "articulation": "舌尖抵上齿龈，气流从鼻腔通过，振动声带",
+      "mouth_tip": "👅 舌尖顶上牙龈，气流走鼻子",
+      "voiced": true,
+      "common_mistake": "词尾/n/要保持舌尖接触牙龈，不要提前松开",
+      "examples": ["no", "ten", "night", "and", "run", "moon", "down"],
+      "minimal_pairs": [{"a": "nap /n/", "b": "map /m/"}]
+    },
+    {
+      "id": "c19", "ipa": "/ŋ/", "name": "鼻音 ng", "category": "nasal",
+      "articulation": "舌根抵软腭，气流从鼻腔通过，振动声带",
+      "mouth_tip": "👅 舌头后部顶软腭，发鼻音，就像汉语'eng'的韵尾",
+      "voiced": true,
+      "common_mistake": "中国学生常在后面加/g/音，sing不能发成sing-g",
+      "examples": ["sing", "ring", "long", "king", "tongue", "finger", "song"],
+      "minimal_pairs": [{"a": "sin /n/", "b": "sing /ŋ/"}]
+    },
+    {
+      "id": "c20", "ipa": "/l/", "name": "侧音 l", "category": "lateral",
+      "articulation": "舌尖抵上齿龈，气流从舌两侧通过",
+      "mouth_tip": "👅 舌尖顶上牙龈，气流从舌两侧流出",
+      "voiced": true,
+      "common_mistake": "词尾的暗/l/（dark l）要把舌头向后收，如ball/call",
+      "examples": ["leg", "life", "love", "tall", "call", "ball", "feel"],
+      "minimal_pairs": [{"a": "led /l/", "b": "red /r/"}]
+    },
+    {
+      "id": "c21", "ipa": "/r/", "name": "近似音 r", "category": "approximant",
+      "articulation": "舌尖稍微上翘或后缩，不触碰任何部位，嘴唇微圆",
+      "mouth_tip": "👅 舌尖翘起但不触碰任何地方，嘴唇微圆",
+      "voiced": true,
+      "common_mistake": "中国学生最难的音！不要像汉语'r'一样用舌面，英语/r/舌尖上翘悬空",
+      "examples": ["red", "run", "right", "rain", "very", "free", "room"],
+      "minimal_pairs": [{"a": "red /r/", "b": "led /l/"}]
+    },
+    {
+      "id": "c22", "ipa": "/w/", "name": "近似音 w", "category": "approximant",
+      "articulation": "嘴唇圆突，快速向/uː/的口型，然后迅速移向下一元音",
+      "mouth_tip": "🫦 嘴唇先圆突，然后快速过渡到下一个音",
+      "voiced": true,
+      "common_mistake": "中国学生常把/w/发成/v/，/w/的嘴唇是圆的，不咬唇",
+      "examples": ["we", "win", "way", "word", "one", "twice", "swim"],
+      "minimal_pairs": [{"a": "wine /w/", "b": "vine /v/"}]
+    },
+    {
+      "id": "c23", "ipa": "/j/", "name": "近似音 y", "category": "approximant",
+      "articulation": "舌面前部靠近硬腭，快速滑向下一元音，类似汉语'y'",
+      "mouth_tip": "类似汉语'一'但快速过渡，就是'你'的声母",
+      "voiced": true,
+      "common_mistake": "不要发成/dʒ/（j的塞擦音），/j/是纯粹的滑音",
+      "examples": ["yes", "you", "year", "yet", "yellow", "yard", "yell"],
+      "minimal_pairs": [{"a": "yet /j/", "b": "jet /dʒ/"}]
+    },
+    {
+      "id": "c24", "ipa": "/h/", "name": "清喉音 h", "category": "fricative",
+      "articulation": "声门轻微收缩，气流从声门摩擦通过",
+      "mouth_tip": "💨 就是呼出一口气，类似汉语'喝'的声母但更轻",
+      "voiced": false,
+      "common_mistake": "不要太用力，轻轻的气流即可",
+      "examples": ["he", "hot", "have", "home", "ahead", "behind", "who"],
+      "minimal_pairs": [{"a": "hat /h/", "b": "at (no h)"}]
+    }
+  ],
+  "stress_rules": [
+    {
+      "rule": "双音节名词/形容词重音在前",
+      "examples": ["TAble", "HAP-py", "WIN-dow", "HEAvy"],
+      "note": "大多数双音节名词和形容词第一音节重读"
+    },
+    {
+      "rule": "双音节动词重音在后",
+      "examples": ["re-CORD", "pre-SENT", "per-MIT", "be-GIN"],
+      "note": "注意区别：REcord(名词) vs re-CORD(动词)"
+    },
+    {
+      "rule": "-tion/-sion/-ic/-ical 结尾，重音在前一音节",
+      "examples": ["na-TION", "mu-SIC", "e-LEC-tric", "e-CON-o-my"],
+      "note": "-tion结尾的词，重音在-tion前一个音节"
+    },
+    {
+      "rule": "复合词通常前重",
+      "examples": ["BLACKbird", "GREENhouse", "BUS-stop", "FOOTball"],
+      "note": "两个词组合的复合词，第一个词重读"
+    }
+  ]
+}

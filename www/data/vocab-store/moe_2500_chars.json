@@ -1,0 +1,612 @@
+{
+  "meta": {
+    "subject": "chinese",
+    "grade": "middle",
+    "name": "教育部2500次常用字（次常用字级）",
+    "version": "2024",
+    "type": "characters",
+    "tags": ["次常用字", "语文"]
+  },
+  "cards": [
+    {
+      "id": "char_zheng",
+      "front": "征",
+      "back": "zhēng｜征讨；征收；征兆",
+      "phonetic": "zhēng",
+      "hint": "双人旁(彳)+正→正道前行→征途",
+      "example": "征服、征兵、长征"
+    },
+    {
+      "id": "char_bi",
+      "front": "彼",
+      "back": "bǐ｜那；那个；对方",
+      "phonetic": "bǐ",
+      "hint": "双人旁(彳)+皮→走到皮肤之外的那边→彼处",
+      "example": "彼此、彼岸、知己知彼"
+    },
+    {
+      "id": "char_yan",
+      "front": "炎",
+      "back": "yán｜炎热；炎症；火焰",
+      "phonetic": "yán",
+      "hint": "两个火叠加→双火→非常炎热",
+      "example": "炎热、炎症、炎帝"
+    },
+    {
+      "id": "char_yan2",
+      "front": "沿",
+      "back": "yán｜沿着；边缘；沿岸",
+      "phonetic": "yán",
+      "hint": "氵+沿(船顺水而行)→顺水边行走→沿岸",
+      "example": "沿途、沿海、沿岸"
+    },
+    {
+      "id": "char_jing",
+      "front": "竟",
+      "back": "jìng｜竟然；终于；完毕",
+      "phonetic": "jìng",
+      "hint": "立+日→站在日落时分→事情结束→竟然",
+      "example": "竟然、毕竟、究竟"
+    },
+    {
+      "id": "char_fen",
+      "front": "纷",
+      "back": "fēn｜杂乱；纷繁；纷纷",
+      "phonetic": "fēn",
+      "hint": "纟(丝)+分→丝线分散→纷乱",
+      "example": "纷纷、纷乱、纷争"
+    },
+    {
+      "id": "char_mao",
+      "front": "贸",
+      "back": "mào｜贸易；买卖；轻率",
+      "phonetic": "mào",
+      "hint": "卯+贝→用贝壳（钱）来换→贸易",
+      "example": "贸易、贸然、外贸"
+    },
+    {
+      "id": "char_li",
+      "front": "励",
+      "back": "lì｜激励；勉励；鼓励",
+      "phonetic": "lì",
+      "hint": "厉+力→用力磨砺→激励",
+      "example": "励志、鼓励、奖励"
+    },
+    {
+      "id": "char_du",
+      "front": "督",
+      "back": "dū｜监督；督促；督察",
+      "phonetic": "dū",
+      "hint": "叔+目→用眼睛盯着叔叔→监督",
+      "example": "督促、监督、督察"
+    },
+    {
+      "id": "char_na",
+      "front": "纳",
+      "back": "nà｜接纳；缴纳；纳入",
+      "phonetic": "nà",
+      "hint": "纟(丝)+内→把丝线纳入→接纳收入",
+      "example": "纳入、缴纳、接纳"
+    },
+    {
+      "id": "char_yuan",
+      "front": "援",
+      "back": "yuán｜援助；支援；引援",
+      "phonetic": "yuán",
+      "hint": "扌+爰(爱护)→伸手帮助→援助",
+      "example": "援助、支援、求援"
+    },
+    {
+      "id": "char_she",
+      "front": "摄",
+      "back": "shè｜摄影；摄取；摄氏",
+      "phonetic": "shè",
+      "hint": "扌+耳(三只耳)→用手一把抓住→摄取",
+      "example": "摄影、摄取、摄氏度"
+    },
+    {
+      "id": "char_ji",
+      "front": "脊",
+      "back": "jǐ｜脊柱；脊梁；书脊",
+      "phonetic": "jǐ",
+      "hint": "月(肉)+脊形→像骨头形状→脊椎",
+      "example": "脊柱、脊梁、书脊"
+    },
+    {
+      "id": "char_ju",
+      "front": "橘",
+      "back": "jú｜橘子；橘红；橘黄",
+      "phonetic": "jú",
+      "hint": "木+矞(尖突)→果实尖突的树→橘树",
+      "example": "橘子、橘红色、橘皮"
+    },
+    {
+      "id": "char_shu",
+      "front": "殊",
+      "back": "shū｜特殊；悬殊；殊途",
+      "phonetic": "shū",
+      "hint": "歹(死)+朱(红)→与众不同的→特殊",
+      "example": "特殊、悬殊、殊途同归"
+    },
+    {
+      "id": "char_xian",
+      "front": "弦",
+      "back": "xián｜弦；琴弦；弦外之音",
+      "phonetic": "xián",
+      "hint": "弓+玄(绳子)→绑在弓上的绳→弦",
+      "example": "琴弦、弦外之音、弦乐"
+    },
+    {
+      "id": "char_jie",
+      "front": "截",
+      "back": "jié｜截断；截止；截取",
+      "phonetic": "jié",
+      "hint": "戈+隹(鸟)→用武器截住鸟→截断",
+      "example": "截止、截断、截取"
+    },
+    {
+      "id": "char_bao",
+      "front": "剥",
+      "back": "bō｜剥皮；剥夺；剥落",
+      "phonetic": "bō",
+      "hint": "刀旁→用刀剥开→剥皮",
+      "example": "剥皮、剥夺、剥落"
+    },
+    {
+      "id": "char_wu",
+      "front": "侮",
+      "back": "wǔ｜侮辱；欺侮；侮慢",
+      "phonetic": "wǔ",
+      "hint": "亻(人)+每(母)→不尊重人→侮辱",
+      "example": "侮辱、欺侮、侮慢"
+    },
+    {
+      "id": "char_yi",
+      "front": "毅",
+      "back": "yì｜毅力；坚毅；毅然",
+      "phonetic": "yì",
+      "hint": "豙(坚硬)+殳(武器)→刚硬果断→毅力",
+      "example": "毅力、坚毅、毅然决然"
+    },
+    {
+      "id": "char_ke",
+      "front": "渴",
+      "back": "kě｜口渴；渴望；渴求",
+      "phonetic": "kě",
+      "hint": "氵+曷(何时)→水在哪里→口渴",
+      "example": "口渴、渴望、渴求"
+    },
+    {
+      "id": "char_dan",
+      "front": "诞",
+      "back": "dàn｜诞生；诞辰；荒诞",
+      "phonetic": "dàn",
+      "hint": "讠(言)+延(延伸)→言语延伸→夸大→荒诞；诞生",
+      "example": "诞生、诞辰、荒诞"
+    },
+    {
+      "id": "char_zhai",
+      "front": "摘",
+      "back": "zhāi｜摘取；摘录；摘要",
+      "phonetic": "zhāi",
+      "hint": "扌+啇(商标)→用手摘下标签→摘取",
+      "example": "摘取、摘录、摘要"
+    },
+    {
+      "id": "char_hun",
+      "front": "婚",
+      "back": "hūn｜婚姻；结婚；婚礼",
+      "phonetic": "hūn",
+      "hint": "女+昏(黄昏)→黄昏时迎娶→婚礼",
+      "example": "婚姻、结婚、婚礼"
+    },
+    {
+      "id": "char_wen",
+      "front": "稳",
+      "back": "wěn｜稳定；稳固；沉稳",
+      "phonetic": "wěn",
+      "hint": "禾(谷物)+急→谷物装满不乱动→稳定",
+      "example": "稳定、稳固、稳重"
+    },
+    {
+      "id": "char_fu",
+      "front": "浮",
+      "back": "fú｜漂浮；浮现；浮夸",
+      "phonetic": "fú",
+      "hint": "氵+孚(孵化)→水上孵化漂浮→浮",
+      "example": "漂浮、浮现、浮夸"
+    },
+    {
+      "id": "char_lan",
+      "front": "懒",
+      "back": "lǎn｜懒惰；懒散；懒得",
+      "phonetic": "lǎn",
+      "hint": "忄(心)+赖(依赖)→心依赖别人→懒惰",
+      "example": "懒惰、懒散、懒得"
+    },
+    {
+      "id": "char_zhou",
+      "front": "骤",
+      "back": "zhòu｜骤然；骤降；骤变",
+      "phonetic": "zhòu",
+      "hint": "马+聚→马群突然聚集→骤然",
+      "example": "骤然、骤降、骤变"
+    },
+    {
+      "id": "char_cuan",
+      "front": "篡",
+      "back": "cuàn｜篡改；篡位；篡夺",
+      "phonetic": "cuàn",
+      "hint": "竹+算→算计着用竹简伪造→篡改",
+      "example": "篡改、篡位、篡夺"
+    },
+    {
+      "id": "char_ai2",
+      "front": "癌",
+      "back": "ái｜癌症；癌变；癌细胞",
+      "phonetic": "ái",
+      "hint": "疒(病)+岩→像岩石一样硬的病→癌症",
+      "example": "癌症、癌变、肿瘤癌"
+    },
+    {
+      "id": "char_xiu",
+      "front": "嗅",
+      "back": "xiù｜嗅觉；嗅到；嗅闻",
+      "phonetic": "xiù",
+      "hint": "口+臭(气味)→用口鼻闻气味→嗅",
+      "example": "嗅觉、嗅到、嗅闻"
+    },
+    {
+      "id": "char_xian2",
+      "front": "腺",
+      "back": "xiàn｜腺体；汗腺；腺素",
+      "phonetic": "xiàn",
+      "hint": "月(肉)+泉→肉中的泉水→腺体分泌",
+      "example": "腺体、汗腺、甲状腺"
+    },
+    {
+      "id": "char_mei",
+      "front": "眉",
+      "back": "méi｜眉毛；眉头；眉开眼笑",
+      "phonetic": "méi",
+      "hint": "目(眼)+象形→眼睛上方的毛→眉毛",
+      "example": "眉毛、眉头、眉开眼笑"
+    },
+    {
+      "id": "char_ji2",
+      "front": "嫉",
+      "back": "jí｜嫉妒；嫉恨；嫉贤妒能",
+      "phonetic": "jí",
+      "hint": "女+疾(疾病)→像生病一样的内心→嫉妒",
+      "example": "嫉妒、嫉恨、嫉贤妒能"
+    },
+    {
+      "id": "char_du2",
+      "front": "妒",
+      "back": "dù｜妒忌；嫉妒；妒恨",
+      "phonetic": "dù",
+      "hint": "女+户(门)→守着自己那扇门不让别人进→妒忌",
+      "example": "妒忌、嫉妒、妒恨"
+    },
+    {
+      "id": "char_han",
+      "front": "憾",
+      "back": "hàn｜遗憾；抱憾；憾事",
+      "phonetic": "hàn",
+      "hint": "忄(心)+感→心有感触→憾恨",
+      "example": "遗憾、抱憾、憾事"
+    },
+    {
+      "id": "char_mie",
+      "front": "蔑",
+      "back": "miè｜蔑视；蔑称；轻蔑",
+      "phonetic": "miè",
+      "hint": "目+小→眯着眼睛看→轻蔑",
+      "example": "蔑视、轻蔑、蔑称"
+    },
+    {
+      "id": "char_ai3",
+      "front": "哀",
+      "back": "āi｜悲哀；哀愁；哀思",
+      "phonetic": "āi",
+      "hint": "口+衣→穿孝衣哀号→悲哀",
+      "example": "悲哀、哀愁、哀思"
+    },
+    {
+      "id": "char_hui",
+      "front": "讳",
+      "back": "huì｜忌讳；讳言；讳莫如深",
+      "phonetic": "huì",
+      "hint": "讠+韦(违背)→说话违背禁忌→忌讳",
+      "example": "忌讳、讳言、讳莫如深"
+    },
+    {
+      "id": "char_dao",
+      "front": "悼",
+      "back": "dào｜悼念；哀悼；追悼",
+      "phonetic": "dào",
+      "hint": "忄(心)+卓(高远)→心思飞远→悼念逝者",
+      "example": "悼念、哀悼、追悼会"
+    },
+    {
+      "id": "char_bin",
+      "front": "殡",
+      "back": "bìn｜出殡；殡仪；殡葬",
+      "phonetic": "bìn",
+      "hint": "歹(死)+宾→用宾客礼仪送别死者→出殡",
+      "example": "出殡、殡仪馆、殡葬"
+    },
+    {
+      "id": "char_ji3",
+      "front": "祭",
+      "back": "jì｜祭祀；祭奠；公祭",
+      "phonetic": "jì",
+      "hint": "月(肉)+又(手)+示(神)→用手持肉祭神→祭祀",
+      "example": "祭祀、祭奠、公祭"
+    },
+    {
+      "id": "char_mian",
+      "front": "缅",
+      "back": "miǎn｜缅怀；缅甸；缅想",
+      "phonetic": "miǎn",
+      "hint": "纟+面→如丝线般绵长的思念→缅怀",
+      "example": "缅怀、缅甸、缅想"
+    },
+    {
+      "id": "char_zong",
+      "front": "纵",
+      "back": "zòng｜纵向；纵容；放纵",
+      "phonetic": "zòng",
+      "hint": "纟+从→顺着丝线方向→纵向；放任",
+      "example": "纵向、纵容、放纵"
+    },
+    {
+      "id": "char_heng",
+      "front": "横",
+      "back": "héng｜横向；横行；蛮横",
+      "phonetic": "héng",
+      "hint": "木+黄→像黄木横放→横向",
+      "example": "横向、横行霸道、蛮横"
+    },
+    {
+      "id": "char_xie",
+      "front": "斜",
+      "back": "xié｜倾斜；斜坡；斜线",
+      "phonetic": "xié",
+      "hint": "余+斗→舀酒的斗倾倒→倾斜",
+      "example": "倾斜、斜坡、斜线"
+    },
+    {
+      "id": "char_leng",
+      "front": "棱",
+      "back": "léng｜棱角；棱形；棱镜",
+      "phonetic": "léng",
+      "hint": "木+夌(尖角)→木头的尖角→棱角",
+      "example": "棱角、棱形、棱镜"
+    },
+    {
+      "id": "char_guai",
+      "front": "拐",
+      "back": "guǎi｜拐弯；拐角；拐杖",
+      "phonetic": "guǎi",
+      "hint": "扌+另(另外方向)→手引向另方→拐弯",
+      "example": "拐弯、拐角、拐杖"
+    },
+    {
+      "id": "char_peng",
+      "front": "碰",
+      "back": "pèng｜碰撞；碰到；碰巧",
+      "phonetic": "pèng",
+      "hint": "石+茸(突出)→石头突出碰撞→碰",
+      "example": "碰撞、碰到、碰巧"
+    },
+    {
+      "id": "char_zhuang",
+      "front": "撞",
+      "back": "zhuàng｜撞击；碰撞；撞车",
+      "phonetic": "zhuàng",
+      "hint": "扌+童(孩子)→像孩子乱跑撞上→撞击",
+      "example": "撞击、碰撞、撞车"
+    },
+    {
+      "id": "char_si",
+      "front": "撕",
+      "back": "sī｜撕裂；撕破；撕开",
+      "phonetic": "sī",
+      "hint": "扌+斯(分裂)→用手分裂→撕开",
+      "example": "撕裂、撕破、撕开"
+    },
+    {
+      "id": "char_che",
+      "front": "扯",
+      "back": "chě｜拉扯；扯开；闲扯",
+      "phonetic": "chě",
+      "hint": "扌+止(停)→用手拉住让其停→扯",
+      "example": "拉扯、扯开、闲扯"
+    },
+    {
+      "id": "char_jiao",
+      "front": "搅",
+      "back": "jiǎo｜搅拌；搅动；搅扰",
+      "phonetic": "jiǎo",
+      "hint": "扌+觉(感受)→用手转动使其感受→搅动",
+      "example": "搅拌、搅动、搅扰"
+    },
+    {
+      "id": "char_ban",
+      "front": "拌",
+      "back": "bàn｜拌和；搅拌；拌嘴",
+      "phonetic": "bàn",
+      "hint": "扌+半→用手把一半一半混合→拌",
+      "example": "搅拌、拌和、拌嘴"
+    },
+    {
+      "id": "char_cuo",
+      "front": "搓",
+      "back": "cuō｜搓揉；搓手；搓洗",
+      "phonetic": "cuō",
+      "hint": "扌+差(相互错落)→两手来回错动→搓",
+      "example": "搓揉、搓手、搓洗"
+    },
+    {
+      "id": "char_rou",
+      "front": "揉",
+      "back": "róu｜揉搓；揉眼；揉面",
+      "phonetic": "róu",
+      "hint": "扌+柔(柔软)→用手使之柔软→揉",
+      "example": "揉搓、揉眼睛、揉面团"
+    },
+    {
+      "id": "char_chui",
+      "front": "捶",
+      "back": "chuí｜捶打；捶背；捶胸顿足",
+      "phonetic": "chuí",
+      "hint": "扌+垂(悬垂落下)→手用力落下→捶打",
+      "example": "捶打、捶背、捶胸顿足"
+    },
+    {
+      "id": "char_chui2",
+      "front": "锤",
+      "back": "chuí｜锤子；铁锤；锤炼",
+      "phonetic": "chuí",
+      "hint": "金(金属)+垂→金属下垂之物→锤子",
+      "example": "锤子、铁锤、锤炼"
+    },
+    {
+      "id": "char_chan",
+      "front": "铲",
+      "back": "chǎn｜铁铲；铲除；铲平",
+      "phonetic": "chǎn",
+      "hint": "金+产→金属制产出之物→铲子",
+      "example": "铁铲、铲除、铲平"
+    },
+    {
+      "id": "char_pa",
+      "front": "耙",
+      "back": "pá｜耙子；铁耙；耙地",
+      "phonetic": "pá",
+      "hint": "耒(农具)+巴→农具耙地→耙子",
+      "example": "耙子、铁耙、耙地"
+    },
+    {
+      "id": "char_li2",
+      "front": "犁",
+      "back": "lí｜犁地；犁头；犁铧",
+      "phonetic": "lí",
+      "hint": "牛+利(锋利)→用牛拉锋利农具→犁地",
+      "example": "犁地、犁头、犁铧"
+    },
+    {
+      "id": "char_chu",
+      "front": "锄",
+      "back": "chú｜锄头；锄地；锄草",
+      "phonetic": "chú",
+      "hint": "金+助(帮助)→金属帮助农耕→锄头",
+      "example": "锄头、锄地、锄草"
+    },
+    {
+      "id": "char_ge",
+      "front": "割",
+      "back": "gē｜割断；收割；割舍",
+      "phonetic": "gē",
+      "hint": "害(伤害)+刀→用刀割伤→切割",
+      "example": "割断、收割、割舍"
+    },
+    {
+      "id": "char_jian",
+      "front": "剪",
+      "back": "jiǎn｜剪刀；剪断；剪纸",
+      "phonetic": "jiǎn",
+      "hint": "前+刀→向前用刀→剪断",
+      "example": "剪刀、剪断、剪纸"
+    },
+    {
+      "id": "char_kan",
+      "front": "砍",
+      "back": "kǎn｜砍伐；砍柴；砍价",
+      "phonetic": "kǎn",
+      "hint": "石+欠(缺)→用石斧使木减少→砍",
+      "example": "砍伐、砍柴、砍价"
+    },
+    {
+      "id": "char_pi",
+      "front": "劈",
+      "back": "pī｜劈开；劈柴；劈叉",
+      "phonetic": "pī",
+      "hint": "尸+刀+辛→用刀使劲砍→劈开",
+      "example": "劈开、劈柴、劈叉"
+    },
+    {
+      "id": "char_zao",
+      "front": "凿",
+      "back": "záo｜凿子；凿孔；穿凿",
+      "phonetic": "záo",
+      "hint": "㔿+工(工具)→用工具凿孔→凿",
+      "example": "凿子、凿孔、穿凿附会"
+    },
+    {
+      "id": "char_zuan",
+      "front": "钻",
+      "back": "zuān｜钻孔；钻研；钻石",
+      "phonetic": "zuān",
+      "hint": "金+隹(短尾鸟)→金属尖锥旋转→钻孔",
+      "example": "钻孔、钻研、钻石"
+    },
+    {
+      "id": "char_ba2",
+      "front": "拔",
+      "back": "bá｜拔出；拔草；拔高",
+      "phonetic": "bá",
+      "hint": "扌+犮(跑走)→用手让其跑开→拔出",
+      "example": "拔出、拔草、拔高"
+    },
+    {
+      "id": "char_cha",
+      "front": "插",
+      "back": "chā｜插入；插嘴；插花",
+      "phonetic": "chā",
+      "hint": "扌+臿(杵)→用手持臿插入→插",
+      "example": "插入、插嘴、插花"
+    },
+    {
+      "id": "char_pu",
+      "front": "扑",
+      "back": "pū｜扑倒；扑面；扑灭",
+      "phonetic": "pū",
+      "hint": "扌+卜(向下)→用手向下扑→扑倒",
+      "example": "扑倒、扑面而来、扑灭"
+    },
+    {
+      "id": "char_shuai",
+      "front": "摔",
+      "back": "shuāi｜摔倒；摔碎；摔跤",
+      "phonetic": "shuāi",
+      "hint": "扌+率→用手甩出→摔落",
+      "example": "摔倒、摔碎、摔跤"
+    },
+    {
+      "id": "char_zhi",
+      "front": "掷",
+      "back": "zhì｜投掷；掷骰子；掷铁饼",
+      "phonetic": "zhì",
+      "hint": "扌+掷→用手用力投出→投掷",
+      "example": "投掷、掷骰子、掷铁饼"
+    },
+    {
+      "id": "char_reng",
+      "front": "扔",
+      "back": "rēng｜扔掉；抛扔；扔球",
+      "phonetic": "rēng",
+      "hint": "扌+乃(顺势)→顺势甩出→扔",
+      "example": "扔掉、抛扔、扔球"
+    },
+    {
+      "id": "char_pao",
+      "front": "抛",
+      "back": "pāo｜抛出；抛弃；抛物线",
+      "phonetic": "pāo",
+      "hint": "扌+包→把包裹扔出去→抛",
+      "example": "抛出、抛弃、抛物线"
+    }
+  ]
+}

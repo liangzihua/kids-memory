@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>小记忆 — 截图素材</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #222; padding: 20px; font-family: sans-serif; }
+.tip {
+  color: #aaa; font-size: 13px; text-align: center;
+  margin-bottom: 20px; line-height: 1.6;
+}
+.tip strong { color: #fff; }
+.screens { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+
+/* 手机外框 */
+.phone {
+  width: 360px; height: 780px;
+  background: #1a1a1a; border-radius: 44px;
+  border: 6px solid #333; position: relative;
+  overflow: hidden; flex-shrink: 0;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.phone::before {
+  content: ''; position: absolute; top: 12px; left: 50%;
+  transform: translateX(-50%);
+  width: 80px; height: 20px;
+  background: #1a1a1a; border-radius: 10px; z-index: 10;
+}
+.screen {
+  width: 100%; height: 100%;
+  background: #FFF8F0;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+
+/* 状态栏 */
+.statusbar {
+  height: 44px; background: #FF6B1A;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  padding: 0 16px 6px; color: white; font-size: 11px; font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* ===== 截图1：主界面 ===== */
+.s1 .screen { background: #FFF8F0; }
+.home-header {
+  background: linear-gradient(135deg, #FF8C42, #FF5F1F);
+  padding: 16px; color: white;
+}
+.home-greeting { font-size: 13px; opacity: 0.9; }
+.home-name { font-size: 22px; font-weight: 800; margin: 2px 0; }
+.home-stats { font-size: 12px; opacity: 0.8; }
+.home-streak {
+  background: rgba(255,255,255,0.2); border-radius: 20px;
+  padding: 6px 12px; font-size: 12px; margin-top: 8px; display: inline-block;
+}
+.subject-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; padding: 14px;
+}
+.subject-card {
+  background: white; border-radius: 16px;
+  padding: 16px; text-align: center;
+  border: 1.5px solid #E8DDD0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.subject-card .icon { font-size: 36px; margin-bottom: 6px; }
+.subject-card .label { font-size: 14px; font-weight: 700; }
+.subject-card .prog { font-size: 11px; color: #B0A090; margin-top: 3px; }
+.section-title {
+  font-size: 14px; font-weight: 700; color: #2C2416;
+  padding: 0 14px 8px; display: flex; justify-content: space-between;
+}
+.review-card {
+  margin: 0 14px 10px; background: white; border-radius: 14px;
+  padding: 14px; border: 1.5px solid #E8DDD0;
+  display: flex; align-items: center; gap: 12px;
+}
+.review-icon {
+  width: 42px; height: 42px; border-radius: 10px;
+  background: linear-gradient(135deg,#3B82F6,#1D4ED8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.review-text .t { font-size: 14px; font-weight: 600; }
+.review-text .s { font-size: 12px; color: #7A6A58; margin-top: 2px; }
+.review-btn {
+  margin-left: auto; background: #FF6B1A; color: white;
+  border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 700;
+}
+.poem-card {
+  margin: 0 14px 10px; background: linear-gradient(135deg,#FFF3E0,#FFE0CC);
+  border-radius: 14px; padding: 14px; border: 1px solid #FFCC80;
+}
+.poem-title { font-size: 13px; font-weight: 700; color: #E65100; }
+.poem-line { font-size: 15px; color: #4A3C2C; margin-top: 4px; font-family: serif; }
+
+/* ===== 截图2：英语闪卡 ===== */
+.s2 .screen { background: #F0F6FF; }
+.page-header {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+  padding: 16px; color: white; display: flex; align-items: center; gap: 10px;
+}
+.back-btn { font-size: 18px; }
+.page-title { font-size: 18px; font-weight: 700; }
+.page-sub { font-size: 11px; opacity: 0.8; margin-left: auto; }
+.flashcard-wrap {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 20px; gap: 16px;
+}
+.progress-bar-wrap { width: 100%; height: 4px; background: #E0EDFF; border-radius: 2px; }
+.progress-bar-fill { width: 35%; height: 100%; background: #3B82F6; border-radius: 2px; }
+.prog-text { font-size: 12px; color: #7A6A58; text-align: center; }
+.card {
+  width: 100%; background: white; border-radius: 24px;
+  padding: 36px 24px; text-align: center;
+  box-shadow: 0 8px 32px rgba(59,130,246,0.2);
+  border: 2px solid #E0EDFF;
+}
+.card-tag { font-size: 11px; color: #3B82F6; font-weight: 700; margin-bottom: 12px; }
+.card-word {
+  font-size: 52px; font-weight: 800; letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.syl1 { color: #E84848; }
+.syl2 { color: #3B82F6; }
+.syl3 { color: #10B981; }
+.card-phonetic { font-size: 16px; color: #7A6A58; margin-bottom: 4px; }
+.card-hint { font-size: 13px; color: #B0A090; }
+.flip-hint { font-size: 13px; color: #B0A090; }
+.rating-row {
+  display: flex; gap: 10px; width: 100%;
+}
+.rating-btn {
+  flex: 1; padding: 12px; border-radius: 14px;
+  font-size: 13px; font-weight: 700; text-align: center;
+}
+.r1 { background: #FFEBEE; color: #E84848; }
+.r2 { background: #FFF8E1; color: #F59E0B; }
+.r3 { background: #E8F5E9; color: #10B981; }
+
+/* ===== 截图3：古诗背诵 ===== */
+.s3 .screen { background: #FFF8F0; }
+.poem-header {
+  background: linear-gradient(135deg, #E84848, #C0392B);
+  padding: 16px; color: white;
+}
+.poem-header-title { font-size: 20px; font-weight: 800; font-family: serif; }
+.poem-header-meta { font-size: 12px; opacity: 0.8; margin-top: 3px; }
+.poem-mode-tabs {
+  display: flex; background: white; border-bottom: 1px solid #E8DDD0;
+}
+.mode-tab {
+  flex: 1; padding: 10px; text-align: center;
+  font-size: 13px; font-weight: 600; color: #7A6A58;
+}
+.mode-tab.active { color: #E84848; border-bottom: 2px solid #E84848; }
+.poem-body { padding: 16px; flex: 1; overflow: hidden; }
+.poem-lines { text-align: center; margin-bottom: 16px; }
+.poem-line-text {
+  font-family: serif; font-size: 20px; color: #2C2416;
+  line-height: 2.2; letter-spacing: 3px;
+}
+.translation-box {
+  background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 12px; padding: 12px; margin-bottom: 12px;
+}
+.trans-label { font-size: 11px; font-weight: 700; color: #3B82F6; margin-bottom: 6px; }
+.trans-text { font-size: 13px; color: #4A3C2C; line-height: 1.7; }
+.notes-box {
+  background: rgba(139,92,246,0.05); border: 1px solid rgba(139,92,246,0.15);
+  border-radius: 12px; padding: 12px;
+}
+.notes-label { font-size: 11px; font-weight: 700; color: #8B5CF6; margin-bottom: 8px; }
+.notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.note-item { font-size: 12px; color: #4A3C2C; }
+.note-word { font-weight: 700; color: #8B5CF6; }
+.speak-btn {
+  margin: 12px 16px 0; background: #E84848; color: white;
+  border-radius: 14px; padding: 12px; text-align: center;
+  font-size: 14px; font-weight: 700;
+}
+</style>
+</head>
+<body>
+<div class="tip">
+  <strong>截图使用方法</strong>：Chrome 打开此页面 → F12 开发者工具 →
+  右键点击对应的 .phone 元素 → "Capture node screenshot" → 保存图片<br>
+  或使用截图工具，每张手机框尺寸为 360×780px（建议放大2倍后截图得到更清晰效果）
+</div>
+
+<div class="screens">
+
+  <!-- 截图1：主界面 -->
+  <div class="phone s1">
+    <div class="screen">
+      <div class="statusbar">
+        <span>9:41</span><span>🔋 100%</span>
+      </div>
+      <div class="home-header">
+        <div class="home-greeting">下午好 👋</div>
+        <div class="home-name">小朋友</div>
+        <div class="home-stats">今日已学 12 张 · 连续 7 天</div>
+        <div class="home-streak">🔥 7天连续学习</div>
+      </div>
+      <div class="subject-grid">
+        <div class="subject-card">
+          <div class="icon">📖</div>
+          <div class="label">语文</div>
+          <div class="prog">128张待复习</div>
+        </div>
+        <div class="subject-card">
+          <div class="icon">🔤</div>
+          <div class="label">英语</div>
+          <div class="prog">56张待复习</div>
+        </div>
+        <div class="subject-card">
+          <div class="icon">📐</div>
+          <div class="label">数学</div>
+          <div class="prog">32张待复习</div>
+        </div>
+        <div class="subject-card">
+          <div class="icon">📚</div>
+          <div class="label">题库</div>
+          <div class="prog">自定义题库</div>
+        </div>
+      </div>
+      <div class="section-title">
+        <span>今日待复习</span><span style="color:#B0A090;font-weight:400">共 216 张</span>
+      </div>
+      <div class="review-card">
+        <div class="review-icon">🔤</div>
+        <div class="review-text">
+          <div class="t">英语单词速记</div>
+          <div class="s">56张待复习 · ECDICT高频词汇</div>
+        </div>
+        <div class="review-btn">开始</div>
+      </div>
+      <div class="poem-card">
+        <div class="poem-title">📜 古诗背诵 · 今日推荐</div>
+        <div class="poem-line">床前明月光，疑是地上霜。</div>
+        <div style="font-size:11px;color:#B0A090;margin-top:6px">李白《静夜思》· 点击开始背诵</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 截图2：英语闪卡 -->
+  <div class="phone s2">
+    <div class="screen">
+      <div class="statusbar" style="background:#1D4ED8;">
+        <span>9:41</span><span>🔋 100%</span>
+      </div>
+      <div class="page-header">
+        <span class="back-btn">←</span>
+        <span class="page-title">英语单词速记</span>
+        <span class="page-sub">3/56</span>
+      </div>
+      <div class="flashcard-wrap">
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill"></div>
+        </div>
+        <div class="prog-text">3 / 56 · 今日新词</div>
+        <div class="card">
+          <div class="card-tag">英语 · ECDICT高频词汇</div>
+          <div class="card-word">
+            <span class="syl1">ver</span><span class="syl2">sion</span>
+          </div>
+          <div class="card-phonetic">/ˈvɜːrʒn/</div>
+          <div class="card-hint">点击翻转查看答案</div>
+        </div>
+        <div class="flip-hint">👆 点击卡片翻转</div>
+        <div class="rating-row">
+          <div class="rating-btn r1">😓 不记得</div>
+          <div class="rating-btn r2">🤔 模糊</div>
+          <div class="rating-btn r3">✅ 记住了</div>
+        </div>
+        <div style="font-size:12px;color:#B0A090;text-align:center">
+          🔊 朗读 &nbsp;·&nbsp; 音节着色辅助拼读
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 截图3：古诗背诵 -->
+  <div class="phone s3">
+    <div class="screen">
+      <div class="statusbar" style="background:#C0392B;">
+        <span>9:41</span><span>🔋 100%</span>
+      </div>
+      <div class="poem-header">
+        <div class="poem-header-title">静夜思</div>
+        <div class="poem-header-meta">唐 · 李白 · 小学一年级</div>
+      </div>
+      <div class="poem-mode-tabs">
+        <div class="mode-tab active">📖 原文</div>
+        <div class="mode-tab">✏️ 填空</div>
+        <div class="mode-tab">🎤 背诵</div>
+      </div>
+      <div class="poem-body">
+        <div class="poem-lines">
+          <div class="poem-line-text">床前明月光，</div>
+          <div class="poem-line-text">疑是地上霜。</div>
+          <div class="poem-line-text">举头望明月，</div>
+          <div class="poem-line-text">低头思故乡。</div>
+        </div>
+        <div class="translation-box">
+          <div class="trans-label">🈶 白话文翻译</div>
+          <div class="trans-text">床榻前洒满了皎洁的月光，好像是一层白白的秋霜。抬起头来望着天上的明月，低下头来深深地思念故乡。</div>
+        </div>
+        <div class="notes-box">
+          <div class="notes-label">📖 词语注释</div>
+          <div class="notes-grid">
+            <div class="note-item"><span class="note-word">床前</span> 床榻前方</div>
+            <div class="note-item"><span class="note-word">疑是</span> 好像是</div>
+            <div class="note-item"><span class="note-word">举头</span> 抬起头</div>
+            <div class="note-item"><span class="note-word">故乡</span> 家乡</div>
+          </div>
+        </div>
+      </div>
+      <div class="speak-btn">🔊 朗读全文</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

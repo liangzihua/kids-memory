@@ -1,0 +1,25 @@
+{
+  "meta": { "subject": "english", "grade": "middle", "name": "初中英语语法要点", "version": "2024", "count": 30 },
+  "cards": [
+    { "id": "gram_001", "type": "qa", "front": "一般现在时第三人称单数规则", "back": "动词+s/es\n特殊：have→has，be→is\n以s/x/ch/sh/o结尾+es\n辅音+y结尾，y→ies", "example": "go→goes，study→studies，have→has", "tags": ["语法","时态"] },
+    { "id": "gram_002", "type": "qa", "front": "现在进行时结构", "back": "be动词（am/is/are）+ 动词-ing", "example": "I am studying. / She is running.", "tags": ["语法","时态"] },
+    { "id": "gram_003", "type": "qa", "front": "一般过去时规则动词变化", "back": "动词+ed\n末尾e：+d\n辅音+y：y→i+ed\n辅元辅（重读）：双写末辅音+ed", "example": "stop→stopped，study→studied，love→loved", "tags": ["语法","时态"] },
+    { "id": "gram_004", "type": "qa", "front": "常见不规则动词（过去式）", "back": "go→went，have→had，do→did\ncome→came，see→saw，take→took\nbuy→bought，bring→brought\nbegin→began，write→wrote", "tags": ["语法","不规则动词"] },
+    { "id": "gram_005", "type": "qa", "front": "一般将来时结构", "back": "will + 动词原形（表示预测/意愿）\nbe going to + 动词原形（表示计划/已有迹象）", "example": "It will rain tomorrow. / I'm going to study.", "tags": ["语法","时态"] },
+    { "id": "gram_006", "type": "qa", "front": "现在完成时结构", "back": "have/has + 过去分词\nyet（否定/疑问）/already（肯定）/just/ever/never", "example": "I have already finished. / Have you eaten yet?", "tags": ["语法","时态"] },
+    { "id": "gram_007", "type": "qa", "front": "被动语态结构", "back": "be动词 + 过去分词\n时态通过be动词体现", "example": "The book was written by Tolstoy.\nEnglish is spoken worldwide.", "tags": ["语法","被动语态"] },
+    { "id": "gram_008", "type": "qa", "front": "情态动词 can/could/may/might/must 区别", "back": "can=能力/许可；could=过去式/更礼貌\nmay=可以/可能；might=更小的可能\nmust=必须/一定（肯定推断）\nmust not=禁止；don't have to=不必要", "example": "You must study. / You don't have to come.", "tags": ["语法","情态动词"] },
+    { "id": "gram_009", "type": "qa", "front": "宾语从句连接词", "back": "that（陈述句）：I think that...\nif/whether（一般疑问句）：I wonder if...\n疑问词（特殊疑问句）：I know where he lives.", "hint": "宾语从句用陈述语序！", "example": "I don't know what time it is.", "tags": ["语法","从句"] },
+    { "id": "gram_010", "type": "qa", "front": "定语从句：which/that/who/whom/whose", "back": "先行词是物：which/that\n先行词是人：who/that（主语）；whom（宾语）\n表示所属：whose", "example": "The book which I read was great. / The man who helped me is kind.", "tags": ["语法","从句"] },
+    { "id": "gram_011", "type": "qa", "front": "状语从句：时间/条件/原因/结果", "back": "时间：when/while/after/before/until\n条件：if/unless（unless=if not）\n原因：because/since/as\n结果：so...that/such...that", "example": "If it rains, I'll stay home. / It was so cold that I stayed inside.", "tags": ["语法","从句"] },
+    { "id": "gram_012", "type": "qa", "front": "反身代词", "back": "myself/yourself/himself/herself/itself\nourselves/yourselves/themselves\n用法：①强调 ②做宾语（主宾同一人）", "example": "I did it myself. / Please help yourself.", "tags": ["语法","代词"] },
+    { "id": "gram_013", "type": "qa", "front": "比较级和最高级构成规则", "back": "单音节：+er/est\ne结尾：+r/st\n辅元辅：双写+er/est\n多音节：more/most + 形容词\n不规则：good→better→best；bad→worse→worst", "example": "tall→taller→tallest；beautiful→more beautiful→most beautiful", "tags": ["语法","形容词"] },
+    { "id": "gram_014", "type": "qa", "front": "there be句型注意", "back": "there is + 单数/不可数名词\nthere are + 复数名词\n就近原则：最近的名词决定be动词形式", "example": "There is a cat and two dogs. (近的是cat，用is)", "tags": ["语法","句型"] },
+    { "id": "gram_015", "type": "qa", "front": "不定代词：some/any/no/every + 复合词", "back": "some：something/someone/somebody（肯定句/疑问句请求）\nany：anything/anyone/anybody（否定句/疑问句）\nevery：everything/everyone（每个）\nno：nothing/nobody（没有）", "example": "Is anyone there? / I have something to tell you.", "tags": ["语法","代词"] },
+    { "id": "gram_016", "type": "qa", "front": "动名词 (V-ing) 的用法", "back": "①做主语：Swimming is fun.\n②做宾语（特定动词后）：enjoy/mind/keep/finish + doing\n③介词后：be good at doing", "example": "I enjoy reading. / She is good at singing.", "tags": ["语法","非谓语动词"] },
+    { "id": "gram_017", "type": "qa", "front": "动词不定式 (to do) 的用法", "back": "①做主语：To learn English is fun.\n②做宾语：want/hope/decide/plan + to do\n③做目的状语：I came to help.\n④形容词后：happy/glad/ready to do", "example": "I want to eat. / She decided to leave.", "tags": ["语法","非谓语动词"] },
+    { "id": "gram_018", "type": "qa", "front": "可数名词与不可数名词", "back": "不可数名词常见：water/milk/food/money/news/advice/information/weather\n量化不可数：a glass of water / a piece of advice\n不可数不加s，不用a/an", "example": "Some information（✓）/ An information（✗）", "tags": ["语法","名词"] },
+    { "id": "gram_019", "type": "qa", "front": "冠词 a/an/the 用法", "back": "a/an：不定冠词，泛指，第一次提到\na+辅音音素；an+元音音素\nthe：定冠词，特指，上文提到过，独一无二", "example": "I saw a dog. The dog was brown. / the sun/moon/earth", "tags": ["语法","冠词"] },
+    { "id": "gram_020", "type": "qa", "front": "感叹句结构", "back": "What + a/an + 形容词 + 单数可数名词！\nWhat + 形容词 + 不可数/复数名词！\nHow + 形容词/副词！", "example": "What a beautiful day! / How clever she is!", "tags": ["语法","句型"] }
+  ]
+}

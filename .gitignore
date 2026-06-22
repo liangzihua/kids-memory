@@ -1,0 +1,11 @@
+node_modules/
+android/build/
+android/.gradle/
+android/app/build/
+android/capacitor-cordova-android-plugins/build/
+*.jks
+*.apk
+*.aab
+.DS_Store
+Thumbs.db
+privacy-deploy/

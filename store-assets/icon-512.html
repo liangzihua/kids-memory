@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #f0f0f0; padding: 20px; }
+.wrap { display: flex; gap: 20px; flex-wrap: wrap; }
+.label { font-family: sans-serif; font-size: 12px; color: #666; text-align: center; margin-top: 6px; }
+
+/* ===== 图标主体 ===== */
+.icon {
+  width: 512px; height: 512px;
+  background: linear-gradient(160deg, #FFE066 0%, #FFB830 40%, #FF8C00 100%);
+  border-radius: 112px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(255,140,0,0.4);
+}
+
+/* 背景光晕 */
+.icon .glow1 {
+  position: absolute; top: -60px; left: -60px;
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(255,255,255,0.35) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.icon .glow2 {
+  position: absolute; bottom: -40px; right: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(255,200,50,0.4) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* 小星星装饰 */
+.star {
+  position: absolute;
+  color: rgba(255,255,255,0.7);
+  font-size: 28px;
+  animation: none;
+}
+.star1 { top: 60px; right: 80px; font-size: 36px; }
+.star2 { top: 100px; left: 60px; font-size: 22px; }
+.star3 { bottom: 100px; right: 60px; font-size: 20px; }
+.star4 { bottom: 70px; left: 80px; font-size: 26px; }
+
+/* 主角：小孩子读书 */
+.character {
+  position: relative; z-index: 2;
+  font-size: 200px;
+  line-height: 1;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.2));
+  margin-top: -10px;
+}
+
+/* 光芒射线 */
+.rays {
+  position: absolute; top: 50px; left: 50%;
+  transform: translateX(-50%);
+  width: 160px; height: 160px;
+  z-index: 1;
+}
+.rays::before, .rays::after {
+  content: '';
+  position: absolute; inset: -20px;
+  border-radius: 50%;
+  background: conic-gradient(
+    rgba(255,255,255,0.3) 0deg,
+    transparent 20deg,
+    rgba(255,255,255,0.3) 40deg,
+    transparent 60deg,
+    rgba(255,255,255,0.3) 80deg,
+    transparent 100deg,
+    rgba(255,255,255,0.3) 120deg,
+    transparent 140deg,
+    rgba(255,255,255,0.3) 160deg,
+    transparent 180deg,
+    rgba(255,255,255,0.3) 200deg,
+    transparent 220deg,
+    rgba(255,255,255,0.3) 240deg,
+    transparent 260deg,
+    rgba(255,255,255,0.3) 280deg,
+    transparent 300deg,
+    rgba(255,255,255,0.3) 320deg,
+    transparent 340deg,
+    rgba(255,255,255,0.3) 360deg
+  );
+}
+
+/* 底部文字 */
+.name-wrap {
+  position: relative; z-index: 2;
+  background: rgba(255,255,255,0.25);
+  border-radius: 40px;
+  padding: 8px 32px;
+  margin-top: 4px;
+  backdrop-filter: blur(4px);
+}
+.name {
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  font-size: 76px; font-weight: 900; color: white;
+  letter-spacing: 12px;
+  text-shadow: 0 3px 10px rgba(180,80,0,0.4), 0 1px 0 rgba(255,255,255,0.5);
+}
+
+/* 小彩虹弧 */
+.arc {
+  position: absolute; bottom: 120px; left: 50%;
+  transform: translateX(-50%);
+  width: 320px; height: 60px;
+  border-radius: 0 0 160px 160px;
+  border: 6px solid transparent;
+  border-bottom: 6px solid rgba(255,255,255,0.2);
+  z-index: 1;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div>
+    <div class="icon">
+      <!-- 光晕背景 -->
+      <div class="glow1"></div>
+      <div class="glow2"></div>
+      <!-- 光芒 -->
+      <div class="rays"></div>
+      <!-- 星星 -->
+      <div class="star star1">✨</div>
+      <div class="star star2">⭐</div>
+      <div class="star star3">🌟</div>
+      <div class="star star4">💫</div>
+      <!-- 主角 -->
+      <div class="character">🧒</div>
+      <!-- 弧线 -->
+      <div class="arc"></div>
+      <!-- 名称 -->
+      <div class="name-wrap">
+        <div class="name">小记忆</div>
+      </div>
+    </div>
+    <div class="label">方案A：阳光小孩</div>
+  </div>
+
+  <div>
+    <div class="icon" style="background: linear-gradient(160deg,#A8EDFF 0%,#5BC8F5 40%,#2196F3 100%);">
+      <div class="glow1" style="background:radial-gradient(circle,rgba(255,255,255,0.4) 0%,transparent 70%)"></div>
+      <div class="glow2" style="background:radial-gradient(circle,rgba(100,200,255,0.4) 0%,transparent 70%)"></div>
+      <div class="rays"></div>
+      <div class="star star1">🌈</div>
+      <div class="star star2">⭐</div>
+      <div class="star star3">✨</div>
+      <div class="star star4">🌟</div>
+      <div class="character" style="font-size:190px">📚</div>
+      <div class="arc" style="border-bottom-color:rgba(255,255,255,0.25)"></div>
+      <div class="name-wrap" style="background:rgba(255,255,255,0.3)">
+        <div class="name" style="text-shadow:0 3px 10px rgba(0,80,180,0.4)">小记忆</div>
+      </div>
+    </div>
+    <div class="label">方案B：蓝天书本</div>
+  </div>
+
+  <div>
+    <div class="icon" style="background: linear-gradient(160deg,#B8F5A0 0%,#5DD96B 40%,#27AE60 100%);">
+      <div class="glow1" style="background:radial-gradient(circle,rgba(255,255,255,0.35) 0%,transparent 70%)"></div>
+      <div class="glow2" style="background:radial-gradient(circle,rgba(180,255,150,0.4) 0%,transparent 70%)"></div>
+      <div class="rays"></div>
+      <div class="star star1">🌻</div>
+      <div class="star star2">🌸</div>
+      <div class="star star3">✨</div>
+      <div class="star star4">⭐</div>
+      <div class="character" style="font-size:190px">🌱</div>
+      <div class="arc" style="border-bottom-color:rgba(255,255,255,0.2)"></div>
+      <div class="name-wrap" style="background:rgba(255,255,255,0.25)">
+        <div class="name" style="text-shadow:0 3px 10px rgba(0,100,50,0.4)">小记忆</div>
+      </div>
+    </div>
+    <div class="label">方案C：绿芽成长</div>
+  </div>
+</div>
+
+<p style="font-family:sans-serif;font-size:12px;color:#888;padding:16px 0">
+  使用方法：Chrome 打开 → F12 → 右键对应 .icon 元素 → "Capture node screenshot" → 保存为 icon-512.png
+</p>
+</body>
+</html>

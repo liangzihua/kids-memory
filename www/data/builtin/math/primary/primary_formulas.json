@@ -1,0 +1,30 @@
+{
+  "meta": { "subject": "math", "grade": "primary", "name": "小学数学公式", "version": "2024", "count": 30 },
+  "cards": [
+    { "id": "pf_001", "type": "formula", "front": "长方形面积", "back": "S = 长 × 宽", "example": "长5cm，宽3cm → S = 15cm²", "tags": ["面积","平面图形"] },
+    { "id": "pf_002", "type": "formula", "front": "正方形面积", "back": "S = 边长 × 边长 = 边长²", "example": "边长4cm → S = 16cm²", "tags": ["面积","平面图形"] },
+    { "id": "pf_003", "type": "formula", "front": "长方形周长", "back": "C = (长 + 宽) × 2", "example": "长6cm，宽4cm → C = 20cm", "tags": ["周长","平面图形"] },
+    { "id": "pf_004", "type": "formula", "front": "正方形周长", "back": "C = 边长 × 4", "example": "边长5cm → C = 20cm", "tags": ["周长","平面图形"] },
+    { "id": "pf_005", "type": "formula", "front": "三角形面积", "back": "S = 底 × 高 ÷ 2", "example": "底8cm，高6cm → S = 24cm²", "tags": ["面积","平面图形"] },
+    { "id": "pf_006", "type": "formula", "front": "平行四边形面积", "back": "S = 底 × 高", "example": "底7cm，高4cm → S = 28cm²", "tags": ["面积","平面图形"] },
+    { "id": "pf_007", "type": "formula", "front": "梯形面积", "back": "S = (上底 + 下底) × 高 ÷ 2", "example": "上底3，下底5，高4 → S = 16cm²", "tags": ["面积","平面图形"] },
+    { "id": "pf_008", "type": "formula", "front": "圆的面积", "back": "S = π × r²（r是半径）", "example": "r=5 → S ≈ 78.5cm²", "tags": ["面积","圆"] },
+    { "id": "pf_009", "type": "formula", "front": "圆的周长", "back": "C = π × d = 2πr（d是直径）", "example": "d=10 → C ≈ 31.4cm", "tags": ["周长","圆"] },
+    { "id": "pf_010", "type": "formula", "front": "长方体体积", "back": "V = 长 × 宽 × 高", "example": "4×3×2 = 24cm³", "tags": ["体积","立体图形"] },
+    { "id": "pf_011", "type": "formula", "front": "正方体体积", "back": "V = 棱长³", "example": "棱长3 → V = 27cm³", "tags": ["体积","立体图形"] },
+    { "id": "pf_012", "type": "formula", "front": "长方体表面积", "back": "S = 2×(长×宽 + 长×高 + 宽×高)", "example": "2×3×4的箱子 → S = 52cm²", "tags": ["表面积","立体图形"] },
+    { "id": "pf_013", "type": "concept", "front": "最大公因数（GCF）", "back": "几个数公有的最大因数", "example": "GCF(12,18)=6，因为12=2²×3，18=2×3²", "hint": "分解质因数，取公有的最小次幂", "tags": ["公因数","整除"] },
+    { "id": "pf_014", "type": "concept", "front": "最小公倍数（LCM）", "back": "几个数公有的最小倍数", "example": "LCM(4,6)=12", "hint": "分解质因数，取最大次幂之积", "tags": ["公倍数","整除"] },
+    { "id": "pf_015", "type": "concept", "front": "质数", "back": "只有1和本身两个因数的自然数（2,3,5,7,11...）", "example": "2是最小的质数，也是唯一的偶数质数", "tags": ["质数合数"] },
+    { "id": "pf_016", "type": "concept", "front": "合数", "back": "除了1和本身还有其他因数的自然数", "example": "4=1×4=2×2，所以4是合数", "tags": ["质数合数"] },
+    { "id": "pf_017", "type": "formula", "front": "分数加减法", "back": "同分母：分子加减，分母不变\n异分母：先通分再计算", "example": "1/4+1/4=2/4=1/2；1/2+1/3=3/6+2/6=5/6", "tags": ["分数"] },
+    { "id": "pf_018", "type": "formula", "front": "分数乘法", "back": "分子×分子，分母×分母", "example": "2/3 × 3/4 = 6/12 = 1/2", "tags": ["分数"] },
+    { "id": "pf_019", "type": "formula", "front": "分数除法", "back": "除以一个数等于乘以它的倒数", "example": "2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6", "tags": ["分数"] },
+    { "id": "pf_020", "type": "concept", "front": "比例", "back": "两个比相等叫做比例：a:b = c:d（外项之积 = 内项之积）", "example": "2:3 = 4:6 → 2×6=3×4=12", "tags": ["比例"] },
+    { "id": "pf_021", "type": "formula", "front": "速度、时间、路程", "back": "路程 = 速度 × 时间\n速度 = 路程 ÷ 时间\n时间 = 路程 ÷ 速度", "example": "60km/h × 3h = 180km", "tags": ["应用题","行程"] },
+    { "id": "pf_022", "type": "formula", "front": "工程问题", "back": "工作效率 × 工作时间 = 工作总量\n（总量通常设为1）", "example": "甲8天完成，每天效率1/8", "tags": ["应用题","工程"] },
+    { "id": "pf_023", "type": "formula", "front": "百分数与分数换算", "back": "a% = a/100\n将分数化百分数：分子÷分母×100%", "example": "3/4 = 75%；20% = 1/5", "tags": ["百分数"] },
+    { "id": "pf_024", "type": "formula", "front": "利润与折扣", "back": "利润 = 售价 - 进价\n利润率 = 利润÷进价×100%\n折扣 = 售价÷原价×100%", "example": "进价80，售价100 → 利润率25%", "tags": ["百分数","应用题"] },
+    { "id": "pf_025", "type": "concept", "front": "π（圆周率）的近似值", "back": "π ≈ 3.14（计算用）\nπ ≈ 3.14159...（更精确）", "hint": "记住：3.14", "tags": ["圆","常数"] }
+  ]
+}

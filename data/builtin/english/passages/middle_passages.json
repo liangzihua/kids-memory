@@ -1,0 +1,611 @@
+{
+  "meta": {
+    "subject": "english",
+    "name": "英语短文背诵（初中篇）",
+    "version": "2024",
+    "count": 60,
+    "description": "初中英语必背短文，适合7-9年级"
+  },
+  "passages": [
+    {
+      "id": "em_001",
+      "title": "My Ideal School",
+      "grade": "middle1",
+      "category": "校园",
+      "text": "My ideal school is a place where students can learn happily. It has modern classrooms with computers and projectors. There is a large sports field and a swimming pool. The school has a well-equipped science lab. Students can choose their own subjects. Teachers are friendly and encouraging. In my ideal school, everyone respects each other. Learning is not just about exams, but about exploring the world.",
+      "translation": "我理想中的学校是一个学生能快乐学习的地方。它有配备电脑和投影仪的现代教室，有大型运动场和游泳池，以及设备齐全的科学实验室。学生可以自己选择科目，老师友善而鼓励学生。在我理想的学校里，每个人都互相尊重。学习不只是为了考试，而是为了探索世界。",
+      "keywords": ["ideal", "projectors", "well-equipped", "respects", "exploring"],
+      "key_points": ["理想学校表达", "where引导定语从句", "not just...but about句型"]
+    },
+    {
+      "id": "em_002",
+      "title": "Friendship",
+      "grade": "middle1",
+      "category": "品德",
+      "text": "Friendship is one of the most valuable things in life. A true friend is someone who supports you when you are in trouble. Friends share both happiness and sadness. They are honest with each other. A good friend gives advice without judging. Friendship requires trust, respect and understanding. We should cherish our friends and treat them well. True friendship lasts forever.",
+      "translation": "友谊是生命中最宝贵的东西之一。真正的朋友是在你遇到困难时支持你的人。朋友分享快乐和悲伤，彼此诚实。好朋友提供建议而不评判。友谊需要信任、尊重和理解。我们应该珍惜朋友，善待他们。真正的友谊永远长存。",
+      "keywords": ["friendship", "valuable", "honest", "cherish", "trust"],
+      "key_points": ["友谊主题词汇", "who引导定语从句", "requires表需要"]
+    },
+    {
+      "id": "em_003",
+      "title": "City Life vs Country Life",
+      "grade": "middle2",
+      "category": "社会",
+      "text": "City life and country life are very different. Cities are busy and exciting. There are many job opportunities and entertainment options. However, cities can be noisy and polluted. Country life is peaceful and relaxing. The air is clean and food is fresh. But there are fewer services and opportunities. Both lifestyles have advantages and disadvantages. People choose where to live based on their needs and preferences.",
+      "translation": "城市生活和乡村生活非常不同。城市繁忙而充满活力，有很多工作机会和娱乐选择，但城市可能嘈杂且污染严重。乡村生活平静而轻松，空气清新，食物新鲜，但服务和机会较少。两种生活方式各有优缺点。人们根据自己的需求和偏好选择居住地。",
+      "keywords": ["opportunities", "polluted", "peaceful", "advantages", "preferences"],
+      "key_points": ["城乡对比", "however转折", "both...have advantages and disadvantages"]
+    },
+    {
+      "id": "em_004",
+      "title": "The Importance of Learning English",
+      "grade": "middle1",
+      "category": "学习",
+      "text": "English is the most widely spoken language in the world. It is used in international business, science and technology. Learning English opens many doors for us. We can communicate with people from different countries. We can access more information on the Internet. English also helps us understand other cultures. In today's world, English is an essential skill. We should work hard to improve our English.",
+      "translation": "英语是世界上使用最广泛的语言，用于国际商务、科学和技术领域。学英语为我们打开了很多大门，可以和来自不同国家的人交流，在互联网上获取更多信息。英语还帮助我们了解其他文化。在当今世界，英语是一项必备技能，我们应该努力提高英语水平。",
+      "keywords": ["widely spoken", "international", "access", "essential", "communicate"],
+      "key_points": ["最高级most widely spoken", "open doors比喻", "access sth获取"]
+    },
+    {
+      "id": "em_005",
+      "title": "Global Warming",
+      "grade": "middle2",
+      "category": "环保",
+      "text": "Global warming is one of the biggest problems facing our planet today. The Earth's temperature is rising because of greenhouse gases. These gases come from burning fossil fuels and cutting down forests. Global warming causes more extreme weather events. Sea levels are rising, threatening coastal cities. We must reduce carbon emissions. Governments, companies and individuals all need to take action. It is our responsibility to protect the Earth.",
+      "translation": "全球变暖是当今我们的星球面临的最大问题之一。由于温室气体，地球温度正在上升。这些气体来自燃烧化石燃料和砍伐森林。全球变暖导致更多极端天气事件，海平面上升威胁沿海城市。我们必须减少碳排放，政府、企业和个人都需要采取行动。保护地球是我们的责任。",
+      "keywords": ["global warming", "greenhouse gases", "fossil fuels", "emissions", "responsibility"],
+      "key_points": ["环保词汇", "because of原因短语", "it is our responsibility句型"]
+    },
+    {
+      "id": "em_006",
+      "title": "Traditional Chinese Medicine",
+      "grade": "middle2",
+      "category": "文化",
+      "text": "Traditional Chinese Medicine, or TCM, has a history of thousands of years. It uses herbs, acupuncture and other methods to treat diseases. TCM focuses on balancing the body's energy. It treats the whole person, not just the symptoms. Many people around the world are interested in TCM. Tu Youyou, a Chinese scientist, discovered artemisinin based on TCM research. She won the Nobel Prize for this. TCM is an important part of Chinese culture.",
+      "translation": "中医有数千年的历史，使用草药、针灸和其他方法来治疗疾病。中医注重平衡身体的能量，治疗整个人而不仅仅是症状。世界各地很多人对中医感兴趣。中国科学家屠呦呦根据中医研究发现了青蒿素，因此获得了诺贝尔奖。中医是中国文化的重要组成部分。",
+      "keywords": ["TCM", "acupuncture", "herbs", "Nobel Prize", "artemisinin"],
+      "key_points": ["中医文化词汇", "focus on表专注于", "based on基于"]
+    },
+    {
+      "id": "em_007",
+      "title": "Social Media",
+      "grade": "middle3",
+      "category": "科技",
+      "text": "Social media has changed the way we communicate. Platforms like WeChat and Weibo allow us to share our lives instantly. We can connect with friends and family anywhere in the world. Social media also helps businesses reach customers. However, there are also problems. Some people spend too much time on social media. Fake news spreads quickly online. Privacy is also a concern. We should use social media wisely and responsibly.",
+      "translation": "社交媒体改变了我们的交流方式。微信和微博等平台让我们可以即时分享生活，可以与世界各地的朋友和家人保持联系。社交媒体也帮助企业接触客户。但也存在问题，有些人花太多时间在社交媒体上，虚假新闻在网上迅速传播，隐私也是一个问题。我们应该明智而负责任地使用社交媒体。",
+      "keywords": ["social media", "instantly", "privacy", "fake news", "responsibly"],
+      "key_points": ["社交媒体词汇", "allow sb to do", "wisely and responsibly副词"]
+    },
+    {
+      "id": "em_008",
+      "title": "Reading Books",
+      "grade": "middle1",
+      "category": "学习",
+      "text": "Reading books is one of the best habits we can develop. Books give us knowledge and wisdom. They take us to different worlds and times. Reading improves our vocabulary and writing skills. It also helps us think critically. People who read regularly tend to be more creative and empathetic. In the age of the Internet, reading books is still irreplaceable. Set aside time every day to read. Books are windows to the world.",
+      "translation": "读书是我们可以养成的最好习惯之一。书籍给我们知识和智慧，带领我们进入不同的世界和时代。阅读提高我们的词汇量和写作技能，也帮助我们批判性思考。经常阅读的人往往更有创造力和同理心。在互联网时代，读书仍然是不可替代的。每天留出时间读书，书是通向世界的窗户。",
+      "keywords": ["wisdom", "vocabulary", "critically", "empathetic", "irreplaceable"],
+      "key_points": ["读书益处", "tend to be句型", "set aside time留出时间"]
+    },
+    {
+      "id": "em_009",
+      "title": "The Silk Road",
+      "grade": "middle2",
+      "category": "历史",
+      "text": "The Silk Road was an ancient trade route that connected China with Europe and the Middle East. It was named after the silk that Chinese merchants sold. Along the Silk Road, people traded not only goods but also ideas, religions and technologies. Buddhism came to China through the Silk Road. Today, China's Belt and Road Initiative follows the spirit of the ancient Silk Road. It aims to promote trade and cooperation among countries.",
+      "translation": "丝绸之路是一条古老的贸易路线，连接中国与欧洲和中东。它以中国商人出售的丝绸命名。沿着丝绸之路，人们不仅交易货物，还交流思想、宗教和技术。佛教通过丝绸之路传入中国。如今，中国的一带一路倡议传承了古代丝绸之路的精神，旨在促进各国之间的贸易和合作。",
+      "keywords": ["Silk Road", "merchants", "Buddhism", "Belt and Road", "cooperation"],
+      "key_points": ["历史词汇", "not only...but also句型", "aim to表旨在"]
+    },
+    {
+      "id": "em_010",
+      "title": "Volunteering",
+      "grade": "middle2",
+      "category": "品德",
+      "text": "Volunteering means offering your time and skills to help others without payment. Many students volunteer in their communities. They help elderly people, clean parks or tutor younger students. Volunteering has many benefits. It helps us develop new skills and make new friends. It also gives us a sense of satisfaction and purpose. Volunteering makes our communities better. Everyone should try to volunteer regularly.",
+      "translation": "志愿服务意味着免费奉献自己的时间和技能来帮助他人。很多学生在社区做志愿者，帮助老人、清洁公园或辅导小学生。志愿服务有很多好处：帮助我们发展新技能、结交新朋友，也给我们带来满足感和使命感。志愿服务让我们的社区更美好，每个人都应该定期志愿服务。",
+      "keywords": ["volunteering", "communities", "satisfaction", "purpose", "tutor"],
+      "key_points": ["志愿服务词汇", "means + doing", "give sb a sense of句型"]
+    },
+    {
+      "id": "em_011",
+      "title": "Artificial Intelligence",
+      "grade": "middle3",
+      "category": "科技",
+      "text": "Artificial Intelligence, or AI, is one of the most exciting technologies today. AI can process large amounts of data quickly. It is used in medicine, education, transportation and entertainment. AI helps doctors diagnose diseases more accurately. Self-driving cars use AI technology. However, AI also brings challenges. Some jobs may be replaced by machines. We need to learn new skills for the future. AI is a tool that we should use carefully.",
+      "translation": "人工智能是当今最令人兴奋的技术之一。人工智能能够快速处理大量数据，被用于医学、教育、交通和娱乐领域。人工智能帮助医生更准确地诊断疾病，自动驾驶汽车使用人工智能技术。然而，人工智能也带来挑战，一些工作可能被机器取代。我们需要为未来学习新技能。人工智能是一种工具，我们应该谨慎使用。",
+      "keywords": ["artificial intelligence", "diagnose", "self-driving", "process", "accurately"],
+      "key_points": ["AI词汇", "be used in用于", "may be replaced by被动语态"]
+    },
+    {
+      "id": "em_012",
+      "title": "The Olympic Games",
+      "grade": "middle1",
+      "category": "体育",
+      "text": "The Olympic Games are the world's largest international sports event. They are held every four years. Athletes from all over the world compete in various sports. The Olympic motto is 'Faster, Higher, Stronger - Together.' The Games promote peace and friendship among nations. China hosted the Summer Olympics in 2008 in Beijing. In 2022, Beijing hosted the Winter Olympics, making it the first city to host both. The Olympics inspire millions of people worldwide.",
+      "translation": "奥运会是世界上最大的国际体育赛事，每四年举办一次。来自世界各地的运动员参加各种体育项目竞技。奥运会格言是《更快、更高、更强——更团结》。奥运会促进各国之间的和平与友谊。中国于2008年在北京举办了夏季奥运会，2022年北京举办冬奥会，成为首个举办夏冬两届奥运会的城市。奥运会激励着全世界数百万人。",
+      "keywords": ["Olympic Games", "motto", "compete", "hosted", "inspire"],
+      "key_points": ["奥运词汇", "最高级largest", "making it the first city不定式结果状语"]
+    },
+    {
+      "id": "em_013",
+      "title": "Environmental Protection",
+      "grade": "middle2",
+      "category": "环保",
+      "text": "Our environment is in danger. Pollution, deforestation and climate change are serious problems. We all have a responsibility to protect the environment. We can start with small actions: recycle waste, use public transport, save electricity and water. Governments should make stricter laws to protect nature. Companies should reduce their carbon footprint. If we work together, we can solve these environmental problems. The future of our planet depends on what we do today.",
+      "translation": "我们的环境正处于危险之中。污染、乱砍滥伐和气候变化是严重的问题。我们都有责任保护环境。可以从小事做起：回收废物、乘坐公共交通、节约电力和用水。政府应该制定更严格的法律来保护自然，企业应该减少碳足迹。如果我们共同努力，就能解决这些环境问题。我们星球的未来取决于我们今天的行动。",
+      "keywords": ["deforestation", "recycle", "carbon footprint", "stricter", "depends on"],
+      "key_points": ["环保词汇", "start with small actions", "depend on取决于"]
+    },
+    {
+      "id": "em_014",
+      "title": "A Successful Person",
+      "grade": "middle2",
+      "category": "励志",
+      "text": "What makes a person successful? Success is not just about making money. A truly successful person is one who achieves their goals and makes a positive difference in the world. Successful people work hard and never give up. They learn from their failures. They set clear goals and work towards them every day. They also have good relationships with others. Success means doing something meaningful and being happy with your life.",
+      "translation": "什么使一个人成功？成功不仅仅是赚钱。真正成功的人是实现了自己目标并对世界产生积极影响的人。成功的人努力工作，永不放弃，从失败中学习，设定明确的目标并每天为之努力。他们与他人的关系也很好。成功意味着做有意义的事情，并对自己的生活感到满意。",
+      "keywords": ["successful", "achieve", "failures", "meaningful", "positive difference"],
+      "key_points": ["成功主题词汇", "what引导主语从句", "learn from failures句型"]
+    },
+    {
+      "id": "em_015",
+      "title": "Travelling",
+      "grade": "middle1",
+      "category": "旅游",
+      "text": "Travelling is a wonderful way to learn about the world. When we travel, we see different landscapes and experience different cultures. We taste new foods and meet interesting people. Travelling broadens our minds and opens our eyes. It helps us understand that people around the world are different but also similar. Travelling teaches us to be adaptable and appreciative. Even travelling within our own country can be very rewarding.",
+      "translation": "旅游是了解世界的好方法。旅行时，我们看到不同的风景，体验不同的文化，品尝新食物，认识有趣的人。旅游开阔我们的思维和眼界，帮助我们理解世界各地的人们既有不同之处，也有相似之处。旅游教会我们适应能力和感恩之心。即使在自己国内旅行，也非常有意义。",
+      "keywords": ["landscapes", "broadens", "adaptable", "appreciative", "rewarding"],
+      "key_points": ["旅游词汇", "broaden minds开阔思维", "even强调副词"]
+    },
+    {
+      "id": "em_016",
+      "title": "The Power of Music",
+      "grade": "middle1",
+      "category": "艺术",
+      "text": "Music is a universal language. It can express feelings that words cannot. Music can make us happy when we are sad. It can calm us when we are anxious. Research shows that listening to music can improve our mood and concentration. Playing a musical instrument also develops discipline and patience. Music connects people across different cultures. Whether you like pop, classical or folk music, music enriches our lives.",
+      "translation": "音乐是一种通用语言，能表达文字无法表达的情感。音乐能在我们悲伤时让我们快乐，在我们焦虑时让我们平静。研究表明，听音乐可以改善我们的情绪和注意力。演奏乐器也培养纪律性和耐心。音乐连接着不同文化的人们。无论你喜欢流行音乐、古典音乐还是民间音乐，音乐都能丰富我们的生活。",
+      "keywords": ["universal", "concentration", "discipline", "enriches", "anxiety"],
+      "key_points": ["音乐词汇", "research shows that研究表明", "whether...or无论...还是"]
+    },
+    {
+      "id": "em_017",
+      "title": "Respecting the Elderly",
+      "grade": "middle1",
+      "category": "品德",
+      "text": "Respecting the elderly is an important value in Chinese culture. Old people have a lot of wisdom and life experience. We can learn much from them. We should be patient and listen to them. We should help them when they need assistance. In our busy modern life, we sometimes forget to spend time with elderly relatives. We should visit them often and show them that we care. A society that respects its elders is a healthy society.",
+      "translation": "尊老是中国文化中的重要价值观。老年人有很多智慧和人生经验，我们可以从他们身上学到很多。我们应该耐心倾听他们，在他们需要帮助时给予协助。在繁忙的现代生活中，我们有时会忘记陪伴年迈的亲人。我们应该经常去看望他们，让他们知道我们关心他们。尊重长辈的社会是健康的社会。",
+      "keywords": ["respecting", "elderly", "wisdom", "patience", "assistance"],
+      "key_points": ["尊老文化词汇", "show sb that表达关心", "a society that定语从句"]
+    },
+    {
+      "id": "em_018",
+      "title": "My Future Plans",
+      "grade": "middle3",
+      "category": "梦想",
+      "text": "I have many plans for my future. First, I want to do well in my high school exams. Then I hope to study computer science at a good university. I am very interested in programming and artificial intelligence. After graduation, I would like to work in a technology company. One day, I dream of starting my own business. I know I need to work very hard to achieve these goals. I believe that with effort and determination, my dreams will come true.",
+      "translation": "我对未来有很多计划。首先，我想在高中考试中取得好成绩。然后我希望在一所好大学学习计算机科学。我对编程和人工智能非常感兴趣。毕业后，我想在一家科技公司工作。有一天，我梦想创办自己的企业。我知道要实现这些目标需要非常努力。我相信凭借努力和决心，我的梦想会成真。",
+      "keywords": ["graduation", "programming", "determination", "achievement", "business"],
+      "key_points": ["将来计划表达", "would like to do", "with effort and determination"]
+    },
+    {
+      "id": "em_019",
+      "title": "Chinese Culture Going Global",
+      "grade": "middle3",
+      "category": "文化",
+      "text": "Chinese culture is becoming more popular around the world. Chinese food, kung fu and traditional medicine are loved globally. Chinese films and TV dramas attract viewers from many countries. The number of people learning Chinese is increasing every year. Chinese festivals like Spring Festival are celebrated in many cities. China's Belt and Road Initiative also promotes cultural exchange. China is sharing its rich culture with the world. Cultural exchange helps build understanding and friendship between nations.",
+      "translation": "中国文化在全球越来越受欢迎。中国食物、功夫和传统医学深受全球喜爱。中国电影和电视剧吸引了很多国家的观众。每年学习中文的人数都在增加。春节等中国节日在很多城市都有庆祝活动。一带一路倡议也促进了文化交流。中国正在与世界分享其丰富的文化。文化交流有助于建立国家间的理解和友谊。",
+      "keywords": ["globally", "cultural exchange", "attract", "promote", "increasing"],
+      "key_points": ["中国文化走向世界", "the number of增长表达", "help build句型"]
+    },
+    {
+      "id": "em_020",
+      "title": "Stress Management",
+      "grade": "middle3",
+      "category": "健康",
+      "text": "Many students feel stressed about their studies and exams. A little stress can motivate us to work harder. But too much stress is harmful to our health. It is important to manage stress effectively. Exercise is a great way to relieve stress. Talking to friends or family can also help. We should organize our time well and avoid leaving things to the last minute. Taking breaks and hobbies are also important. Remember, your health is more important than your grades.",
+      "translation": "很多学生对学习和考试感到压力。适度的压力能激励我们更努力地工作，但压力过大对健康有害。有效地管理压力很重要。锻炼是缓解压力的好方法，和朋友或家人交谈也有帮助。我们应该合理安排时间，避免拖到最后一刻。休息和培养爱好也很重要。记住，你的健康比成绩更重要。",
+      "keywords": ["stress", "motivate", "harmful", "relieve", "organize"],
+      "key_points": ["压力管理词汇", "avoid + doing避免做", "remember句式"]
+    },
+    {
+      "id": "em_021",
+      "title": "The Great Wall",
+      "grade": "middle1",
+      "category": "文化",
+      "text": "The Great Wall of China is one of the greatest wonders of the world. It stretches over 21,000 kilometers across northern China. Construction began more than 2,000 years ago during the Qin Dynasty. The wall was built to protect China from northern invaders. Millions of workers built it over hundreds of years. Today, the Great Wall is a symbol of Chinese civilization and strength. It attracts millions of tourists from around the world every year. The Great Wall represents the wisdom and hard work of the Chinese people.",
+      "translation": "中国长城是世界上最伟大的奇迹之一，绵延中国北部超过21000公里。建造始于2000多年前的秦朝。长城的修建是为了保护中国不受北方入侵者的侵犯，数百万工人用了数百年建造了它。如今，长城是中华文明和力量的象征，每年吸引来自世界各地的数百万游客。长城代表着中国人民的智慧和勤劳。",
+      "keywords": ["Great Wall", "stretches", "civilization", "invaders", "symbol"],
+      "key_points": ["长城文化词汇", "stretch over延伸", "represent表代表"]
+    },
+    {
+      "id": "em_022",
+      "title": "Online Learning",
+      "grade": "middle2",
+      "category": "教育",
+      "text": "Online learning has become very popular in recent years. Students can learn from the comfort of their homes. There are thousands of online courses available. Online learning is flexible and convenient. Students can study at their own pace. However, online learning also has challenges. It requires self-discipline and motivation. Without a teacher present, some students may lose focus. Online learning cannot fully replace traditional classroom learning. A combination of both is probably the best approach.",
+      "translation": "近年来，在线学习变得非常普及。学生可以在家舒适地学习，有数千门在线课程可供选择。在线学习灵活方便，学生可以按自己的节奏学习。然而，在线学习也有挑战，需要自律和积极性。没有老师在场，一些学生可能会失去注意力。在线学习不能完全取代传统课堂学习，两者结合可能是最好的方法。",
+      "keywords": ["online learning", "flexible", "self-discipline", "motivation", "combination"],
+      "key_points": ["在线学习词汇", "at one's own pace按自己节奏", "cannot fully replace"]
+    },
+    {
+      "id": "em_023",
+      "title": "Dreams and Goals",
+      "grade": "middle1",
+      "category": "励志",
+      "text": "Everyone has dreams. Dreams give us direction and motivation in life. But dreams alone are not enough. We need to set clear goals and make plans to achieve them. Break big goals into smaller steps. Work on them every day. Don't be afraid of failure. Every failure teaches us something valuable. Successful people have faced many difficulties before reaching their goals. Keep believing in yourself and never give up. Your dreams are worth fighting for.",
+      "translation": "每个人都有梦想。梦想给我们人生的方向和动力，但光有梦想是不够的。我们需要设定明确的目标并制定计划来实现它们。把大目标分解成小步骤，每天为之努力。不要害怕失败，每次失败都教会我们宝贵的东西。成功的人在达到目标之前都面临过很多困难。继续相信自己，永不放弃。你的梦想值得为之奋斗。",
+      "keywords": ["direction", "motivation", "failure", "valuable", "worth fighting"],
+      "key_points": ["励志词汇", "break...into分解", "be worth + doing值得做"]
+    },
+    {
+      "id": "em_024",
+      "title": "Fast Food",
+      "grade": "middle1",
+      "category": "健康",
+      "text": "Fast food has become very popular worldwide. It is cheap, quick and convenient. Young people especially enjoy eating hamburgers, pizza and fried chicken. However, fast food is not good for our health. It contains too much fat, salt and sugar. Eating too much fast food can lead to obesity and other health problems. We should eat fast food only occasionally. A balanced diet with vegetables, fruits and whole grains is much healthier. Good eating habits start from a young age.",
+      "translation": "快餐在全球变得非常流行，便宜、快捷、方便。年轻人尤其喜欢吃汉堡、披萨和炸鸡。然而，快餐对健康不好，含有过多的脂肪、盐和糖。过多食用快餐会导致肥胖和其他健康问题。我们应该偶尔才吃快餐，含有蔬菜、水果和全谷物的均衡饮食要健康得多。良好的饮食习惯从小开始养成。",
+      "keywords": ["fast food", "obesity", "occasionally", "balanced diet", "whole grains"],
+      "key_points": ["饮食健康词汇", "lead to导致", "only occasionally仅偶尔"]
+    },
+    {
+      "id": "em_025",
+      "title": "Technology in Daily Life",
+      "grade": "middle2",
+      "category": "科技",
+      "text": "Technology has transformed our daily lives in amazing ways. Smartphones allow us to communicate, shop and entertain ourselves anywhere. Smart home devices make our homes more comfortable and energy-efficient. Medical technology saves lives every day. Transportation has become faster and safer. However, we should not become too dependent on technology. Spending too much screen time can affect our health and relationships. Technology should serve us, not control us. We must use technology wisely.",
+      "translation": "科技以惊人的方式改变了我们的日常生活。智能手机让我们能够在任何地方通讯、购物和娱乐。智能家居设备让家庭更舒适、更节能。医疗技术每天都在拯救生命，交通变得更快更安全。然而，我们不应该过于依赖科技，过多的屏幕时间会影响我们的健康和人际关系。科技应该为我们服务，而不是控制我们。我们必须明智地使用科技。",
+      "keywords": ["transformed", "smartphones", "dependent", "screen time", "energy-efficient"],
+      "key_points": ["科技词汇", "allow sb to do", "serve us, not control us对比句型"]
+    },
+    {
+      "id": "em_026",
+      "title": "The Importance of Exercise",
+      "grade": "middle1",
+      "category": "健康",
+      "text": "Regular exercise is essential for good health. Exercise strengthens our muscles and bones. It improves our cardiovascular health. Physical activity also releases endorphins, which make us feel happy. Exercise helps us maintain a healthy weight. It reduces the risk of diseases like diabetes and heart disease. Students who exercise regularly tend to perform better in school. We should aim to exercise for at least thirty minutes every day. Any form of movement counts.",
+      "translation": "定期锻炼对健康至关重要。锻炼能增强肌肉和骨骼，改善心血管健康。体育活动还能释放内啡肽，让我们感到快乐。锻炼帮助我们保持健康体重，降低患糖尿病和心脏病等疾病的风险。定期锻炼的学生往往在学校表现更好。我们应该争取每天至少锻炼三十分钟，任何形式的运动都有效。",
+      "keywords": ["cardiovascular", "endorphins", "maintain", "diabetes", "regular"],
+      "key_points": ["健康词汇", "reduce the risk of降低风险", "tend to perform better句型"]
+    },
+    {
+      "id": "em_027",
+      "title": "Pandas in China",
+      "grade": "middle1",
+      "category": "动物",
+      "text": "Giant pandas are one of China's most beloved national treasures. They live in the mountains of Sichuan, Shaanxi and Gansu provinces. Pandas mainly eat bamboo and can eat up to 40 kilograms a day. They were once close to extinction, with fewer than 1,000 living in the wild. Thanks to conservation efforts, their population has been growing. China has established more than 60 panda reserves. Pandas are now considered a conservation success story. They are also symbols of peace and friendship.",
+      "translation": "大熊猫是中国最受喜爱的国宝之一，生活在四川、陕西和甘肃省的山区。熊猫主要以竹子为食，每天能吃多达40公斤。它们曾经濒临灭绝，野外数量不足1000只。得益于保育工作，种群数量一直在增长。中国已建立60多个熊猫保护区。大熊猫如今被视为保育成功的案例，也是和平与友谊的象征。",
+      "keywords": ["giant pandas", "bamboo", "extinction", "conservation", "reserves"],
+      "key_points": ["熊猫词汇", "thanks to得益于", "be considered被视为"]
+    },
+    {
+      "id": "em_028",
+      "title": "Teamwork",
+      "grade": "middle2",
+      "category": "品德",
+      "text": "Teamwork is the ability to work together to achieve a common goal. Good teamwork requires communication, trust and cooperation. Every team member has a role to play. When team members support each other, they can achieve more than working alone. In school projects, sports and work, teamwork is essential. Successful companies often credit their success to good teamwork. Learning to work in a team is an important life skill. A team that works well together can overcome any challenge.",
+      "translation": "团队合作是指共同努力实现共同目标的能力。良好的团队合作需要沟通、信任和协作。每个团队成员都有自己的角色。当团队成员互相支持时，他们能取得比单独工作更多的成就。在学校项目、体育和工作中，团队合作至关重要。成功的公司往往将成功归因于良好的团队合作。学会在团队中工作是重要的人生技能。合作默契的团队能克服任何挑战。",
+      "keywords": ["teamwork", "cooperation", "achieve", "overcome", "communication"],
+      "key_points": ["团队合作词汇", "credit success to归因于", "overcome challenges克服挑战"]
+    },
+    {
+      "id": "em_029",
+      "title": "The Benefits of Learning a Second Language",
+      "grade": "middle2",
+      "category": "学习",
+      "text": "Learning a second language has many benefits. It improves our memory and problem-solving skills. Bilingual people tend to be better at multitasking. Speaking another language opens up new career opportunities. It allows us to communicate with more people around the world. Learning a language also helps us understand different cultures and perspectives. Research shows that learning a second language can delay the onset of dementia. Start learning a new language today - it is never too late.",
+      "translation": "学习第二语言有很多好处。它能改善我们的记忆力和解决问题的能力。双语人士往往更擅长多任务处理。掌握另一门语言能开辟新的职业机会，让我们能与更多世界各地的人交流。学习语言还帮助我们理解不同的文化和视角。研究表明，学习第二语言可以延缓痴呆症的发生。今天就开始学习新语言吧，永远不会太迟。",
+      "keywords": ["bilingual", "multitasking", "perspectives", "dementia", "opportunities"],
+      "key_points": ["双语学习词汇", "tend to be better at句型", "it is never too late句型"]
+    },
+    {
+      "id": "em_030",
+      "title": "Charity and Giving",
+      "grade": "middle2",
+      "category": "品德",
+      "text": "Charity means helping others who are less fortunate. There are many ways to be charitable. We can donate money, food or clothes to people in need. We can volunteer our time to help in our community. Even small acts of kindness can make a big difference. When we help others, we also feel better about ourselves. Charity teaches us to be grateful for what we have. In a world where many people suffer, giving to others is one of the most meaningful things we can do.",
+      "translation": "慈善是指帮助那些不那么幸运的人。做慈善有很多方式，可以向有需要的人捐钱、食物或衣物，也可以在社区里志愿奉献时间。即使是小小的善举也能产生巨大影响。帮助他人时，我们自己也会感觉更好。慈善教导我们感恩所拥有的一切。在一个许多人受苦的世界里，给予他人是我们能做的最有意义的事情之一。",
+      "keywords": ["charity", "donate", "fortunate", "grateful", "meaningful"],
+      "key_points": ["慈善词汇", "be grateful for感恩", "one of the most meaningful句型"]
+    },
+    {
+      "id": "em_031",
+      "title": "Food Waste",
+      "grade": "middle2",
+      "category": "社会",
+      "text": "Food waste is a serious global problem. One-third of all food produced is wasted every year. Meanwhile, millions of people around the world go hungry. Food waste also harms the environment. When food rots in landfills, it produces methane, a greenhouse gas. We can reduce food waste by buying only what we need. We should eat leftovers instead of throwing them away. Restaurants and supermarkets should also find ways to reduce waste. Every bite of food we save makes a difference.",
+      "translation": "食物浪费是一个严重的全球性问题。每年生产的所有食物中有三分之一被浪费，与此同时，全球数百万人忍饥挨饿。食物浪费也危害环境，食物在垃圾填埋场腐烂时会产生温室气体甲烷。我们可以只购买所需的食物来减少浪费，应该吃剩菜而不是把它们扔掉。餐厅和超市也应该想办法减少浪费。我们节省的每一口食物都有意义。",
+      "keywords": ["food waste", "landfills", "methane", "leftovers", "hungry"],
+      "key_points": ["食物浪费词汇", "one-third分数表达", "every...makes a difference"]
+    },
+    {
+      "id": "em_032",
+      "title": "The Dragon Boat Festival",
+      "grade": "middle1",
+      "category": "文化",
+      "text": "The Dragon Boat Festival is celebrated on the fifth day of the fifth month of the lunar calendar. It commemorates the ancient poet Qu Yuan, who drowned himself in the river to protest against corruption. People raced boats shaped like dragons to search for him. Today, dragon boat racing is a popular sport worldwide. People also eat zongzi, sticky rice wrapped in bamboo leaves. The festival is now on UNESCO's Intangible Cultural Heritage list. It is a time to remember Chinese history and culture.",
+      "translation": "端午节在农历五月初五庆祝，纪念古代诗人屈原——他投江自尽以抗议腐败。人们赛龙舟寻找他。如今，龙舟比赛在全球已成为一项流行运动。人们还吃粽子，即用竹叶包裹的糯米。端午节现已被列入联合国教科文组织非物质文化遗产名录，是一个铭记中国历史和文化的时节。",
+      "keywords": ["Dragon Boat Festival", "Qu Yuan", "zongzi", "UNESCO", "commemorate"],
+      "key_points": ["端午节文化词汇", "who引导定语从句", "be on UNESCO list表达"]
+    },
+    {
+      "id": "em_033",
+      "title": "Cyberbullying",
+      "grade": "middle3",
+      "category": "安全",
+      "text": "Cyberbullying means using technology to harass or hurt others online. It can happen through social media, text messages or online games. Cyberbullying can cause serious emotional harm to victims. Some victims feel depressed, anxious or even afraid to go to school. If you are being cyberbullied, tell a trusted adult immediately. Do not respond to the bully. Save evidence of the bullying. Schools and parents need to educate students about online safety. Everyone deserves to feel safe online.",
+      "translation": "网络欺凌是指使用技术在网上骚扰或伤害他人，可能通过社交媒体、短信或网络游戏发生。网络欺凌会对受害者造成严重的情感伤害，一些受害者感到抑郁、焦虑甚至不敢上学。如果你遭受网络欺凌，应立即告诉信任的大人，不要回应欺凌者，保存欺凌证据。学校和家长需要对学生进行网络安全教育。每个人都应该在网上感到安全。",
+      "keywords": ["cyberbullying", "harass", "victim", "evidence", "emotional"],
+      "key_points": ["网络安全词汇", "cause harm to造成伤害", "deserve to do应得到"]
+    },
+    {
+      "id": "em_034",
+      "title": "The Mid-Autumn Festival",
+      "grade": "middle1",
+      "category": "文化",
+      "text": "The Mid-Autumn Festival falls on the fifteenth day of the eighth lunar month. It is a time when families gather together to appreciate the full moon. People eat mooncakes, which come in many flavors. The festival is associated with the legend of Chang'e, the moon goddess. Children carry colorful lanterns. The Mid-Autumn Festival is celebrated not only in China but also in Vietnam, Korea and other Asian countries. It represents reunion, harmony and gratitude.",
+      "translation": "中秋节是农历八月十五，是家人聚在一起赏满月的时节。人们吃月饼，月饼有很多口味。节日与嫦娥奔月的传说有关。孩子们提着彩灯。中秋节不仅在中国庆祝，也在越南、韩国和其他亚洲国家庆祝，象征着团圆、和谐与感恩。",
+      "keywords": ["Mid-Autumn Festival", "mooncakes", "Chang'e", "reunion", "harmony"],
+      "key_points": ["中秋节词汇", "be associated with与...有关", "not only...but also句型"]
+    },
+    {
+      "id": "em_035",
+      "title": "The Value of Failure",
+      "grade": "middle2",
+      "category": "励志",
+      "text": "Many people fear failure. But failure is actually a valuable teacher. Every time we fail, we learn what not to do next time. Many successful people failed many times before achieving success. Thomas Edison failed thousands of times before inventing the light bulb. He said, 'I have not failed. I've just found 10,000 ways that won't work.' Failure builds resilience and character. Instead of giving up after failure, use it as a stepping stone to success.",
+      "translation": "很多人害怕失败，但失败实际上是一位宝贵的老师。每次失败，我们都能学到下次不该做什么。很多成功人士在取得成功之前都失败了很多次。托马斯·爱迪生在发明灯泡之前失败了数千次，他说：《我没有失败，我只是找到了一万种行不通的方法。《失败磨砺了韧性和品格。失败后不要放弃，而应将其作为通往成功的垫脚石。",
+      "keywords": ["failure", "resilience", "stepping stone", "Edison", "character"],
+      "key_points": ["励志词汇", "instead of代替", "use sth as a stepping stone句型"]
+    },
+    {
+      "id": "em_036",
+      "title": "China's Space Program",
+      "grade": "middle3",
+      "category": "科技",
+      "text": "China's space program has achieved remarkable progress in recent years. In 2003, Yang Liwei became China's first astronaut in space. China has landed a rover on the moon and Mars. The Chinese Space Station, Tiangong, was completed in 2022. Chinese astronauts now live and work there regularly. China plans to land astronauts on the moon before 2030. China's space achievements show the country's scientific strength and technological innovation. Space exploration inspires the next generation of scientists and engineers.",
+      "translation": "中国航天事业近年来取得了显著进步。2003年，杨利伟成为中国首位进入太空的宇航员。中国已在月球和火星上着陆探测器，中国空间站《天宫《于2022年竣工，中国宇航员如今定期在那里工作生活。中国计划在2030年前将宇航员送上月球。中国的航天成就展示了国家的科学实力和技术创新能力，激励着下一代科学家和工程师。",
+      "keywords": ["space program", "Tiangong", "rover", "remarkable", "innovation"],
+      "key_points": ["航天词汇", "achieve remarkable progress取得显著进步", "inspire the next generation激励下一代"]
+    },
+    {
+      "id": "em_037",
+      "title": "Plastic Pollution",
+      "grade": "middle2",
+      "category": "环保",
+      "text": "Plastic pollution is one of the most serious environmental problems today. Billions of pieces of plastic end up in our oceans every year. Marine animals often mistake plastic for food, which can kill them. Plastic takes hundreds of years to decompose. We must reduce our use of single-use plastics. Bring reusable bags when shopping. Use metal or glass water bottles. Governments should ban plastic bags and straws. Together, we can protect our oceans and wildlife from plastic pollution.",
+      "translation": "塑料污染是当今最严重的环境问题之一。每年数十亿件塑料最终进入海洋，海洋动物常常将塑料误认为食物，这可能导致它们死亡。塑料需要数百年才能分解。我们必须减少一次性塑料的使用，购物时带可重复使用的袋子，使用金属或玻璃水瓶。政府应该禁止塑料袋和吸管。共同努力，我们可以保护海洋和野生动物免受塑料污染。",
+      "keywords": ["plastic pollution", "decompose", "reusable", "marine", "single-use"],
+      "key_points": ["环保词汇", "mistake...for误认为", "take + 时间 + to do需要...时间"]
+    },
+    {
+      "id": "em_038",
+      "title": "The Importance of Sleep",
+      "grade": "middle1",
+      "category": "健康",
+      "text": "Sleep is essential for our health and wellbeing. During sleep, our bodies repair themselves and our brains process information. Teenagers need about eight to ten hours of sleep per night. Lack of sleep can cause problems with concentration, mood and health. Many students stay up late to study or use their phones. This is not a good habit. A consistent sleep schedule is important. Try to go to bed and wake up at the same time each day. Good sleep leads to better performance in school and sports.",
+      "translation": "睡眠对我们的健康和幸福至关重要。在睡眠期间，我们的身体自我修复，大脑处理信息。青少年每晚需要大约8到10小时的睡眠。睡眠不足会导致注意力、情绪和健康方面的问题。很多学生熬夜学习或玩手机，这不是一个好习惯。规律的睡眠时间表很重要，尽量每天在同一时间就寝和起床。良好的睡眠带来学习和运动的更好表现。",
+      "keywords": ["essential", "wellbeing", "consistent", "schedule", "performance"],
+      "key_points": ["睡眠健康词汇", "lead to better performance", "consistent schedule规律作息"]
+    },
+    {
+      "id": "em_039",
+      "title": "Protecting Our Oceans",
+      "grade": "middle3",
+      "category": "环保",
+      "text": "Our oceans cover more than seventy percent of the Earth and are home to millions of species. However, human activities are threatening ocean health. Overfishing has reduced fish populations dramatically. Pollution from land enters the ocean and harms marine life. Climate change is causing oceans to warm and become more acidic. We must take action to protect our oceans. Establish more marine protected areas. Reduce pollution and carbon emissions. The health of our oceans directly affects the health of our planet.",
+      "translation": "我们的海洋覆盖地球超过70%，是数百万物种的家园。然而，人类活动正在威胁海洋健康。过度捕捞大幅减少了鱼类种群，来自陆地的污染进入海洋，危害海洋生物。气候变化导致海洋变暖和酸化。我们必须采取行动保护海洋，建立更多海洋保护区，减少污染和碳排放。海洋的健康直接影响我们星球的健康。",
+      "keywords": ["oceans", "overfishing", "acidic", "marine protected areas", "species"],
+      "key_points": ["海洋环保词汇", "be home to是...的家园", "directly affects直接影响"]
+    },
+    {
+      "id": "em_040",
+      "title": "Famous Chinese Scientists",
+      "grade": "middle2",
+      "category": "科学",
+      "text": "China has produced many great scientists. Yuan Longping developed hybrid rice that has helped feed millions of people. Tu Youyou discovered artemisinin, a medicine for malaria. Deng Jiaxian was a key figure in China's nuclear development. Qian Xuesen made major contributions to China's space program. These scientists dedicated their lives to improving the world. They inspire young Chinese people to pursue science and technology. China's scientific achievements are admired around the world.",
+      "translation": "中国培养了许多伟大的科学家。袁隆平研发了杂交水稻，帮助养活了数百万人。屠呦呦发现了治疗疟疾的药物青蒿素。邓稼先是中国核武器研发的关键人物。钱学森为中国航天事业做出了重大贡献。这些科学家把一生献给了改善世界的事业，激励着中国年轻人追求科学和技术。中国的科学成就受到全世界的敬仰。",
+      "keywords": ["hybrid rice", "artemisinin", "malaria", "nuclear", "contributions"],
+      "key_points": ["中国科学家词汇", "dedicate lives to致力于", "be admired around the world"]
+    },
+    {
+      "id": "em_041",
+      "title": "Being a Good Citizen",
+      "grade": "middle1",
+      "category": "品德",
+      "text": "A good citizen cares about their community and country. Good citizens obey laws and respect others. They pay taxes and vote in elections. They help their neighbors and volunteer in the community. A good citizen is honest and fair. They speak out against injustice. They protect the environment. Being a good citizen means thinking about the greater good, not just yourself. Young people can start by being responsible students and helpful family members. Every person can make a positive contribution.",
+      "translation": "好公民关心自己的社区和国家。好公民遵守法律，尊重他人，缴税并参与选举。他们帮助邻居，在社区志愿服务。好公民诚实公正，敢于对不公正发声，保护环境。做一个好公民意味着考虑公共利益，而不仅仅是自己。年轻人可以从做负责任的学生和有帮助的家庭成员开始。每个人都可以做出积极贡献。",
+      "keywords": ["citizen", "obey", "injustice", "volunteer", "contribution"],
+      "key_points": ["公民词汇", "speak out against发声反对", "make a positive contribution"]
+    },
+    {
+      "id": "em_042",
+      "title": "Saving Money",
+      "grade": "middle1",
+      "category": "生活",
+      "text": "Saving money is an important life skill. When we save money, we can afford things we really need or want in the future. It also helps us in emergencies. A good habit is to save a part of any money you receive. Instead of spending everything at once, put some in a savings box or bank. Avoid buying things you don't need. Think carefully before spending. Learning to manage money well when young will benefit you throughout your life.",
+      "translation": "储蓄是一项重要的生活技能。储蓄可以让我们在未来买到真正需要或想要的东西，也能帮助我们应对紧急情况。一个好习惯是把收到的任何钱存一部分，不要一下子全花掉，而是把一些放入储钱罐或银行。避免购买不需要的东西，花钱前认真思考。年轻时学会理财，终身受益。",
+      "keywords": ["saving", "emergencies", "afford", "benefit", "manage money"],
+      "key_points": ["理财词汇", "afford to buy有能力买", "benefit sb throughout life终身受益"]
+    },
+    {
+      "id": "em_043",
+      "title": "The Power of Kindness",
+      "grade": "middle2",
+      "category": "品德",
+      "text": "Kindness is one of the most powerful forces in the world. A small act of kindness can change someone's day or even their life. Smiling at a stranger, helping someone carry bags, or saying a kind word costs nothing but means everything. Research shows that being kind makes both the giver and receiver happier. When we are kind, others are more likely to be kind in return. Kindness creates a ripple effect in society. Make kindness a daily habit and the world will become a better place.",
+      "translation": "善良是世界上最强大的力量之一。一个小小的善举可以改变某人的一天，甚至是他们的生活。向陌生人微笑、帮人提包或说一句善意的话，不花任何代价却意义重大。研究表明，善良让给予者和接受者都更快乐。当我们善良时，他人更有可能以善相报。善良在社会中产生涟漪效应。把善良变成日常习惯，世界将变得更美好。",
+      "keywords": ["kindness", "ripple effect", "receiver", "giver", "habit"],
+      "key_points": ["善良主题词汇", "be more likely to do更有可能", "ripple effect涟漪效应"]
+    },
+    {
+      "id": "em_044",
+      "title": "China's High-Speed Rail",
+      "grade": "middle2",
+      "category": "科技",
+      "text": "China has the world's largest high-speed rail network. It covers more than 40,000 kilometers across the country. Trains can travel at speeds of up to 350 kilometers per hour. High-speed rail has transformed transportation in China. A journey from Beijing to Shanghai now takes only four and a half hours. High-speed rail is also environmentally friendly compared to air travel. It has boosted economic development in many cities. China's high-speed rail technology is being exported to many countries. It is one of China's proudest achievements.",
+      "translation": "中国拥有世界上最大的高铁网络，覆盖全国超过4万公里，列车时速可达350公里。高铁改变了中国的交通运输，北京到上海的旅程现在只需四个半小时。与航空旅行相比，高铁也更环保。高铁促进了许多城市的经济发展，中国的高铁技术正在向许多国家出口，是中国最自豪的成就之一。",
+      "keywords": ["high-speed rail", "network", "boosted", "environmentally friendly", "exported"],
+      "key_points": ["高铁词汇", "be exported to被出口到", "compare to与...相比"]
+    },
+    {
+      "id": "em_045",
+      "title": "Peer Pressure",
+      "grade": "middle3",
+      "category": "品德",
+      "text": "Peer pressure means being influenced by people of your own age to do something. Peer pressure can be positive or negative. Positive peer pressure encourages us to work harder or try new activities. Negative peer pressure may push us to do things we know are wrong. It is important to be confident in your own values. Learn to say no when you feel uncomfortable. True friends will respect your decisions. Talk to a trusted adult if peer pressure becomes a serious problem.",
+      "translation": "同伴压力是指被同龄人影响而做某事。同伴压力可以是正面的，也可以是负面的。正面的同伴压力鼓励我们更努力地工作或尝试新活动，负面的同伴压力可能推动我们做自己明知错误的事。对自己的价值观保持自信很重要，当感到不适时学会说不。真正的朋友会尊重你的决定。如果同伴压力变成严重问题，请告诉信任的大人。",
+      "keywords": ["peer pressure", "influence", "confidence", "values", "uncomfortable"],
+      "key_points": ["同伴压力词汇", "can be positive or negative", "learn to say no学会拒绝"]
+    },
+    {
+      "id": "em_046",
+      "title": "Healthy Relationships",
+      "grade": "middle3",
+      "category": "品德",
+      "text": "Healthy relationships are based on mutual respect, trust and communication. In a healthy relationship, both people feel valued and safe. They support each other's goals and interests. They resolve conflicts calmly and fairly. Healthy relationships help us grow and become better people. Unhealthy relationships involve control, jealousy or disrespect. Recognize the signs of unhealthy relationships and seek help if needed. Building healthy relationships requires effort and practice. Start by being a good friend to others.",
+      "translation": "健康的关系建立在相互尊重、信任和沟通的基础上。在健康的关系中，双方都感到被重视和安全，互相支持对方的目标和兴趣，平静公正地解决冲突。健康的关系帮助我们成长，成为更好的人。不健康的关系涉及控制、嫉妒或不尊重。识别不健康关系的迹象，必要时寻求帮助。建立健康的关系需要努力和实践，从对他人做一个好朋友开始。",
+      "keywords": ["mutual respect", "resolve conflicts", "jealousy", "valued", "recognize"],
+      "key_points": ["健康关系词汇", "be based on基于", "resolve conflicts解决冲突"]
+    },
+    {
+      "id": "em_047",
+      "title": "Renewable Energy",
+      "grade": "middle3",
+      "category": "科技",
+      "text": "Renewable energy comes from natural sources that are constantly replenished. Solar, wind, hydro and geothermal power are examples. Renewable energy does not produce greenhouse gases. It helps reduce air pollution and combat climate change. China is the world's largest producer of renewable energy. It has built massive solar farms and wind farms. The cost of renewable energy is decreasing every year. In the future, most of our energy may come from renewable sources. Investing in renewable energy is investing in our future.",
+      "translation": "可再生能源来自不断补充的自然资源，如太阳能、风能、水力和地热能。可再生能源不产生温室气体，有助于减少空气污染和应对气候变化。中国是世界上最大的可再生能源生产国，建设了大规模的太阳能发电场和风电场。可再生能源的成本每年都在下降，未来我们的大部分能源可能来自可再生资源。投资可再生能源就是投资我们的未来。",
+      "keywords": ["renewable energy", "replenished", "geothermal", "solar farms", "combat"],
+      "key_points": ["可再生能源词汇", "be replenished被补充", "investing in is investing in句型"]
+    },
+    {
+      "id": "em_048",
+      "title": "The Importance of History",
+      "grade": "middle2",
+      "category": "教育",
+      "text": "History teaches us about the past so we can understand the present and plan for the future. By studying history, we learn about different civilizations and cultures. We understand how today's world came to be. History also teaches us important lessons. Many conflicts and disasters happened because people forgot the lessons of history. Learning about history helps us avoid repeating past mistakes. History also gives us role models - people whose courage and wisdom we can learn from. History is not just about the past; it shapes who we are today.",
+      "translation": "历史告诉我们过去，让我们能够理解现在并规划未来。通过学习历史，我们了解不同的文明和文化，理解今天的世界是如何形成的。历史也给我们重要的教训，很多冲突和灾难都是因为人们忘记了历史教训而发生的。了解历史帮助我们避免重蹈覆辙，也给我们提供榜样——那些我们可以从中学习勇气和智慧的人。历史不仅仅是关于过去，它塑造了我们今天是谁。",
+      "keywords": ["civilizations", "conflicts", "role models", "courage", "wisdom"],
+      "key_points": ["历史重要性词汇", "came to be形成", "avoid repeating mistakes避免重复错误"]
+    },
+    {
+      "id": "em_049",
+      "title": "Biodiversity",
+      "grade": "middle3",
+      "category": "科学",
+      "text": "Biodiversity refers to the variety of life on Earth. It includes all plants, animals, fungi and microorganisms. Biodiversity is essential for healthy ecosystems. Different species depend on each other for survival. When one species disappears, it can affect the entire food chain. Human activities like deforestation, pollution and climate change are causing species to go extinct at an alarming rate. We must protect biodiversity. Create and expand nature reserves. Stop illegal wildlife trade. Reduce pollution. Every species, no matter how small, plays a role in the ecosystem.",
+      "translation": "生物多样性是指地球上生命的多样性，包括所有植物、动物、真菌和微生物。生物多样性对健康的生态系统至关重要，不同物种相互依存以生存。当一个物种消失时，可能影响整个食物链。人类的砍伐森林、污染和气候变化正在以惊人的速度导致物种灭绝。我们必须保护生物多样性：建立和扩大自然保护区，打击非法野生动物贸易，减少污染。每个物种，无论多么微小，在生态系统中都发挥着作用。",
+      "keywords": ["biodiversity", "ecosystems", "species", "food chain", "extinct"],
+      "key_points": ["生物多样性词汇", "depend on each other相互依存", "play a role in发挥作用"]
+    },
+    {
+      "id": "em_050",
+      "title": "My Vision for the Future",
+      "grade": "middle3",
+      "category": "梦想",
+      "text": "I have a vision for the future where technology and humanity live in harmony. I imagine cities powered by clean energy. I picture schools where every child has equal access to quality education. I hope for a world where diseases can be cured with advanced medicine. I dream of nations that cooperate instead of fighting. This future is possible if we all work towards it. Young people today will shape the world of tomorrow. Let's study hard, think creatively and act responsibly to build the future we want.",
+      "translation": "我对未来有一个愿景：科技与人类和谐共处。我想象城市由清洁能源驱动，学校里每个孩子都能平等接受优质教育。我希望疾病能被先进医疗技术治愈，国家间合作而非争斗。如果我们共同为之努力，这个未来是可能的。今天的年轻人将塑造明天的世界。让我们努力学习、创新思考、负责任地行动，共同建设我们想要的未来。",
+      "keywords": ["vision", "harmony", "cooperate", "creatively", "responsibly"],
+      "key_points": ["未来愿景词汇", "where引导定语从句", "instead of代替"]
+    },
+    {
+      "id": "em_051",
+      "title": "The Role of Parents",
+      "grade": "middle2",
+      "category": "家庭",
+      "text": "Parents play the most important role in a child's life. They provide food, shelter and love. Parents are a child's first teachers. They teach values, language and social skills. Good parents encourage their children and support their dreams. They set boundaries to keep children safe. Parents sacrifice a lot for their children. As children grow up, they should show gratitude to their parents. Help them at home and spend quality time with them. A child who respects and loves their parents is truly happy.",
+      "translation": "父母在孩子的生命中扮演着最重要的角色，提供食物、住所和爱。父母是孩子的第一任老师，教导价值观、语言和社交技能。好的父母鼓励孩子，支持他们的梦想，设定界限保护孩子安全。父母为孩子牺牲了很多。当孩子长大后，应该向父母表达感激，在家帮忙，与他们共度美好时光。尊重和爱父母的孩子才是真正幸福的。",
+      "keywords": ["sacrifice", "gratitude", "boundaries", "encourage", "quality time"],
+      "key_points": ["家庭词汇", "provide...for提供", "spend quality time共度美好时光"]
+    },
+    {
+      "id": "em_052",
+      "title": "Digital Literacy",
+      "grade": "middle3",
+      "category": "科技",
+      "text": "Digital literacy means being able to use digital technology effectively and safely. It includes knowing how to search for information online, evaluate its reliability and protect your privacy. Digital literacy also means understanding how social media algorithms work and how they influence what we see. In today's world, digital literacy is as important as reading and writing. Schools should teach students to think critically about digital information. Everyone should learn to be responsible digital citizens.",
+      "translation": "数字素养是指能够有效、安全地使用数字技术，包括知道如何在网上搜索信息、评估其可靠性和保护隐私。数字素养还意味着了解社交媒体算法的工作原理以及它们如何影响我们所看到的内容。在当今世界，数字素养与读写能力同样重要。学校应该教学生批判性地思考数字信息，每个人都应该学会成为负责任的数字公民。",
+      "keywords": ["digital literacy", "algorithms", "reliability", "evaluate", "critical thinking"],
+      "key_points": ["数字素养词汇", "as important as同等重要", "evaluate reliability评估可靠性"]
+    },
+    {
+      "id": "em_053",
+      "title": "Cultural Diversity",
+      "grade": "middle2",
+      "category": "文化",
+      "text": "The world is home to thousands of different cultures. Each culture has its own language, traditions, food and art. Cultural diversity makes our world rich and interesting. We can learn from different cultures and broaden our perspectives. However, cultural differences can sometimes lead to misunderstandings. It is important to be open-minded and respectful of other cultures. Travelling and making friends from different backgrounds helps us appreciate diversity. A world that celebrates cultural differences is a better world.",
+      "translation": "世界拥有数千种不同的文化，每种文化都有自己的语言、传统、食物和艺术。文化多样性使我们的世界丰富而有趣，我们可以从不同文化中学习，开阔视野。然而，文化差异有时会导致误解，对其他文化保持开放和尊重的态度很重要。旅行和结交不同背景的朋友有助于我们欣赏多样性。一个庆祝文化差异的世界是一个更美好的世界。",
+      "keywords": ["cultural diversity", "perspectives", "misunderstandings", "open-minded", "appreciate"],
+      "key_points": ["文化多样性词汇", "lead to导致", "be respectful of尊重"]
+    },
+    {
+      "id": "em_054",
+      "title": "The Future of Work",
+      "grade": "middle3",
+      "category": "社会",
+      "text": "The world of work is changing rapidly. Automation and AI are replacing many jobs that existed before. New jobs are being created in technology, creative industries and healthcare. Workers in the future will need to be adaptable and lifelong learners. Soft skills like communication, creativity and problem-solving will be more valuable than ever. Remote work has also become more common. Young people should prepare by developing a wide range of skills. The future belongs to those who are willing to learn and adapt.",
+      "translation": "工作世界正在快速变化。自动化和人工智能正在取代很多以前的工作，在科技、创意产业和医疗保健领域正在创造新的工作机会。未来的工人需要具备适应性，成为终身学习者。沟通、创造力和解决问题等软技能将比以往任何时候都更有价值。远程工作也变得更加普遍。年轻人应该通过培养广泛的技能来做准备。未来属于那些愿意学习和适应的人。",
+      "keywords": ["automation", "adaptable", "lifelong learners", "remote work", "soft skills"],
+      "key_points": ["未来工作词汇", "be willing to do愿意做", "belong to属于"]
+    },
+    {
+      "id": "em_055",
+      "title": "Acts of Heroism",
+      "grade": "middle2",
+      "category": "品德",
+      "text": "Heroes are not just people in movies. Real heroes live among us every day. Firefighters rush into burning buildings to save lives. Doctors work long hours to help the sick. Teachers inspire students to reach their potential. Ordinary people show heroism too, by stopping to help someone in need or speaking up for what is right. Heroism does not require special powers. It requires courage, compassion and the willingness to put others before yourself. Look for opportunities to be a hero in your daily life.",
+      "translation": "英雄不只是电影里的人物，真正的英雄就生活在我们身边。消防员冲入燃烧的建筑物拯救生命，医生长时间工作帮助病人，老师激励学生发挥潜能。普通人也会展示英雄主义，比如停下来帮助有需要的人，或为正义发声。英雄主义不需要特殊力量，需要的是勇气、同情心和把他人置于自身之前的意愿。在日常生活中寻找机会成为英雄。",
+      "keywords": ["heroism", "compassion", "courage", "potential", "willingness"],
+      "key_points": ["英雄主义词汇", "rush into冲入", "put others before yourself以他人为先"]
+    },
+    {
+      "id": "em_056",
+      "title": "Mental Health",
+      "grade": "middle3",
+      "category": "健康",
+      "text": "Mental health is just as important as physical health. Many young people experience stress, anxiety or depression. It is important to talk about your feelings instead of keeping them inside. Exercise, good sleep and a balanced diet all contribute to mental health. Hobbies and social connections are also important. If you feel overwhelmed, seek help from a counselor or trusted adult. There is no shame in asking for help. Taking care of your mental health is a sign of strength, not weakness.",
+      "translation": "心理健康与身体健康同样重要。很多年轻人会经历压力、焦虑或抑郁。重要的是说出你的感受，而不是把它们压在心里。锻炼、良好的睡眠和均衡的饮食都有助于心理健康，爱好和社交关系也很重要。如果你感到不知所措，向心理咨询师或信任的大人寻求帮助。寻求帮助不丢人，照顾好心理健康是坚强的表现，而不是软弱。",
+      "keywords": ["mental health", "anxiety", "depression", "overwhelmed", "counselor"],
+      "key_points": ["心理健康词汇", "contribute to有助于", "sign of strength坚强的表现"]
+    },
+    {
+      "id": "em_057",
+      "title": "The Gift of Education",
+      "grade": "middle2",
+      "category": "教育",
+      "text": "Education is one of the greatest gifts a person can receive. It gives us knowledge, skills and opportunities. Education allows us to think critically and make better decisions. It helps us understand the world around us. Unfortunately, not every child in the world has access to quality education. Many children cannot go to school because of poverty or conflict. Organizations around the world are working to change this. We should cherish our education and not take it for granted. Every day in school is a privilege.",
+      "translation": "教育是一个人能得到的最大礼物之一，给我们知识、技能和机会，让我们能够批判性思考并做出更好的决定，帮助我们理解周围的世界。不幸的是，世界上并非每个孩子都能接受优质教育，很多孩子因贫困或冲突而无法上学。世界各地的组织正在努力改变这一现状。我们应该珍惜教育，不要视其为理所当然。每一天在学校的时光都是特权。",
+      "keywords": ["education", "privilege", "access", "poverty", "cherish"],
+      "key_points": ["教育词汇", "take for granted视为理所当然", "have access to能够获得"]
+    },
+    {
+      "id": "em_058",
+      "title": "Festivals Around the World",
+      "grade": "middle1",
+      "category": "文化",
+      "text": "Every culture has its own unique festivals. In China, we celebrate Spring Festival and Mid-Autumn Festival. In India, Diwali is the Festival of Lights. Christmas is celebrated by Christians around the world. Brazil has the famous Rio Carnival. Japan celebrates Cherry Blossom Festival in spring. Festivals bring people together and strengthen community bonds. They preserve cultural traditions and pass them on to younger generations. Learning about other cultures' festivals helps us appreciate the richness of human civilization.",
+      "translation": "每种文化都有自己独特的节日。在中国，我们庆祝春节和中秋节。在印度，排灯节是光明节。基督徒在世界各地庆祝圣诞节。巴西有著名的里约狂欢节，日本在春天庆祝樱花节。节日把人们聚在一起，加强社区联系，保留文化传统并传承给年轻一代。了解其他文化的节日有助于我们欣赏人类文明的丰富性。",
+      "keywords": ["festivals", "Diwali", "traditions", "preserve", "civilization"],
+      "key_points": ["节日文化词汇", "pass on to传承给", "strengthen bonds加强联系"]
+    },
+    {
+      "id": "em_059",
+      "title": "Good Study Habits",
+      "grade": "middle1",
+      "category": "学习",
+      "text": "Good study habits are the key to academic success. First, create a quiet study environment free from distractions. Set a regular study schedule and stick to it. Break your work into smaller tasks and focus on one at a time. Take short breaks to stay fresh. Review your notes after class while the information is still fresh. Ask questions when you don't understand. Form study groups with classmates. Get enough sleep before exams. Good habits developed now will benefit you throughout your school life and beyond.",
+      "translation": "好的学习习惯是学业成功的关键。首先，创造一个安静、无干扰的学习环境。制定规律的学习计划并坚持执行，把工作分解成小任务，每次专注一项。短暂休息以保持精力充沛。课后趁信息还新鲜时复习笔记，不懂时提问，和同学组成学习小组。考前保证充足睡眠。现在养成的好习惯将使你终身受益，不仅限于学校生活。",
+      "keywords": ["study habits", "distractions", "schedule", "review", "focus"],
+      "key_points": ["学习习惯词汇", "stick to坚持", "free from distractions无干扰"]
+    },
+    {
+      "id": "em_060",
+      "title": "A Letter to My Future Self",
+      "grade": "middle3",
+      "category": "写作",
+      "text": "Dear Future Me, I am writing this when I am fifteen years old. I hope when you read this, you have achieved your dreams. I hope you are kind and generous to others. I hope you have not forgotten the values our parents taught us. Remember that success is not measured only by wealth or status. Real success is being happy, healthy and making a positive impact on the world. Whatever challenges you face, remember that you have the strength to overcome them. Stay curious, keep learning and never stop growing. With love, Past Me.",
+      "translation": "亲爱的未来的我，我在十五岁时写下这封信。希望你读到这封信时，已经实现了自己的梦想。我希望你对他人善良慷慨，没有忘记父母教给我们的价值观。记住，成功不仅仅用财富或地位来衡量，真正的成功是快乐、健康并对世界产生积极影响。无论你面临什么挑战，记住你有力量克服它们。保持好奇心，不断学习，永不停止成长。满怀爱意，过去的我。",
+      "keywords": ["generous", "values", "measured", "impact", "curious"],
+      "key_points": ["书信格式", "be measured by用...来衡量", "make a positive impact产生积极影响"]
+    }
+  ]
+}

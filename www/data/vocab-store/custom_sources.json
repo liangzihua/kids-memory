@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "type": "custom_sources",
+    "description": "自定义词库源配置，用户可在此添加自定义词库",
+    "version": "1.0"
+  },
+  "sources": [
+    {
+      "_comment": "示例：添加你自己的词库",
+      "_example": {
+        "id":       "my_custom_vocab",
+        "name":     "我的自定义词库",
+        "desc":     "从本地文件或网络 URL 添加",
+        "category": "english",
+        "grade":    "middle",
+        "subject":  "english",
+        "size":     "自定义",
+        "source":   "本地",
+        "local":    "data/vocab-store/my_vocab.json",
+        "remote":   null,
+        "parser":   "cards_json",
+        "count":    0
+      }
+    }
+  ]
+}

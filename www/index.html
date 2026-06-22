@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#FF8C42">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="小记忆">
+  <title>小记忆 — 儿童学习助手</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<!-- ===== 页面：档案选择 ===== -->
+<div id="page-profiles" class="page active">
+  <header class="app-header">
+    <h1 class="app-title">小记忆</h1>
+    <p class="app-subtitle">今天要一起学习吗？</p>
+  </header>
+  <div class="profiles-grid" id="profiles-grid">
+    <!-- 动态渲染 -->
+  </div>
+  <div class="profiles-actions">
+    <button class="btn-voice-switch" id="btn-voice-switch" title="语音切换">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+      </svg>
+      <span>语音切换</span>
+    </button>
+    <button class="btn-manage-profiles" id="btn-manage-profiles">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+      <span>管理档案</span>
+    </button>
+  </div>
+</div>
+
+<!-- ===== 弹窗：新建/编辑档案 ===== -->
+<div class="modal-overlay hidden" id="profile-edit-modal">
+  <div class="modal profile-modal">
+    <h3 id="profile-modal-title">新建档案</h3>
+
+    <!-- 头像选择 -->
+    <div class="avatar-picker" id="avatar-picker">
+      <button class="avatar-option selected" data-emoji="🐼">🐼</button>
+      <button class="avatar-option" data-emoji="🐻">🐻</button>
+      <button class="avatar-option" data-emoji="🐯">🐯</button>
+      <button class="avatar-option" data-emoji="🦁">🦁</button>
+      <button class="avatar-option" data-emoji="🐸">🐸</button>
+      <button class="avatar-option" data-emoji="🐧">🐧</button>
+      <button class="avatar-option" data-emoji="🦊">🦊</button>
+      <button class="avatar-option" data-emoji="🐮">🐮</button>
+      <button class="avatar-option" data-emoji="🐷">🐷</button>
+      <button class="avatar-option" data-emoji="🐙">🐙</button>
+      <button class="avatar-option" data-emoji="🦋">🦋</button>
+      <button class="avatar-option" data-emoji="⭐">⭐</button>
+    </div>
+
+    <div class="profile-modal-selected-avatar" id="profile-selected-avatar">🐼</div>
+
+    <input type="text" id="profile-name-input" placeholder="孩子的名字" maxlength="10">
+
+    <select id="profile-grade-input" class="setting-select">
+      <option value="primary" selected>小学</option>
+      <option value="middle">初中</option>
+      <option value="adult">成人学习</option>
+    </select>
+
+    <div class="modal-buttons">
+      <button class="btn-secondary" id="btn-profile-cancel">取消</button>
+      <button class="btn-primary" id="btn-profile-save" style="flex:1">保存</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 弹窗：档案管理（编辑/删除列表）===== -->
+<div class="modal-overlay hidden" id="manage-profiles-modal">
+  <div class="modal">
+    <h3>管理档案</h3>
+    <div id="manage-profiles-list"></div>
+    <button class="btn-primary" id="btn-manage-add" style="margin-top:8px">+ 新建档案</button>
+    <button class="btn-secondary" id="btn-manage-close" style="margin-top:8px">关闭</button>
+  </div>
+</div>
+
+<!-- ===== 页面：主页（学科选择）===== -->
+<div id="page-home" class="page">
+  <header class="app-header" id="home-header">
+    <div class="profile-bar">
+      <div class="profile-avatar-sm" id="current-avatar"></div>
+      <span class="profile-name-sm" id="current-name">同学</span>
+      <button class="btn-icon" id="btn-switch-profile" title="切换档案">⇄</button>
+    </div>
+    <div class="streak-bar">
+      <span class="streak-icon">🔥</span>
+      <span class="streak-count" id="streak-count">0</span>
+      <span class="streak-label">天连续学习</span>
+    </div>
+  </header>
+
+  <div class="subject-grid" id="subject-grid">
+    <button class="subject-card" data-subject="chinese">
+      <span class="subject-icon">文</span>
+      <span class="subject-name">语文</span>
+      <span class="subject-progress" id="prog-chinese">0%</span>
+    </button>
+    <button class="subject-card" data-subject="english">
+      <span class="subject-icon">En</span>
+      <span class="subject-name">英语单词</span>
+      <span class="subject-progress" id="prog-english">0%</span>
+    </button>
+    <button class="subject-card" data-subject="math">
+      <span class="subject-icon">∑</span>
+      <span class="subject-name">数学</span>
+      <span class="subject-progress" id="prog-math">0%</span>
+    </button>
+    <button class="subject-card subject-card-recite" id="btn-home-recite">
+      <span class="subject-icon" style="background:var(--color-chinese)">诗</span>
+      <span class="subject-name">古诗文背诵</span>
+      <span class="subject-progress" id="prog-recite">点击进入</span>
+    </button>
+    <button class="subject-card" data-subject="custom">
+      <span class="subject-icon">+</span>
+      <span class="subject-name">自定义</span>
+      <span class="subject-progress" id="prog-custom"></span>
+    </button>
+  </div>
+
+  <!-- 英语专项快捷区 -->
+  <div class="english-quick-row">
+    <button class="english-quick-btn" id="btn-quick-oral">
+      <span>🎤</span><span>口语练习</span>
+    </button>
+    <button class="english-quick-btn" id="btn-quick-phonetics">
+      <span>🔤</span><span>音标课程</span>
+    </button>
+    <button class="english-quick-btn" id="btn-quick-grammar">
+      <span>📖</span><span>语法要点</span>
+    </button>
+  </div>
+
+  <section class="today-section">
+    <h2 class="section-title">今日待复习</h2>
+    <div class="today-stats" id="today-stats">
+      <div class="stat-item"><span class="stat-num" id="due-count">0</span><span class="stat-label">到期</span></div>
+      <div class="stat-item"><span class="stat-num" id="new-count">0</span><span class="stat-label">新词</span></div>
+      <div class="stat-item"><span class="stat-num" id="done-count">0</span><span class="stat-label">已学</span></div>
+    </div>
+    <div class="review-direction-row">
+      <span class="rd-label">背诵方向：</span>
+      <button class="rd-btn active" id="btn-rd-forward" data-dir="normal">问 → 答</button>
+      <button class="rd-btn" id="btn-rd-reverse" data-dir="reverse">答 → 问</button>
+    </div>
+    <button class="btn-start-review" id="btn-start-review">开始复习</button>
+  </section>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-page="home">
+      <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>主页</span>
+    </button>
+    <button class="nav-item" data-page="library">
+      <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span>题库</span>
+    </button>
+    <button class="nav-item" data-page="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span>查询</span>
+    </button>
+    <button class="nav-item" data-page="english" style="display:none">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span>英语</span>
+    </button>
+    <button class="nav-item" data-page="stats">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      <span>统计</span>
+    </button>
+    <button class="nav-item" data-page="settings">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span>设置</span>
+    </button>
+  </nav>
+</div>
+
+<!-- ===== 页面：学习/闪卡 ===== -->
+<div id="page-study" class="page">
+  <header class="study-header">
+    <button class="btn-back" id="btn-study-back">←</button>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="study-progress-bar"></div>
+    </div>
+    <span class="progress-text" id="study-progress-text">0/0</span>
+  </header>
+
+  <div class="study-mode-tabs" id="study-mode-tabs">
+    <button class="mode-tab active" data-mode="flashcard">闪卡</button>
+    <button class="mode-tab" data-mode="choice">选择题</button>
+    <button class="mode-tab" data-mode="dictation">听写</button>
+    <button class="mode-tab" data-mode="speaking">跟读</button>
+  </div>
+
+  <div class="card-container" id="card-container">
+    <div class="flashcard" id="flashcard">
+      <div class="card-inner" id="card-inner">
+        <div class="card-front" id="card-front">
+          <div class="card-subject-tag" id="card-tag"></div>
+          <button class="btn-speak btn-card-action" id="btn-speak-front" title="朗读">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+          </button>
+          <div class="card-text" id="card-front-text"></div>
+          <div class="card-phonetic" id="card-phonetic"></div>
+          <div class="voice-answer-result hidden" id="voice-answer-result">
+            <span id="voice-answer-text"></span>
+          </div>
+          <p class="card-hint-prompt" id="card-hint-prompt">点击卡片翻转查看答案</p>
+        </div>
+        <div class="card-back" id="card-back">
+          <div class="card-text" id="card-back-text"></div>
+          <div class="card-example" id="card-example"></div>
+          <button class="btn-speak" id="btn-speak-back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </button>
+          <p class="card-back-prompt">↓ 选择下方按钮评分后继续</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 选择题模式 -->
+    <div class="choice-container hidden" id="choice-container">
+      <div class="choice-question" id="choice-question"></div>
+      <div class="choice-options" id="choice-options"></div>
+    </div>
+
+    <!-- 听写模式 -->
+    <div class="dictation-container hidden" id="dictation-container">
+      <div class="dictation-hint-row">
+        <button class="btn-dictation-replay" id="btn-dictation-replay" title="再听一遍">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          </svg>
+          再听一遍
+        </button>
+        <button class="btn-dictation-peek" id="btn-dictation-peek" title="查看答案">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          查看答案
+        </button>
+      </div>
+      <div class="dictation-prompt" id="dictation-prompt"></div>
+      <div class="dictation-answer-reveal hidden" id="dictation-answer-reveal">
+        <span class="answer-label">答案：</span>
+        <span class="answer-text" id="dictation-answer-text"></span>
+      </div>
+      <input class="dictation-input" id="dictation-input" type="text" placeholder="输入你听到的单词...">
+      <div class="dictation-actions">
+        <button class="btn-check-dictation" id="btn-check-dictation">确认</button>
+        <button class="btn-next-dictation hidden" id="btn-next-dictation">知道了，下一题 →</button>
+      </div>
+    </div>
+
+    <!-- 跟读模式 -->
+    <div class="speaking-container hidden" id="speaking-container">
+      <div class="speaking-word" id="speaking-word"></div>
+      <div class="speaking-meaning hidden" id="speaking-meaning"></div>
+      <div class="speaking-example hidden" id="speaking-example"></div>
+      <div class="speaking-top-actions">
+        <button class="btn-speak-again" id="btn-speak-again">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          </svg>
+          再听一遍
+        </button>
+        <button class="btn-speak-slow" id="btn-speak-slow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          慢速
+        </button>
+      </div>
+      <div class="waveform" id="waveform">
+        <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+        <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+        <div class="wave-bar"></div><div class="wave-bar"></div>
+      </div>
+      <button class="btn-record" id="btn-record">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+        <span id="record-label">按住说话</span>
+      </button>
+      <div class="mic-hint hidden" id="mic-hint"></div>
+      <div class="score-display hidden" id="score-display">
+        <div class="score-circle" id="score-circle">
+          <span class="score-num" id="score-num">0</span>
+        </div>
+        <p class="score-feedback" id="score-feedback"></p>
+        <button class="btn-retry-record" id="btn-retry-record">再试一次</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 评分按钮（闪卡翻转后显示）-->
+  <div class="rating-buttons hidden" id="rating-buttons">
+    <button class="btn-rating btn-flip-back" id="btn-flip-back" title="重看正面">
+      <span class="rating-icon">↩</span>
+      <span class="rating-label">重看</span>
+    </button>
+    <button class="btn-rating btn-wrong" data-rating="1">
+      <span class="rating-icon">✕</span>
+      <span class="rating-label">不会</span>
+    </button>
+    <button class="btn-rating btn-hard" data-rating="2">
+      <span class="rating-icon">△</span>
+      <span class="rating-label">较难</span>
+    </button>
+    <button class="btn-rating btn-good" data-rating="4">
+      <span class="rating-icon">○</span>
+      <span class="rating-label">记得</span>
+    </button>
+    <button class="btn-rating btn-easy" data-rating="5">
+      <span class="rating-icon">★</span>
+      <span class="rating-label">很熟</span>
+    </button>
+  </div>
+
+  <!-- 闪卡底部工具栏：朗读 + 语音回答 -->
+  <div class="card-bottom-bar" id="card-bottom-bar">
+    <button class="btn-card-bottom" id="btn-speak-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+      </svg>
+      朗读
+    </button>
+    <button class="btn-card-bottom btn-voice-answer-bottom" id="btn-voice-answer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+      </svg>
+      <span id="voice-answer-label">语音回答</span>
+    </button>
+  </div>
+
+  <!-- 学习完成 -->
+  <div class="session-complete hidden" id="session-complete">
+    <div class="complete-icon">🎉</div>
+    <h2>太棒了！</h2>
+    <p id="complete-summary"></p>
+    <div class="coins-earned" id="coins-earned"></div>
+    <button class="btn-primary" id="btn-continue">继续学习</button>
+    <button class="btn-secondary" id="btn-back-home">回到主页</button>
+  </div>
+</div>
+
+<!-- ===== 页面：题库管理 ===== -->
+<div id="page-library" class="page">
+  <header class="page-header">
+    <button class="btn-back" data-page="home">←</button>
+    <h2>题库</h2>
+    <button class="btn-icon btn-vocab-store" id="btn-vocab-store" title="词库商店">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+    </button>
+    <button class="btn-icon" id="btn-load-builtin" title="加载内置题库">＋库</button>
+  </header>
+
+  <!-- 搜索栏 -->
+  <div class="library-search-bar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input type="text" id="library-search-input" placeholder="搜索公式、诗词、单词..." autocomplete="off">
+    <button class="btn-search-clear hidden" id="btn-search-clear">✕</button>
+  </div>
+
+  <!-- 搜索结果 -->
+  <div class="search-results hidden" id="search-results"></div>
+
+  <!-- 题库操作栏 -->
+  <div class="library-action-bar">
+    <div class="grade-filter" id="grade-filter">
+      <button class="filter-btn active" data-grade="all">全部</button>
+      <button class="filter-btn" data-grade="primary">小学</button>
+      <button class="filter-btn" data-grade="middle">初中</button>
+    </div>
+    <button class="btn-import-to-library" id="btn-import-to-library">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+      </svg>
+      导入
+    </button>
+  </div>
+
+  <div class="decks-list" id="decks-list"></div>
+</div>
+
+<!-- ===== 弹窗：导入到题库（带科目选择）===== -->
+<div class="modal-overlay hidden" id="import-to-library-modal">
+  <div class="modal">
+    <h3>导入素材到题库</h3>
+    <div class="import-subject-row">
+      <label style="font-size:var(--font-size-sm);font-weight:600">科目：</label>
+      <select id="import-subject-select" class="setting-select" style="flex:1">
+        <option value="chinese">语文</option>
+        <option value="english">英语</option>
+        <option value="math">数学</option>
+        <option value="custom">自定义</option>
+      </select>
+    </div>
+    <div class="import-options" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:8px">
+      <label class="import-card" for="lib-file-input" style="padding:16px">
+        <span class="import-icon">📂</span>
+        <span class="import-name">选择文件</span>
+        <span class="import-desc">CSV/Excel/图片</span>
+        <input type="file" id="lib-file-input" accept=".csv,.xlsx,.xls,.txt,image/*" hidden>
+      </label>
+      <label class="import-card" for="lib-image-input" style="padding:16px">
+        <span class="import-icon">📷</span>
+        <span class="import-name">拍照OCR</span>
+        <span class="import-desc">识别图片文字</span>
+        <input type="file" id="lib-image-input" accept="image/*" capture="environment" hidden>
+      </label>
+      <button class="import-card" id="btn-lib-manual" style="padding:16px">
+        <span class="import-icon">✏️</span>
+        <span class="import-name">手动输入</span>
+        <span class="import-desc">直接添加卡片</span>
+      </button>
+      <button class="import-card" id="btn-lib-ai" style="padding:16px">
+        <span class="import-icon">🤖</span>
+        <span class="import-name">AI生题</span>
+        <span class="import-desc">智能生成</span>
+      </button>
+    </div>
+    <button class="btn-secondary" id="btn-import-lib-cancel" style="margin-top:8px;width:100%">取消</button>
+  </div>
+</div>
+
+<!-- ===== 页面：导入 ===== -->
+<div id="page-import" class="page">
+  <header class="page-header">
+    <button class="btn-back" data-page="home">←</button>
+    <h2>导入素材</h2>
+  </header>
+
+  <div class="import-options">
+    <label class="import-card" for="file-input">
+      <span class="import-icon">📂</span>
+      <span class="import-name">选择文件</span>
+      <span class="import-desc">CSV / Excel / TXT / 图片</span>
+      <input type="file" id="file-input" accept=".csv,.xlsx,.xls,.txt,image/*" hidden>
+    </label>
+
+    <label class="import-card" for="image-input">
+      <span class="import-icon">📷</span>
+      <span class="import-name">拍照</span>
+      <span class="import-desc">直接拍照识别文字</span>
+      <input type="file" id="image-input" accept="image/*" capture="environment" hidden>
+    </label>
+
+    <button class="import-card" id="btn-manual-input">
+      <span class="import-icon">✏️</span>
+      <span class="import-name">手动输入</span>
+      <span class="import-desc">直接添加卡片</span>
+    </button>
+
+    <button class="import-card" id="btn-ai-generate">
+      <span class="import-icon">🤖</span>
+      <span class="import-name">AI 智能生题</span>
+      <span class="import-desc">DeepSeek/豆包生成</span>
+    </button>
+  </div>
+
+  <!-- 下载模板 -->
+  <div class="template-download-row">
+    <span class="template-label">📋 下载空白模板：</span>
+    <button class="btn-tpl" data-tpl="english">英语单词</button>
+    <button class="btn-tpl" data-tpl="chinese">语文词语</button>
+    <button class="btn-tpl" data-tpl="math">数学公式</button>
+    <button class="btn-tpl" data-tpl="general">通用模板</button>
+  </div>
+
+  <div class="import-preview hidden" id="import-preview">
+    <h3>预览（<span id="preview-count">0</span>张卡片）</h3>
+    <div class="preview-list" id="preview-list"></div>
+    <div class="import-deck-form">
+      <!-- 选择操作模式 -->
+      <div class="import-mode-row">
+        <button class="import-mode-btn active" id="import-mode-new" data-mode="new">新建题库</button>
+        <button class="import-mode-btn" id="import-mode-append" data-mode="append">追加到现有题库</button>
+      </div>
+      <!-- 新建模式：输入名称 -->
+      <div id="import-new-section">
+        <input class="deck-name-input" id="deck-name-input" type="text" placeholder="新题库名称...">
+      </div>
+      <!-- 追加模式：选择已有题库 -->
+      <div id="import-append-section" class="hidden">
+        <select id="import-target-deck" class="setting-select">
+          <option value="">-- 选择要追加的题库 --</option>
+        </select>
+        <p class="setting-desc" style="margin-top:4px">新卡片将追加到所选题库中（不会重复添加相同内容）</p>
+      </div>
+      <button class="btn-primary" id="btn-confirm-import">确认导入</button>
+    </div>
+  </div>
+
+  <!-- OCR进度 -->
+  <div class="ocr-progress hidden" id="ocr-progress">
+    <div class="ocr-spinner"></div>
+    <p id="ocr-status">正在识别...</p>
+  </div>
+
+  <!-- 手动输入弹窗 -->
+  <div class="modal-overlay hidden" id="manual-modal">
+    <div class="modal">
+      <h3>添加卡片</h3>
+      <input type="text" id="manual-front" placeholder="正面（问题/单词）">
+      <textarea id="manual-back" placeholder="背面（答案/释义）" rows="3"></textarea>
+      <input type="text" id="manual-hint" placeholder="记忆提示（可选）">
+      <input type="text" id="manual-tags" placeholder="标签，逗号分隔（可选）">
+      <div class="modal-buttons">
+        <button class="btn-secondary" id="btn-manual-cancel">取消</button>
+        <button class="btn-primary" id="btn-manual-save">添加</button>
+        <button class="btn-secondary" id="btn-manual-add-more">保存并继续</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 页面：全局查询 ===== -->
+<div id="page-search" class="page">
+  <header class="page-header" style="flex-direction:column;gap:10px;padding-bottom:0">
+    <div style="display:flex;align-items:center;gap:10px;width:100%">
+      <button class="btn-back" data-page="home">←</button>
+      <h2 style="flex:1">查询</h2>
+      <span class="search-page-count" id="search-page-count"></span>
+    </div>
+    <!-- 搜索输入框 -->
+    <div class="search-page-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="search-page-input" placeholder="输入单词、诗句、公式…" autocomplete="off" autocorrect="off">
+      <button class="btn-search-page-clear hidden" id="btn-search-page-clear">✕</button>
+    </div>
+    <!-- 科目过滤 -->
+    <div class="search-filter-row">
+      <button class="search-filter-btn active" data-filter="all">全部</button>
+      <button class="search-filter-btn" data-filter="english">英语</button>
+      <button class="search-filter-btn" data-filter="chinese">语文</button>
+      <button class="search-filter-btn" data-filter="math">数学</button>
+    </div>
+  </header>
+
+  <!-- 初始提示 -->
+  <div class="search-page-hint" id="search-page-hint">
+    <div class="sph-icon">🔍</div>
+    <p>输入关键词查询已下载的所有词库</p>
+    <p class="sph-sub">支持：英语单词、汉语词语、古诗句、数学公式、拼音…</p>
+    <div class="sph-examples">
+      <span class="sph-ex" data-q="beautiful">beautiful</span>
+      <span class="sph-ex" data-q="床前明月光">床前明月光</span>
+      <span class="sph-ex" data-q="勾股">勾股</span>
+      <span class="sph-ex" data-q="abandon">abandon</span>
+      <span class="sph-ex" data-q="πr²">πr²</span>
+    </div>
+  </div>
+
+  <!-- 搜索结果（按词库分组）-->
+  <div class="search-page-results hidden" id="search-page-results"></div>
+</div>
+
+<!-- ===== 页面：统计 ===== -->
+<div id="page-stats" class="page">
+  <header class="page-header">
+    <button class="btn-back" data-page="home">←</button>
+    <h2>学习统计</h2>
+  </header>
+  <div class="stats-overview" id="stats-overview">
+    <div class="stat-big"><span id="total-reviewed">0</span><label>累计复习</label></div>
+    <div class="stat-big"><span id="total-accuracy">0%</span><label>正确率</label></div>
+    <div class="stat-big"><span id="total-streak">0</span><label>连续天数</label></div>
+  </div>
+  <h3 class="section-title">最近7天</h3>
+  <div class="chart-container" id="weekly-chart"></div>
+  <h3 class="section-title">最难的卡片</h3>
+  <div class="hard-cards-list" id="hard-cards-list"></div>
+</div>
+
+<!-- ===== 页面：设置 ===== -->
+<div id="page-settings" class="page">
+  <header class="page-header">
+    <button class="btn-back" data-page="home">←</button>
+    <h2>设置</h2>
+  </header>
+  <div class="settings-list">
+    <div class="settings-section">
+      <h3>学习档案</h3>
+      <div id="settings-profiles-list"></div>
+      <button class="btn-secondary" id="btn-add-profile">+ 添加档案</button>
+    </div>
+    <div class="settings-section">
+      <h3>年级设置</h3>
+      <select id="setting-grade" class="setting-select">
+        <option value="primary">小学</option>
+        <option value="middle">初中</option>
+        <option value="adult">成人学习</option>
+      </select>
+    </div>
+    <div class="settings-section">
+      <h3>学习算法</h3>
+      <select id="setting-algorithm" class="setting-select">
+        <option value="auto">自动（根据年级）</option>
+        <option value="leitner">Leitner（直观盒子）</option>
+        <option value="sm2">SM-2（精准间隔）</option>
+      </select>
+    </div>
+    <div class="settings-section">
+      <h3>每日新卡片数量</h3>
+      <input type="range" id="setting-new-per-day" min="5" max="30" value="10" step="5">
+      <span id="new-per-day-value">10</span> 张
+    </div>
+    <div class="settings-section">
+      <h3>朗读语速</h3>
+      <input type="range" id="setting-speech-rate" min="0.5" max="1.5" value="0.8" step="0.1">
+      <span id="speech-rate-value">0.8×</span>
+    </div>
+    <div class="settings-section">
+      <h3>朗读声音</h3>
+      <p class="setting-desc">选择不同声音，Google/Microsoft 声音通常更自然</p>
+      <div class="voice-select-row">
+        <label style="font-size:var(--font-size-xs);color:var(--color-text-sub)">中文：</label>
+        <select id="setting-voice-zh" class="setting-select" style="flex:1"></select>
+      </div>
+      <div class="voice-select-row" style="margin-top:6px">
+        <label style="font-size:var(--font-size-xs);color:var(--color-text-sub)">英语：</label>
+        <select id="setting-voice-en" class="setting-select" style="flex:1"></select>
+      </div>
+      <button class="btn-secondary" id="btn-test-voice" style="margin-top:8px;width:100%">🔊 试听</button>
+    </div>
+    <div class="settings-section">
+      <h3>AI 智能生题 / 图片解析</h3>
+      <p class="setting-desc">可免费使用，也可配置自己的 API Key 获得更好效果</p>
+
+      <!-- 免费方案 -->
+      <div class="ai-free-section">
+        <div class="ai-free-label">
+          <span class="free-badge">免费</span>
+          Cloudflare Workers AI
+        </div>
+        <p class="setting-desc" style="margin:4px 0 6px">一次性部署到你的 Cloudflare 免费账号，永久免费使用（每天 10万次）</p>
+        <input type="text" id="setting-free-worker-url" class="setting-input" placeholder="https://kids-memory-ai.xxx.workers.dev">
+        <div class="deploy-worker-hint">
+          Worker 代码在 <code>proxy/cloudflare-worker.js</code>，
+          <a href="https://workers.cloudflare.com" target="_blank" rel="noopener" style="color:var(--color-primary)">点此前往 Cloudflare 部署</a>
+        </div>
+      </div>
+
+      <!-- 自有 Key -->
+      <div class="ai-key-divider">— 或使用自己的 API Key（更强模型）—</div>
+      <select id="setting-ai-provider" class="setting-select">
+        <option value="">不使用</option>
+        <option value="deepseek">DeepSeek（推荐，价格低）</option>
+        <option value="doubao">豆包（字节）</option>
+        <option value="qwen">通义千问（阿里）</option>
+        <option value="openai">OpenAI / 兼容接口</option>
+      </select>
+      <input type="password" id="setting-ai-key" class="setting-input" placeholder="API Key" style="margin-top:8px">
+      <input type="text" id="setting-ai-endpoint" class="setting-input" placeholder="自定义 API 地址（可选）" style="margin-top:6px">
+      <button class="btn-secondary" id="btn-save-ai-config" style="margin-top:8px">保存 AI 配置</button>
+    </div>
+    <div class="settings-section">
+      <h3>成人学习模式</h3>
+      <p class="setting-desc">开启后底部导航增加"英语"Tab，解锁职场词汇、口语训练和音标课程</p>
+      <label class="toggle-row">
+        <span>成人英语学习模式</span>
+        <input type="checkbox" id="setting-adult-mode" class="toggle-input">
+        <span class="toggle-thumb"></span>
+      </label>
+    </div>
+    <div class="settings-section">
+      <h3>Azure 发音评分（可选）</h3>
+      <p class="setting-desc">填写后可获得更精准的发音评分</p>
+      <input type="password" id="setting-azure-key" class="setting-input" placeholder="Azure Subscription Key">
+      <input type="text" id="setting-azure-region" class="setting-input" placeholder="区域 (如 eastasia)">
+      <button class="btn-secondary" id="btn-save-azure">保存</button>
+    </div>
+    <div class="settings-section">
+      <h3>数据管理</h3>
+      <button class="btn-secondary" id="btn-update-builtin">🔄 更新内置题库</button>
+      <button class="btn-secondary" id="btn-export-data">📤 导出所有数据</button>
+      <details class="danger-zone">
+        <summary>危险操作</summary>
+        <p class="setting-desc" style="margin:8px 0">以下操作不可撤销，请谨慎使用</p>
+        <button class="btn-danger-outline" id="btn-clear-data">清空当前档案数据</button>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 页面：成人英语学习中心 ===== -->
+<div id="page-english-adult" class="page">
+  <header class="page-header">
+    <button class="btn-back" data-page="home">←</button>
+    <h2>英语学习</h2>
+    <button class="btn-icon" id="btn-english-settings" title="设置">⚙</button>
+  </header>
+
+  <div class="english-tabs" id="english-tabs">
+    <button class="english-tab active" data-etab="vocab">
+      <span>📖</span><span>单词速记</span>
+    </button>
+    <button class="english-tab" data-etab="speaking">
+      <span>🎤</span><span>口语训练</span>
+    </button>
+    <button class="english-tab" data-etab="phonetics">
+      <span>🔤</span><span>音标课程</span>
+    </button>
+    <button class="english-tab" data-etab="grammar">
+      <span>📚</span><span>语法要点</span>
+    </button>
+    <button class="english-tab" data-etab="twister">
+      <span>🌀</span><span>绕口令</span>
+    </button>
+  </div>
+
+  <!-- 单词速记子页 -->
+  <div class="english-section active" id="etab-vocab">
+    <div class="vocab-controls">
+      <button class="btn-secondary vocab-dir-btn active" data-dir="en-zh">英→中</button>
+      <button class="btn-secondary vocab-dir-btn" data-dir="zh-en">中→英</button>
+      <select id="vocab-deck-select" class="setting-select" style="flex:1;margin-left:8px"></select>
+    </div>
+    <div class="vocab-stats-row">
+      <div class="vocab-stat"><span id="vocab-due">0</span><label>待复习</label></div>
+      <div class="vocab-stat"><span id="vocab-new">0</span><label>新词</label></div>
+      <div class="vocab-stat"><span id="vocab-mastered">0</span><label>已掌握</label></div>
+    </div>
+    <button class="btn-start-review" id="btn-start-vocab-study" style="margin:0 16px 16px">开始背单词</button>
+    <div class="vocab-load-row">
+      <button class="btn-secondary" id="btn-load-adult-vocab">加载职场词汇库</button>
+    </div>
+  </div>
+
+  <!-- 口语训练子页 -->
+  <div class="english-section hidden" id="etab-speaking">
+    <div class="scenario-grid" id="scenario-grid">
+      <!-- 动态渲染情景列表 -->
+    </div>
+  </div>
+
+  <!-- 音标课程子页 -->
+  <div class="english-section hidden" id="etab-phonetics">
+    <div class="phonetics-group-tabs">
+      <button class="ph-group-btn active" data-group="vowels">元音 (17)</button>
+      <button class="ph-group-btn" data-group="consonants">辅音 (24)</button>
+      <button class="ph-group-btn" data-group="stress">重音规则</button>
+    </div>
+    <div class="phoneme-grid" id="phoneme-grid"></div>
+  </div>
+
+  <!-- 绕口令子页 -->
+  <div class="english-section hidden" id="etab-twister">
+    <div class="twister-list" id="twister-list"></div>
+  </div>
+
+  <!-- 语法要点子页 -->
+  <div class="english-section hidden" id="etab-grammar">
+    <div class="grammar-filter-row">
+      <button class="grammar-level-btn active" data-level="all">全部</button>
+      <button class="grammar-level-btn" data-level="primary">小学</button>
+      <button class="grammar-level-btn" data-level="middle">初中</button>
+    </div>
+    <div class="grammar-list" id="grammar-list"></div>
+  </div>
+</div>
+
+<!-- ===== 页面：口语情景练习 ===== -->
+<div id="page-scenario" class="page">
+  <header class="study-header">
+    <button class="btn-back" id="btn-scenario-back">←</button>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="scenario-progress-bar"></div>
+    </div>
+    <span class="progress-text" id="scenario-progress-text">0/0</span>
+  </header>
+
+  <div class="scenario-body">
+    <div class="scenario-context-card" id="scenario-context"></div>
+
+    <div class="scenario-exchange" id="scenario-exchange">
+      <div class="cue-bubble">
+        <div class="cue-label">💬 对方说：</div>
+        <div class="cue-text" id="cue-text"></div>
+        <button class="btn-speak-cue" id="btn-speak-cue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="model-answer-section">
+        <div class="key-phrases-row hidden" id="key-phrases-row">
+          <span class="kp-label">关键词：</span>
+          <div class="key-phrases" id="key-phrases"></div>
+        </div>
+        <div class="pronunciation-tip-row hidden" id="pronunciation-tip-row">
+          <span class="pt-label">发音提示：</span>
+          <span class="pt-text" id="pronunciation-tip-text"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scenario-record-area">
+      <div class="waveform" id="scenario-waveform">
+        <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+        <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+        <div class="wave-bar"></div><div class="wave-bar"></div>
+      </div>
+
+      <button class="btn-record scenario-record-btn" id="btn-scenario-record">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+        </svg>
+        <span id="scenario-record-label">开始说话</span>
+      </button>
+
+      <div class="scenario-score hidden" id="scenario-score">
+        <div class="score-row">
+          <div class="score-item">
+            <span class="score-val" id="sc-pronunciation">—</span>
+            <label>发音</label>
+          </div>
+          <div class="score-item">
+            <span class="score-val" id="sc-content">—</span>
+            <label>内容</label>
+          </div>
+          <div class="score-item">
+            <span class="score-val" id="sc-overall">—</span>
+            <label>综合</label>
+          </div>
+        </div>
+        <p class="score-feedback" id="sc-feedback"></p>
+        <p class="recognized-text" id="sc-recognized"></p>
+      </div>
+
+      <div class="scenario-actions">
+        <button class="btn-secondary" id="btn-show-model">查看参考答案</button>
+        <button class="btn-secondary" id="btn-try-again">再试一次</button>
+        <button class="btn-primary hidden" id="btn-next-exchange">下一句 →</button>
+      </div>
+    </div>
+
+    <div class="model-answer hidden" id="model-answer">
+      <h4>参考答案：</h4>
+      <p id="model-answer-text"></p>
+      <button class="btn-speak-sm" id="btn-speak-model">朗读参考答案</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 弹窗：音素详情 ===== -->
+<div class="modal-overlay hidden" id="phoneme-detail-modal">
+  <div class="modal phoneme-modal">
+    <div class="phoneme-header">
+      <span class="phoneme-ipa-big" id="pd-ipa"></span>
+      <span class="phoneme-name-big" id="pd-name"></span>
+      <button class="btn-speak-ipa" id="btn-speak-ipa">🔊</button>
+    </div>
+    <div class="phoneme-info-grid">
+      <div class="ph-info-item">
+        <label>嘴型提示</label>
+        <p id="pd-mouth-tip"></p>
+      </div>
+      <div class="ph-info-item">
+        <label>发音方法</label>
+        <p id="pd-articulation"></p>
+      </div>
+      <div class="ph-info-item" id="pd-mistake-row">
+        <label>⚠ 常见错误</label>
+        <p id="pd-mistake"></p>
+      </div>
+    </div>
+    <div class="ph-spellings">
+      <label>常见拼写</label>
+      <div class="spelling-chips" id="pd-spellings"></div>
+    </div>
+    <div class="ph-examples">
+      <label>例词（点击朗读）</label>
+      <div class="example-words" id="pd-examples"></div>
+    </div>
+    <div class="ph-minimal-pairs" id="pd-pairs-row">
+      <label>最小对比</label>
+      <div class="minimal-pairs" id="pd-pairs"></div>
+    </div>
+    <div class="phoneme-practice">
+      <h4>跟读练习</h4>
+      <div class="practice-word-display" id="practice-word-display"></div>
+      <div class="practice-controls">
+        <button class="btn-secondary" id="btn-practice-speak">🔊 听标准</button>
+        <button class="btn-record" id="btn-practice-record" style="width:64px;height:64px;font-size:12px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+          </svg>
+          跟读
+        </button>
+      </div>
+      <div class="score-display hidden" id="phoneme-score-display">
+        <div class="score-circle" id="phoneme-score-circle"><span id="phoneme-score-num">0</span></div>
+        <p id="phoneme-score-feedback"></p>
+      </div>
+    </div>
+    <button class="btn-secondary" id="btn-close-phoneme-modal" style="margin-top:8px;width:100%">关闭</button>
+  </div>
+</div>
+
+<!-- ===== 弹窗：今日数据详情 ===== -->
+<div class="modal-overlay hidden" id="today-cards-modal">
+  <div class="modal">
+    <h3 id="today-cards-modal-title">今日卡片</h3>
+    <div class="today-cards-list" id="today-cards-list"></div>
+    <button class="btn-secondary" id="btn-close-today-modal" style="margin-top:12px;width:100%">关闭</button>
+  </div>
+</div>
+
+<!-- ===== 页面：古诗文清单 ===== -->
+<div id="page-recitation-list" class="page">
+  <header class="page-header">
+    <button class="btn-back" id="btn-recite-list-back">←</button>
+    <h2>古诗文背诵</h2>
+    <span class="recite-list-count" id="recite-list-count"></span>
+  </header>
+
+  <!-- 分类筛选 -->
+  <div class="recite-list-tabs">
+    <button class="recite-list-tab active" data-cat="all">全部</button>
+    <button class="recite-list-tab" data-cat="primary">小学</button>
+    <button class="recite-list-tab" data-cat="middle">初中</button>
+    <button class="recite-list-tab" data-cat="wenyan">文言文</button>
+    <button class="recite-list-tab" data-cat="poem">古诗词</button>
+  </div>
+
+  <!-- 搜索 -->
+  <div class="recite-list-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="recite-search-input" placeholder="搜索诗文名称、作者...">
+  </div>
+
+  <!-- 列表 -->
+  <div class="recite-texts-list" id="recite-texts-list"></div>
+</div>
+
+<!-- ===== 页面：古诗文背诵（单篇）===== -->
+<div id="page-recitation" class="page">
+  <header class="page-header">
+    <button class="btn-back" id="btn-recite-back">←</button>
+    <div style="flex:1;min-width:0">
+      <div id="recite-title" style="font-size:var(--font-size-lg);font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></div>
+      <div id="recite-author" style="font-size:var(--font-size-xs);color:var(--color-text-sub)"></div>
+    </div>
+    <span id="recite-grade" style="font-size:var(--font-size-xs);color:var(--color-text-sub);flex-shrink:0"></span>
+  </header>
+
+  <!-- 模式切换 -->
+  <div class="recite-mode-tabs">
+    <button class="recite-mode-btn active" data-mode="read">📖 朗读原文</button>
+    <button class="recite-mode-btn" data-mode="quiz">📝 段落填空</button>
+    <button class="recite-mode-btn" data-mode="recite">🎤 语音背诵</button>
+  </div>
+
+  <!-- 朗读原文 -->
+  <div id="recite-full-section" class="recite-section">
+    <div class="recite-full-text" id="recite-full-text"></div>
+    <button class="btn-speak-full" id="btn-speak-full">🔊 朗读全文</button>
+  </div>
+
+  <!-- 段落填空 -->
+  <div id="recite-quiz-section" class="recite-section hidden">
+    <div class="segment-nav">
+      <button class="btn-nav" id="btn-prev-seg">‹ 上一段</button>
+      <span id="quiz-progress">1/1</span>
+      <button class="btn-nav" id="btn-next-seg">下一段 ›</button>
+    </div>
+    <div class="quiz-question-card">
+      <div class="quiz-question" id="quiz-question"></div>
+      <div class="quiz-context" id="quiz-context"></div>
+    </div>
+    <div class="quiz-blank-area" id="quiz-blank"></div>
+    <textarea class="quiz-input" id="quiz-input" placeholder="在此输入你记得的内容..." rows="3"></textarea>
+    <div class="quiz-actions">
+      <button class="btn-secondary" id="btn-reveal-answer">显示答案</button>
+      <button class="btn-speak-full" id="btn-speak-quiz" onclick="this.closest('[id^=recite]')">🔊 听正确答案</button>
+    </div>
+    <div class="quiz-answer-reveal hidden" id="quiz-answer-reveal">
+      <div class="answer-label">正确原文：</div>
+      <div class="quiz-answer-text" id="quiz-answer-text"></div>
+    </div>
+  </div>
+
+  <!-- 语音背诵 -->
+  <div id="recite-voice-section" class="recite-section hidden">
+    <div class="segment-nav">
+      <button class="btn-nav" id="btn-prev-seg-v" onclick="document.getElementById('btn-prev-seg').click()">‹ 上一段</button>
+      <span id="voice-progress">1/1</span>
+      <button class="btn-nav" id="btn-next-seg-v" onclick="document.getElementById('btn-next-seg').click()">下一段 ›</button>
+    </div>
+    <div class="voice-question-card">
+      <div class="voice-question" id="voice-question"></div>
+      <div class="voice-context" id="voice-context"></div>
+    </div>
+    <div class="recite-record-area">
+      <button class="btn-record recite-record-btn" id="btn-recite-record">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+        </svg>
+        <span id="recite-record-label">开始背诵</span>
+      </button>
+    </div>
+    <div class="recite-score hidden" id="recite-score">
+      <div class="recite-score-row">
+        <span class="recite-score-val" id="recite-score-val">0</span>
+        <span class="recite-score-grade" id="recite-score-grade">—</span>
+      </div>
+      <p id="recite-score-feedback"></p>
+      <p class="recite-recognized" id="recite-recognized"></p>
+    </div>
+    <div class="recite-answer-reveal hidden" id="recite-answer-reveal">
+      <div class="answer-label">正确原文：</div>
+      <div id="recite-answer-text" class="recite-answer-text"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 页面：词库商店 ===== -->
+<div id="page-vocab-store" class="page">
+  <header class="page-header">
+    <button class="btn-back" id="btn-vocab-store-back">←</button>
+    <h2>词库商店</h2>
+    <span class="store-badge">免费</span>
+  </header>
+
+  <!-- 分类筛选 -->
+  <div class="store-category-tabs">
+    <button class="store-cat-btn active" data-cat="all">全部</button>
+    <button class="store-cat-btn" data-cat="english">英语</button>
+    <button class="store-cat-btn" data-cat="chinese">汉语</button>
+    <button class="store-cat-btn" data-cat="math">数学</button>
+    <button class="store-cat-btn store-cat-add" id="btn-add-custom-vocab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14">
+        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+      添加
+    </button>
+  </div>
+
+  <!-- 词库网络设置 -->
+  <div class="store-network-row" id="store-network-row">
+    <span class="network-label">📡 下载源：</span>
+    <select id="store-mirror-select" class="setting-select" style="flex:1;font-size:12px">
+      <option value="jsdelivr">jsDelivr CDN（国内可用）</option>
+      <option value="ghproxy">GitHub Proxy（ghproxy.com）</option>
+      <option value="github">GitHub 直连（需翻墙）</option>
+      <option value="local">仅内置数据（无需网络）</option>
+    </select>
+  </div>
+
+  <!-- 词库列表 -->
+  <div class="vocab-store-list" id="vocab-store-list">
+    <!-- 动态渲染 -->
+  </div>
+</div>
+
+<!-- ===== 页面：科目题库选择 ===== -->
+<div id="page-subject-decks" class="page">
+  <header class="page-header">
+    <button class="btn-back" id="btn-subject-decks-back">←</button>
+    <h2 id="subject-decks-title">语文题库</h2>
+    <span class="subject-decks-total" id="subject-decks-total"></span>
+  </header>
+
+  <!-- 复习方向 -->
+  <div class="sdb-direction-row">
+    <span class="rd-label">方向：</span>
+    <button class="rd-btn active" id="sdb-dir-forward" data-dir="normal">问 → 答</button>
+    <button class="rd-btn" id="sdb-dir-reverse" data-dir="reverse">答 → 问</button>
+  </div>
+
+  <!-- 「全部」入口 -->
+  <button class="sdb-deck-all" id="btn-study-all-subject">
+    <span class="sdb-deck-icon">▶</span>
+    <span class="sdb-deck-info">
+      <span class="sdb-deck-name">全部题库一起复习</span>
+      <span class="sdb-deck-meta" id="sdb-all-meta">所有卡片混合</span>
+    </span>
+  </button>
+
+  <!-- 各牌组列表 -->
+  <div class="sdb-decks-list" id="sdb-decks-list"></div>
+</div>
+
+<!-- ===== 全局：Toast 通知 ===== -->
+<div class="toast-container" id="toast-container"></div>
+
+<!-- ===== 全局：语音切换覆盖层 ===== -->
+<div class="voice-overlay hidden" id="voice-overlay">
+  <div class="voice-modal">
+    <div class="voice-anim" id="voice-anim">
+      <div class="voice-ring"></div>
+      <div class="voice-ring"></div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+      </svg>
+    </div>
+    <p id="voice-overlay-text">说出要切换的名字...</p>
+    <button class="btn-secondary" id="btn-voice-cancel">取消</button>
+  </div>
+</div>
+
+<!-- ===== 全局：AI 生成弹窗 ===== -->
+<div class="modal-overlay hidden" id="ai-generate-modal">
+  <div class="modal ai-modal">
+    <h3>AI 智能生题</h3>
+
+    <div class="ai-provider-tabs" id="ai-provider-tabs">
+      <button class="ai-tab active" data-provider="free">免费</button>
+      <button class="ai-tab" data-provider="deepseek">DeepSeek</button>
+      <button class="ai-tab" data-provider="doubao">豆包</button>
+      <button class="ai-tab" data-provider="qwen">千问</button>
+      <button class="ai-tab" data-provider="openai">OpenAI兼容</button>
+    </div>
+
+    <div class="ai-key-hint" id="ai-key-hint">
+      已使用保存的 Key <span id="ai-saved-indicator">✓</span>
+    </div>
+
+    <select id="ai-subject-select" class="setting-select">
+      <option value="english">英语词汇/句型</option>
+      <option value="chinese">语文/古诗/成语</option>
+      <option value="math">数学公式/概念</option>
+      <option value="custom">自定义主题</option>
+    </select>
+
+    <select id="ai-grade-select" class="setting-select" style="margin-top:8px">
+      <option value="小学一年级">小学一年级</option>
+      <option value="小学二年级">小学二年级</option>
+      <option value="小学三年级" selected>小学三年级</option>
+      <option value="小学四年级">小学四年级</option>
+      <option value="小学五年级">小学五年级</option>
+      <option value="小学六年级">小学六年级</option>
+      <option value="初中一年级">初中一年级</option>
+      <option value="初中二年级">初中二年级</option>
+      <option value="初中三年级">初中三年级</option>
+    </select>
+
+    <textarea id="ai-prompt-input" rows="4" placeholder="描述你想要的卡片内容，例如：
+• 生成20个小学四年级英语单词，包含中文释义和音标
+• 生成《静夜思》相关的10道填空题
+• 生成初中几何公式卡片，要有例子" style="margin-top:8px"></textarea>
+
+    <div class="ai-count-row">
+      <label>生成数量：</label>
+      <input type="number" id="ai-count" value="20" min="5" max="50" style="width:70px;padding:8px">
+      <span>张</span>
+    </div>
+
+    <div class="ai-status hidden" id="ai-status">
+      <div class="ocr-spinner"></div>
+      <span id="ai-status-text">正在生成...</span>
+    </div>
+
+    <div class="modal-buttons" style="margin-top:12px">
+      <button class="btn-secondary" id="btn-ai-cancel">取消</button>
+      <button class="btn-primary" id="btn-ai-submit" style="flex:1">🤖 开始生成</button>
+    </div>
+
+    <p class="setting-desc" style="margin-top:8px;text-align:center">
+      如未配置 Key，请先在「设置→AI 智能生题」中填写
+    </p>
+  </div>
+</div>
+
+<!-- ===== 脚本 ===== -->
+<!--
+  bundle.js 是打包后的单文件版本，可在 file:// 直接打开。
+  开发时可切换回 type="module" 版本获得更好的调试体验（需本地服务器）。
+-->
+<script src="bundle.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>

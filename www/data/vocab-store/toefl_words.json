@@ -1,0 +1,884 @@
+{
+  "meta": {
+    "subject": "english",
+    "grade": "adult",
+    "name": "TOEFL高频词汇100",
+    "version": "2024",
+    "type": "vocabulary",
+    "tags": ["托福", "TOEFL", "英语"]
+  },
+  "cards": [
+    {
+      "id": "toefl_abandon",
+      "front": "abandon",
+      "back": "v. 放弃；遗弃；抛弃",
+      "phonetic": "/əˈbændən/",
+      "hint": "a(加强)+band(绑)+on→不再绑住→放弃",
+      "example": "The crew had to abandon the sinking ship immediately."
+    },
+    {
+      "id": "toefl_abolish",
+      "front": "abolish",
+      "back": "v. 废除（制度、法律等）",
+      "phonetic": "/əˈbɒlɪʃ/",
+      "hint": "a(否定)+bol(球)+ish→把球打掉→彻底废除",
+      "example": "Many countries have abolished the death penalty."
+    },
+    {
+      "id": "toefl_abstract",
+      "front": "abstract",
+      "back": "adj. 抽象的；n. 摘要；v. 提取",
+      "phonetic": "/ˈæbstrækt/",
+      "hint": "abs(离开)+tract(拉)→从具体事物中拉离→抽象",
+      "example": "The professor presented an abstract theory about consciousness."
+    },
+    {
+      "id": "toefl_accelerate",
+      "front": "accelerate",
+      "back": "v. 加速；促进",
+      "phonetic": "/əkˈseləreɪt/",
+      "hint": "ac(加强)+celer(速度)+ate→加快速度",
+      "example": "Climate change accelerates the melting of polar ice caps."
+    },
+    {
+      "id": "toefl_accommodate",
+      "front": "accommodate",
+      "back": "v. 容纳；适应；为…提供住宿",
+      "phonetic": "/əˈkɒmədeɪt/",
+      "hint": "ac+commoda(方便)→使之方便→容纳、适应",
+      "example": "The hotel can accommodate up to 500 guests."
+    },
+    {
+      "id": "toefl_accumulate",
+      "front": "accumulate",
+      "back": "v. 积累；积聚",
+      "phonetic": "/əˈkjuːmjəleɪt/",
+      "hint": "ac(加强)+cumul(堆)+ate→不断堆积→积累",
+      "example": "She accumulated years of research experience before writing her thesis."
+    },
+    {
+      "id": "toefl_accurate",
+      "front": "accurate",
+      "back": "adj. 准确的；精确的",
+      "phonetic": "/ˈækjərət/",
+      "hint": "ac(加强)+cur(关心)+ate→用心关注→精准",
+      "example": "The weather forecast was surprisingly accurate this week."
+    },
+    {
+      "id": "toefl_acknowledge",
+      "front": "acknowledge",
+      "back": "v. 承认；致谢；确认收到",
+      "phonetic": "/əkˈnɒlɪdʒ/",
+      "hint": "ac(朝向)+knowledge(知识)→向知识靠近→承认",
+      "example": "The scientist acknowledged the limitations of her study."
+    },
+    {
+      "id": "toefl_acquire",
+      "front": "acquire",
+      "back": "v. 获得；习得；取得",
+      "phonetic": "/əˈkwaɪər/",
+      "hint": "ac(加强)+quire(寻求)→努力寻求→获得",
+      "example": "Children acquire language skills naturally through exposure."
+    },
+    {
+      "id": "toefl_adequate",
+      "front": "adequate",
+      "back": "adj. 足够的；充分的；合格的",
+      "phonetic": "/ˈædɪkwət/",
+      "hint": "ad(朝)+equ(相等)+ate→达到相等水平→足够",
+      "example": "The study found that most students lacked adequate sleep."
+    },
+    {
+      "id": "toefl_adjacent",
+      "front": "adjacent",
+      "back": "adj. 邻近的；毗连的",
+      "phonetic": "/əˈdʒeɪsənt/",
+      "hint": "ad(靠近)+jac(躺)+ent→躺在旁边的→邻近",
+      "example": "The library is adjacent to the science building."
+    },
+    {
+      "id": "toefl_advocate",
+      "front": "advocate",
+      "back": "v. 提倡，主张；n. 倡导者，辩护人",
+      "phonetic": "/ˈædvəkeɪt/",
+      "hint": "ad(朝)+voc(声音)+ate→为某事发声→倡导",
+      "example": "She advocates for stricter environmental regulations."
+    },
+    {
+      "id": "toefl_aesthetic",
+      "front": "aesthetic",
+      "back": "adj. 审美的；美学的；n. 美感",
+      "phonetic": "/iːsˈθetɪk/",
+      "hint": "aesth(感觉)+etic→感受美的→审美",
+      "example": "The architect's aesthetic choices were both bold and harmonious."
+    },
+    {
+      "id": "toefl_aggregate",
+      "front": "aggregate",
+      "back": "v. 聚集；汇总；adj. 总计的；n. 总量",
+      "phonetic": "/ˈæɡrɪɡət/",
+      "hint": "ag(加强)+greg(群体)+ate→聚成群体→汇总",
+      "example": "The aggregate data shows a clear upward trend."
+    },
+    {
+      "id": "toefl_aggressive",
+      "front": "aggressive",
+      "back": "adj. 积极进取的；侵略性的；好斗的",
+      "phonetic": "/əˈɡresɪv/",
+      "hint": "ag(朝)+gress(走)+ive→主动走向→进攻性的",
+      "example": "The company adopted an aggressive marketing strategy."
+    },
+    {
+      "id": "toefl_allegory",
+      "front": "allegory",
+      "back": "n. 寓言；讽喻；象征性叙述",
+      "phonetic": "/ˈæləɡɔːri/",
+      "hint": "alleg(别的)+ory→用别的东西来说→寓言",
+      "example": "Animal Farm is a famous allegory about political corruption."
+    },
+    {
+      "id": "toefl_alleviate",
+      "front": "alleviate",
+      "back": "v. 减轻；缓和（痛苦、问题）",
+      "phonetic": "/əˈliːvieɪt/",
+      "hint": "al+levi(轻)+ate→使变轻→减轻",
+      "example": "Regular exercise can alleviate symptoms of depression."
+    },
+    {
+      "id": "toefl_ambiguous",
+      "front": "ambiguous",
+      "back": "adj. 模糊的；含混的；有歧义的",
+      "phonetic": "/æmˈbɪɡjuəs/",
+      "hint": "ambi(两者)+gu(走)+ous→往两个方向走→含混不清",
+      "example": "The contract contained several ambiguous clauses."
+    },
+    {
+      "id": "toefl_amplify",
+      "front": "amplify",
+      "back": "v. 放大；扩大；详述",
+      "phonetic": "/ˈæmplɪfaɪ/",
+      "hint": "ampl(大)+ify(使)→使变大→放大",
+      "example": "The microphone amplifies the speaker's voice throughout the hall."
+    },
+    {
+      "id": "toefl_analogous",
+      "front": "analogous",
+      "back": "adj. 类似的；相似的；类比的",
+      "phonetic": "/əˈnæləɡəs/",
+      "hint": "ana(按照)+log(逻辑)+ous→按同样逻辑→类似的",
+      "example": "The human brain is analogous to a computer in some ways."
+    },
+    {
+      "id": "toefl_analytical",
+      "front": "analytical",
+      "back": "adj. 分析的；善于分析的",
+      "phonetic": "/ˌænəˈlɪtɪkəl/",
+      "hint": "ana(分开)+lyt(解)+ical→分解开来→分析的",
+      "example": "TOEFL requires strong analytical reading skills."
+    },
+    {
+      "id": "toefl_anticipate",
+      "front": "anticipate",
+      "back": "v. 预期；期待；提前考虑",
+      "phonetic": "/ænˈtɪsɪpeɪt/",
+      "hint": "anti(提前)+cip(抓)+ate→提前抓住→预期",
+      "example": "Researchers anticipate significant breakthroughs in the next decade."
+    },
+    {
+      "id": "toefl_arbitrary",
+      "front": "arbitrary",
+      "back": "adj. 任意的；武断的；专制的",
+      "phonetic": "/ˈɑːrbɪtrəri/",
+      "hint": "arbitr(仲裁者)+ary→仲裁者说了算→任意武断",
+      "example": "The decision seemed arbitrary and lacked a clear rationale."
+    },
+    {
+      "id": "toefl_articulate",
+      "front": "articulate",
+      "back": "v. 清晰表达；adj. 表达清晰的；有关节的",
+      "phonetic": "/ɑːrˈtɪkjuleɪt/",
+      "hint": "articul(关节)+ate→一节一节讲清楚→清晰表达",
+      "example": "She was able to articulate her ideas with great clarity."
+    },
+    {
+      "id": "toefl_assimilate",
+      "front": "assimilate",
+      "back": "v. 吸收；同化；消化（知识）",
+      "phonetic": "/əˈsɪməleɪt/",
+      "hint": "as(朝)+simil(相似)+ate→使变得相似→同化吸收",
+      "example": "Immigrants often struggle to assimilate into a new culture."
+    },
+    {
+      "id": "toefl_attribute",
+      "front": "attribute",
+      "back": "v. 归因于；n. 特征；属性",
+      "phonetic": "/əˈtrɪbjuːt/",
+      "hint": "at(朝)+tribute(给予)→朝某处给予→归因",
+      "example": "Scientists attribute the warming trend to greenhouse gas emissions."
+    },
+    {
+      "id": "toefl_authentic",
+      "front": "authentic",
+      "back": "adj. 真实的；真正的；可信的",
+      "phonetic": "/ɔːˈθentɪk/",
+      "hint": "auth(自身)+ent+ic→本身的→真实的",
+      "example": "The museum displays an authentic painting by Van Gogh."
+    },
+    {
+      "id": "toefl_autonomous",
+      "front": "autonomous",
+      "back": "adj. 自治的；自主的；独立的",
+      "phonetic": "/ɔːˈtɒnəməs/",
+      "hint": "auto(自己)+nom(法律)+ous→自己制定法律→自治",
+      "example": "The region has been granted autonomous status."
+    },
+    {
+      "id": "toefl_benevolent",
+      "front": "benevolent",
+      "back": "adj. 仁慈的；慈善的；善意的",
+      "phonetic": "/bəˈnevələnt/",
+      "hint": "bene(好)+vol(意愿)+ent→有好意愿→仁慈",
+      "example": "The benevolent donor funded an entire school library."
+    },
+    {
+      "id": "toefl_bias",
+      "front": "bias",
+      "back": "n. 偏见；偏向；v. 使有偏见",
+      "phonetic": "/ˈbaɪəs/",
+      "hint": "bi(两)+as→只走一边→偏见",
+      "example": "Media bias can distort public perception of events."
+    },
+    {
+      "id": "toefl_celestial",
+      "front": "celestial",
+      "back": "adj. 天体的；天上的；神圣的",
+      "phonetic": "/səˈlestiəl/",
+      "hint": "celest(天空)+ial→天空的→天体的",
+      "example": "Astronomers track the movement of celestial bodies."
+    },
+    {
+      "id": "toefl_coherent",
+      "front": "coherent",
+      "back": "adj. 连贯的；一致的；清晰易懂的",
+      "phonetic": "/kəʊˈhɪərənt/",
+      "hint": "co(共同)+her(粘住)+ent→粘在一起→连贯",
+      "example": "A coherent argument requires clear logical structure."
+    },
+    {
+      "id": "toefl_compensate",
+      "front": "compensate",
+      "back": "v. 补偿；赔偿；弥补",
+      "phonetic": "/ˈkɒmpənseɪt/",
+      "hint": "com(共同)+pens(称重)+ate→重新称平→补偿",
+      "example": "Extra pay can compensate workers for overtime hours."
+    },
+    {
+      "id": "toefl_compel",
+      "front": "compel",
+      "back": "v. 强迫；迫使；驱使",
+      "phonetic": "/kəmˈpel/",
+      "hint": "com(加强)+pel(推)→用力推→强迫",
+      "example": "The evidence compelled the jury to reach a guilty verdict."
+    },
+    {
+      "id": "toefl_concede",
+      "front": "concede",
+      "back": "v. 承认（失败/错误）；退让；让步",
+      "phonetic": "/kənˈsiːd/",
+      "hint": "con(共同)+cede(走开)→一起走开→让步承认",
+      "example": "He conceded that his initial data analysis was flawed."
+    },
+    {
+      "id": "toefl_conceive",
+      "front": "conceive",
+      "back": "v. 构想；设想；怀孕",
+      "phonetic": "/kənˈsiːv/",
+      "hint": "con(加强)+ceive(抓取)→在脑中抓住→构想",
+      "example": "Darwin conceived his theory of evolution over many years."
+    },
+    {
+      "id": "toefl_contemplate",
+      "front": "contemplate",
+      "back": "v. 思考；考虑；沉思",
+      "phonetic": "/ˈkɒntəmpleɪt/",
+      "hint": "con(共同)+templ(神庙)+ate→在神庙冥想→沉思",
+      "example": "She paused to contemplate the implications of her research."
+    },
+    {
+      "id": "toefl_contradict",
+      "front": "contradict",
+      "back": "v. 与…矛盾；反驳；否认",
+      "phonetic": "/ˌkɒntrəˈdɪkt/",
+      "hint": "contra(反对)+dict(说)→反着说→矛盾，反驳",
+      "example": "The new evidence contradicts the original hypothesis."
+    },
+    {
+      "id": "toefl_controversy",
+      "front": "controversy",
+      "back": "n. 争议；争论；论战",
+      "phonetic": "/ˈkɒntrəvɜːsi/",
+      "hint": "contro(反对)+vers(转)+y→反方转过来→争议",
+      "example": "The policy sparked considerable controversy among experts."
+    },
+    {
+      "id": "toefl_conventional",
+      "front": "conventional",
+      "back": "adj. 传统的；惯例的；常规的",
+      "phonetic": "/kənˈvenʃənəl/",
+      "hint": "convent(集会共识)+ional→大家达成共识的→传统惯例",
+      "example": "She challenged conventional thinking in her field."
+    },
+    {
+      "id": "toefl_correlate",
+      "front": "correlate",
+      "back": "v. 使相关联；n. 相关物；adj. 相关的",
+      "phonetic": "/ˈkɒrəleɪt/",
+      "hint": "cor(共同)+relate(关联)→共同关联→相关",
+      "example": "Income levels often correlate with educational attainment."
+    },
+    {
+      "id": "toefl_counterpart",
+      "front": "counterpart",
+      "back": "n. 对应的人/物；副本；对等物",
+      "phonetic": "/ˈkaʊntəpɑːrt/",
+      "hint": "counter(对面)+part(部分)→对面那部分→对应物",
+      "example": "The CEO met with his counterpart at the rival firm."
+    },
+    {
+      "id": "toefl_crucial",
+      "front": "crucial",
+      "back": "adj. 关键的；决定性的；至关重要的",
+      "phonetic": "/ˈkruːʃəl/",
+      "hint": "cruc(十字路口)+ial→十字路口→关键时刻",
+      "example": "Early childhood education is crucial for cognitive development."
+    },
+    {
+      "id": "toefl_cultivate",
+      "front": "cultivate",
+      "back": "v. 培养；耕种；陶冶",
+      "phonetic": "/ˈkʌltɪveɪt/",
+      "hint": "cultiv(耕)+ate→耕种→培养",
+      "example": "Reading widely helps cultivate critical thinking skills."
+    },
+    {
+      "id": "toefl_depict",
+      "front": "depict",
+      "back": "v. 描绘；描述；刻画",
+      "phonetic": "/dɪˈpɪkt/",
+      "hint": "de(完全)+pict(画)→完全画出→描绘",
+      "example": "The novel vividly depicts life in 19th-century London."
+    },
+    {
+      "id": "toefl_derive",
+      "front": "derive",
+      "back": "v. 源自；获得；推导出",
+      "phonetic": "/dɪˈraɪv/",
+      "hint": "de(从)+rive(河流)→从河流引出→源自",
+      "example": "Many English words derive from Latin or Greek roots."
+    },
+    {
+      "id": "toefl_deviate",
+      "front": "deviate",
+      "back": "v. 偏离；背离（标准/路线）",
+      "phonetic": "/ˈdiːvieɪt/",
+      "hint": "de(离开)+via(路)+ate→离开路→偏离",
+      "example": "The pilot had to deviate from the flight path to avoid the storm."
+    },
+    {
+      "id": "toefl_diminish",
+      "front": "diminish",
+      "back": "v. 减少；缩小；降低（价值/权威）",
+      "phonetic": "/dɪˈmɪnɪʃ/",
+      "hint": "di(分)+min(小)+ish→变得越来越小→减少",
+      "example": "Overuse of antibiotics can diminish their effectiveness."
+    },
+    {
+      "id": "toefl_disperse",
+      "front": "disperse",
+      "back": "v. 分散；驱散；散布",
+      "phonetic": "/dɪˈspɜːrs/",
+      "hint": "dis(分开)+perse(散)→分散开→驱散",
+      "example": "Seeds are dispersed by wind, water, or animals."
+    },
+    {
+      "id": "toefl_distort",
+      "front": "distort",
+      "back": "v. 扭曲；歪曲；使变形",
+      "phonetic": "/dɪˈstɔːrt/",
+      "hint": "dis(偏离)+tort(扭转)→扭转偏离→扭曲",
+      "example": "Sensational headlines often distort the facts."
+    },
+    {
+      "id": "toefl_diverse",
+      "front": "diverse",
+      "back": "adj. 多样的；多元的；不同的",
+      "phonetic": "/daɪˈvɜːrs/",
+      "hint": "di(不同)+verse(转)→朝不同方向转→多样的",
+      "example": "The city has a diverse population from many cultural backgrounds."
+    },
+    {
+      "id": "toefl_dominant",
+      "front": "dominant",
+      "back": "adj. 占主导的；支配的；显性的",
+      "phonetic": "/ˈdɒmɪnənt/",
+      "hint": "domin(主人)+ant→主人的特质→占主导",
+      "example": "English has become the dominant language in global business."
+    },
+    {
+      "id": "toefl_elaborate",
+      "front": "elaborate",
+      "back": "v. 详细阐述；adj. 精心制作的；复杂的",
+      "phonetic": "/ɪˈlæbərət/",
+      "hint": "e(出)+labor(劳动)+ate→用力做出来→精心制作",
+      "example": "Could you elaborate on your research methodology?"
+    },
+    {
+      "id": "toefl_eloquent",
+      "front": "eloquent",
+      "back": "adj. 雄辩的；有口才的；表达有力的",
+      "phonetic": "/ˈeləkwənt/",
+      "hint": "e(出)+loqu(说)+ent→流畅说出→雄辩",
+      "example": "The senator gave an eloquent speech on civil rights."
+    },
+    {
+      "id": "toefl_empirical",
+      "front": "empirical",
+      "back": "adj. 经验的；以实证为据的；实验的",
+      "phonetic": "/ɪmˈpɪrɪkəl/",
+      "hint": "empir(经验)+ical→来自经验的→实证的",
+      "example": "The theory is supported by empirical evidence from multiple studies."
+    },
+    {
+      "id": "toefl_endorse",
+      "front": "endorse",
+      "back": "v. 支持；认可；背书；（在背面）签名",
+      "phonetic": "/ɪnˈdɔːrs/",
+      "hint": "en+dorse(背面)→在背面签名→认可支持",
+      "example": "The organization endorsed the new climate agreement."
+    },
+    {
+      "id": "toefl_equivalent",
+      "front": "equivalent",
+      "back": "adj. 等同的；相当的；n. 等同物",
+      "phonetic": "/ɪˈkwɪvələnt/",
+      "hint": "equi(相等)+val(价值)+ent→价值相等→等同",
+      "example": "One mile is roughly equivalent to 1.6 kilometers."
+    },
+    {
+      "id": "toefl_evaluate",
+      "front": "evaluate",
+      "back": "v. 评估；评价；估算",
+      "phonetic": "/ɪˈvæljueɪt/",
+      "hint": "e(出)+valu(价值)+ate→算出价值→评估",
+      "example": "Teachers evaluate student performance through multiple assessments."
+    },
+    {
+      "id": "toefl_evolve",
+      "front": "evolve",
+      "back": "v. 进化；逐渐发展；演变",
+      "phonetic": "/ɪˈvɒlv/",
+      "hint": "e(出)+volve(滚动)→滚动发展→进化演变",
+      "example": "Languages evolve over time to reflect cultural changes."
+    },
+    {
+      "id": "toefl_excerpt",
+      "front": "excerpt",
+      "back": "n. 摘录；节选；v. 摘录",
+      "phonetic": "/ˈeksɜːrpt/",
+      "hint": "ex(出)+cerpt(摘取)→从中摘出→节选",
+      "example": "The teacher read an excerpt from the novel to the class."
+    },
+    {
+      "id": "toefl_exhibit",
+      "front": "exhibit",
+      "back": "v. 展示；表现出；n. 展览品；展览",
+      "phonetic": "/ɪɡˈzɪbɪt/",
+      "hint": "ex(出)+hibit(持有)→持出展示→展示",
+      "example": "The patient began to exhibit symptoms of the disease."
+    },
+    {
+      "id": "toefl_explicit",
+      "front": "explicit",
+      "back": "adj. 明确的；清晰的；直言不讳的",
+      "phonetic": "/ɪkˈsplɪsɪt/",
+      "hint": "ex(出)+plic(折叠)+it→完全展开→明确清晰",
+      "example": "The instructions must be explicit to avoid any confusion."
+    },
+    {
+      "id": "toefl_facilitate",
+      "front": "facilitate",
+      "back": "v. 促进；使便利；帮助推动",
+      "phonetic": "/fəˈsɪlɪteɪt/",
+      "hint": "facil(容易)+itate→使变容易→促进",
+      "example": "Technology facilitates communication across long distances."
+    },
+    {
+      "id": "toefl_fundamental",
+      "front": "fundamental",
+      "back": "adj. 基本的；根本的；n. 基本原则",
+      "phonetic": "/ˌfʌndəˈmentəl/",
+      "hint": "fund(基础)+amental→基础的→根本的",
+      "example": "Clean water is a fundamental human right."
+    },
+    {
+      "id": "toefl_generate",
+      "front": "generate",
+      "back": "v. 产生；生成；引起",
+      "phonetic": "/ˈdʒenəreɪt/",
+      "hint": "gener(产生)+ate→产生出来→生成",
+      "example": "Solar panels generate electricity from sunlight."
+    },
+    {
+      "id": "toefl_gradual",
+      "front": "gradual",
+      "back": "adj. 逐渐的；渐进的；缓慢的",
+      "phonetic": "/ˈɡrædʒuəl/",
+      "hint": "grad(台阶)+ual→一步一步台阶→逐渐",
+      "example": "The gradual melting of glaciers threatens coastal cities."
+    },
+    {
+      "id": "toefl_highlight",
+      "front": "highlight",
+      "back": "v. 强调；突出；n. 最精彩部分；亮点",
+      "phonetic": "/ˈhaɪlaɪt/",
+      "hint": "high(高)+light(光)→用高光照射→突出强调",
+      "example": "The report highlights the need for policy reform."
+    },
+    {
+      "id": "toefl_hypothesis",
+      "front": "hypothesis",
+      "back": "n. 假设；假说；推测",
+      "phonetic": "/haɪˈpɒθəsɪs/",
+      "hint": "hypo(下面)+thesis(命题)→在下面的命题→待证假说",
+      "example": "The scientist formulated a hypothesis and then tested it."
+    },
+    {
+      "id": "toefl_imply",
+      "front": "imply",
+      "back": "v. 暗示；意味着；隐含",
+      "phonetic": "/ɪmˈplaɪ/",
+      "hint": "im(进入)+ply(折叠)→折叠在里面→暗示",
+      "example": "The data implies a strong connection between diet and health."
+    },
+    {
+      "id": "toefl_inherent",
+      "front": "inherent",
+      "back": "adj. 固有的；内在的；天生的",
+      "phonetic": "/ɪnˈhɪərənt/",
+      "hint": "in(在内)+her(粘住)+ent→粘在内部的→固有的",
+      "example": "There are inherent risks in any scientific experiment."
+    },
+    {
+      "id": "toefl_innovate",
+      "front": "innovate",
+      "back": "v. 革新；创新；引进新方法",
+      "phonetic": "/ˈɪnəveɪt/",
+      "hint": "in(进入)+nov(新)+ate→带入新的→创新",
+      "example": "Companies must continually innovate to remain competitive."
+    },
+    {
+      "id": "toefl_integrate",
+      "front": "integrate",
+      "back": "v. 整合；融合；使成一体",
+      "phonetic": "/ˈɪntɪɡreɪt/",
+      "hint": "integr(完整)+ate→使变完整→整合",
+      "example": "The TOEFL test integrates reading, listening, speaking, and writing."
+    },
+    {
+      "id": "toefl_intrinsic",
+      "front": "intrinsic",
+      "back": "adj. 内在的；本质的；固有的",
+      "phonetic": "/ɪnˈtrɪnzɪk/",
+      "hint": "intrin(内部)+sic→来自内部的→本质固有",
+      "example": "Intrinsic motivation is more lasting than external rewards."
+    },
+    {
+      "id": "toefl_justify",
+      "front": "justify",
+      "back": "v. 证明…合理；为…辩护；对齐",
+      "phonetic": "/ˈdʒʌstɪfaɪ/",
+      "hint": "just(公正)+ify(使)→使之公正→证明合理",
+      "example": "The results justify further investment in the project."
+    },
+    {
+      "id": "toefl_legitimate",
+      "front": "legitimate",
+      "back": "adj. 合法的；正当的；合理的",
+      "phonetic": "/lɪˈdʒɪtɪmət/",
+      "hint": "legit(法律)+imate→符合法律的→合法正当",
+      "example": "The protesters had a legitimate right to demonstrate."
+    },
+    {
+      "id": "toefl_marginal",
+      "front": "marginal",
+      "back": "adj. 边缘的；微小的；勉强达到标准的",
+      "phonetic": "/ˈmɑːrdʒɪnəl/",
+      "hint": "margin(边缘)+al→在边缘的→边缘微小",
+      "example": "The improvement in performance was only marginal."
+    },
+    {
+      "id": "toefl_manifest",
+      "front": "manifest",
+      "back": "v. 显示；表明；adj. 明显的；n. 货单",
+      "phonetic": "/ˈmænɪfest/",
+      "hint": "mani(手)+fest(打击)→用手打出来→显现",
+      "example": "Stress can manifest itself in various physical symptoms."
+    },
+    {
+      "id": "toefl_metaphor",
+      "front": "metaphor",
+      "back": "n. 隐喻；暗喻；象征",
+      "phonetic": "/ˈmetəfɔːr/",
+      "hint": "meta(超越)+phor(携带)→超越字面携带含义→隐喻",
+      "example": "Time is money is a common metaphor in English."
+    },
+    {
+      "id": "toefl_modify",
+      "front": "modify",
+      "back": "v. 修改；调整；修饰",
+      "phonetic": "/ˈmɒdɪfaɪ/",
+      "hint": "mod(方式)+ify(使)→改变方式→修改",
+      "example": "The researchers modified the experiment to reduce errors."
+    },
+    {
+      "id": "toefl_mutual",
+      "front": "mutual",
+      "back": "adj. 相互的；共同的；彼此的",
+      "phonetic": "/ˈmjuːtʃuəl/",
+      "hint": "mut(变换)+ual→相互变换→互相的",
+      "example": "The agreement was based on mutual respect and trust."
+    },
+    {
+      "id": "toefl_negative",
+      "front": "negative",
+      "back": "adj. 负面的；否定的；消极的；n. 负数",
+      "phonetic": "/ˈneɡətɪv/",
+      "hint": "neg(否定)+ative→否定的",
+      "example": "Pollution has a negative impact on public health."
+    },
+    {
+      "id": "toefl_neutral",
+      "front": "neutral",
+      "back": "adj. 中立的；中性的；不偏不倚的",
+      "phonetic": "/ˈnjuːtrəl/",
+      "hint": "neut(既不)+ral→既不这也不那→中立",
+      "example": "Switzerland remained neutral during World War II."
+    },
+    {
+      "id": "toefl_objective",
+      "front": "objective",
+      "back": "adj. 客观的；n. 目标；目的",
+      "phonetic": "/əbˈdʒektɪv/",
+      "hint": "object(物体)+ive→基于实物的→客观；目标物",
+      "example": "A good journalist must provide an objective account of events."
+    },
+    {
+      "id": "toefl_omit",
+      "front": "omit",
+      "back": "v. 省略；遗漏；忽略不计",
+      "phonetic": "/əˈmɪt/",
+      "hint": "o+mit(发送)→不发送→省去不说",
+      "example": "The editor omitted several key facts from the report."
+    },
+    {
+      "id": "toefl_opt",
+      "front": "opt",
+      "back": "v. 选择；决定；倾向于",
+      "phonetic": "/ɒpt/",
+      "hint": "opt→option的简化→选择",
+      "example": "Many students opt to study abroad for greater opportunities."
+    },
+    {
+      "id": "toefl_paradigm",
+      "front": "paradigm",
+      "back": "n. 范式；典范；模式",
+      "phonetic": "/ˈpærədaɪm/",
+      "hint": "para(旁边)+digm(显示)→旁边展示的模板→范式",
+      "example": "The invention of the internet created a new paradigm for communication."
+    },
+    {
+      "id": "toefl_perceive",
+      "front": "perceive",
+      "back": "v. 感知；察觉；认为",
+      "phonetic": "/pəˈsiːv/",
+      "hint": "per(完全)+ceive(抓取)→完全抓住感受→感知",
+      "example": "How we perceive time changes as we grow older."
+    },
+    {
+      "id": "toefl_persist",
+      "front": "persist",
+      "back": "v. 坚持；持续；固执地坚持",
+      "phonetic": "/pəˈsɪst/",
+      "hint": "per(一直)+sist(站立)→一直站着→坚持",
+      "example": "She persisted in her research despite repeated setbacks."
+    },
+    {
+      "id": "toefl_portray",
+      "front": "portray",
+      "back": "v. 描绘；刻画；扮演（角色）",
+      "phonetic": "/pɔːrˈtreɪ/",
+      "hint": "port(带出)+ray(射线)→射出形象→描绘",
+      "example": "The documentary portrays life in rural communities."
+    },
+    {
+      "id": "toefl_precede",
+      "front": "precede",
+      "back": "v. 在…之前；先于；领先",
+      "phonetic": "/prɪˈsiːd/",
+      "hint": "pre(在前)+cede(走)→走在前面→先于",
+      "example": "A brief introduction should precede the main argument."
+    },
+    {
+      "id": "toefl_predict",
+      "front": "predict",
+      "back": "v. 预测；预言；预报",
+      "phonetic": "/prɪˈdɪkt/",
+      "hint": "pre(提前)+dict(说)→提前说出→预测",
+      "example": "Scientists can predict solar eclipses centuries in advance."
+    },
+    {
+      "id": "toefl_profound",
+      "front": "profound",
+      "back": "adj. 深刻的；意义深远的；知识渊博的",
+      "phonetic": "/prəˈfaʊnd/",
+      "hint": "pro(向前)+found(底部)→深入底部→深刻",
+      "example": "Reading great literature can have a profound effect on your thinking."
+    },
+    {
+      "id": "toefl_prohibit",
+      "front": "prohibit",
+      "back": "v. 禁止；阻止；明令禁止",
+      "phonetic": "/prəˈhɪbɪt/",
+      "hint": "pro(在前)+hibit(持有)→在前面拦住→禁止",
+      "example": "Smoking is prohibited in all public buildings."
+    },
+    {
+      "id": "toefl_prominent",
+      "front": "prominent",
+      "back": "adj. 突出的；著名的；显眼的",
+      "phonetic": "/ˈprɒmɪnənt/",
+      "hint": "pro(向前)+min(突出)+ent→向前突出的→著名显眼",
+      "example": "She became a prominent figure in environmental science."
+    },
+    {
+      "id": "toefl_provoke",
+      "front": "provoke",
+      "back": "v. 激怒；引发；刺激",
+      "phonetic": "/prəˈvəʊk/",
+      "hint": "pro(向前)+voke(呼唤)→呼唤出反应→激起",
+      "example": "The controversial policy provoked widespread protest."
+    },
+    {
+      "id": "toefl_radical",
+      "front": "radical",
+      "back": "adj. 根本的；激进的；彻底的；n. 激进分子",
+      "phonetic": "/ˈrædɪkəl/",
+      "hint": "radic(根)+al→从根上的→根本彻底",
+      "example": "The new treatment represents a radical departure from conventional medicine."
+    },
+    {
+      "id": "toefl_rationale",
+      "front": "rationale",
+      "back": "n. 基本原理；理论依据；逻辑依据",
+      "phonetic": "/ˌræʃəˈnɑːl/",
+      "hint": "ration(理性)+ale→理性的根基→理论依据",
+      "example": "The committee explained the rationale behind the new regulations."
+    },
+    {
+      "id": "toefl_reinforce",
+      "front": "reinforce",
+      "back": "v. 加强；强化；增援",
+      "phonetic": "/ˌriːɪnˈfɔːrs/",
+      "hint": "re(再)+in(进入)+force(力量)→再次注入力量→强化",
+      "example": "Positive feedback reinforces good behavior in students."
+    },
+    {
+      "id": "toefl_relevant",
+      "front": "relevant",
+      "back": "adj. 相关的；有意义的；切题的",
+      "phonetic": "/ˈreləvənt/",
+      "hint": "relev(举起)+ant→举起联系→与…相关",
+      "example": "Please only include information that is relevant to the topic."
+    },
+    {
+      "id": "toefl_revise",
+      "front": "revise",
+      "back": "v. 修订；修改；复习",
+      "phonetic": "/rɪˈvaɪz/",
+      "hint": "re(再)+vise(看)→再次看→修订",
+      "example": "The author revised the manuscript three times before publication."
+    },
+    {
+      "id": "toefl_significant",
+      "front": "significant",
+      "back": "adj. 重要的；显著的；有意义的",
+      "phonetic": "/sɪɡˈnɪfɪkənt/",
+      "hint": "sign(符号)+ific+ant→能发出信号→显著重要",
+      "example": "The study found a significant correlation between sleep and memory."
+    },
+    {
+      "id": "toefl_simulate",
+      "front": "simulate",
+      "back": "v. 模拟；仿造；假装",
+      "phonetic": "/ˈsɪmjəleɪt/",
+      "hint": "simul(相似)+ate→使相似→模拟",
+      "example": "Scientists simulate climate change using computer models."
+    },
+    {
+      "id": "toefl_substantial",
+      "front": "substantial",
+      "back": "adj. 大量的；实质性的；坚固的",
+      "phonetic": "/səbˈstænʃəl/",
+      "hint": "sub(下面)+stance(物质)+ial→有实质在下面→实质的",
+      "example": "There has been a substantial increase in renewable energy use."
+    },
+    {
+      "id": "toefl_synthesis",
+      "front": "synthesis",
+      "back": "n. 综合；合成；结合",
+      "phonetic": "/ˈsɪnθəsɪs/",
+      "hint": "syn(共同)+thesis(放置)→放在一起→综合合成",
+      "example": "The essay requires a synthesis of ideas from multiple sources."
+    },
+    {
+      "id": "toefl_terminate",
+      "front": "terminate",
+      "back": "v. 终止；结束；使终止",
+      "phonetic": "/ˈtɜːrmɪneɪt/",
+      "hint": "termin(边界终点)+ate→到达终点→终止",
+      "example": "The contract will terminate at the end of this fiscal year."
+    },
+    {
+      "id": "toefl_transform",
+      "front": "transform",
+      "back": "v. 转变；改变；变革",
+      "phonetic": "/trænsˈfɔːrm/",
+      "hint": "trans(跨越)+form(形式)→跨越形式→转变",
+      "example": "Technology has transformed the way we communicate."
+    },
+    {
+      "id": "toefl_undermine",
+      "front": "undermine",
+      "back": "v. 削弱；暗中破坏；侵蚀基础",
+      "phonetic": "/ˌʌndərˈmaɪn/",
+      "hint": "under(下面)+mine(挖矿)→在下面挖→暗中削弱",
+      "example": "Corruption can undermine public trust in government."
+    },
+    {
+      "id": "toefl_uniform",
+      "front": "uniform",
+      "back": "adj. 统一的；一致的；均匀的；n. 制服",
+      "phonetic": "/ˈjuːnɪfɔːrm/",
+      "hint": "uni(一)+form(形式)→同一形式→统一",
+      "example": "The study requires uniform conditions across all test groups."
+    },
+    {
+      "id": "toefl_validate",
+      "front": "validate",
+      "back": "v. 验证；确认有效；使合法",
+      "phonetic": "/ˈvælɪdeɪt/",
+      "hint": "valid(有效)+ate→使有效→验证确认",
+      "example": "Further research is needed to validate these findings."
+    }
+  ]
+}

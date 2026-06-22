@@ -1,0 +1,88 @@
+{
+  "meta": { "subject": "english", "grade": "middle", "name": "初中英语短文阅读", "version": "2024", "count": 6, "type": "reading" },
+  "passages": [
+    {
+      "id": "r_m01",
+      "title": "Social Media and Teenagers",
+      "level": "middle1",
+      "word_count": 130,
+      "text": "Social media has become an important part of teenagers' lives. Many young people spend several hours each day on platforms like WeChat, Douyin and Weibo. They use these apps to share photos, watch videos and keep in touch with friends.\n\nHowever, there are both advantages and disadvantages to social media. On the positive side, it helps people stay connected and allows teenagers to express themselves. It can also be a great source of information and entertainment.\n\nOn the negative side, spending too much time on social media can affect teenagers' sleep, studies and real-life relationships. Some young people feel anxious if they don't check their phones regularly.\n\nExperts recommend that teenagers limit their screen time to two hours per day. Balance is the key to using social media in a healthy way.",
+      "vocabulary": ["platforms", "disadvantages", "express", "anxious", "recommend"],
+      "comprehension_questions": [
+        { "q": "What are three things teenagers do on social media?", "a": "Share photos, watch videos, keep in touch with friends.", "type": "factual" },
+        { "q": "What are two negative effects of social media?", "a": "Affects sleep/studies/relationships; causes anxiety.", "type": "factual" },
+        { "q": "How much screen time do experts recommend?", "a": "Two hours per day.", "type": "factual" },
+        { "q": "What does 'Balance is the key' mean?", "a": "Using social media moderately/in a balanced way is most important.", "type": "vocabulary" }
+      ],
+      "speaking_practice": [
+        { "prompt": "Do you think social media is good or bad for teenagers?", "hint": "Use: In my opinion..., On one hand..., On the other hand..., I believe..." }
+      ]
+    },
+    {
+      "id": "r_m02",
+      "title": "Climate Change",
+      "level": "middle2",
+      "word_count": 140,
+      "text": "Climate change is one of the most serious problems facing our planet today. Over the past century, the Earth's average temperature has risen by about 1.1 degrees Celsius. This may not seem like much, but it has caused significant changes around the world.\n\nThe main cause of climate change is the burning of fossil fuels such as coal, oil and gas. This releases carbon dioxide into the atmosphere, trapping heat and causing the greenhouse effect.\n\nThe effects of climate change include rising sea levels, more frequent extreme weather events, and threats to wildlife and ecosystems.\n\nTo fight climate change, governments and individuals must take action. Switching to renewable energy, reducing waste and changing our consumption habits are all important steps. Every small action counts when we all work together.",
+      "vocabulary": ["atmosphere", "greenhouse effect", "renewable", "consumption", "ecosystems"],
+      "comprehension_questions": [
+        { "q": "By how much has the Earth's temperature risen?", "a": "About 1.1 degrees Celsius.", "type": "factual" },
+        { "q": "What is the main cause of climate change?", "a": "Burning of fossil fuels (coal, oil, gas).", "type": "factual" },
+        { "q": "Name two effects of climate change.", "a": "Rising sea levels; extreme weather; threats to wildlife (any two).", "type": "factual" },
+        { "q": "What does 'Every small action counts' mean?", "a": "Even small individual actions are important and make a difference.", "type": "vocabulary" }
+      ],
+      "speaking_practice": [
+        { "prompt": "What can young people do to fight climate change?", "hint": "Use: Young people can..., We should..., One important step is to..., In addition..." }
+      ]
+    },
+    {
+      "id": "r_m03",
+      "title": "Traditional Chinese Medicine",
+      "level": "middle3",
+      "word_count": 150,
+      "text": "Traditional Chinese Medicine (TCM) is one of the world's oldest medical systems, with a history of over 3,000 years. Unlike Western medicine, which focuses on treating specific diseases, TCM aims to balance the body's energy, or 'qi', to maintain overall health.\n\nTCM uses a variety of treatments, including herbal medicine, acupuncture, and Tai Chi. Herbal medicine uses plants, minerals and animal products to create remedies. Acupuncture involves inserting thin needles into specific points on the body to stimulate energy flow.\n\nIn recent years, TCM has gained international recognition. During the COVID-19 pandemic, TCM treatments were used alongside Western medicine in China with positive results.\n\nHowever, TCM also faces challenges. Some treatments lack scientific evidence, and quality control can be difficult. The World Health Organization has been working to integrate TCM into global healthcare systems in a safe and effective way.",
+      "vocabulary": ["acupuncture", "qi", "remedies", "recognition", "integrate"],
+      "comprehension_questions": [
+        { "q": "How old is Traditional Chinese Medicine?", "a": "Over 3,000 years old.", "type": "factual" },
+        { "q": "What is the main difference between TCM and Western medicine?", "a": "TCM aims to balance body energy/qi; Western medicine treats specific diseases.", "type": "inferential" },
+        { "q": "Name three TCM treatments mentioned.", "a": "Herbal medicine, acupuncture, Tai Chi.", "type": "factual" },
+        { "q": "What challenge does TCM face?", "a": "Lack of scientific evidence; quality control difficulties.", "type": "factual" }
+      ],
+      "speaking_practice": [
+        { "prompt": "Tell me about one aspect of Chinese culture you are proud of.", "hint": "Use: I am proud of..., It has a history of..., It is special because..., In recent years..." }
+      ]
+    }
+  ],
+  "oral_scenarios": [
+    {
+      "id": "oral_m01", "level": "middle1", "category": "school",
+      "title": "课堂讨论",
+      "context": "英语课上分组讨论话题",
+      "exchanges": [
+        { "cue": "What do you think about homework? Should students have less homework?", "model": "In my opinion, students have too much homework. It doesn't leave time for exercise or hobbies.", "hint": "用 In my opinion... 表达观点" },
+        { "cue": "That's interesting. Can you give an example?", "model": "For example, I often stay up until midnight finishing assignments. This affects my sleep and health.", "hint": "用 For example... 举例支持观点" },
+        { "cue": "But what about students who need more practice?", "model": "That's a good point. Maybe teachers could give different amounts of homework based on each student's needs.", "hint": "承认对方观点后用 Maybe... 提出折中方案" }
+      ]
+    },
+    {
+      "id": "oral_m02", "level": "middle2", "category": "career",
+      "title": "未来职业规划",
+      "context": "与老师讨论将来的职业计划",
+      "exchanges": [
+        { "cue": "Have you thought about what you want to be in the future?", "model": "Yes, I'd like to become an engineer. I'm really interested in technology and how things work.", "hint": "用 I'd like to become... 表达职业理想" },
+        { "cue": "That's a great goal. What are you doing to prepare?", "model": "I'm studying hard in Math and Physics. I also read science magazines in my spare time.", "hint": "用 I'm... 描述具体行动" },
+        { "cue": "What's the biggest challenge you think you'll face?", "model": "I think the biggest challenge is the competition. There are many talented students, so I need to develop unique skills.", "hint": "用 I think... / The biggest challenge is... 分析困难" }
+      ]
+    },
+    {
+      "id": "oral_m03", "level": "middle3", "category": "environment",
+      "title": "环境保护讨论",
+      "context": "参加学校环保主题演讲",
+      "exchanges": [
+        { "cue": "You mentioned that pollution is a serious problem. What solutions do you suggest?", "model": "There are several solutions. First, we need to switch to renewable energy sources like solar and wind power. Second, we should reduce our use of plastic.", "hint": "用 First..., Second... 结构化表达多个方案" },
+        { "cue": "Do you think individuals can really make a difference?", "model": "Absolutely. Although one person's actions seem small, millions of people making small changes adds up to a huge impact. Every action counts.", "hint": "用 Although... 让步后加强论证" },
+        { "cue": "What is your message to other students?", "model": "My message is this: don't wait for others to act. Start with yourself. Walk or cycle instead of taking a car, reduce waste, and inspire those around you.", "hint": "用命令句和号召语增强演讲效果" }
+      ]
+    }
+  ]
+}

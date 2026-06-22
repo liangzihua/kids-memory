@@ -1,0 +1,238 @@
+{
+  "meta": { "subject": "english", "grade": "adult", "name": "职场口语情景对话", "version": "2024" },
+  "scenarios": [
+    {
+      "id": "sc_meeting_01",
+      "category": "meeting",
+      "category_name": "会议沟通",
+      "level": "intermediate",
+      "title": "开始会议",
+      "context": "你是会议主持人，需要开始一个项目讨论会",
+      "exchanges": [
+        {
+          "cue": "Let's get started. Could you give us a brief update on the project status?",
+          "model_response": "Sure. The project is on track. We've completed 60% of the development phase and are on schedule to hit our milestone next Friday.",
+          "key_phrases": ["on track", "on schedule", "milestone"],
+          "pronunciation_focus": "stress on content words: PROJECT, TRACK, SCHEDULE"
+        },
+        {
+          "cue": "What are the main challenges you're facing right now?",
+          "model_response": "The main challenge is resource allocation. We're short on QA engineers this sprint, but I've already raised the issue with HR.",
+          "key_phrases": ["resource allocation", "short on", "raised the issue"],
+          "pronunciation_focus": "challenge /ˈtʃælɪndʒ/ — don't say 'challen-ji'"
+        },
+        {
+          "cue": "Do you need any support from the team?",
+          "model_response": "Actually, yes. It would be very helpful if John could review the technical specs by Wednesday. That would unblock our development team.",
+          "key_phrases": ["It would be helpful if", "unblock", "technical specs"],
+          "pronunciation_focus": "would /wʊd/ — often reduced to /wəd/ in natural speech"
+        }
+      ]
+    },
+    {
+      "id": "sc_meeting_02",
+      "category": "meeting",
+      "category_name": "会议沟通",
+      "level": "intermediate",
+      "title": "表达观点与异议",
+      "context": "团队讨论中需要提出不同意见",
+      "exchanges": [
+        {
+          "cue": "I think we should launch the product in Q1.",
+          "model_response": "I see your point, but I'm a bit concerned about the timeline. We might need more time to ensure quality. Have we considered a Q2 launch?",
+          "key_phrases": ["I see your point", "I'm concerned about", "Have we considered"],
+          "pronunciation_focus": "concerned /kənˈsɜːnd/ — vowel in middle is /ɜː/"
+        },
+        {
+          "cue": "What do you think about the new design proposal?",
+          "model_response": "Honestly, while I appreciate the creativity, I think it might be too complex for our target users. Perhaps we could simplify the navigation.",
+          "key_phrases": ["while I appreciate", "I think it might be", "Perhaps we could"],
+          "pronunciation_focus": "appreciate /əˈpriːʃieɪt/ — stress on second syllable"
+        },
+        {
+          "cue": "Let's vote on this. Who's in favor?",
+          "model_response": "Before we vote, could I suggest we take five minutes to review the key points? I want to make sure everyone has the same information.",
+          "key_phrases": ["Before we", "could I suggest", "I want to make sure"],
+          "pronunciation_focus": "suggest /səˈdʒest/ — the 'g' is silent, don't say /sʌɡˈɡest/"
+        }
+      ]
+    },
+    {
+      "id": "sc_presentation_01",
+      "category": "presentation",
+      "category_name": "汇报演示",
+      "level": "intermediate",
+      "title": "季度汇报",
+      "context": "向管理层做季度工作汇报",
+      "exchanges": [
+        {
+          "cue": "Please present your Q3 results.",
+          "model_response": "Thank you. I'd like to start with our key achievements. In Q3, we increased revenue by 15% compared to Q2, exceeded our customer acquisition target by 200 new clients, and successfully launched two new features.",
+          "key_phrases": ["I'd like to start with", "compared to", "exceeded our target"],
+          "pronunciation_focus": "exceeded /ɪkˈsiːdɪd/ — stress on second syllable"
+        },
+        {
+          "cue": "What were the biggest challenges in Q3?",
+          "model_response": "The biggest challenge was supply chain disruption, which delayed delivery by an average of two weeks. We addressed this by diversifying our supplier base and maintaining a larger safety stock.",
+          "key_phrases": ["supply chain disruption", "addressed this by", "diversifying"],
+          "pronunciation_focus": "disruption /dɪsˈrʌpʃən/ — stress on second syllable"
+        },
+        {
+          "cue": "What's your plan for Q4?",
+          "model_response": "For Q4, we're focusing on three priorities: customer retention, expanding into the Southeast Asian market, and upgrading our analytics platform. I'm confident we can achieve a 20% revenue growth.",
+          "key_phrases": ["focusing on", "expanding into", "I'm confident we can"],
+          "pronunciation_focus": "retention /rɪˈtenʃən/ — the 'ti' sounds like /ʃ/"
+        }
+      ]
+    },
+    {
+      "id": "sc_email_follow",
+      "category": "email",
+      "category_name": "邮件电话",
+      "level": "beginner",
+      "title": "跟进事项",
+      "context": "打电话或发邮件跟进工作事项",
+      "exchanges": [
+        {
+          "cue": "I'm calling to follow up on the proposal I sent last week.",
+          "model_response": "Hi, this is [your name] from [company]. I sent you a proposal on the 15th regarding our software solution. I wanted to check if you had a chance to review it.",
+          "key_phrases": ["follow up on", "I wanted to check if", "had a chance to"],
+          "pronunciation_focus": "proposal /prəˈpoʊzəl/ — stress on second syllable"
+        },
+        {
+          "cue": "Could you give me a status update on the report?",
+          "model_response": "Certainly. The first draft is complete and currently being reviewed by the legal team. I expect it to be ready for your review by Thursday afternoon.",
+          "key_phrases": ["Certainly", "currently being reviewed", "I expect it to be ready"],
+          "pronunciation_focus": "currently /ˈkɜːrəntli/ — the 'ur' is /ɜː/ sound"
+        }
+      ]
+    },
+    {
+      "id": "sc_negotiation_01",
+      "category": "negotiation",
+      "category_name": "商务谈判",
+      "level": "advanced",
+      "title": "价格谈判",
+      "context": "与供应商或客户进行价格谈判",
+      "exchanges": [
+        {
+          "cue": "Our standard rate is $50 per hour.",
+          "model_response": "I appreciate your offer. However, based on our budget constraints, we were hoping to work within $40 per hour. Could you see if there's any flexibility on that price, perhaps in exchange for a longer contract term?",
+          "key_phrases": ["budget constraints", "flexibility", "in exchange for"],
+          "pronunciation_focus": "negotiate /nɪˈɡoʊʃieɪt/ — 'ti' sounds like /ʃ/"
+        },
+        {
+          "cue": "The best we can do is $45.",
+          "model_response": "That's closer to our range. If we agree on $45, would you be able to include priority support and quarterly business reviews? That would help us justify the investment to our management.",
+          "key_phrases": ["If we agree on", "would you be able to", "justify the investment"],
+          "pronunciation_focus": "quarterly /ˈkwɔːrtərli/ — stress on first syllable"
+        },
+        {
+          "cue": "We can include quarterly reviews but not priority support.",
+          "model_response": "Fair enough. Let me check with my team and come back to you by end of day. I think we can make this work. Thank you for your flexibility.",
+          "key_phrases": ["Fair enough", "come back to you", "make this work"],
+          "pronunciation_focus": "flexibility /ˌfleksɪˈbɪlɪti/ — stress on third syllable"
+        }
+      ]
+    },
+    {
+      "id": "sc_interview_01",
+      "category": "interview",
+      "category_name": "面试求职",
+      "level": "intermediate",
+      "title": "工作面试",
+      "context": "参加英语面试",
+      "exchanges": [
+        {
+          "cue": "Tell me about yourself.",
+          "model_response": "I have five years of experience in software development, primarily focusing on backend systems. I'm particularly skilled in Python and cloud technologies. I'm passionate about building scalable solutions and I enjoy working in agile teams.",
+          "key_phrases": ["primarily focusing on", "particularly skilled in", "passionate about"],
+          "pronunciation_focus": "experience /ɪkˈspɪriəns/ — 4 syllables, stress on second"
+        },
+        {
+          "cue": "What's your greatest weakness?",
+          "model_response": "I tend to be a perfectionist, which can sometimes slow me down. However, I've been actively working on prioritizing tasks and setting realistic timelines. I've found that using project management tools helps me balance quality with efficiency.",
+          "key_phrases": ["tend to be", "actively working on", "balance quality with"],
+          "pronunciation_focus": "perfectionist /pərˈfekʃənɪst/ — stress on second syllable"
+        },
+        {
+          "cue": "Where do you see yourself in five years?",
+          "model_response": "In five years, I hope to have grown into a senior technical role, possibly as a team lead or architect. I'd like to mentor junior developers and contribute to the company's technical direction.",
+          "key_phrases": ["grown into", "contribute to", "technical direction"],
+          "pronunciation_focus": "possibly /ˈpɒsɪbli/ — three syllables, stress on first"
+        }
+      ]
+    },
+    {
+      "id": "sc_smalltalk_01",
+      "category": "smalltalk",
+      "category_name": "日常闲聊",
+      "level": "beginner",
+      "title": "办公室闲聊",
+      "context": "与同事或客户建立关系的日常对话",
+      "exchanges": [
+        {
+          "cue": "How was your weekend?",
+          "model_response": "It was great, thanks! I went hiking with my family. The weather was perfect. How about you—did you do anything fun?",
+          "key_phrases": ["It was great", "How about you", "did you do anything"],
+          "pronunciation_focus": "weekend /ˈwiːkend/ — stress on first syllable"
+        },
+        {
+          "cue": "Have you tried the new coffee place downstairs?",
+          "model_response": "Not yet, but I've heard it's really good. A colleague recommended their cold brew. I'll probably grab one this afternoon. Would you like to join me?",
+          "key_phrases": ["Not yet", "I've heard", "Would you like to join"],
+          "pronunciation_focus": "recommended /ˌrekəˈmendɪd/ — stress on third syllable"
+        }
+      ]
+    },
+    {
+      "id": "sc_problem_01",
+      "category": "problem_solving",
+      "category_name": "问题处理",
+      "level": "intermediate",
+      "title": "处理投诉与问题",
+      "context": "与客户或同事处理问题和投诉",
+      "exchanges": [
+        {
+          "cue": "The system crashed again and we lost two hours of work!",
+          "model_response": "I completely understand your frustration and I sincerely apologize for the inconvenience. I'm escalating this issue to our technical team right now. Can you describe exactly what happened before the crash?",
+          "key_phrases": ["I completely understand", "I sincerely apologize", "escalating this issue"],
+          "pronunciation_focus": "frustration /frʌˈstreɪʃən/ — stress on second syllable"
+        },
+        {
+          "cue": "This keeps happening. We need a permanent solution.",
+          "model_response": "You're absolutely right. A temporary fix is not acceptable. I'm arranging an emergency meeting with our CTO to review the root cause analysis. I'll keep you updated every two hours until this is resolved.",
+          "key_phrases": ["absolutely right", "root cause analysis", "keep you updated"],
+          "pronunciation_focus": "temporary /ˈtempəreri/ — 4 syllables, stress on first"
+        }
+      ]
+    }
+  ],
+  "tongue_twisters": [
+    {
+      "id": "tt_th", "focus": "/θ/ and /ð/",
+      "text": "The thirty-three thieves thought they thrilled the throne throughout Thursday.",
+      "tip": "舌尖在每个'th'上都要伸出齿间"
+    },
+    {
+      "id": "tt_rl", "focus": "/r/ and /l/",
+      "text": "Red lorry, yellow lorry. Really lovely red lorries roll right along.",
+      "tip": "/r/舌尖翘起不触碰，/l/舌尖顶上牙龈"
+    },
+    {
+      "id": "tt_vw", "focus": "/v/ and /w/",
+      "text": "Victor very vividly viewed vivid violet violets while walking west.",
+      "tip": "/v/上齿咬下唇，/w/嘴唇圆突不咬唇"
+    },
+    {
+      "id": "tt_sh_s", "focus": "/ʃ/ and /s/",
+      "text": "She sells seashells by the seashore. The shells she sells are surely seashells.",
+      "tip": "/ʃ/嘴唇略圆，/s/牙齿合拢舌尖在内"
+    },
+    {
+      "id": "tt_p_b", "focus": "/p/ and /b/",
+      "text": "Peter Piper picked a peck of pickled peppers. Betty bought a bit of better butter.",
+      "tip": "/p/有气流送出，/b/有声带振动"
+    }
+  ]
+}
