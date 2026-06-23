@@ -483,9 +483,9 @@ input:focus, textarea:focus, select:focus {
 
 .subject-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 14px 14px 4px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 14px 10px 4px;
 }
 
 .subject-card {
@@ -495,7 +495,7 @@ input:focus, textarea:focus, select:focus {
   gap: 8px;
   background: var(--color-surface);
   border-radius: var(--radius-md);
-  padding: 16px 8px 14px;
+  padding: 16px 4px 14px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   transition: transform var(--transition), box-shadow var(--transition);
   border: 1.5px solid var(--color-border);
@@ -516,7 +516,7 @@ input:focus, textarea:focus, select:focus {
 .subject-card-recite .subject-progress { color: rgba(232,72,72,0.6); }
 
 .subject-icon {
-  font-size: 32px;
+  font-size: 28px;
   width: 52px;
   height: 52px;
   border-radius: 14px;
@@ -1687,7 +1687,7 @@ input:focus, textarea:focus, select:focus {
 
 /* ===== 响应式（平板优化）===== */
 @media (min-width: 600px) {
-  .subject-grid { grid-template-columns: repeat(5, 1fr); max-width: 640px; margin: 0 auto; }
+  .subject-grid { grid-template-columns: repeat(4, 1fr); max-width: 100%; }
   .import-options { grid-template-columns: repeat(3, 1fr); max-width: 500px; margin: 0 auto; }
   .rating-buttons { max-width: 480px; margin: 0 auto; }
   .flashcard { max-height: 340px; }
@@ -3503,3 +3503,278 @@ input:focus, textarea:focus, select:focus {
 #page-study.subject-chinese { background: linear-gradient(180deg, #fff5f5 0%, var(--color-bg) 140px); }
 #page-study.subject-english { background: linear-gradient(180deg, #f0f6ff 0%, var(--color-bg) 140px); }
 #page-study.subject-math    { background: linear-gradient(180deg, #f5f0ff 0%, var(--color-bg) 140px); }
+
+/* ===== 拼音学习 ===== */
+#page-pinyin { background: linear-gradient(180deg, #fff5f5 0%, var(--color-bg) 120px); }
+
+.py-mode-tabs {
+  display: flex; overflow-x: auto; gap: 6px;
+  padding: 10px 14px 6px; flex-shrink: 0;
+  scrollbar-width: none;
+}
+.py-mode-tabs::-webkit-scrollbar { display: none; }
+.py-mode-btn {
+  flex-shrink: 0; padding: 7px 14px; border-radius: 20px;
+  font-size: 13px; font-weight: 600;
+  background: var(--color-surface2); color: var(--color-text-sub);
+  border: 1.5px solid var(--color-border); transition: all var(--transition);
+  white-space: nowrap;
+}
+.py-mode-btn.active { background: var(--color-chinese); color: white; border-color: var(--color-chinese); }
+
+.py-grade-row {
+  display: flex; overflow-x: auto; gap: 6px;
+  padding: 4px 14px 8px; flex-shrink: 0;
+  scrollbar-width: none;
+}
+.py-grade-btn {
+  flex-shrink: 0; padding: 4px 12px; border-radius: 16px;
+  font-size: 12px; font-weight: 600;
+  background: var(--color-surface2); color: var(--color-text-sub);
+  border: 1px solid var(--color-border);
+}
+.py-grade-btn.active { background: rgba(232,72,72,0.12); color: var(--color-chinese); border-color: var(--color-chinese); }
+
+/* 声母韵母表 */
+.py-section { margin-bottom: 20px; }
+.py-section-title {
+  font-size: 15px; font-weight: 700; color: var(--color-chinese);
+  margin-bottom: 10px; padding-left: 8px;
+  border-left: 3px solid var(--color-chinese);
+}
+.py-group-label { font-size: 11px; color: var(--color-text-hint); margin: 8px 0 4px; }
+.py-initials-grid, .py-finals-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;
+}
+.py-initial-card, .py-final-card {
+  background: white; border-radius: 10px; padding: 8px 4px;
+  border: 1.5px solid var(--color-border); text-align: center;
+  transition: all var(--transition);
+}
+.py-initial-card:active, .py-final-card:active {
+  background: rgba(232,72,72,0.08); border-color: var(--color-chinese);
+}
+.py-char { font-size: 16px; font-weight: 700; color: var(--color-chinese); }
+.py-example-small { font-size: 10px; color: var(--color-text-hint); margin-top: 2px; }
+
+/* 声调 */
+.py-tones-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.py-tone-card {
+  background: white; border-radius: 12px; padding: 12px;
+  border: 1.5px solid var(--color-border); text-align: center;
+}
+.py-tone-mark { font-size: 28px; font-weight: 900; color: var(--color-chinese); }
+.py-tone-name { font-size: 12px; font-weight: 700; margin: 4px 0; }
+.py-tone-desc { font-size: 11px; color: var(--color-text-sub); }
+.py-tone-ex { font-size: 11px; color: var(--color-text-hint); margin-top: 4px; }
+
+/* 声调详情 */
+.py-tone-detail-card {
+  background: white; border-radius: 14px; padding: 16px;
+  border: 1.5px solid var(--color-border); margin-bottom: 10px;
+}
+.py-tone-detail-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.py-tone-mark-big { font-size: 40px; font-weight: 900; color: var(--color-chinese); }
+.py-tone-name-big { font-size: 16px; font-weight: 700; }
+.py-tone-desc-text { font-size: 13px; color: var(--color-text-sub); margin-bottom: 6px; }
+.py-tone-tip { font-size: 12px; color: var(--color-primary); margin-bottom: 6px; }
+.py-tone-examples { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+
+/* 标调规则 */
+.py-rule-item {
+  background: rgba(232,72,72,0.04); border-radius: 8px;
+  padding: 10px 12px; margin-bottom: 6px; font-size: 13px;
+  border-left: 3px solid var(--color-chinese);
+  color: var(--color-text-sub);
+}
+.py-rule-num {
+  display: inline-block; width: 20px; height: 20px;
+  background: var(--color-chinese); color: white;
+  border-radius: 50%; font-size: 11px; font-weight: 700;
+  text-align: center; line-height: 20px; margin-right: 6px;
+}
+
+/* 多音字 */
+.py-poly-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.py-poly-item {
+  background: white; border-radius: 10px; padding: 10px 6px;
+  border: 1.5px solid var(--color-border); text-align: center;
+  transition: all var(--transition);
+}
+.py-poly-item:active { background: rgba(232,72,72,0.08); border-color: var(--color-chinese); }
+.py-poly-char { font-size: 24px; font-weight: 700; display: block; color: var(--color-text); }
+.py-poly-pinyins { font-size: 10px; color: var(--color-chinese); margin-top: 3px; display: block; }
+.py-poly-badge {
+  background: rgba(232,72,72,0.1); color: var(--color-chinese);
+  border-radius: 12px; padding: 2px 8px; font-size: 11px;
+  font-weight: 700; margin-left: 8px;
+}
+.py-poly-reading {
+  background: var(--color-surface2); border-radius: 10px;
+  padding: 10px; margin: 8px 0;
+}
+.py-poly-reading-py { font-size: 18px; font-weight: 700; color: var(--color-chinese); }
+.py-poly-reading-meaning { font-size: 13px; color: var(--color-text-sub); margin: 4px 0; }
+.py-poly-reading-exs { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0; }
+.py-poly-ex {
+  background: white; border-radius: 8px; padding: 3px 8px;
+  font-size: 12px; color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+/* 练习题 */
+.py-quiz-progress {
+  font-size: 13px; color: var(--color-text-sub);
+  padding: 0 4px 10px; font-weight: 600;
+}
+.py-quiz-card {
+  background: white; border-radius: 16px; padding: 20px;
+  border: 1.5px solid var(--color-border);
+  text-align: center; margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(232,72,72,0.1);
+}
+.py-quiz-label { font-size: 12px; color: var(--color-text-hint); margin-bottom: 12px; }
+.py-pinyin-big { font-size: 36px; font-weight: 800; color: var(--color-chinese); letter-spacing: 4px; margin-bottom: 8px; }
+.py-word-big { font-size: 48px; font-weight: 900; color: var(--color-text); margin-bottom: 8px; }
+.py-quiz-hint { font-size: 12px; color: var(--color-text-hint); margin-bottom: 8px; }
+.py-speak-pinyin {
+  background: rgba(232,72,72,0.1); color: var(--color-chinese);
+  border-radius: 20px; padding: 6px 16px; font-size: 13px; font-weight: 600;
+}
+.py-options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.py-option-btn {
+  background: white; border-radius: 12px; padding: 14px 8px;
+  border: 2px solid var(--color-border); font-size: 16px; font-weight: 700;
+  transition: all var(--transition);
+}
+.py-option-btn:active { transform: scale(0.97); }
+.py-option-btn.py-correct { background: rgba(76,175,125,0.12); border-color: var(--color-success); color: var(--color-success); }
+.py-option-btn.py-wrong { background: rgba(232,72,72,0.1); border-color: var(--color-chinese); color: var(--color-chinese); }
+.py-pinyin-opt { font-size: 14px; letter-spacing: 1px; }
+
+/* 详情弹窗 */
+.py-detail-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  display: flex; align-items: flex-end; z-index: 300;
+  backdrop-filter: blur(4px);
+}
+.py-detail-box {
+  background: var(--color-surface); border-radius: 20px 20px 0 0;
+  padding: 20px; width: 100%; max-height: 70vh; overflow-y: auto;
+}
+.py-detail-title { font-size: 40px; font-weight: 900; text-align: center; margin-bottom: 12px; }
+.py-detail-tip { font-size: 13px; color: var(--color-text-sub); margin-bottom: 8px; }
+.py-detail-example { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+.py-tone-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+.py-tone-ex-item {
+  background: rgba(232,72,72,0.08); color: var(--color-chinese);
+  border-radius: 8px; padding: 6px 12px; font-size: 15px; font-weight: 600;
+}
+.py-speak-btn {
+  background: rgba(232,72,72,0.1); color: var(--color-chinese);
+  border-radius: 16px; padding: 4px 12px; font-size: 13px; margin-top: 6px;
+}
+
+/* ===== 语文学习中心 ===== */
+#page-chinese-learning { background: linear-gradient(180deg, #fff5f5 0%, var(--color-bg) 120px); }
+
+.chinese-tabs {
+  display: flex; overflow-x: auto; gap: 0;
+  background: white; border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0; scrollbar-width: none;
+}
+.chinese-tabs::-webkit-scrollbar { display: none; }
+.chinese-tab {
+  flex-shrink: 0; display: flex; flex-direction: column;
+  align-items: center; gap: 3px; padding: 10px 14px;
+  font-size: 12px; font-weight: 600; color: var(--color-text-sub);
+  border-bottom: 2px solid transparent; transition: all var(--transition);
+  white-space: nowrap;
+}
+.chinese-tab span:first-child { font-size: 18px; }
+.chinese-tab.active { color: var(--color-chinese); border-bottom-color: var(--color-chinese); }
+
+/* 入口卡片 */
+.chinese-entry-card {
+  display: flex; align-items: center; gap: 12px;
+  background: white; border-radius: 14px; padding: 14px;
+  border: 1.5px solid var(--color-border); margin-bottom: 10px;
+  cursor: pointer; transition: all var(--transition);
+  width: 100%; text-align: left;
+}
+.chinese-entry-card:active {
+  background: rgba(232,72,72,0.04); border-color: var(--color-chinese);
+  transform: scale(0.99);
+}
+.cec-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: white; font-weight: 900;
+  flex-shrink: 0; box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.cec-info { flex: 1; min-width: 0; }
+.cec-title { font-size: 15px; font-weight: 700; color: var(--color-text); }
+.cec-desc { font-size: 12px; color: var(--color-text-sub); margin-top: 3px; }
+.cec-arrow { font-size: 20px; color: var(--color-text-hint); flex-shrink: 0; }
+
+.btn-switch-inline {
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* 语文学习中心内嵌卡片 */
+.ctab-card-item {
+  background: white; border-radius: 12px; padding: 12px 14px;
+  border: 1.5px solid var(--color-border); margin-bottom: 8px;
+  position: relative;
+}
+.ctab-card-front { font-size: 18px; font-weight: 700; color: var(--color-text); margin-bottom: 4px; }
+.ctab-card-back { font-size: 13px; color: var(--color-text-sub); line-height: 1.5; }
+.ctab-card-phonetic { font-size: 12px; color: var(--color-chinese); margin-top: 2px; }
+.ctab-card-speak { position: absolute; top: 10px; right: 10px; font-size: 16px; opacity: 0.6; }
+
+.ctab-idiom-item .ctab-idiom-word { font-size: 20px; font-weight: 800; color: var(--color-chinese); margin-bottom: 4px; }
+.ctab-idiom-ex { font-size: 12px; color: var(--color-text-hint); margin-top: 4px; }
+
+.ctab-poem-item .ctab-poem-q { font-size: 16px; font-weight: 700; font-family: serif; color: var(--color-text); margin-bottom: 4px; }
+.ctab-poem-a { font-size: 15px; font-weight: 700; color: var(--color-chinese); font-family: serif; margin: 6px 0 4px; }
+.ctab-poem-hint { font-size: 12px; color: var(--color-text-hint); margin-bottom: 6px; }
+.ctab-poem-reveal {
+  background: rgba(232,72,72,0.08); color: var(--color-chinese);
+  border-radius: 14px; padding: 4px 12px; font-size: 12px; font-weight: 600;
+}
+
+.chinese-quick-btn {
+  border-color: rgba(232,72,72,0.3) !important;
+  color: var(--color-chinese) !important;
+}
+.chinese-quick-btn:active { background: rgba(232,72,72,0.08) !important; }
+
+/* 快捷功能行（英语/语文）*/
+.english-quick-row {
+  display: flex; gap: 8px;
+  padding: 8px 14px 4px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.english-quick-row::-webkit-scrollbar { display: none; }
+.english-quick-btn {
+  flex: 1; min-width: 0;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 4px;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 4px 8px;
+  font-size: 11px; font-weight: 600;
+  color: var(--color-text-sub);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.english-quick-btn span:first-child { font-size: 20px; }
+.english-quick-btn:active { background: var(--color-surface2); transform: scale(0.97); }

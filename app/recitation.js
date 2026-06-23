@@ -63,8 +63,7 @@ async function loadRecitationTexts() {
 
 function bindRecitationListEvents() {
   $('btn-recite-list-back')?.addEventListener('click', () => {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    $('page-home')?.classList.add('active');
+    (window._goBack || (() => { document.querySelectorAll('.page').forEach(p => p.classList.remove('active')); document.getElementById('page-home')?.classList.add('active'); }))();
   });
 
   // 分类 tab
@@ -88,8 +87,8 @@ function bindRecitationListEvents() {
 }
 
 export function openRecitationListPage() {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  $('page-recitation-list')?.classList.add('active');
+  if (window._showPage) { window._showPage('recitation-list'); }
+  else { document.querySelectorAll('.page').forEach(p => p.classList.remove('active')); $('page-recitation-list')?.classList.add('active'); }
   const cat = document.querySelector('.recite-list-tab.active')?.dataset.cat || 'all';
   renderRecitationListPage(cat);
 }
@@ -181,11 +180,10 @@ function renderRecitationListPage(cat = 'all', query = '') {
 function bindRecitationEvents() {
   $('btn-recite-back')?.addEventListener('click', () => {
     clearInterval(R.autoPlayTimer);
-    // 返回古诗文清单页（如果存在），否则返回题库
-    const listPage = $('page-recitation-list');
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    if (listPage) listPage.classList.add('active');
-    else $('page-library')?.classList.add('active');
+    window._goBack?.() || (() => {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-recitation-list')?.classList.add('active');
+    })();
   });
 
   // 模式切换按钮（用 data-mode 属性，没有独立 ID）
@@ -258,8 +256,8 @@ export function openRecitationPage(textId) {
   renderFullText(text);
   setReciteMode('read');
 
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  $('page-recitation')?.classList.add('active');
+  if (window._showPage) { window._showPage('recitation'); }
+  else { document.querySelectorAll('.page').forEach(p => p.classList.remove('active')); $('page-recitation')?.classList.add('active'); }
 }
 
 function renderFullText(text) {

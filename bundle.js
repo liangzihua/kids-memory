@@ -857,7 +857,7 @@
     renderPassageList();
   }
   function bindPassageEvents() {
-    const $4 = (id) => document.getElementById(id);
+    const $5 = (id) => document.getElementById(id);
     document.querySelectorAll(".passage-grade-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         document.querySelectorAll(".passage-grade-btn").forEach((b) => b.classList.remove("active"));
@@ -866,16 +866,10 @@
         renderPassageList();
       });
     });
-    $4("btn-passage-back")?.addEventListener("click", () => {
-      document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
-      $4("page-english-adult")?.classList.add("active");
-      document.querySelectorAll(".english-tab").forEach((t) => t.classList.toggle("active", t.dataset.etab === "passages"));
-      document.querySelectorAll(".english-section").forEach((s) => {
-        s.classList.toggle("active", s.id === "etab-passages");
-        s.classList.toggle("hidden", s.id !== "etab-passages");
-      });
+    $5("btn-passage-back")?.addEventListener("click", () => {
+      window._goBack?.();
     });
-    $4("btn-passage-speak")?.addEventListener("click", () => {
+    $5("btn-passage-speak")?.addEventListener("click", () => {
       if (_currentPassage) speak(_currentPassage.text, "en-US", 0.8);
     });
     document.querySelectorAll("[data-pmode]").forEach((btn) => {
@@ -887,12 +881,12 @@
           b.style.borderBottom = on ? "2px solid var(--color-english)" : "2px solid transparent";
         });
         const mode = btn.dataset.pmode;
-        $4("passage-read-section").classList.toggle("hidden", mode !== "read");
-        $4("passage-translate-section").classList.toggle("hidden", mode !== "translate");
-        $4("passage-recite-section").classList.toggle("hidden", mode !== "recite");
+        $5("passage-read-section").classList.toggle("hidden", mode !== "read");
+        $5("passage-translate-section").classList.toggle("hidden", mode !== "translate");
+        $5("passage-recite-section").classList.toggle("hidden", mode !== "recite");
       });
     });
-    $4("btn-passage-record")?.addEventListener("click", startPassageRecite);
+    $5("btn-passage-record")?.addEventListener("click", startPassageRecite);
   }
   function passageGradeLabel(g) {
     return {
@@ -959,53 +953,57 @@
     const p = _passages.find((x) => x.id === pid);
     if (!p) return;
     _currentPassage = p;
-    const $4 = (id) => document.getElementById(id);
-    $4("passage-title").textContent = p.title;
-    $4("passage-meta").textContent = (p.category || "") + " \xB7 " + (p.text || "").split(/\s+/).length + " \u8BCD";
+    const $5 = (id) => document.getElementById(id);
+    $5("passage-title").textContent = p.title;
+    $5("passage-meta").textContent = (p.category || "") + " \xB7 " + (p.text || "").split(/\s+/).length + " \u8BCD";
     const tokens = p.text.split(/([a-zA-Z][a-zA-Z'-]*)/);
-    $4("passage-text").innerHTML = tokens.map((tok) => {
+    $5("passage-text").innerHTML = tokens.map((tok) => {
       if (/^[a-zA-Z][a-zA-Z'-]*$/.test(tok)) {
         if (window._colorEnglishSyllables) return window._colorEnglishSyllables(tok);
         return escapeHtml(tok);
       }
       return escapeHtml(tok);
     }).join("");
-    const kwEl = $4("passage-keywords");
+    const kwEl = $5("passage-keywords");
     if (kwEl) kwEl.innerHTML = p.keywords?.length ? `
     <div style="font-size:11px;font-weight:700;color:var(--color-english);margin-bottom:6px">\u{1F511} \u5173\u952E\u8BCD</div>
     <div style="display:flex;flex-wrap:wrap;gap:6px">
       ${p.keywords.map((k) => `<span style="background:rgba(59,130,246,0.1);color:var(--color-english);border-radius:20px;padding:3px 10px;font-size:12px">${escapeHtml(k)}</span>`).join("")}
     </div>` : "";
-    const kpEl = $4("passage-keypoints");
+    const kpEl = $5("passage-keypoints");
     if (kpEl) kpEl.innerHTML = p.key_points?.length ? `
     <div style="font-size:11px;font-weight:700;color:#8B5CF6;margin-bottom:6px;margin-top:12px">\u{1F4CC} \u5B66\u4E60\u91CD\u70B9</div>
     ${p.key_points.map((pt) => `<div style="font-size:12px;color:var(--color-text-sub);padding:3px 0">\xB7 ${escapeHtml(pt)}</div>`).join("")}` : "";
-    const trEl = $4("passage-translation");
+    const trEl = $5("passage-translation");
     if (trEl) trEl.textContent = p.translation || "";
-    $4("passage-score")?.classList.add("hidden");
-    if ($4("passage-recognized")) $4("passage-recognized").textContent = "";
-    if ($4("passage-record-label")) $4("passage-record-label").textContent = "\u5F00\u59CB\u80CC\u8BF5";
+    $5("passage-score")?.classList.add("hidden");
+    if ($5("passage-recognized")) $5("passage-recognized").textContent = "";
+    if ($5("passage-record-label")) $5("passage-record-label").textContent = "\u5F00\u59CB\u80CC\u8BF5";
     document.querySelectorAll("[data-pmode]").forEach((b) => {
       const on = b.dataset.pmode === "read";
       b.classList.toggle("active", on);
       b.style.color = on ? "var(--color-english)" : "var(--color-text-sub)";
       b.style.borderBottom = on ? "2px solid var(--color-english)" : "2px solid transparent";
     });
-    $4("passage-read-section")?.classList.remove("hidden");
-    $4("passage-translate-section")?.classList.add("hidden");
-    $4("passage-recite-section")?.classList.add("hidden");
-    document.querySelectorAll(".page").forEach((pg) => pg.classList.remove("active"));
-    document.getElementById("page-passage")?.classList.add("active");
+    $5("passage-read-section")?.classList.remove("hidden");
+    $5("passage-translate-section")?.classList.add("hidden");
+    $5("passage-recite-section")?.classList.add("hidden");
+    if (window._showPage) {
+      window._showPage("passage");
+    } else {
+      document.querySelectorAll(".page").forEach((pg) => pg.classList.remove("active"));
+      document.getElementById("page-passage")?.classList.add("active");
+    }
   }
   async function startPassageRecite() {
     const { startListening: startListening2, SpeechSupport: SpeechSupport2 } = await Promise.resolve().then(() => (init_speech(), speech_exports));
-    const $4 = (id) => document.getElementById(id);
+    const $5 = (id) => document.getElementById(id);
     if (!SpeechSupport2.stt) {
       alert("\u6B64\u8BBE\u5907\u4E0D\u652F\u6301\u8BED\u97F3\u8BC6\u522B\uFF0C\u8BF7\u4F7F\u7528 Chrome \u6D4F\u89C8\u5668");
       return;
     }
-    const btn = $4("btn-passage-record");
-    const label = $4("passage-record-label");
+    const btn = $5("btn-passage-record");
+    const label = $5("passage-record-label");
     if (_passageStopRecord) {
       _passageStopRecord();
       _passageStopRecord = null;
@@ -1020,7 +1018,7 @@
       "en-US",
       (text) => {
         spoken = text;
-        if ($4("passage-recognized")) $4("passage-recognized").textContent = "\u8BC6\u522B\uFF1A" + text;
+        if ($5("passage-recognized")) $5("passage-recognized").textContent = "\u8BC6\u522B\uFF1A" + text;
       },
       () => {
         btn.style.background = "var(--color-english)";
@@ -1036,9 +1034,9 @@
         const hits = said.filter((w) => target.includes(w)).length;
         const score = Math.min(100, Math.round(hits / Math.max(target.length * 0.3, 1) * 100));
         const feedback = score >= 85 ? "\u592A\u68D2\u4E86\uFF01\u80CC\u8BF5\u975E\u5E38\u6D41\u5229\uFF01" : score >= 60 ? "\u4E0D\u9519\uFF01\u7EE7\u7EED\u7EC3\u4E60" : "\u518D\u719F\u6089\u4E00\u4E0B\u539F\u6587\uFF0C\u52A0\u6CB9\uFF01";
-        if ($4("passage-score-val")) $4("passage-score-val").textContent = score;
-        if ($4("passage-score-feedback")) $4("passage-score-feedback").textContent = feedback;
-        $4("passage-score")?.classList.remove("hidden");
+        if ($5("passage-score-val")) $5("passage-score-val").textContent = score;
+        if ($5("passage-score-feedback")) $5("passage-score-feedback").textContent = feedback;
+        $5("passage-score")?.classList.remove("hidden");
       }
     );
   }
@@ -1126,8 +1124,12 @@
     });
   }
   function showEnglishPage() {
-    document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
-    $("page-english-adult")?.classList.add("active");
+    if (window._showPage) {
+      window._showPage("english-adult");
+    } else {
+      document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
+      $("page-english-adult")?.classList.add("active");
+    }
   }
   function switchEnglishTab(tab) {
     document.querySelectorAll(".english-tab").forEach((b) => b.classList.toggle("active", b.dataset.etab === tab));
@@ -1267,8 +1269,12 @@
   function startScenario(scenario) {
     E.scenario = scenario;
     E.exchangeIndex = 0;
-    document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
-    $("page-scenario")?.classList.add("active");
+    if (window._showPage) {
+      window._showPage("scenario");
+    } else {
+      document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
+      $("page-scenario")?.classList.add("active");
+    }
     $("scenario-context").textContent = `\u573A\u666F\uFF1A${scenario.title} \u2014 ${scenario.context}`;
     renderExchange();
   }
@@ -2170,6 +2176,427 @@
     }
   });
 
+  // app/pinyin.js
+  var pinyin_exports = {};
+  __export(pinyin_exports, {
+    initPinyin: () => initPinyin,
+    openPinyinPage: () => openPinyinPage
+  });
+  function escapeHtml3(s) {
+    return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  async function initPinyin() {
+    if (_data) {
+      renderPinyinHome();
+      return;
+    }
+    try {
+      const res = await fetch("data/builtin/chinese/pinyin.json");
+      if (!res.ok) throw new Error("\u62FC\u97F3\u6570\u636E\u52A0\u8F7D\u5931\u8D25");
+      _data = await res.json();
+      window._pinyinData = _data;
+    } catch (e) {
+      console.warn("pinyin load error", e);
+      return;
+    }
+    window._renderPinyinToElement = function(el, mode, grade) {
+      _currentMode = mode || "table";
+      _gradeFilter = grade || "all";
+      if (mode === "table") renderInitialFinalTable(el);
+      else if (mode === "tones") renderTonesSection(el);
+      else if (mode === "poly") renderPolyphoneSection(el);
+      else if (mode === "p2w") renderPinyinToWordQuiz(el);
+      else if (mode === "w2p") renderWordToPinyinQuiz(el);
+    };
+    bindPinyinEvents();
+    renderPinyinHome();
+  }
+  function bindPinyinEvents() {
+    document.querySelectorAll(".py-mode-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".py-mode-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        _currentMode = btn.dataset.mode;
+        const gradeRow = document.getElementById("py-grade-row");
+        if (gradeRow) gradeRow.style.display = _currentMode === "p2w" || _currentMode === "w2p" ? "flex" : "none";
+        renderPinyinHome();
+      });
+    });
+    document.querySelectorAll(".py-grade-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".py-grade-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        _gradeFilter = btn.dataset.grade;
+        if (_currentMode === "p2w" || _currentMode === "w2p") renderPinyinHome();
+      });
+    });
+    $2("btn-pinyin-back")?.addEventListener("click", () => {
+      window._goBack?.();
+    });
+  }
+  function openPinyinPage() {
+    if (window._showPage) {
+      window._showPage("pinyin");
+    } else {
+      document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
+      $2("page-pinyin")?.classList.add("active");
+    }
+    initPinyin();
+  }
+  function renderPinyinHome() {
+    const body = $2("pinyin-body");
+    if (!body || !_data) return;
+    if (_currentMode === "table") renderInitialFinalTable(body);
+    else if (_currentMode === "p2w") renderPinyinToWordQuiz(body);
+    else if (_currentMode === "w2p") renderWordToPinyinQuiz(body);
+    else if (_currentMode === "poly") renderPolyphoneSection(body);
+    else if (_currentMode === "tones") renderTonesSection(body);
+  }
+  function renderInitialFinalTable(body) {
+    const tones = _data.tones;
+    body.innerHTML = `
+    <!-- \u58F0\u6BCD -->
+    <div class="py-section">
+      <div class="py-section-title">\u58F0\u6BCD\uFF0821\u4E2A\uFF09</div>
+      <div class="py-initials-grid">
+        ${_data.initials.cards.map((c) => `
+          <button class="py-initial-card" data-initial="${c.initial}">
+            <div class="py-char">${escapeHtml3(c.initial)}</div>
+            <div class="py-example-small">${escapeHtml3(c.example.split(" ")[0])}</div>
+          </button>`).join("")}
+      </div>
+    </div>
+
+    <!-- \u97F5\u6BCD -->
+    <div class="py-section">
+      <div class="py-section-title">\u97F5\u6BCD\uFF0836\u4E2A\uFF09</div>
+      ${_data.finals.groups.map((g) => `
+        <div class="py-group-label">${escapeHtml3(g.name)}</div>
+        <div class="py-finals-grid">
+          ${g.items.map((f) => `
+            <button class="py-final-card" data-final="${f}">
+              <div class="py-char">${escapeHtml3(f)}</div>
+            </button>`).join("")}
+        </div>`).join("")}
+    </div>
+
+    <!-- \u58F0\u8C03\u89C4\u5219 -->
+    <div class="py-section">
+      <div class="py-section-title">\u58F0\u8C03\u53E3\u8BC0</div>
+      ${tones.tone_rules.map((r) => `
+        <div class="py-rule-item">\u{1F4CC} ${escapeHtml3(r)}</div>`).join("")}
+    </div>
+
+    <!-- \u56DB\u58F0\u5BF9\u6BD4 -->
+    <div class="py-section">
+      <div class="py-section-title">\u56DB\u58F0\u7EC3\u4E60</div>
+      <div class="py-tones-grid">
+        ${tones.rules.map((t) => `
+          <div class="py-tone-card">
+            <div class="py-tone-mark">${escapeHtml3(t.mark)}</div>
+            <div class="py-tone-name">${escapeHtml3(t.name)}</div>
+            <div class="py-tone-desc">${escapeHtml3(t.desc)}</div>
+            <div class="py-tone-ex">${escapeHtml3(t.example)}</div>
+            <button class="py-speak-btn" data-text="${escapeHtml3(t.example.split("\uFF0C")[0])}">\u{1F50A}</button>
+          </div>`).join("")}
+      </div>
+    </div>
+  `;
+    body.querySelectorAll(".py-initial-card").forEach((btn) => {
+      btn.addEventListener("click", () => showInitialDetail(btn.dataset.initial));
+    });
+    body.querySelectorAll(".py-final-card").forEach((btn) => {
+      btn.addEventListener("click", () => showFinalDetail(btn.dataset.final));
+    });
+    body.querySelectorAll(".py-speak-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        speakChinese(btn.dataset.text, 0.8);
+      });
+    });
+  }
+  function showInitialDetail(initial) {
+    const card = _data.initials.cards.find((c) => c.initial === initial);
+    if (!card) return;
+    showDetailPopup(`
+    <div class="py-detail-title">${escapeHtml3(card.initial)}</div>
+    <div class="py-detail-tip">\u53D1\u97F3\u8981\u9886\uFF1A${escapeHtml3(card.tip)}</div>
+    <div class="py-detail-example">\u4F8B\u8BCD\uFF1A${escapeHtml3(card.example)}</div>
+    <button class="btn-primary py-detail-speak" data-text="${escapeHtml3(card.example.split(" ")[0])}">\u{1F50A} \u6717\u8BFB\u4F8B\u8BCD</button>
+  `);
+  }
+  function showFinalDetail(final) {
+    const card = _data.finals.cards.find((c) => c.final === final);
+    if (!card) return;
+    const toneHtml = card.tone_examples ? `<div class="py-tone-row">${card.tone_examples.map((t) => `<span class="py-tone-ex-item">${escapeHtml3(t)}</span>`).join("")}</div>` : "";
+    showDetailPopup(`
+    <div class="py-detail-title">${escapeHtml3(final)}</div>
+    <div class="py-detail-example">\u4F8B\u5B57\uFF1A${escapeHtml3(card.example)}</div>
+    ${toneHtml}
+    <button class="btn-primary py-detail-speak" data-text="${escapeHtml3(card.example.split(" ")[1] || card.example)}">\u{1F50A} \u6717\u8BFB</button>
+  `);
+  }
+  function showDetailPopup(html) {
+    let overlay = $2("py-detail-overlay");
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.id = "py-detail-overlay";
+      overlay.className = "py-detail-overlay";
+      overlay.innerHTML = `<div class="py-detail-box" id="py-detail-box"></div>`;
+      document.body.appendChild(overlay);
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) overlay.classList.add("hidden");
+      });
+    }
+    $2("py-detail-box").innerHTML = html + `<button class="btn-secondary py-detail-close" style="width:100%;margin-top:12px">\u5173\u95ED</button>`;
+    overlay.classList.remove("hidden");
+    $2("py-detail-box").querySelector(".py-detail-speak")?.addEventListener("click", (e) => {
+      speakChinese(e.currentTarget.dataset.text, 0.8);
+    });
+    $2("py-detail-box").querySelector(".py-detail-close")?.addEventListener("click", () => {
+      overlay.classList.add("hidden");
+    });
+  }
+  function renderPinyinToWordQuiz(body) {
+    let items = _data.pinyin_to_word.items;
+    if (_gradeFilter !== "all") items = items.filter((i) => i.grade === _gradeFilter);
+    if (!items.length) {
+      body.innerHTML = '<p style="text-align:center;padding:32px;color:var(--color-text-sub)">\u8BE5\u5E74\u7EA7\u6682\u65E0\u9898\u76EE</p>';
+      return;
+    }
+    _currentItems = [...items].sort(() => Math.random() - 0.5);
+    _currentIdx = 0;
+    _score = { correct: 0, wrong: 0 };
+    renderP2WCard(body);
+  }
+  function renderP2WCard(body) {
+    const item = _currentItems[_currentIdx];
+    if (!item) {
+      renderQuizResult(body);
+      return;
+    }
+    const total = _currentItems.length;
+    const allWords = _data.pinyin_to_word.items.map((i) => i.word);
+    let options = [item.word];
+    while (options.length < 4) {
+      const rand = allWords[Math.floor(Math.random() * allWords.length)];
+      if (!options.includes(rand)) options.push(rand);
+    }
+    options = options.sort(() => Math.random() - 0.5);
+    body.innerHTML = `
+    <div class="py-quiz-progress">${_currentIdx + 1} / ${total}
+      <span style="float:right">\u2705${_score.correct} \u274C${_score.wrong}</span>
+    </div>
+    <div class="py-quiz-card">
+      <div class="py-quiz-label">\u770B\u62FC\u97F3\uFF0C\u9009\u8BCD\u8BED</div>
+      <div class="py-pinyin-big">${escapeHtml3(item.pinyin)}</div>
+      ${item.hint ? `<div class="py-quiz-hint">\u{1F4A1} ${escapeHtml3(item.hint)}</div>` : ""}
+      <button class="py-speak-pinyin" data-text="${escapeHtml3(item.word)}">\u{1F50A} \u542C\u8BFB\u97F3</button>
+    </div>
+    <div class="py-options-grid">
+      ${options.map((opt) => `
+        <button class="py-option-btn" data-word="${escapeHtml3(opt)}" data-correct="${opt === item.word}">
+          ${escapeHtml3(opt)}
+        </button>`).join("")}
+    </div>
+    <button class="btn-secondary py-skip-btn" style="margin:12px 16px">\u8DF3\u8FC7</button>
+  `;
+    body.querySelector(".py-speak-pinyin")?.addEventListener("click", () => speakChinese(item.word, 0.8));
+    body.querySelectorAll(".py-option-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const correct = btn.dataset.correct === "true";
+        body.querySelectorAll(".py-option-btn").forEach((b) => {
+          b.disabled = true;
+          if (b.dataset.correct === "true") b.classList.add("py-correct");
+          else if (b === btn && !correct) b.classList.add("py-wrong");
+        });
+        if (correct) {
+          _score.correct++;
+          speakChinese(item.word, 0.8);
+        } else _score.wrong++;
+        setTimeout(() => {
+          _currentIdx++;
+          renderP2WCard(body);
+        }, 1200);
+      });
+    });
+    body.querySelector(".py-skip-btn")?.addEventListener("click", () => {
+      _currentIdx++;
+      renderP2WCard(body);
+    });
+  }
+  function renderWordToPinyinQuiz(body) {
+    let items = _data.word_to_pinyin.items;
+    if (_gradeFilter !== "all") items = items.filter((i) => i.grade === _gradeFilter);
+    if (!items.length) {
+      body.innerHTML = '<p style="text-align:center;padding:32px;color:var(--color-text-sub)">\u8BE5\u5E74\u7EA7\u6682\u65E0\u9898\u76EE</p>';
+      return;
+    }
+    _currentItems = [...items].sort(() => Math.random() - 0.5);
+    _currentIdx = 0;
+    _score = { correct: 0, wrong: 0 };
+    renderW2PCard(body);
+  }
+  function renderW2PCard(body) {
+    const item = _currentItems[_currentIdx];
+    if (!item) {
+      renderQuizResult(body);
+      return;
+    }
+    const total = _currentItems.length;
+    let options = [item.pinyin, ...item.wrong_options || []].slice(0, 4);
+    while (options.length < 4) {
+      const rand = _data.word_to_pinyin.items[Math.floor(Math.random() * _data.word_to_pinyin.items.length)].pinyin;
+      if (!options.includes(rand)) options.push(rand);
+    }
+    options = options.sort(() => Math.random() - 0.5);
+    const polyBadge = item.polyphone ? `<span class="py-poly-badge">\u591A\u97F3\u5B57\uFF1A${escapeHtml3(item.polyphone)}</span>` : "";
+    body.innerHTML = `
+    <div class="py-quiz-progress">${_currentIdx + 1} / ${total}
+      <span style="float:right">\u2705${_score.correct} \u274C${_score.wrong}</span>
+    </div>
+    <div class="py-quiz-card">
+      <div class="py-quiz-label">\u770B\u8BCD\u8BED\uFF0C\u9009\u62FC\u97F3${polyBadge}</div>
+      <div class="py-word-big">${escapeHtml3(item.word)}</div>
+      <button class="py-speak-pinyin" data-text="${escapeHtml3(item.word)}">\u{1F50A} \u542C\u8BFB\u97F3</button>
+    </div>
+    <div class="py-options-grid">
+      ${options.map((opt) => `
+        <button class="py-option-btn py-pinyin-opt" data-pinyin="${escapeHtml3(opt)}" data-correct="${opt === item.pinyin}">
+          ${escapeHtml3(opt)}
+        </button>`).join("")}
+    </div>
+    <button class="btn-secondary py-skip-btn" style="margin:12px 16px">\u8DF3\u8FC7</button>
+  `;
+    body.querySelector(".py-speak-pinyin")?.addEventListener("click", () => speakChinese(item.word, 0.8));
+    body.querySelectorAll(".py-option-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const correct = btn.dataset.correct === "true";
+        body.querySelectorAll(".py-option-btn").forEach((b) => {
+          b.disabled = true;
+          if (b.dataset.correct === "true") b.classList.add("py-correct");
+          else if (b === btn && !correct) b.classList.add("py-wrong");
+        });
+        if (correct) {
+          _score.correct++;
+          speakChinese(item.word, 0.8);
+        } else _score.wrong++;
+        setTimeout(() => {
+          _currentIdx++;
+          renderW2PCard(body);
+        }, 1200);
+      });
+    });
+    body.querySelector(".py-skip-btn")?.addEventListener("click", () => {
+      _currentIdx++;
+      renderW2PCard(body);
+    });
+  }
+  function renderPolyphoneSection(body) {
+    const chars = _data.polyphones.chars;
+    body.innerHTML = `
+    <div class="py-section">
+      <div class="py-section-title">\u591A\u97F3\u5B57\uFF08${chars.length}\u4E2A\u5E38\u7528\u5B57\uFF09</div>
+      <p style="font-size:12px;color:var(--color-text-sub);padding:0 4px 12px">\u540C\u4E00\u4E2A\u5B57\u6839\u636E\u4E0D\u540C\u8BED\u5883\u6709\u4E0D\u540C\u8BFB\u97F3\uFF0C\u70B9\u51FB\u67E5\u770B\u8BE6\u60C5</p>
+      <div class="py-poly-list">
+        ${chars.map((c) => `
+          <button class="py-poly-item" data-char="${escapeHtml3(c.char)}">
+            <span class="py-poly-char">${escapeHtml3(c.char)}</span>
+            <span class="py-poly-pinyins">${c.readings.map((r) => escapeHtml3(r.pinyin)).join(" / ")}</span>
+          </button>`).join("")}
+      </div>
+    </div>
+  `;
+    body.querySelectorAll(".py-poly-item").forEach((btn) => {
+      btn.addEventListener("click", () => showPolyphoneDetail(btn.dataset.char));
+    });
+  }
+  function showPolyphoneDetail(char) {
+    const c = _data.polyphones.chars.find((x) => x.char === char);
+    if (!c) return;
+    const html = `
+    <div class="py-detail-title" style="font-size:48px">${escapeHtml3(c.char)}</div>
+    ${c.readings.map((r) => `
+      <div class="py-poly-reading">
+        <div class="py-poly-reading-py">${escapeHtml3(r.pinyin)}</div>
+        <div class="py-poly-reading-meaning">${escapeHtml3(r.meaning)}</div>
+        <div class="py-poly-reading-exs">${r.examples.map((e) => `<span class="py-poly-ex">${escapeHtml3(e)}</span>`).join("")}</div>
+        <button class="py-speak-btn" data-text="${escapeHtml3(r.examples[0])}">\u{1F50A}</button>
+      </div>`).join("")}
+  `;
+    showDetailPopup(html);
+    $2("py-detail-box").querySelectorAll(".py-speak-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        speakChinese(btn.dataset.text, 0.8);
+      });
+    });
+  }
+  function renderTonesSection(body) {
+    const tones = _data.tones;
+    body.innerHTML = `
+    <div class="py-section">
+      <div class="py-section-title">\u56DB\u4E2A\u58F0\u8C03\u8BE6\u89E3</div>
+      ${tones.rules.map((t) => `
+        <div class="py-tone-detail-card">
+          <div class="py-tone-detail-header">
+            <span class="py-tone-mark-big">${escapeHtml3(t.mark)}</span>
+            <span class="py-tone-name-big">${escapeHtml3(t.name)}</span>
+          </div>
+          <div class="py-tone-desc-text">${escapeHtml3(t.desc)}</div>
+          <div class="py-tone-tip">\u{1F4A1} ${escapeHtml3(t.tip)}</div>
+          <div class="py-tone-examples">${escapeHtml3(t.example)}</div>
+          <button class="py-speak-btn" data-text="${escapeHtml3(t.example.split("\uFF0C")[0])}">\u{1F50A} \u8BD5\u542C</button>
+        </div>`).join("")}
+    </div>
+    <div class="py-section">
+      <div class="py-section-title">\u6807\u8C03\u89C4\u5219\u53E3\u8BC0</div>
+      ${tones.tone_rules.map((r, i) => `
+        <div class="py-rule-item">
+          <span class="py-rule-num">${i + 1}</span>
+          ${escapeHtml3(r)}
+        </div>`).join("")}
+    </div>
+  `;
+    body.querySelectorAll(".py-speak-btn").forEach((btn) => {
+      btn.addEventListener("click", () => speakChinese(btn.dataset.text, 0.8));
+    });
+  }
+  function renderQuizResult(body) {
+    const total = _score.correct + _score.wrong;
+    const pct = total ? Math.round(_score.correct / total * 100) : 0;
+    const grade = pct >= 90 ? "\u4F18\u79C0 \u{1F3C6}" : pct >= 70 ? "\u826F\u597D \u{1F44D}" : pct >= 50 ? "\u7EE7\u7EED\u52A0\u6CB9 \u{1F4AA}" : "\u9700\u8981\u591A\u52A0\u7EC3\u4E60 \u{1F4DA}";
+    body.innerHTML = `
+    <div style="text-align:center;padding:40px 20px">
+      <div style="font-size:64px;margin-bottom:12px">${pct >= 90 ? "\u{1F389}" : pct >= 70 ? "\u{1F60A}" : "\u{1F605}"}</div>
+      <div style="font-size:48px;font-weight:900;color:var(--color-chinese)">${pct}<span style="font-size:20px">%</span></div>
+      <div style="font-size:16px;margin:8px 0 4px">${grade}</div>
+      <div style="font-size:13px;color:var(--color-text-sub)">\u7B54\u5BF9 ${_score.correct} \u9898\uFF0C\u7B54\u9519 ${_score.wrong} \u9898</div>
+      <button class="btn-primary" style="margin-top:24px;width:80%" id="btn-py-retry">\u518D\u7EC3\u4E00\u6B21</button>
+      <button class="btn-secondary" style="margin-top:10px;width:80%" id="btn-py-home">\u8FD4\u56DE</button>
+    </div>
+  `;
+    $2("btn-py-retry")?.addEventListener("click", () => renderPinyinHome());
+    $2("btn-py-home")?.addEventListener("click", () => {
+      _currentMode = "table";
+      document.querySelectorAll(".py-mode-btn").forEach((b) => b.classList.toggle("active", b.dataset.mode === "table"));
+      renderPinyinHome();
+    });
+  }
+  var _data, _currentMode, _gradeFilter, _currentItems, _currentIdx, _score, $2;
+  var init_pinyin = __esm({
+    "app/pinyin.js"() {
+      init_speech();
+      _data = null;
+      _currentMode = "table";
+      _gradeFilter = "all";
+      _currentItems = [];
+      _currentIdx = 0;
+      _score = { correct: 0, wrong: 0 };
+      $2 = (id) => document.getElementById(id);
+    }
+  });
+
   // app/recitation.js
   var recitation_exports = {};
   __export(recitation_exports, {
@@ -2180,7 +2607,7 @@
     renderRecitationList: () => renderRecitationList
   });
   function toast3(msg) {
-    const c = $2("toast-container");
+    const c = $3("toast-container");
     if (!c) return;
     const el = document.createElement("div");
     el.className = "toast";
@@ -2214,9 +2641,11 @@
     window._recitationTexts = R.allTexts;
   }
   function bindRecitationListEvents() {
-    $2("btn-recite-list-back")?.addEventListener("click", () => {
-      document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
-      $2("page-home")?.classList.add("active");
+    $3("btn-recite-list-back")?.addEventListener("click", () => {
+      (window._goBack || (() => {
+        document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
+        document.getElementById("page-home")?.classList.add("active");
+      }))();
     });
     document.querySelectorAll(".recite-list-tab").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -2226,7 +2655,7 @@
       });
     });
     let searchTimer;
-    $2("recite-search-input")?.addEventListener("input", (e) => {
+    $3("recite-search-input")?.addEventListener("input", (e) => {
       clearTimeout(searchTimer);
       searchTimer = setTimeout(() => {
         const cat = document.querySelector(".recite-list-tab.active")?.dataset.cat || "all";
@@ -2235,13 +2664,17 @@
     });
   }
   function openRecitationListPage() {
-    document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
-    $2("page-recitation-list")?.classList.add("active");
+    if (window._showPage) {
+      window._showPage("recitation-list");
+    } else {
+      document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
+      $3("page-recitation-list")?.classList.add("active");
+    }
     const cat = document.querySelector(".recite-list-tab.active")?.dataset.cat || "all";
     renderRecitationListPage(cat);
   }
   function renderRecitationListPage(cat = "all", query = "") {
-    const list = $2("recite-texts-list");
+    const list = $3("recite-texts-list");
     if (!list) return;
     let texts = R.allTexts;
     if (cat === "primary") texts = texts.filter((t) => t.grade?.startsWith("primary"));
@@ -2254,9 +2687,9 @@
         (t) => t.title?.includes(query) || t.author?.toLowerCase().includes(q) || t.dynasty?.includes(query) || t.annotation?.includes(query)
       );
     }
-    $2("recite-list-count") && ($2("recite-list-count").textContent = `\u5171${texts.length}\u7BC7`);
+    $3("recite-list-count") && ($3("recite-list-count").textContent = `\u5171${texts.length}\u7BC7`);
     if (!texts.length) {
-      list.innerHTML = `<div style="text-align:center;padding:48px;color:var(--color-text-sub)">${query ? `\u672A\u627E\u5230"${escapeHtml3(query)}"` : "\u6682\u65E0\u5185\u5BB9"}</div>`;
+      list.innerHTML = `<div style="text-align:center;padding:48px;color:var(--color-text-sub)">${query ? `\u672A\u627E\u5230"${escapeHtml4(query)}"` : "\u6682\u65E0\u5185\u5BB9"}</div>`;
       return;
     }
     const groups = {};
@@ -2299,8 +2732,8 @@
         item.innerHTML = `
         <div class="rti-cat" style="background:${catColor}">${catIcon}</div>
         <div class="rti-info">
-          <div class="rti-title">${escapeHtml3(text.title)}</div>
-          <div class="rti-meta">${text.dynasty ? text.dynasty + " \xB7 " : ""}${escapeHtml3(text.author || "")}${text.category ? " \xB7 " + text.category : ""}</div>
+          <div class="rti-title">${escapeHtml4(text.title)}</div>
+          <div class="rti-meta">${text.dynasty ? text.dynasty + " \xB7 " : ""}${escapeHtml4(text.author || "")}${text.category ? " \xB7 " + text.category : ""}</div>
         </div>
         <div class="rti-segs">${text.segments?.length || 0}\u6BB5 \u203A</div>
       `;
@@ -2310,49 +2743,49 @@
     });
   }
   function bindRecitationEvents() {
-    $2("btn-recite-back")?.addEventListener("click", () => {
+    $3("btn-recite-back")?.addEventListener("click", () => {
       clearInterval(R.autoPlayTimer);
-      const listPage = $2("page-recitation-list");
-      document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
-      if (listPage) listPage.classList.add("active");
-      else $2("page-library")?.classList.add("active");
+      window._goBack?.() || (() => {
+        document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
+        document.getElementById("page-recitation-list")?.classList.add("active");
+      })();
     });
     document.querySelectorAll(".recite-mode-btn").forEach((btn) => {
       btn.addEventListener("click", () => setReciteMode(btn.dataset.mode));
     });
-    $2("btn-speak-full")?.addEventListener("click", speakCurrentFull);
-    $2("btn-speak-quiz")?.addEventListener("click", () => {
+    $3("btn-speak-full")?.addEventListener("click", speakCurrentFull);
+    $3("btn-speak-quiz")?.addEventListener("click", () => {
       const seg = R.currentText?.segments?.[R.currentSegIdx];
       if (seg) speakChinese(seg.text.replace(/\n/g, "\uFF0C"), 0.8);
     });
-    $2("btn-prev-seg")?.addEventListener("click", () => navigateSegment(-1));
-    $2("btn-next-seg")?.addEventListener("click", () => navigateSegment(1));
-    $2("btn-prev-seg-v")?.addEventListener("click", () => navigateSegment(-1));
-    $2("btn-next-seg-v")?.addEventListener("click", () => navigateSegment(1));
-    $2("btn-reveal-answer")?.addEventListener("click", revealAnswer);
-    $2("btn-recite-record")?.addEventListener("click", startVoiceRecite);
+    $3("btn-prev-seg")?.addEventListener("click", () => navigateSegment(-1));
+    $3("btn-next-seg")?.addEventListener("click", () => navigateSegment(1));
+    $3("btn-prev-seg-v")?.addEventListener("click", () => navigateSegment(-1));
+    $3("btn-next-seg-v")?.addEventListener("click", () => navigateSegment(1));
+    $3("btn-reveal-answer")?.addEventListener("click", revealAnswer);
+    $3("btn-recite-record")?.addEventListener("click", startVoiceRecite);
     document.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-recite-id]");
       if (btn) openRecitationPage(btn.dataset.reciteId);
     });
-    $2("btn-recite-again")?.addEventListener("click", () => {
-      hide2($2("recite-score"));
-      hide2($2("recite-answer-reveal"));
-      $2("btn-recite-record").classList.remove("recording");
-      $2("recite-record-label").textContent = "\u5F00\u59CB\u80CC\u8BF5";
+    $3("btn-recite-again")?.addEventListener("click", () => {
+      hide2($3("recite-score"));
+      hide2($3("recite-answer-reveal"));
+      $3("btn-recite-record").classList.remove("recording");
+      $3("recite-record-label").textContent = "\u5F00\u59CB\u80CC\u8BF5";
     });
-    $2("btn-recite-clear-score")?.addEventListener("click", () => {
-      hide2($2("recite-score"));
-      hide2($2("recite-answer-reveal"));
-      $2("btn-recite-record").classList.remove("recording");
-      $2("recite-record-label").textContent = "\u5F00\u59CB\u80CC\u8BF5";
-      $2("recite-score-val").textContent = "0";
-      $2("recite-score-grade").textContent = "\u2014";
-      $2("recite-score-feedback").textContent = "";
-      $2("recite-recognized").textContent = "";
+    $3("btn-recite-clear-score")?.addEventListener("click", () => {
+      hide2($3("recite-score"));
+      hide2($3("recite-answer-reveal"));
+      $3("btn-recite-record").classList.remove("recording");
+      $3("recite-record-label").textContent = "\u5F00\u59CB\u80CC\u8BF5";
+      $3("recite-score-val").textContent = "0";
+      $3("recite-score-grade").textContent = "\u2014";
+      $3("recite-score-feedback").textContent = "";
+      $3("recite-recognized").textContent = "";
       toast3("\u5DF2\u6E05\u9664\u672C\u6BB5\u80CC\u8BF5\u8BB0\u5F55");
     });
-    $2("btn-recite-replay")?.addEventListener("click", () => {
+    $3("btn-recite-replay")?.addEventListener("click", () => {
       const seg = R.currentText?.segments?.[R.currentSegIdx];
       if (seg) speakChinese(seg.text.replace(/\n/g, "\uFF0C"), 0.8);
     });
@@ -2365,25 +2798,29 @@
     }
     R.currentText = text;
     R.currentSegIdx = 0;
-    $2("recite-title") && ($2("recite-title").textContent = text.title);
-    $2("recite-author") && ($2("recite-author").textContent = `${text.dynasty} \xB7 ${text.author}`);
-    $2("recite-grade") && ($2("recite-grade").textContent = gradeLabel(text.grade));
+    $3("recite-title") && ($3("recite-title").textContent = text.title);
+    $3("recite-author") && ($3("recite-author").textContent = `${text.dynasty} \xB7 ${text.author}`);
+    $3("recite-grade") && ($3("recite-grade").textContent = gradeLabel(text.grade));
     renderFullText(text);
     setReciteMode("read");
-    document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
-    $2("page-recitation")?.classList.add("active");
+    if (window._showPage) {
+      window._showPage("recitation");
+    } else {
+      document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
+      $3("page-recitation")?.classList.add("active");
+    }
   }
   function renderFullText(text) {
-    const el = $2("recite-full-text");
+    const el = $3("recite-full-text");
     if (!el) return;
     const lines = text.full_text.split("\n");
     let html = lines.map(
-      (line) => line.trim() ? `<div class="recite-line">${escapeHtml3(line)}</div>` : ""
+      (line) => line.trim() ? `<div class="recite-line">${escapeHtml4(line)}</div>` : ""
     ).join("");
     if (text.translation) {
       html += `<div class="recite-translation">
       <div class="ra-label">\u{1F236} \u767D\u8BDD\u6587\u7FFB\u8BD1</div>
-      <div class="rt-text">${escapeHtml3(text.translation)}</div>
+      <div class="rt-text">${escapeHtml4(text.translation)}</div>
     </div>`;
     }
     if (text.word_notes?.length) {
@@ -2392,8 +2829,8 @@
       <div class="rwn-grid">
         ${text.word_notes.map((n) => `
           <div class="rwn-item">
-            <span class="rwn-word">${escapeHtml3(n.word)}</span>
-            <span class="rwn-note">${escapeHtml3(n.note)}</span>
+            <span class="rwn-word">${escapeHtml4(n.word)}</span>
+            <span class="rwn-note">${escapeHtml4(n.note)}</span>
           </div>`).join("")}
       </div>
     </div>`;
@@ -2401,13 +2838,13 @@
     if (text.annotation) {
       html += `<div class="recite-annotation">
       <div class="ra-label">\u{1F4DD} \u521B\u4F5C\u80CC\u666F</div>
-      <div class="ra-text">${escapeHtml3(text.annotation)}</div>
+      <div class="ra-text">${escapeHtml4(text.annotation)}</div>
     </div>`;
     }
     if (text.key_points?.length) {
       html += `<div class="recite-keypoints">
       <div class="ra-label">\u{1F511} \u5B66\u4E60\u91CD\u70B9</div>
-      ${text.key_points.map((p) => `<div class="rk-item">\xB7 ${escapeHtml3(p)}</div>`).join("")}
+      ${text.key_points.map((p) => `<div class="rk-item">\xB7 ${escapeHtml4(p)}</div>`).join("")}
     </div>`;
     }
     el.innerHTML = html;
@@ -2415,17 +2852,17 @@
   function setReciteMode(mode) {
     R.mode = mode;
     document.querySelectorAll(".recite-mode-btn").forEach((b) => b.classList.toggle("active", b.dataset.mode === mode));
-    hide2($2("recite-full-section"));
-    hide2($2("recite-quiz-section"));
-    hide2($2("recite-voice-section"));
+    hide2($3("recite-full-section"));
+    hide2($3("recite-quiz-section"));
+    hide2($3("recite-voice-section"));
     if (mode === "read") {
-      show2($2("recite-full-section"));
+      show2($3("recite-full-section"));
       renderFullText(R.currentText);
     } else if (mode === "quiz") {
-      show2($2("recite-quiz-section"));
+      show2($3("recite-quiz-section"));
       renderQuizSegment();
     } else if (mode === "recite") {
-      show2($2("recite-voice-section"));
+      show2($3("recite-voice-section"));
       renderVoiceSegment();
     }
   }
@@ -2434,15 +2871,15 @@
     const seg = text.segments[R.currentSegIdx];
     if (!seg) return;
     const total = text.segments.length;
-    $2("quiz-progress").textContent = `${R.currentSegIdx + 1} / ${total}`;
-    $2("quiz-question").textContent = seg.question;
-    $2("quiz-context").textContent = `\uFF08${seg.context}\uFF09`;
+    $3("quiz-progress").textContent = `${R.currentSegIdx + 1} / ${total}`;
+    $3("quiz-question").textContent = seg.question;
+    $3("quiz-context").textContent = `\uFF08${seg.context}\uFF09`;
     const blanked = blankText(seg.text);
-    $2("quiz-blank").innerHTML = blanked;
-    hide2($2("quiz-answer-reveal"));
-    $2("quiz-input").value = "";
-    $2("quiz-input").disabled = false;
-    hide2($2("quiz-result"));
+    $3("quiz-blank").innerHTML = blanked;
+    hide2($3("quiz-answer-reveal"));
+    $3("quiz-input").value = "";
+    $3("quiz-input").disabled = false;
+    hide2($3("quiz-result"));
   }
   function blankText(text) {
     const chars = [...text];
@@ -2454,8 +2891,8 @@
   }
   function revealAnswer() {
     const seg = R.currentText.segments[R.currentSegIdx];
-    $2("quiz-answer-text").textContent = seg.text;
-    show2($2("quiz-answer-reveal"));
+    $3("quiz-answer-text").textContent = seg.text;
+    show2($3("quiz-answer-reveal"));
     speakChinese(seg.text, 0.8);
   }
   function navigateSegment(dir) {
@@ -2469,21 +2906,21 @@
     const seg = text.segments[R.currentSegIdx];
     if (!seg) return;
     const total = text.segments.length;
-    $2("voice-progress").textContent = `${R.currentSegIdx + 1} / ${total}`;
-    $2("voice-question").textContent = seg.question;
-    $2("voice-context").textContent = `\uFF08${seg.context}\uFF09`;
-    hide2($2("recite-score"));
-    hide2($2("recite-answer-reveal"));
-    $2("btn-recite-record").classList.remove("recording");
-    $2("recite-record-label").textContent = "\u5F00\u59CB\u80CC\u8BF5";
+    $3("voice-progress").textContent = `${R.currentSegIdx + 1} / ${total}`;
+    $3("voice-question").textContent = seg.question;
+    $3("voice-context").textContent = `\uFF08${seg.context}\uFF09`;
+    hide2($3("recite-score"));
+    hide2($3("recite-answer-reveal"));
+    $3("btn-recite-record").classList.remove("recording");
+    $3("recite-record-label").textContent = "\u5F00\u59CB\u80CC\u8BF5";
   }
   async function startVoiceRecite() {
     if (!SpeechSupport.stt) {
       toast3("\u6B64\u8BBE\u5907\u4E0D\u652F\u6301\u8BED\u97F3\u8BC6\u522B\uFF0C\u8BF7\u4F7F\u7528 Chrome");
       return;
     }
-    const btn = $2("btn-recite-record");
-    const label = $2("recite-record-label");
+    const btn = $3("btn-recite-record");
+    const label = $3("recite-record-label");
     if (_reciteStopRecord) {
       _reciteStopRecord();
       _reciteStopRecord = null;
@@ -2516,14 +2953,14 @@
         const score = Math.round((1 - dist / Math.max(target.length, spoken.length)) * 100);
         const grade = score >= 90 ? "A" : score >= 70 ? "B" : score >= 50 ? "C" : "D";
         const feedback = score >= 90 ? "\u80CC\u5F97\u975E\u5E38\u597D\uFF01\u5B57\u5B57\u5230\u4F4D \u{1F389}" : score >= 70 ? "\u80CC\u5F97\u4E0D\u9519\uFF01\u6709\u51E0\u4E2A\u5B57\u9700\u8981\u6CE8\u610F" : score >= 50 ? "\u7EE7\u7EED\u52AA\u529B\uFF0C\u53EF\u4EE5\u518D\u591A\u80CC\u51E0\u904D" : "\u9700\u8981\u591A\u52A0\u7EC3\u4E60\uFF0C\u5148\u770B\u539F\u6587\u518D\u80CC";
-        $2("recite-score-val").textContent = score;
-        $2("recite-score-grade").textContent = grade;
-        $2("recite-score-feedback").textContent = feedback;
-        $2("recite-recognized").textContent = `\u4F60\u8BF4\u7684\uFF1A${spokenText}`;
-        show2($2("recite-score"));
+        $3("recite-score-val").textContent = score;
+        $3("recite-score-grade").textContent = grade;
+        $3("recite-score-feedback").textContent = feedback;
+        $3("recite-recognized").textContent = `\u4F60\u8BF4\u7684\uFF1A${spokenText}`;
+        show2($3("recite-score"));
         if (score < 70) {
-          $2("recite-answer-text").textContent = seg.text;
-          show2($2("recite-answer-reveal"));
+          $3("recite-answer-text").textContent = seg.text;
+          show2($3("recite-answer-reveal"));
         }
       }
     );
@@ -2546,7 +2983,7 @@
     };
     return map[g] || g || "";
   }
-  function escapeHtml3(str) {
+  function escapeHtml4(str) {
     return String(str || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
   function getRecitationTexts() {
@@ -2565,7 +3002,7 @@
       item.className = "recitation-item";
       item.innerHTML = `
       <div class="recit-info">
-        <div class="recit-title">${escapeHtml3(text.title)}</div>
+        <div class="recit-title">${escapeHtml4(text.title)}</div>
         <div class="recit-meta">${text.dynasty} \xB7 ${text.author} \xB7 ${gradeLabel(text.grade)}</div>
       </div>
       <div class="recit-actions">
@@ -2575,7 +3012,7 @@
       container.appendChild(item);
     });
   }
-  var R, $2, show2, hide2, _reciteStopRecord;
+  var R, $3, show2, hide2, _reciteStopRecord;
   var init_recitation = __esm({
     "app/recitation.js"() {
       init_speech();
@@ -2592,7 +3029,7 @@
         // read | quiz | recite
         autoPlayTimer: null
       };
-      $2 = (id) => document.getElementById(id);
+      $3 = (id) => document.getElementById(id);
       show2 = (el) => el?.classList.remove("hidden");
       hide2 = (el) => el?.classList.add("hidden");
       _reciteStopRecord = null;
@@ -2824,6 +3261,7 @@
   init_pronunciation();
   init_english();
   init_passages();
+  init_pinyin();
 
   // app/ai.js
   var FREE_WORKER_URL = localStorage.getItem("free_worker_url") || "";
@@ -3760,7 +4198,7 @@
     recordStream: null,
     recordStop: null
   };
-  function $3(id) {
+  function $4(id) {
     return document.getElementById(id);
   }
   function show3(el) {
@@ -3770,17 +4208,53 @@
     el?.classList.add("hidden");
   }
   function toast4(msg, duration = 2500) {
-    const container = $3("toast-container");
+    const container = $4("toast-container");
     const el = document.createElement("div");
     el.className = "toast";
     el.textContent = msg;
     container.appendChild(el);
     setTimeout(() => el.remove(), duration);
   }
+  var _pageHistory = [];
+  var _isGoingBack = false;
+  function goBack() {
+    const prev = _pageHistory.pop();
+    _isGoingBack = true;
+    showPage(prev || "home");
+    _isGoingBack = false;
+    if (!prev) loadHomeData();
+  }
+  window._goBack = goBack;
+  window._showPage = showPage;
   function showPage(pageId) {
+    if (!_isGoingBack) {
+      const cur = document.querySelector(".page.active")?.id?.replace("page-", "");
+      if (cur && cur !== pageId && cur !== "profiles") {
+        _pageHistory.push(cur);
+        if (_pageHistory.length > 30) _pageHistory.shift();
+      }
+    }
     document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
-    const target = $3(`page-${pageId}`);
+    const target = $4(`page-${pageId}`);
     if (target) target.classList.add("active");
+    if (target && pageId !== "home" && pageId !== "profiles") {
+      const header = target.querySelector(".page-header, .study-header, .home-header");
+      if (header && !header.querySelector(".btn-go-home")) {
+        const btn = document.createElement("button");
+        btn.className = "btn-go-home btn-icon";
+        btn.title = "\u8FD4\u56DE\u4E3B\u9875";
+        btn.innerHTML = "\u{1F3E0}";
+        btn.style.cssText = "background:rgba(255,255,255,0.2);color:white;font-size:16px;flex-shrink:0;margin-left:auto";
+        btn.addEventListener("click", () => {
+          _pageHistory.length = 0;
+          _isGoingBack = true;
+          showPage("home");
+          _isGoingBack = false;
+          loadHomeData();
+        });
+        header.appendChild(btn);
+      }
+    }
     document.querySelectorAll(".nav-item").forEach((btn) => {
       btn.classList.toggle("active", btn.dataset.page === pageId);
     });
@@ -3805,8 +4279,11 @@
           if (page === "settings") renderSettings();
         });
       });
-      document.querySelectorAll(".btn-back[data-page]").forEach((btn) => {
-        btn.addEventListener("click", () => showPage(btn.dataset.page));
+      document.querySelectorAll(".btn-back").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (btn.dataset.page) showPage(btn.dataset.page);
+          else goBack();
+        });
       });
       document.querySelectorAll(".filter-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -3815,7 +4292,7 @@
           renderLibrary();
         });
       });
-      $3("btn-quick-oral")?.addEventListener("click", () => {
+      $4("btn-quick-oral")?.addEventListener("click", () => {
         showPage("english-adult");
         Promise.resolve().then(() => (init_english(), english_exports)).then((m) => m.switchEnglishTabPublic?.("speaking") || null);
         document.getElementById("etab-speaking")?.scrollIntoView();
@@ -3826,7 +4303,7 @@
         });
         Promise.resolve().then(() => (init_english(), english_exports)).then((m) => m.renderScenarioGrid?.());
       });
-      $3("btn-quick-phonetics")?.addEventListener("click", () => {
+      $4("btn-quick-phonetics")?.addEventListener("click", () => {
         showPage("english-adult");
         document.querySelectorAll(".english-tab").forEach((t) => t.classList.toggle("active", t.dataset.etab === "phonetics"));
         document.querySelectorAll(".english-section").forEach((s) => {
@@ -3835,7 +4312,7 @@
         });
         Promise.resolve().then(() => (init_english(), english_exports)).then((m) => m.renderPhonemeGrid?.("vowels"));
       });
-      $3("btn-quick-grammar")?.addEventListener("click", () => {
+      $4("btn-quick-grammar")?.addEventListener("click", () => {
         showPage("english-adult");
         document.querySelectorAll(".english-tab").forEach((t) => t.classList.toggle("active", t.dataset.etab === "grammar"));
         document.querySelectorAll(".english-section").forEach((s) => {
@@ -3844,46 +4321,54 @@
         });
         Promise.resolve().then(() => (init_english(), english_exports)).then((m) => m.renderGrammarList?.("all"));
       });
-      $3("btn-study-back")?.addEventListener("click", () => showPage("home"));
-      $3("btn-back-home")?.addEventListener("click", () => {
-        hide3($3("session-complete"));
-        showPage("home");
+      $4("btn-quick-chinese")?.addEventListener("click", () => openChineseLearningPage());
+      $4("btn-quick-recite-tab")?.addEventListener("click", () => openChineseTab("recite"));
+      $4("btn-quick-pinyin-tab")?.addEventListener("click", () => openChineseTab("pinyin"));
+      $4("btn-quick-chars-tab")?.addEventListener("click", () => openChineseTab("chars"));
+      $4("btn-quick-idioms-tab")?.addEventListener("click", () => openChineseTab("idioms"));
+      document.querySelectorAll(".chinese-tab").forEach((btn) => {
+        btn.addEventListener("click", () => switchChineseTab(btn.dataset.ctab));
+      });
+      $4("btn-study-back")?.addEventListener("click", () => goBack());
+      $4("btn-back-home")?.addEventListener("click", () => {
+        hide3($4("session-complete"));
+        goBack();
         loadHomeData();
       });
-      $3("btn-continue")?.addEventListener("click", () => startStudySession());
+      $4("btn-continue")?.addEventListener("click", () => startStudySession());
       document.querySelectorAll(".subject-card[data-subject]").forEach((btn) => {
         btn.addEventListener("click", () => startStudyBySubject(btn.dataset.subject));
       });
-      $3("btn-home-recite")?.addEventListener("click", openHomeRecitation);
-      $3("btn-start-review")?.addEventListener("click", () => startStudySession());
-      $3("btn-switch-profile")?.addEventListener("click", () => showPage("profiles"));
-      $3("btn-voice-switch").addEventListener("click", openVoiceSwitch);
-      $3("btn-voice-cancel").addEventListener("click", closeVoiceSwitch);
-      $3("btn-manage-profiles").addEventListener("click", openManageProfiles);
-      $3("btn-manage-close").addEventListener("click", () => hide3($3("manage-profiles-modal")));
-      $3("btn-manage-add").addEventListener("click", () => {
-        hide3($3("manage-profiles-modal"));
+      $4("btn-home-recite")?.addEventListener("click", openHomeRecitation);
+      $4("btn-start-review")?.addEventListener("click", () => startStudySession());
+      $4("btn-switch-profile")?.addEventListener("click", () => showPage("profiles"));
+      $4("btn-voice-switch").addEventListener("click", openVoiceSwitch);
+      $4("btn-voice-cancel").addEventListener("click", closeVoiceSwitch);
+      $4("btn-manage-profiles").addEventListener("click", openManageProfiles);
+      $4("btn-manage-close").addEventListener("click", () => hide3($4("manage-profiles-modal")));
+      $4("btn-manage-add").addEventListener("click", () => {
+        hide3($4("manage-profiles-modal"));
         openProfileEditModal(null);
       });
-      $3("btn-profile-cancel").addEventListener("click", () => hide3($3("profile-edit-modal")));
-      $3("btn-profile-save").addEventListener("click", saveProfileFromModal);
-      $3("avatar-picker").addEventListener("click", (e) => {
+      $4("btn-profile-cancel").addEventListener("click", () => hide3($4("profile-edit-modal")));
+      $4("btn-profile-save").addEventListener("click", saveProfileFromModal);
+      $4("avatar-picker").addEventListener("click", (e) => {
         const btn = e.target.closest(".avatar-option");
         if (!btn) return;
         document.querySelectorAll(".avatar-option").forEach((b) => b.classList.remove("selected"));
         btn.classList.add("selected");
-        $3("profile-selected-avatar").textContent = btn.dataset.emoji;
+        $4("profile-selected-avatar").textContent = btn.dataset.emoji;
       });
-      $3("btn-ai-generate")?.addEventListener("click", openAIModal);
-      $3("ai-generate-modal")?.addEventListener("click", (e) => {
+      $4("btn-ai-generate")?.addEventListener("click", openAIModal);
+      $4("ai-generate-modal")?.addEventListener("click", (e) => {
         const tab = e.target.closest("[data-provider]");
         if (!tab) return;
-        $3("ai-generate-modal").querySelectorAll("[data-provider]").forEach((b) => b.classList.remove("active"));
+        $4("ai-generate-modal").querySelectorAll("[data-provider]").forEach((b) => b.classList.remove("active"));
         tab.classList.add("active");
         localStorage.setItem("ai_provider", tab.dataset.provider);
       });
-      $3("btn-ai-cancel")?.addEventListener("click", () => hide3($3("ai-generate-modal")));
-      $3("btn-ai-submit")?.addEventListener("click", handleAIGenerate);
+      $4("btn-ai-cancel")?.addEventListener("click", () => hide3($4("ai-generate-modal")));
+      $4("btn-ai-submit")?.addEventListener("click", handleAIGenerate);
       document.querySelectorAll(".btn-tpl").forEach((btn) => {
         btn.addEventListener("click", () => downloadTemplate(btn.dataset.tpl));
       });
@@ -3897,126 +4382,126 @@
       document.querySelectorAll(".mode-tab").forEach((tab) => {
         tab.addEventListener("click", () => switchStudyMode(tab.dataset.mode));
       });
-      $3("flashcard")?.addEventListener("click", (e) => {
+      $4("flashcard")?.addEventListener("click", (e) => {
         if (e.target.closest(".btn-card-action") || e.target.closest(".voice-answer-result")) return;
         flipCard();
       });
       document.querySelectorAll(".btn-rating[data-rating]").forEach((btn) => {
         btn.addEventListener("click", () => submitRating(parseInt(btn.dataset.rating)));
       });
-      $3("btn-flip-back")?.addEventListener("click", () => {
+      $4("btn-flip-back")?.addEventListener("click", () => {
         App.isCardFlipped = false;
-        $3("card-inner").classList.remove("flipped");
-        hide3($3("rating-buttons"));
+        $4("card-inner").classList.remove("flipped");
+        hide3($4("rating-buttons"));
       });
-      $3("btn-speak-front")?.addEventListener("click", (e) => {
+      $4("btn-speak-front")?.addEventListener("click", (e) => {
         e.stopPropagation();
         speakCurrentCardFront();
       });
-      $3("btn-speak-card")?.addEventListener("click", speakCurrentCardFront);
-      $3("btn-speak-back")?.addEventListener("click", (e) => {
+      $4("btn-speak-card")?.addEventListener("click", speakCurrentCardFront);
+      $4("btn-speak-back")?.addEventListener("click", (e) => {
         e.stopPropagation();
         speakCurrentCardBack();
       });
-      $3("btn-voice-answer")?.addEventListener("click", startVoiceAnswer);
-      $3("choice-options")?.addEventListener("click", (e) => {
+      $4("btn-voice-answer")?.addEventListener("click", startVoiceAnswer);
+      $4("choice-options")?.addEventListener("click", (e) => {
         const btn = e.target.closest(".choice-btn");
         if (btn) onChoiceSelected(btn);
       });
-      $3("btn-check-dictation")?.addEventListener("click", checkDictation);
-      $3("btn-next-dictation")?.addEventListener("click", () => submitRating(2));
-      $3("btn-dictation-replay")?.addEventListener("click", replayDictation);
-      $3("btn-dictation-peek")?.addEventListener("click", peekDictationAnswer);
-      $3("dictation-input")?.addEventListener("keydown", (e) => {
+      $4("btn-check-dictation")?.addEventListener("click", checkDictation);
+      $4("btn-next-dictation")?.addEventListener("click", () => submitRating(2));
+      $4("btn-dictation-replay")?.addEventListener("click", replayDictation);
+      $4("btn-dictation-peek")?.addEventListener("click", peekDictationAnswer);
+      $4("dictation-input")?.addEventListener("keydown", (e) => {
         if (e.key === "Enter") checkDictation();
       });
-      $3("btn-record")?.addEventListener("click", toggleRecording);
-      $3("file-input")?.addEventListener("change", (e) => handleFileInput(e.target.files[0]));
-      $3("image-input")?.addEventListener("change", (e) => handleImageInput(e.target.files[0]));
-      $3("btn-manual-input")?.addEventListener("click", () => show3($3("manual-modal")));
-      $3("btn-manual-cancel")?.addEventListener("click", () => hide3($3("manual-modal")));
-      $3("btn-manual-save")?.addEventListener("click", () => saveManualCard(false));
-      $3("btn-manual-add-more")?.addEventListener("click", () => saveManualCard(true));
-      $3("btn-confirm-import")?.addEventListener("click", confirmImport);
-      $3("btn-load-builtin")?.addEventListener("click", showBuiltinLibrary);
+      $4("btn-record")?.addEventListener("click", toggleRecording);
+      $4("file-input")?.addEventListener("change", (e) => handleFileInput(e.target.files[0]));
+      $4("image-input")?.addEventListener("change", (e) => handleImageInput(e.target.files[0]));
+      $4("btn-manual-input")?.addEventListener("click", () => show3($4("manual-modal")));
+      $4("btn-manual-cancel")?.addEventListener("click", () => hide3($4("manual-modal")));
+      $4("btn-manual-save")?.addEventListener("click", () => saveManualCard(false));
+      $4("btn-manual-add-more")?.addEventListener("click", () => saveManualCard(true));
+      $4("btn-confirm-import")?.addEventListener("click", confirmImport);
+      $4("btn-load-builtin")?.addEventListener("click", showBuiltinLibrary);
       document.querySelectorAll(".import-mode-btn").forEach((btn) => {
         btn.addEventListener("click", async () => {
           document.querySelectorAll(".import-mode-btn").forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
           const isAppend = btn.dataset.mode === "append";
-          $3("import-new-section")?.classList.toggle("hidden", isAppend);
-          $3("import-append-section")?.classList.toggle("hidden", !isAppend);
+          $4("import-new-section")?.classList.toggle("hidden", isAppend);
+          $4("import-append-section")?.classList.toggle("hidden", !isAppend);
           if (isAppend && App.currentProfile) {
             const decks = await DeckManager.getByProfile(App.currentProfile.id);
-            const sel = $3("import-target-deck");
+            const sel = $4("import-target-deck");
             if (sel) {
-              sel.innerHTML = '<option value="">-- \u9009\u62E9\u8981\u8FFD\u52A0\u7684\u9898\u5E93 --</option>' + decks.map((d) => `<option value="${d.id}">${escapeHtml4(d.name)}\uFF08${App.allProfileCards.filter((c) => c.deckId === d.id).length}\u5F20\uFF09</option>`).join("");
+              sel.innerHTML = '<option value="">-- \u9009\u62E9\u8981\u8FFD\u52A0\u7684\u9898\u5E93 --</option>' + decks.map((d) => `<option value="${d.id}">${escapeHtml5(d.name)}\uFF08${App.allProfileCards.filter((c) => c.deckId === d.id).length}\u5F20\uFF09</option>`).join("");
             }
           }
         });
       });
-      const searchInput = $3("library-search-input");
+      const searchInput = $4("library-search-input");
       if (searchInput) {
         let searchTimer;
         searchInput.addEventListener("input", () => {
           clearTimeout(searchTimer);
           const q = searchInput.value.trim();
           if (q) {
-            show3($3("btn-search-clear"));
+            show3($4("btn-search-clear"));
             searchTimer = setTimeout(() => searchCards(q), 300);
           } else {
-            hide3($3("btn-search-clear"));
-            hide3($3("search-results"));
+            hide3($4("btn-search-clear"));
+            hide3($4("search-results"));
           }
         });
-        $3("btn-search-clear")?.addEventListener("click", () => {
+        $4("btn-search-clear")?.addEventListener("click", () => {
           searchInput.value = "";
-          hide3($3("btn-search-clear"));
-          hide3($3("search-results"));
+          hide3($4("btn-search-clear"));
+          hide3($4("search-results"));
         });
       }
-      $3("btn-import-to-library")?.addEventListener("click", () => show3($3("import-to-library-modal")));
-      $3("btn-import-lib-cancel")?.addEventListener("click", () => hide3($3("import-to-library-modal")));
-      $3("lib-file-input")?.addEventListener("change", (e) => {
-        hide3($3("import-to-library-modal"));
+      $4("btn-import-to-library")?.addEventListener("click", () => show3($4("import-to-library-modal")));
+      $4("btn-import-lib-cancel")?.addEventListener("click", () => hide3($4("import-to-library-modal")));
+      $4("lib-file-input")?.addEventListener("change", (e) => {
+        hide3($4("import-to-library-modal"));
         handleFileInputWithSubject(e.target.files[0]);
       });
-      $3("lib-image-input")?.addEventListener("change", (e) => {
-        hide3($3("import-to-library-modal"));
+      $4("lib-image-input")?.addEventListener("change", (e) => {
+        hide3($4("import-to-library-modal"));
         handleImageInput(e.target.files[0]);
       });
-      $3("btn-lib-manual")?.addEventListener("click", () => {
-        hide3($3("import-to-library-modal"));
-        show3($3("manual-modal"));
+      $4("btn-lib-manual")?.addEventListener("click", () => {
+        hide3($4("import-to-library-modal"));
+        show3($4("manual-modal"));
       });
-      $3("btn-lib-ai")?.addEventListener("click", () => {
-        hide3($3("import-to-library-modal"));
+      $4("btn-lib-ai")?.addEventListener("click", () => {
+        hide3($4("import-to-library-modal"));
         openAIModal();
       });
-      $3("setting-new-per-day")?.addEventListener("input", (e) => {
-        $3("new-per-day-value").textContent = e.target.value;
+      $4("setting-new-per-day")?.addEventListener("input", (e) => {
+        $4("new-per-day-value").textContent = e.target.value;
       });
-      $3("setting-speech-rate")?.addEventListener("input", (e) => {
-        $3("speech-rate-value").textContent = `${e.target.value}\xD7`;
+      $4("setting-speech-rate")?.addEventListener("input", (e) => {
+        $4("speech-rate-value").textContent = `${e.target.value}\xD7`;
       });
-      $3("btn-save-azure")?.addEventListener("click", saveAzureConfig);
-      $3("btn-save-ai-config")?.addEventListener("click", saveAIConfig);
-      $3("btn-update-builtin")?.addEventListener("click", updateAllBuiltinDecks);
-      $3("btn-export-data")?.addEventListener("click", exportCurrentProfile);
-      $3("btn-clear-data")?.addEventListener("click", clearCurrentProfileData);
-      $3("btn-show-privacy")?.addEventListener("click", () => {
-        $3("privacy-overlay")?.classList.remove("hidden");
+      $4("btn-save-azure")?.addEventListener("click", saveAzureConfig);
+      $4("btn-save-ai-config")?.addEventListener("click", saveAIConfig);
+      $4("btn-update-builtin")?.addEventListener("click", updateAllBuiltinDecks);
+      $4("btn-export-data")?.addEventListener("click", exportCurrentProfile);
+      $4("btn-clear-data")?.addEventListener("click", clearCurrentProfileData);
+      $4("btn-show-privacy")?.addEventListener("click", () => {
+        $4("privacy-overlay")?.classList.remove("hidden");
       });
-      $3("btn-close-privacy")?.addEventListener("click", () => {
-        $3("privacy-overlay")?.classList.add("hidden");
+      $4("btn-close-privacy")?.addEventListener("click", () => {
+        $4("privacy-overlay")?.classList.add("hidden");
       });
-      $3("btn-privacy-ok")?.addEventListener("click", () => {
-        $3("privacy-overlay")?.classList.add("hidden");
+      $4("btn-privacy-ok")?.addEventListener("click", () => {
+        $4("privacy-overlay")?.classList.add("hidden");
       });
-      $3("privacy-overlay")?.addEventListener("click", (e) => {
-        if (e.target === $3("privacy-overlay")) $3("privacy-overlay").classList.add("hidden");
+      $4("privacy-overlay")?.addEventListener("click", (e) => {
+        if (e.target === $4("privacy-overlay")) $4("privacy-overlay").classList.add("hidden");
       });
-      $3("btn-add-profile")?.addEventListener("click", () => openProfileEditModal(null));
+      $4("btn-add-profile")?.addEventListener("click", () => openProfileEditModal(null));
       setupSwipeGesture();
       setupBackGesture();
       initSpeakingButtons();
@@ -4044,14 +4529,14 @@
     showPage("profiles");
   }
   function renderProfilesGrid(profiles) {
-    const grid = $3("profiles-grid");
+    const grid = $4("profiles-grid");
     grid.innerHTML = "";
     profiles.forEach((p) => {
       const card = document.createElement("button");
       card.className = "profile-card";
       card.innerHTML = `
       <div class="profile-avatar">${p.avatar || "\u{1F423}"}</div>
-      <div class="profile-name">${escapeHtml4(p.name)}</div>
+      <div class="profile-name">${escapeHtml5(p.name)}</div>
       <div class="profile-grade">${gradeLabel2(p.grade)}</div>
     `;
       card.addEventListener("click", () => selectProfile(p));
@@ -4066,8 +4551,8 @@
   async function selectProfile(profile) {
     App.currentProfile = profile;
     App.allProfileCards = await CardManager.getByProfile(profile.id);
-    $3("current-avatar").textContent = profile.avatar || "\u{1F423}";
-    $3("current-name").textContent = profile.name;
+    $4("current-avatar").textContent = profile.avatar || "\u{1F423}";
+    $4("current-name").textContent = profile.name;
     window._App = App;
     const isYoung = profile.grade?.startsWith("primary") && parseInt(profile.grade.replace("primary", "")) <= 3;
     document.body.className = isYoung ? "theme-young" : "";
@@ -4099,13 +4584,13 @@
     if (!App.currentProfile) return;
     const profile = App.currentProfile;
     const streak = await ProgressManager.updateStreak(profile);
-    $3("streak-count").textContent = streak;
+    $4("streak-count").textContent = streak;
     const due = await CardManager.getDueCards(profile.id);
     const newCards = App.allProfileCards.filter((c) => c.reviewCount === 0);
     const todayProg = await ProgressManager.getByDate(profile.id, todayStr());
-    $3("due-count").textContent = due.length;
-    $3("new-count").textContent = newCards.length;
-    $3("done-count").textContent = todayProg?.reviewed || 0;
+    $4("due-count").textContent = due.length;
+    $4("new-count").textContent = newCards.length;
+    $4("done-count").textContent = todayProg?.reviewed || 0;
     const subjectTagMap = {
       chinese: ["\u8BED\u6587", "\u53E4\u8BD7", "\u6210\u8BED", "\u6587\u8A00\u6587", "\u8BED\u6587"],
       english: ["\u82F1\u8BED", "English", "CET-4", "CET-6", "\u6210\u4EBA", "\u5355\u8BCD"],
@@ -4127,7 +4612,7 @@
       if (c.box >= 3 || c.interval >= 21) bySubject[effectiveSubject].mastered++;
     });
     ["chinese", "english", "math", "custom"].forEach((s) => {
-      const el = $3(`prog-${s}`);
+      const el = $4(`prog-${s}`);
       if (!el) return;
       if (bySubject[s] && bySubject[s].total > 0) {
         const pct = Math.round(bySubject[s].mastered / bySubject[s].total * 100);
@@ -4143,11 +4628,11 @@
       toast4("\u5F53\u524D\u6D4F\u89C8\u5668\u4E0D\u652F\u6301\u8BED\u97F3\u8BC6\u522B\uFF0C\u8BF7\u4F7F\u7528 Chrome");
       return;
     }
-    show3($3("voice-overlay"));
-    $3("voice-anim").classList.add("listening");
+    show3($4("voice-overlay"));
+    $4("voice-anim").classList.add("listening");
     const profiles = await ProfileManager.getAll();
     const names = profiles.map((p) => p.name);
-    $3("voice-overlay-text").textContent = "\u8BF4\u51FA\u8981\u5207\u6362\u7684\u540D\u5B57...";
+    $4("voice-overlay-text").textContent = "\u8BF4\u51FA\u8981\u5207\u6362\u7684\u540D\u5B57...";
     startVoiceProfileSwitch(
       names,
       async (matchedName) => {
@@ -4159,7 +4644,7 @@
         }
       },
       (msg) => {
-        $3("voice-overlay-text").textContent = msg;
+        $4("voice-overlay-text").textContent = msg;
         setTimeout(closeVoiceSwitch, 2e3);
       },
       closeVoiceSwitch
@@ -4167,8 +4652,8 @@
   }
   function closeVoiceSwitch() {
     stopListening();
-    hide3($3("voice-overlay"));
-    $3("voice-anim").classList.remove("listening");
+    hide3($4("voice-overlay"));
+    $4("voice-anim").classList.remove("listening");
   }
   async function startStudySession(subject) {
     const profile = App.currentProfile;
@@ -4207,9 +4692,9 @@
     App.studyQueue = queue;
     App.studyIndex = 0;
     App.sessionResults = [];
-    hide3($3("session-complete"));
+    hide3($4("session-complete"));
     showPage("study");
-    const studyPage = $3("page-study");
+    const studyPage = $4("page-study");
     if (studyPage) {
       studyPage.classList.remove("subject-chinese", "subject-english", "subject-math", "subject-custom");
       const subj = subject || App.studyQueue[0]?.subject || "custom";
@@ -4217,6 +4702,150 @@
     }
     switchStudyMode("flashcard");
     renderCard();
+  }
+  function openChineseLearningPage() {
+    showPage("chinese-learning");
+    switchChineseTab("recite");
+  }
+  function openChineseTab(tab) {
+    showPage("chinese-learning");
+    document.querySelectorAll(".chinese-tab").forEach((b) => b.classList.toggle("active", b.dataset.ctab === tab));
+    switchChineseTab(tab);
+  }
+  function switchChineseTab(tab) {
+    document.querySelectorAll(".chinese-tab").forEach((b) => b.classList.toggle("active", b.dataset.ctab === tab));
+    document.querySelectorAll(".chinese-section").forEach((s) => {
+      s.classList.toggle("active", s.id === `ctab-${tab}`);
+      s.classList.toggle("hidden", s.id !== `ctab-${tab}`);
+    });
+    if (tab === "recite") initCtabRecite();
+    if (tab === "pinyin") initCtabPinyin();
+    if (tab === "chars") initCtabChars();
+    if (tab === "idioms") initCtabIdioms();
+    if (tab === "poems") initCtabPoems();
+  }
+  function initCtabRecite() {
+    const list = document.getElementById("ctab-recite-list");
+    if (!list) return;
+    const { getRecitationTexts: getRecitationTexts2, openRecitationPage: openRecitationPage2 } = window._recitationAPI || {};
+    const texts = window._recitationTexts || [];
+    if (!texts.length) {
+      list.innerHTML = '<p style="text-align:center;padding:32px;color:var(--color-text-sub)">\u6B63\u5728\u52A0\u8F7D\u53E4\u8BD7\u6570\u636E\u2026</p>';
+      setTimeout(() => {
+        if (window._recitationTexts?.length) initCtabRecite();
+      }, 500);
+      return;
+    }
+    function renderList(cat2 = "all", query = "") {
+      let items = texts;
+      if (cat2 === "primary") items = items.filter((t) => t.grade?.startsWith("primary"));
+      else if (cat2 === "middle") items = items.filter((t) => t.grade?.startsWith("middle"));
+      else if (cat2 === "poem") items = items.filter((t) => t.category === "\u53E4\u8BD7" || t.category === "\u53E4\u8BD7\u8BCD" || t.tags?.includes("\u53E4\u8BD7"));
+      if (query) {
+        const q = query.toLowerCase();
+        items = items.filter((t) => t.title?.includes(query) || t.author?.toLowerCase().includes(q) || t.dynasty?.includes(query));
+      }
+      const gradeLabel3 = (g) => ({ primary1: "\u5C0F\u5B66\u4E00\u5E74\u7EA7", primary2: "\u5C0F\u5B66\u4E8C\u5E74\u7EA7", primary3: "\u5C0F\u5B66\u4E09\u5E74\u7EA7", primary4: "\u5C0F\u5B66\u56DB\u5E74\u7EA7", primary5: "\u5C0F\u5B66\u4E94\u5E74\u7EA7", primary6: "\u5C0F\u5B66\u516D\u5E74\u7EA7", middle1: "\u521D\u4E2D\u4E00\u5E74\u7EA7", middle2: "\u521D\u4E2D\u4E8C\u5E74\u7EA7", middle3: "\u521D\u4E2D\u4E09\u5E74\u7EA7" })[g] || g || "";
+      if (!items.length) {
+        list.innerHTML = '<p style="text-align:center;padding:32px;color:var(--color-text-sub)">\u6682\u65E0\u5185\u5BB9</p>';
+        return;
+      }
+      list.innerHTML = items.map((t) => {
+        const isWenyan = t.category === "\u6587\u8A00\u6587" || t.tags?.includes("\u6587\u8A00\u6587");
+        return `<button class="recite-text-item" data-id="${t.id}" style="width:100%;text-align:left">
+        <div class="rti-cat" style="background:${isWenyan ? "#8B5CF6" : "var(--color-chinese)"}">${isWenyan ? "\u6587" : "\u8BD7"}</div>
+        <div class="rti-info">
+          <div class="rti-title">${t.title}</div>
+          <div class="rti-meta">${t.dynasty ? t.dynasty + " \xB7 " : ""}${t.author || ""}${t.category ? " \xB7 " + t.category : ""}</div>
+        </div>
+        <div class="rti-segs">${t.segments?.length || 0}\u6BB5 \u203A</div>
+      </button>`;
+      }).join("");
+      list.querySelectorAll(".recite-text-item").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (window._openRecitationPage) window._openRecitationPage(btn.dataset.id);
+        });
+      });
+    }
+    const tabContainer = document.querySelector("#ctab-recite .recite-list-tabs");
+    if (tabContainer && !tabContainer.dataset.bound) {
+      tabContainer.dataset.bound = "1";
+      tabContainer.querySelectorAll(".recite-list-tab").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          tabContainer.querySelectorAll(".recite-list-tab").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const q = document.getElementById("ctab-recite-search")?.value.trim() || "";
+          renderList(btn.dataset.cat, q);
+        });
+      });
+    }
+    const searchInput = document.getElementById("ctab-recite-search");
+    if (searchInput && !searchInput.dataset.bound) {
+      searchInput.dataset.bound = "1";
+      let timer;
+      searchInput.addEventListener("input", () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          const cat2 = document.querySelector("#ctab-recite .recite-list-tab.active")?.dataset.cat || "all";
+          renderList(cat2, searchInput.value.trim());
+        }, 250);
+      });
+    }
+    const cat = document.querySelector("#ctab-recite .recite-list-tab.active")?.dataset.cat || "all";
+    renderList(cat);
+  }
+  var _ctabPinyinMode = "table";
+  var _ctabPinyinGrade = "all";
+  function initCtabPinyin() {
+    const modeTabs = document.getElementById("ctab-py-mode-tabs");
+    if (modeTabs && !modeTabs.dataset.bound) {
+      modeTabs.dataset.bound = "1";
+      modeTabs.querySelectorAll(".py-mode-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          modeTabs.querySelectorAll(".py-mode-btn").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          _ctabPinyinMode = btn.dataset.pymode;
+          const gradeRow = document.getElementById("ctab-py-grade-row");
+          if (gradeRow) gradeRow.style.display = _ctabPinyinMode === "p2w" || _ctabPinyinMode === "w2p" ? "flex" : "none";
+          renderCtabPinyin();
+        });
+      });
+      document.getElementById("ctab-py-grade-row")?.querySelectorAll(".py-grade-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.getElementById("ctab-py-grade-row").querySelectorAll(".py-grade-btn").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          _ctabPinyinGrade = btn.dataset.pygrade;
+          renderCtabPinyin();
+        });
+      });
+    }
+    if (window._pinyinData) {
+      renderCtabPinyin();
+    } else {
+      Promise.resolve().then(() => (init_pinyin(), pinyin_exports)).then((m) => m.initPinyin?.()).then(() => renderCtabPinyin());
+    }
+  }
+  function renderCtabPinyin() {
+    const body = document.getElementById("ctab-py-body");
+    if (!body || !window._pinyinData) return;
+    Promise.resolve().then(() => (init_pinyin(), pinyin_exports)).then((m) => {
+      if (window._renderPinyinToElement) {
+        window._renderPinyinToElement(body, _ctabPinyinMode, _ctabPinyinGrade);
+      }
+    });
+  }
+  async function startStudyFromSubjectDeck(subject, deckNameKeyword) {
+    const profile = App.currentProfile;
+    if (!profile) return;
+    App._studyFromPage = "chinese-learning";
+    const decks = await DeckManager.getByProfile(profile.id);
+    const deck = decks.find((d) => d.subject === subject && d.name.includes(deckNameKeyword));
+    if (deck) {
+      startStudyFromDeck(deck.id, subject);
+    } else {
+      toast4(`\u6B63\u5728\u52A0\u8F7D"${deckNameKeyword}"...`);
+      await ensureBuiltinDeck(subject, deckNameKeyword);
+    }
   }
   function startStudyBySubject(subject) {
     if (subject === "custom") {
@@ -4232,6 +4861,165 @@
     } catch (_) {
     }
     openRecitationListPage();
+  }
+  var _ctabCharsTab = "chars";
+  async function initCtabChars() {
+    const tabs = document.getElementById("ctab-chars-tabs");
+    if (tabs && !tabs.dataset.bound) {
+      tabs.dataset.bound = "1";
+      tabs.querySelectorAll(".py-mode-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          tabs.querySelectorAll(".py-mode-btn").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          _ctabCharsTab = btn.dataset.charstab;
+          renderCtabChars();
+        });
+      });
+    }
+    renderCtabChars();
+  }
+  async function renderCtabChars() {
+    const body = document.getElementById("ctab-chars-body");
+    if (!body) return;
+    body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u52A0\u8F7D\u4E2D\u2026</p>';
+    const deckName = _ctabCharsTab === "chars" ? "\u5C0F\u5B66\u751F\u5B57" : "\u5C0F\u5B66\u8BED\u6587\u8BCD\u8BED";
+    const cards = await loadBuiltinCardsInline("chinese", deckName);
+    if (!cards.length) {
+      body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u6682\u65E0\u6570\u636E\uFF0C\u9996\u6B21\u4F7F\u7528\u9700\u52A0\u8F7D</p>';
+      return;
+    }
+    body.innerHTML = cards.slice(0, 100).map((c) => `
+    <div class="ctab-card-item">
+      <div class="ctab-card-front">${escapeHtml5(c.front)}</div>
+      <div class="ctab-card-back">${escapeHtml5((c.back || "").split("\uFF5C")[0])}</div>
+      ${c.phonetic ? `<div class="ctab-card-phonetic">${escapeHtml5(c.phonetic)}</div>` : ""}
+      <button class="ctab-card-speak" data-text="${escapeHtml5(c.front)}">\u{1F50A}</button>
+    </div>`).join("");
+    body.querySelectorAll(".ctab-card-speak").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        speakChinese(btn.dataset.text, 0.8);
+      });
+    });
+    if (cards.length > 100) {
+      const moreBtn = document.createElement("button");
+      moreBtn.className = "btn-secondary";
+      moreBtn.style.cssText = "width:100%;margin-top:8px";
+      moreBtn.textContent = `\u25B6 \u8FDB\u5165\u95EA\u5361\u7EC3\u4E60\uFF08\u5171${cards.length}\u5F20\uFF09`;
+      moreBtn.addEventListener("click", () => startStudyFromSubjectDeck("chinese", deckName));
+      body.appendChild(moreBtn);
+    }
+  }
+  async function initCtabIdioms() {
+    const body = document.getElementById("ctab-idioms-body");
+    if (!body) return;
+    const search = document.getElementById("ctab-idioms-search");
+    if (search && !search.dataset.bound) {
+      search.dataset.bound = "1";
+      let timer;
+      search.addEventListener("input", () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => renderCtabIdioms(search.value.trim()), 250);
+      });
+    }
+    renderCtabIdioms("");
+  }
+  async function renderCtabIdioms(query = "") {
+    const body = document.getElementById("ctab-idioms-body");
+    if (!body) return;
+    body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u52A0\u8F7D\u4E2D\u2026</p>';
+    let cards = await loadBuiltinCardsInline("chinese", "\u5C0F\u5B66\u6210\u8BED");
+    if (query) cards = cards.filter((c) => c.front?.includes(query) || c.back?.includes(query));
+    if (!cards.length) {
+      body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u672A\u627E\u5230\u76F8\u5173\u6210\u8BED</p>';
+      return;
+    }
+    body.innerHTML = cards.slice(0, 80).map((c) => `
+    <div class="ctab-card-item ctab-idiom-item">
+      <div class="ctab-idiom-word">${escapeHtml5(c.front)}</div>
+      <div class="ctab-card-back">${escapeHtml5(c.back || "")}</div>
+      ${c.example ? `<div class="ctab-idiom-ex">\u{1F4DD} ${escapeHtml5(c.example)}</div>` : ""}
+      <button class="ctab-card-speak" data-text="${escapeHtml5(c.front)}">\u{1F50A}</button>
+    </div>`).join("");
+    body.querySelectorAll(".ctab-card-speak").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        speakChinese(btn.dataset.text, 0.8);
+      });
+    });
+    if (!query && cards.length > 80) {
+      const moreBtn = document.createElement("button");
+      moreBtn.className = "btn-secondary";
+      moreBtn.style.cssText = "width:100%;margin-top:8px";
+      moreBtn.textContent = `\u25B6 \u8FDB\u5165\u95EA\u5361\u7EC3\u4E60\uFF08\u5171${cards.length}\u6761\uFF09`;
+      moreBtn.addEventListener("click", () => startStudyFromSubjectDeck("chinese", "\u5C0F\u5B66\u6210\u8BED"));
+      body.appendChild(moreBtn);
+    }
+  }
+  async function initCtabPoems() {
+    const body = document.getElementById("ctab-poems-body");
+    if (!body) return;
+    body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u52A0\u8F7D\u4E2D\u2026</p>';
+    const cards = await loadBuiltinCardsInline("chinese", "\u5C0F\u5B66\u5FC5\u80CC\u53E4\u8BD7");
+    if (!cards.length) {
+      body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u6682\u65E0\u6570\u636E</p>';
+      return;
+    }
+    body.innerHTML = cards.slice(0, 60).map((c) => `
+    <div class="ctab-card-item ctab-poem-item">
+      <div class="ctab-poem-q">${escapeHtml5(c.front)}</div>
+      <div class="ctab-poem-a" style="display:none">${escapeHtml5(c.back || "")}</div>
+      <div class="ctab-poem-hint">${escapeHtml5(c.hint || "")}</div>
+      <button class="ctab-poem-reveal">\u663E\u793A\u7B54\u6848</button>
+    </div>`).join("");
+    body.querySelectorAll(".ctab-poem-reveal").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const ans = btn.previousElementSibling.previousElementSibling;
+        if (ans.style.display === "none") {
+          ans.style.display = "block";
+          btn.textContent = "\u9690\u85CF\u7B54\u6848";
+        } else {
+          ans.style.display = "none";
+          btn.textContent = "\u663E\u793A\u7B54\u6848";
+        }
+      });
+    });
+    if (cards.length > 60) {
+      const moreBtn = document.createElement("button");
+      moreBtn.className = "btn-secondary";
+      moreBtn.style.cssText = "width:100%;margin-top:8px";
+      moreBtn.textContent = `\u25B6 \u8FDB\u5165\u95EA\u5361\u7EC3\u4E60\uFF08\u5171${cards.length}\u9898\uFF09`;
+      moreBtn.addEventListener("click", () => startStudyFromSubjectDeck("chinese", "\u5C0F\u5B66\u5FC5\u80CC\u53E4\u8BD7"));
+      body.appendChild(moreBtn);
+    }
+  }
+  var _builtinCardCache = {};
+  async function loadBuiltinCardsInline(subject, nameKeyword) {
+    const key = subject + "|" + nameKeyword;
+    if (_builtinCardCache[key]) return _builtinCardCache[key];
+    if (App.currentProfile) {
+      const decks = await DeckManager.getByProfile(App.currentProfile.id);
+      const deck = decks.find((d) => d.subject === subject && d.name.includes(nameKeyword));
+      if (deck) {
+        const cards = App.allProfileCards.filter((c) => c.deckId === deck.id);
+        if (cards.length) {
+          _builtinCardCache[key] = cards;
+          return cards;
+        }
+      }
+    }
+    const def = BUILTIN_DECKS.find((d) => d.subject === subject && d.name.includes(nameKeyword));
+    if (!def) return [];
+    try {
+      const res = await fetch(def.file);
+      if (!res.ok) return [];
+      const data = await res.json();
+      const cards = (data.cards || []).map((c) => ({ ...c, subject }));
+      _builtinCardCache[key] = cards;
+      return cards;
+    } catch {
+      return [];
+    }
   }
   async function openSubjectDecksPage(subject) {
     const profile = App.currentProfile;
@@ -4257,12 +5045,12 @@
       return deckCards.length > 0;
     });
     const titleSuffix = subject === "custom" ? "" : "\u9898\u5E93";
-    $3("subject-decks-title").textContent = `${subjectNames[subject] || subject}${titleSuffix}`;
+    $4("subject-decks-title").textContent = `${subjectNames[subject] || subject}${titleSuffix}`;
     const due = allSubjectCards.filter((c) => c.nextReview <= todayStr());
     const newCards = allSubjectCards.filter((c) => c.reviewCount === 0);
-    $3("sdb-all-meta").textContent = `${allSubjectCards.length}\u5F20 \xB7 \u5F85\u590D\u4E60${due.length + newCards.length}\u5F20`;
-    $3("subject-decks-total").textContent = `\u5171${subjectDecks.length}\u4E2A\u9898\u5E93`;
-    const list = $3("sdb-decks-list");
+    $4("sdb-all-meta").textContent = `${allSubjectCards.length}\u5F20 \xB7 \u5F85\u590D\u4E60${due.length + newCards.length}\u5F20`;
+    $4("subject-decks-total").textContent = `\u5171${subjectDecks.length}\u4E2A\u9898\u5E93`;
+    const list = $4("sdb-decks-list");
     list.innerHTML = "";
     subjectDecks.forEach((deck) => {
       const deckCards = allSubjectCards.filter((c) => c.deckId === deck.id);
@@ -4276,7 +5064,7 @@
       item.dataset.deckId = deck.id;
       item.innerHTML = `
       <div class="sdb-deck-header">
-        <span class="sdb-deck-name">${escapeHtml4(deck.name)}</span>
+        <span class="sdb-deck-name">${escapeHtml5(deck.name)}</span>
         ${todayCount > 0 ? `<span class="sdb-badge">${todayCount}</span>` : '<span class="sdb-done">\u2713</span>'}
       </div>
       <div class="sdb-deck-stats">
@@ -4288,25 +5076,25 @@
       item.addEventListener("click", () => startStudyFromDeck(deck.id, subject));
       list.appendChild(item);
     });
-    $3("sdb-dir-forward")?.addEventListener("click", () => {
-      $3("sdb-dir-forward").classList.add("active");
-      $3("sdb-dir-reverse").classList.remove("active");
+    $4("sdb-dir-forward")?.addEventListener("click", () => {
+      $4("sdb-dir-forward").classList.add("active");
+      $4("sdb-dir-reverse").classList.remove("active");
       App.cardDirection = "normal";
     });
-    $3("sdb-dir-reverse")?.addEventListener("click", () => {
-      $3("sdb-dir-reverse").classList.add("active");
-      $3("sdb-dir-forward").classList.remove("active");
+    $4("sdb-dir-reverse")?.addEventListener("click", () => {
+      $4("sdb-dir-reverse").classList.add("active");
+      $4("sdb-dir-forward").classList.remove("active");
       App.cardDirection = "reverse";
     });
     if (App.cardDirection === "reverse") {
-      $3("sdb-dir-forward")?.classList.remove("active");
-      $3("sdb-dir-reverse")?.classList.add("active");
+      $4("sdb-dir-forward")?.classList.remove("active");
+      $4("sdb-dir-reverse")?.classList.add("active");
     } else {
-      $3("sdb-dir-forward")?.classList.add("active");
-      $3("sdb-dir-reverse")?.classList.remove("active");
+      $4("sdb-dir-forward")?.classList.add("active");
+      $4("sdb-dir-reverse")?.classList.remove("active");
     }
-    $3("btn-study-all-subject").onclick = () => startStudySession(subject);
-    $3("btn-subject-decks-back").onclick = () => showPage("home");
+    $4("btn-study-all-subject").onclick = () => startStudySession(subject);
+    $4("btn-subject-decks-back").onclick = () => goBack();
     showPage("subject-decks");
   }
   async function startStudyFromDeck(deckId, subject) {
@@ -4322,7 +5110,7 @@
     App.studyQueue = queue;
     App.studyIndex = 0;
     App.sessionResults = [];
-    hide3($3("session-complete"));
+    hide3($4("session-complete"));
     showPage("study");
     switchStudyMode("flashcard");
     renderCard();
@@ -4335,19 +5123,19 @@
     }
     const total = App.studyQueue.length;
     const current = App.studyIndex + 1;
-    $3("study-progress-bar").style.width = `${current / total * 100}%`;
-    $3("study-progress-text").textContent = `${current}/${total}`;
+    $4("study-progress-bar").style.width = `${current / total * 100}%`;
+    $4("study-progress-text").textContent = `${current}/${total}`;
     App.isCardFlipped = false;
-    $3("card-inner").classList.remove("flipped");
-    hide3($3("rating-buttons"));
-    hide3($3("voice-answer-result"));
-    const voiceBtn = $3("btn-voice-answer");
+    $4("card-inner").classList.remove("flipped");
+    hide3($4("rating-buttons"));
+    hide3($4("voice-answer-result"));
+    const voiceBtn = $4("btn-voice-answer");
     if (voiceBtn) {
       voiceBtn.classList.remove("recording");
-      const lbl = $3("voice-answer-label");
+      const lbl = $4("voice-answer-label");
       if (lbl) lbl.textContent = "\u8BED\u97F3\u56DE\u7B54";
     }
-    const hintP = $3("card-hint-prompt");
+    const hintP = $4("card-hint-prompt");
     if (hintP) hintP.textContent = SpeechSupport.stt ? "\u70B9\u51FB\u7FFB\u8F6C\u67E5\u770B\u7B54\u6848\uFF08\u6216\u8BED\u97F3\u56DE\u7B54\uFF09" : "\u70B9\u51FB\u7FFB\u8F6C\u67E5\u770B\u7B54\u6848";
     const isReverse = App.cardDirection === "reverse";
     const displayFront = isReverse ? card.back : card.front;
@@ -4355,42 +5143,42 @@
     const displayPhon = isReverse ? "" : card.phonetic || "";
     const displayEx = isReverse ? "" : card.example || "";
     const isEnglishFront = displayFront && !/[一-鿿]/.test(displayFront);
-    const frontEl = $3("card-front-text");
+    const frontEl = $4("card-front-text");
     if (isEnglishFront) {
       frontEl.innerHTML = colorEnglishSyllables(displayFront);
     } else {
       frontEl.textContent = displayFront;
     }
-    $3("card-phonetic").textContent = displayPhon;
-    $3("card-back-text").textContent = displayBack;
-    $3("card-example").textContent = displayEx;
-    $3("card-tag").textContent = subjectLabel(card.subject) + (isReverse ? " \u21A9" : "");
+    $4("card-phonetic").textContent = displayPhon;
+    $4("card-back-text").textContent = displayBack;
+    $4("card-example").textContent = displayEx;
+    $4("card-tag").textContent = subjectLabel(card.subject) + (isReverse ? " \u21A9" : "");
     renderCharInfo(card);
     if (card.type === "word" && card.subject === "chinese") {
-      $3("card-hint-prompt") && ($3("card-hint-prompt").textContent = "\u70B9\u51FB\u7FFB\u8F6C\u67E5\u770B\u91CA\u4E49\uFF0C\u6216\u76F4\u63A5\u8DDF\u8BFB");
+      $4("card-hint-prompt") && ($4("card-hint-prompt").textContent = "\u70B9\u51FB\u7FFB\u8F6C\u67E5\u770B\u91CA\u4E49\uFF0C\u6216\u76F4\u63A5\u8DDF\u8BFB");
       if (mode === "flashcard") {
         setTimeout(() => speakCard(card, "front", App.currentProfile?.speechRate || 0.85), 300);
       }
     }
-    const mode = $3("study-mode-tabs")?.querySelector(".mode-tab.active")?.dataset.mode || "flashcard";
+    const mode = $4("study-mode-tabs")?.querySelector(".mode-tab.active")?.dataset.mode || "flashcard";
     if (mode === "choice") renderChoiceMode(card);
     if (mode === "dictation") renderDictationMode(card);
     if (mode === "speaking") renderSpeakingMode(card);
   }
   function renderCharInfo(card) {
-    let infoEl = $3("card-char-info");
+    let infoEl = $4("card-char-info");
     if (!infoEl) {
       infoEl = document.createElement("div");
       infoEl.id = "card-char-info";
       infoEl.className = "card-char-info";
-      const frontText = $3("card-front-text");
+      const frontText = $4("card-front-text");
       frontText?.parentNode?.insertBefore(infoEl, frontText.nextSibling);
     }
     if (card.type === "char" && (card.radical || card.strokes)) {
       const parts = [];
-      if (card.radical) parts.push(`<span class="char-info-item"><span class="cii-label">\u90E8\u9996</span><span class="cii-val">${escapeHtml4(card.radical)}</span></span>`);
+      if (card.radical) parts.push(`<span class="char-info-item"><span class="cii-label">\u90E8\u9996</span><span class="cii-val">${escapeHtml5(card.radical)}</span></span>`);
       if (card.strokes) parts.push(`<span class="char-info-item"><span class="cii-label">\u7B14\u753B</span><span class="cii-val">${card.strokes}\u753B</span></span>`);
-      if (card.structure) parts.push(`<span class="char-info-item"><span class="cii-label">\u7ED3\u6784</span><span class="cii-val">${escapeHtml4(card.structure)}</span></span>`);
+      if (card.structure) parts.push(`<span class="char-info-item"><span class="cii-label">\u7ED3\u6784</span><span class="cii-val">${escapeHtml5(card.structure)}</span></span>`);
       infoEl.innerHTML = parts.join("");
       infoEl.style.display = "flex";
     } else {
@@ -4401,8 +5189,8 @@
   function flipCard() {
     if (App.isCardFlipped) return;
     App.isCardFlipped = true;
-    $3("card-inner").classList.add("flipped");
-    show3($3("rating-buttons"));
+    $4("card-inner").classList.add("flipped");
+    show3($4("rating-buttons"));
     speakCurrentCardBack();
   }
   function speakCurrentCardFront() {
@@ -4423,8 +5211,8 @@
       toast4("\u6B64\u8BBE\u5907\u4E0D\u652F\u6301\u8BED\u97F3\u8BC6\u522B\uFF0C\u8BF7\u4F7F\u7528 Chrome \u6216\u5B89\u5353\u8BBE\u5907");
       return;
     }
-    const btn = $3("btn-voice-answer");
-    const label = $3("voice-answer-label");
+    const btn = $4("btn-voice-answer");
+    const label = $4("voice-answer-label");
     const card = App.studyQueue[App.studyIndex];
     if (!card) return;
     if (_voiceAnswerStop) {
@@ -4458,8 +5246,8 @@
         const dist = levenshtein2(target.toLowerCase(), spokenText.toLowerCase());
         const score = Math.max(0, Math.round((1 - dist / Math.max(target.length, spokenText.length)) * 100));
         const isCorrect = score >= 65 || spokenText.toLowerCase().includes(target.toLowerCase().slice(0, 4));
-        const resultEl = $3("voice-answer-result");
-        $3("voice-answer-text").textContent = `"${spokenText}" ${isCorrect ? "\u2713" : "\u2717"}`;
+        const resultEl = $4("voice-answer-result");
+        $4("voice-answer-text").textContent = `"${spokenText}" ${isCorrect ? "\u2713" : "\u2717"}`;
         if (resultEl) {
           resultEl.style.background = isCorrect ? "#D1FAE5" : "#FEE2E2";
           resultEl.style.color = isCorrect ? "#065F46" : "#991B1B";
@@ -4511,11 +5299,11 @@
     }
   }
   function renderChoiceMode(card) {
-    show3($3("choice-container"));
-    hide3($3("flashcard"));
-    $3("choice-question").textContent = card.front;
+    show3($4("choice-container"));
+    hide3($4("flashcard"));
+    $4("choice-question").textContent = card.front;
     const options = generateDistractors(card, App.allProfileCards.length > 3 ? App.allProfileCards : App.studyQueue);
-    const container = $3("choice-options");
+    const container = $4("choice-options");
     container.innerHTML = "";
     options.forEach((opt) => {
       const btn = document.createElement("button");
@@ -4539,19 +5327,19 @@
   }
   var _dictationPeeked = false;
   function renderDictationMode(card) {
-    hide3($3("flashcard"));
-    show3($3("dictation-container"));
+    hide3($4("flashcard"));
+    show3($4("dictation-container"));
     _dictationPeeked = false;
-    $3("dictation-prompt").textContent = "";
-    $3("dictation-prompt").style.color = "";
-    $3("dictation-input").value = "";
-    $3("dictation-input").disabled = false;
-    hide3($3("dictation-answer-reveal"));
-    show3($3("btn-check-dictation"));
-    hide3($3("btn-next-dictation"));
-    $3("btn-dictation-peek").classList.remove("peeked");
-    $3("btn-dictation-peek").disabled = false;
-    $3("dictation-input").focus();
+    $4("dictation-prompt").textContent = "";
+    $4("dictation-prompt").style.color = "";
+    $4("dictation-input").value = "";
+    $4("dictation-input").disabled = false;
+    hide3($4("dictation-answer-reveal"));
+    show3($4("btn-check-dictation"));
+    hide3($4("btn-next-dictation"));
+    $4("btn-dictation-peek").classList.remove("peeked");
+    $4("btn-dictation-peek").disabled = false;
+    $4("dictation-input").focus();
     setTimeout(() => speakCard(card, "front", App.currentProfile?.speechRate || 0.8), 500);
   }
   function replayDictation() {
@@ -4562,14 +5350,14 @@
     const card = App.studyQueue[App.studyIndex];
     if (!card) return;
     _dictationPeeked = true;
-    $3("dictation-answer-text").textContent = card.back;
-    show3($3("dictation-answer-reveal"));
+    $4("dictation-answer-text").textContent = card.back;
+    show3($4("dictation-answer-reveal"));
     speakCard(card, "back", App.currentProfile?.speechRate || 0.8);
-    $3("btn-dictation-peek").classList.add("peeked");
-    $3("btn-dictation-peek").disabled = true;
-    $3("dictation-input").disabled = true;
-    hide3($3("btn-check-dictation"));
-    show3($3("btn-next-dictation"));
+    $4("btn-dictation-peek").classList.add("peeked");
+    $4("btn-dictation-peek").disabled = true;
+    $4("dictation-input").disabled = true;
+    hide3($4("btn-check-dictation"));
+    show3($4("btn-next-dictation"));
   }
   function checkDictation() {
     if (_dictationPeeked) {
@@ -4577,11 +5365,11 @@
       return;
     }
     const card = App.studyQueue[App.studyIndex];
-    const input = $3("dictation-input").value.trim().toLowerCase();
+    const input = $4("dictation-input").value.trim().toLowerCase();
     const target = card.front.toLowerCase().trim();
     const back = card.back.toLowerCase().trim();
     const correct = input === target || input === back || target.startsWith(input) && input.length >= target.length * 0.9;
-    const prompt2 = $3("dictation-prompt");
+    const prompt2 = $4("dictation-prompt");
     if (correct) {
       prompt2.textContent = `\u2713 ${card.front}  ${card.back}`;
       prompt2.style.color = "var(--color-success)";
@@ -4592,69 +5380,69 @@
       speakCard(card, "front", App.currentProfile?.speechRate || 0.8);
       playSound("wrong");
     }
-    $3("dictation-input").disabled = true;
+    $4("dictation-input").disabled = true;
     setTimeout(() => submitRating(correct ? 5 : 1), 1200);
   }
   function renderSpeakingMode(card) {
-    hide3($3("flashcard"));
-    show3($3("speaking-container"));
-    hide3($3("score-display"));
-    hide3($3("mic-hint"));
-    $3("speaking-word").textContent = card.front;
-    const meaningEl = $3("speaking-meaning");
+    hide3($4("flashcard"));
+    show3($4("speaking-container"));
+    hide3($4("score-display"));
+    hide3($4("mic-hint"));
+    $4("speaking-word").textContent = card.front;
+    const meaningEl = $4("speaking-meaning");
     if (card.back && card.back !== card.front) {
       meaningEl.textContent = card.back;
       show3(meaningEl);
     } else {
       hide3(meaningEl);
     }
-    const exampleEl = $3("speaking-example");
+    const exampleEl = $4("speaking-example");
     if (card.example) {
       exampleEl.textContent = card.example;
       show3(exampleEl);
     } else {
       hide3(exampleEl);
     }
-    $3("btn-record").classList.remove("recording");
-    $3("record-label").textContent = "\u5F00\u59CB\u8DDF\u8BFB";
-    $3("waveform").classList.remove("active");
+    $4("btn-record").classList.remove("recording");
+    $4("record-label").textContent = "\u5F00\u59CB\u8DDF\u8BFB";
+    $4("waveform").classList.remove("active");
     if (window.location.protocol === "file:") {
-      const hint = $3("mic-hint");
+      const hint = $4("mic-hint");
       hint.textContent = "\u26A0 \u672C\u5730\u6587\u4EF6\u6A21\u5F0F\u4E0B\u9EA6\u514B\u98CE\u53D7\u9650\uFF0C\u8BF7\u7528 Live Server \u6216\u5B89\u88C5\u4E3A Android APP \u540E\u4F7F\u7528\u3002\u70B9\u51FB\u300C\u518D\u542C\u4E00\u904D\u300D\u53EF\u5148\u7EC3\u4E60\u53D1\u97F3\u3002";
       show3(hint);
     }
     setTimeout(() => speakCard(card, "front", App.currentProfile?.speechRate || 0.8), 400);
   }
   function initSpeakingButtons() {
-    $3("btn-speak-again")?.addEventListener("click", () => {
+    $4("btn-speak-again")?.addEventListener("click", () => {
       const card = App.studyQueue[App.studyIndex];
       if (card) speakCard(card, "front", App.currentProfile?.speechRate || 0.8);
     });
-    $3("btn-speak-slow")?.addEventListener("click", () => {
+    $4("btn-speak-slow")?.addEventListener("click", () => {
       const card = App.studyQueue[App.studyIndex];
       if (card) speakCard(card, "front", 0.5);
     });
-    $3("btn-retry-record")?.addEventListener("click", () => {
-      hide3($3("score-display"));
-      $3("btn-record").classList.remove("recording");
-      $3("record-label").textContent = "\u5F00\u59CB\u8DDF\u8BFB";
+    $4("btn-retry-record")?.addEventListener("click", () => {
+      hide3($4("score-display"));
+      $4("btn-record").classList.remove("recording");
+      $4("record-label").textContent = "\u5F00\u59CB\u8DDF\u8BFB";
     });
   }
   async function toggleRecording() {
-    const btn = $3("btn-record");
+    const btn = $4("btn-record");
     if (App.recordStop) {
       App.recordStop();
       App.recordStop = null;
       btn.classList.remove("recording");
-      $3("record-label").textContent = "\u5904\u7406\u4E2D...";
-      $3("waveform").classList.remove("active");
+      $4("record-label").textContent = "\u5904\u7406\u4E2D...";
+      $4("waveform").classList.remove("active");
       return;
     }
     const card = App.studyQueue[App.studyIndex];
     const lang = /[一-鿿]/.test(card.front) ? "zh-CN" : "en-US";
     btn.classList.add("recording");
-    $3("record-label").textContent = "\u8BF4\u8BDD\u4E2D...";
-    $3("waveform").classList.add("active");
+    $4("record-label").textContent = "\u8BF4\u8BDD\u4E2D...";
+    $4("waveform").classList.add("active");
     let spokenText = "";
     let spokenConf = 0;
     if (SpeechSupport.stt) {
@@ -4667,12 +5455,12 @@
         (msg) => {
           toast4(msg);
           btn.classList.remove("recording");
-          $3("record-label").textContent = "\u6309\u4F4F\u8BF4\u8BDD";
+          $4("record-label").textContent = "\u6309\u4F4F\u8BF4\u8BDD";
         },
         async () => {
           btn.classList.remove("recording");
-          $3("record-label").textContent = "\u6309\u4F4F\u8BF4\u8BDD";
-          $3("waveform").classList.remove("active");
+          $4("record-label").textContent = "\u6309\u4F4F\u8BF4\u8BDD";
+          $4("waveform").classList.remove("active");
           App.recordStop = null;
           if (!spokenText) {
             toast4("\u6CA1\u6709\u8BC6\u522B\u5230\u5185\u5BB9\uFF0C\u8BF7\u518D\u8BD5");
@@ -4687,38 +5475,38 @@
     } else {
       toast4("\u6B64\u8BBE\u5907\u4E0D\u652F\u6301\u8BED\u97F3\u8BC6\u522B\uFF0C\u8BF7\u4F7F\u7528 Android Chrome");
       btn.classList.remove("recording");
-      $3("record-label").textContent = "\u6309\u4F4F\u8BF4\u8BDD";
-      $3("waveform").classList.remove("active");
+      $4("record-label").textContent = "\u6309\u4F4F\u8BF4\u8BDD";
+      $4("waveform").classList.remove("active");
     }
   }
   function showPronunciationResult(result) {
-    const scoreEl = $3("score-circle");
-    const numEl = $3("score-num");
-    const feedEl = $3("score-feedback");
+    const scoreEl = $4("score-circle");
+    const numEl = $4("score-num");
+    const feedEl = $4("score-feedback");
     numEl.textContent = result.score;
     scoreEl.className = `score-circle ${result.score >= 75 ? "" : result.score >= 60 ? "score-mid" : "score-low"}`;
     feedEl.textContent = result.feedback;
-    show3($3("score-display"));
+    show3($4("score-display"));
     if (result.score >= 75) playSound("correct");
     else playSound("wrong");
     const rating = result.score >= 90 ? 5 : result.score >= 75 ? 4 : result.score >= 60 ? 2 : 1;
     setTimeout(() => submitRating(rating), 2e3);
   }
   function switchStudyMode(mode) {
-    $3("study-mode-tabs")?.querySelectorAll(".mode-tab").forEach(
+    $4("study-mode-tabs")?.querySelectorAll(".mode-tab").forEach(
       (t) => t.classList.toggle("active", t.dataset.mode === mode)
     );
-    hide3($3("flashcard"));
-    hide3($3("choice-container"));
-    hide3($3("dictation-container"));
-    hide3($3("speaking-container"));
-    hide3($3("rating-buttons"));
-    if (mode === "flashcard") show3($3("flashcard"));
-    if (mode === "choice") show3($3("choice-container"));
-    if (mode === "dictation") show3($3("dictation-container"));
-    if (mode === "speaking") show3($3("speaking-container"));
+    hide3($4("flashcard"));
+    hide3($4("choice-container"));
+    hide3($4("dictation-container"));
+    hide3($4("speaking-container"));
+    hide3($4("rating-buttons"));
+    if (mode === "flashcard") show3($4("flashcard"));
+    if (mode === "choice") show3($4("choice-container"));
+    if (mode === "dictation") show3($4("dictation-container"));
+    if (mode === "speaking") show3($4("speaking-container"));
     App.isCardFlipped = false;
-    $3("card-inner").classList.remove("flipped");
+    $4("card-inner").classList.remove("flipped");
     renderCard();
   }
   async function finishSession() {
@@ -4734,13 +5522,13 @@
     showSessionComplete(total, correct, coins);
   }
   function showSessionComplete(total, correct, coins) {
-    $3("complete-summary").textContent = `\u590D\u4E60\u4E86 ${total} \u5F20\uFF0C\u7B54\u5BF9 ${correct} \u5F20\uFF08${Math.round(correct / total * 100)}%\uFF09`;
-    $3("coins-earned").textContent = coins > 0 ? `+${coins} \u91D1\u5E01` : "";
-    show3($3("session-complete"));
+    $4("complete-summary").textContent = `\u590D\u4E60\u4E86 ${total} \u5F20\uFF0C\u7B54\u5BF9 ${correct} \u5F20\uFF08${Math.round(correct / total * 100)}%\uFF09`;
+    $4("coins-earned").textContent = coins > 0 ? `+${coins} \u91D1\u5E01` : "";
+    show3($4("session-complete"));
   }
   function setupSwipeGesture() {
     let startX = 0;
-    const card = $3("flashcard");
+    const card = $4("flashcard");
     card.addEventListener("touchstart", (e) => {
       startX = e.touches[0].clientX;
     }, { passive: true });
@@ -4758,20 +5546,6 @@
   function setupBackGesture() {
     let startX = 0, startY = 0;
     const EDGE = 30;
-    const pageBackMap = {
-      "page-library": "home",
-      "page-import": "home",
-      "page-search": "home",
-      "page-stats": "home",
-      "page-settings": "home",
-      "page-study": "home",
-      "page-scenario": "english-adult",
-      "page-recitation": "recitation-list",
-      "page-recitation-list": "home",
-      "page-english-adult": "home",
-      "page-vocab-store": "library",
-      "page-subject-decks": "home"
-    };
     document.addEventListener("touchstart", (e) => {
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
@@ -4782,12 +5556,10 @@
       if (dx > 80 && dy < dx * 0.8 && (startX < EDGE + 20 || dx > 120)) {
         const activePage = document.querySelector(".page.active");
         if (!activePage) return;
-        const pageId = activePage.id;
-        const backTarget = pageBackMap[pageId];
-        if (backTarget) {
+        const pageId = activePage.id?.replace("page-", "");
+        if (pageId && pageId !== "home" && pageId !== "profiles") {
           e.preventDefault?.();
-          showPage(backTarget);
-          if (backTarget === "home") loadHomeData();
+          goBack();
         }
       }
     }, { passive: true });
@@ -4802,9 +5574,9 @@
     try {
       toast4("\u6B63\u5728\u89E3\u6790\u6587\u4EF6...");
       const { cards, suggestedName } = await parseFile(file);
-      const subject = $3("import-subject-select")?.value || "custom";
+      const subject = $4("import-subject-select")?.value || "custom";
       _importCache = cards.map((c) => ({ ...c, subject }));
-      $3("deck-name-input").value = suggestedName;
+      $4("deck-name-input").value = suggestedName;
       showImportPreview(_importCache);
       showPage("import");
     } catch (e) {
@@ -4821,7 +5593,7 @@
       toast4("\u6B63\u5728\u89E3\u6790\u6587\u4EF6...");
       const { cards, suggestedName } = await parseFile(file);
       _importCache = cards;
-      $3("deck-name-input").value = suggestedName;
+      $4("deck-name-input").value = suggestedName;
       showImportPreview(cards);
     } catch (e) {
       toast4(`\u89E3\u6790\u5931\u8D25\uFF1A${e.message}`);
@@ -4834,35 +5606,35 @@
   async function handleImageInput(file) {
     if (!file) return;
     if (hasAIKey()) {
-      show3($3("ocr-progress"));
+      show3($4("ocr-progress"));
       try {
         const { cards, suggestedName } = await parseImageWithAI(file, (msg) => {
-          $3("ocr-status").textContent = msg;
+          $4("ocr-status").textContent = msg;
         });
         _importCache = cards;
-        hide3($3("ocr-progress"));
-        $3("deck-name-input").value = suggestedName;
+        hide3($4("ocr-progress"));
+        $4("deck-name-input").value = suggestedName;
         showImportPreview(cards);
         showPage("import");
         return;
       } catch (e) {
-        $3("ocr-status").textContent = `AI\u89E3\u6790\u5931\u8D25\uFF08${e.message}\uFF09\uFF0C\u5207\u6362\u5230\u672C\u5730OCR...`;
+        $4("ocr-status").textContent = `AI\u89E3\u6790\u5931\u8D25\uFF08${e.message}\uFF09\uFF0C\u5207\u6362\u5230\u672C\u5730OCR...`;
       }
     }
-    show3($3("ocr-progress"));
+    show3($4("ocr-progress"));
     try {
       const { cards: rawCards, suggestedName } = await parseImageOCR(file, (msg) => {
-        $3("ocr-status").textContent = msg;
+        $4("ocr-status").textContent = msg;
       });
-      $3("ocr-status").textContent = "\u6B63\u5728\u67E5\u8BE2\u8BCD\u5178\u8865\u5145\u91CA\u4E49...";
+      $4("ocr-status").textContent = "\u6B63\u5728\u67E5\u8BE2\u8BCD\u5178\u8865\u5145\u91CA\u4E49...";
       const cards = await enrichEnglishCards(rawCards);
       _importCache = cards;
-      hide3($3("ocr-progress"));
-      $3("deck-name-input").value = suggestedName;
+      hide3($4("ocr-progress"));
+      $4("deck-name-input").value = suggestedName;
       showImportPreview(cards);
       showPage("import");
     } catch (e) {
-      hide3($3("ocr-progress"));
+      hide3($4("ocr-progress"));
       toast4(`\u8BC6\u522B\u5931\u8D25\uFF1A${e.message}`);
     }
   }
@@ -4899,13 +5671,13 @@
     });
   }
   function showImportPreview(cards) {
-    $3("preview-count").textContent = cards.length;
-    const list = $3("preview-list");
+    $4("preview-count").textContent = cards.length;
+    const list = $4("preview-list");
     list.innerHTML = "";
     cards.slice(0, 20).forEach((c) => {
       const item = document.createElement("div");
       item.className = "preview-item";
-      item.innerHTML = `<span class="preview-front">${escapeHtml4(c.front)}</span><span class="preview-back">${escapeHtml4(c.back)}</span>`;
+      item.innerHTML = `<span class="preview-front">${escapeHtml5(c.front)}</span><span class="preview-back">${escapeHtml5(c.back)}</span>`;
       list.appendChild(item);
     });
     if (cards.length > 20) {
@@ -4914,7 +5686,7 @@
       more.innerHTML = `<span style="color:var(--color-text-sub)">...\u8FD8\u6709 ${cards.length - 20} \u5F20</span>`;
       list.appendChild(more);
     }
-    show3($3("import-preview"));
+    show3($4("import-preview"));
   }
   async function confirmImport() {
     const profile = App.currentProfile;
@@ -4923,7 +5695,7 @@
       return;
     }
     const isAppend = document.querySelector(".import-mode-btn.active")?.dataset.mode === "append";
-    const targetDeckId = $3("import-target-deck")?.value;
+    const targetDeckId = $4("import-target-deck")?.value;
     let deckId, deckName, added;
     if (isAppend && targetDeckId) {
       const existing = App.allProfileCards.filter((c) => c.deckId === targetDeckId);
@@ -4935,11 +5707,11 @@
       }
       await CardManager.bulkCreate(profile.id, targetDeckId, newCards);
       added = newCards.length;
-      deckName = $3("import-target-deck")?.selectedOptions[0]?.text || "\u5DF2\u6709\u9898\u5E93";
+      deckName = $4("import-target-deck")?.selectedOptions[0]?.text || "\u5DF2\u6709\u9898\u5E93";
       toast4(`\u5DF2\u8FFD\u52A0 ${added} \u5F20\uFF08\u8DF3\u8FC7 ${_importCache.length - added} \u5F20\u91CD\u590D\uFF09\uFF0C\u9898\u5E93\uFF1A${deckName}`);
     } else {
-      const name = $3("deck-name-input")?.value.trim() || "\u5BFC\u5165\u7684\u5361\u7247";
-      const subject = $3("import-subject-select")?.value || _importCache[0]?.subject || "custom";
+      const name = $4("deck-name-input")?.value.trim() || "\u5BFC\u5165\u7684\u5361\u7247";
+      const subject = $4("import-subject-select")?.value || _importCache[0]?.subject || "custom";
       const deck = await DeckManager.create(profile.id, name, subject, "custom");
       await CardManager.bulkCreate(profile.id, deck.id, _importCache);
       added = _importCache.length;
@@ -4948,17 +5720,17 @@
     }
     App.allProfileCards = await CardManager.getByProfile(profile.id);
     _importCache = [];
-    hide3($3("import-preview"));
+    hide3($4("import-preview"));
     document.getElementById("import-mode-new")?.classList.add("active");
     document.getElementById("import-mode-append")?.classList.remove("active");
-    $3("import-new-section")?.classList.remove("hidden");
-    $3("import-append-section")?.classList.add("hidden");
+    $4("import-new-section")?.classList.remove("hidden");
+    $4("import-append-section")?.classList.add("hidden");
     loadHomeData();
   }
   var _manualCards = [];
   function saveManualCard(continueAdding) {
-    const front = $3("manual-front").value.trim();
-    const back = $3("manual-back").value.trim();
+    const front = $4("manual-front").value.trim();
+    const back = $4("manual-back").value.trim();
     if (!front || !back) {
       toast4("\u6B63\u9762\u548C\u80CC\u9762\u90FD\u9700\u8981\u586B\u5199");
       return;
@@ -4966,15 +5738,15 @@
     _manualCards.push({
       front,
       back,
-      hint: $3("manual-hint").value.trim(),
-      tags: $3("manual-tags").value.split(/[,，]/).map((t) => t.trim()).filter(Boolean)
+      hint: $4("manual-hint").value.trim(),
+      tags: $4("manual-tags").value.split(/[,，]/).map((t) => t.trim()).filter(Boolean)
     });
-    $3("manual-front").value = "";
-    $3("manual-back").value = "";
-    $3("manual-hint").value = "";
+    $4("manual-front").value = "";
+    $4("manual-back").value = "";
+    $4("manual-hint").value = "";
     toast4("\u5DF2\u6DFB\u52A0");
     if (!continueAdding) {
-      hide3($3("manual-modal"));
+      hide3($4("manual-modal"));
       _importCache = _manualCards;
       _manualCards = [];
       showImportPreview(_importCache);
@@ -4982,9 +5754,9 @@
   }
   async function renderLibrary() {
     const decks = await DeckManager.getByProfile(App.currentProfile.id);
-    const list = $3("decks-list");
+    const list = $4("decks-list");
     list.innerHTML = "";
-    const gradeFilterEl = $3("grade-filter");
+    const gradeFilterEl = $4("grade-filter");
     const gradeFilter = gradeFilterEl?.querySelector(".filter-btn.active")?.dataset.grade || "all";
     const seen = /* @__PURE__ */ new Set();
     const deduped = decks.filter((d) => {
@@ -5030,13 +5802,13 @@
           ${subjectIcon(deck.subject)}
         </div>
         <div class="deck-info">
-          <div class="deck-name">${escapeHtml4(deck.name)}</div>
+          <div class="deck-name">${escapeHtml5(deck.name)}</div>
           <div class="deck-count">${cards.length}\u5F20 ${todayN > 0 ? `\xB7 <span style="color:var(--color-primary)">\u4ECA\u65E5${todayN}\u5F20</span>` : "\xB7 \u4ECA\u65E5\u5DF2\u5B8C\u6210 \u2713"}</div>
         </div>
         <div class="deck-actions">
           ${hasRecitation ? `<button class="btn-deck-recite" data-deck="${deck.id}" title="\u80CC\u8BF5\u5168\u6587">\u{1F4D6}</button>` : ""}
           <button class="btn-deck-study" data-deck="${deck.id}">\u5B66\u4E60</button>
-          <button class="btn-deck-delete" data-deck="${deck.id}" data-name="${escapeHtml4(deck.name)}" title="\u5220\u9664\u9898\u5E93">\u{1F5D1}</button>
+          <button class="btn-deck-delete" data-deck="${deck.id}" data-name="${escapeHtml5(deck.name)}" title="\u5220\u9664\u9898\u5E93">\u{1F5D1}</button>
         </div>
       `;
         item.querySelector(".btn-deck-study").addEventListener("click", () => studyDeck(deck.id));
@@ -5080,15 +5852,14 @@
     if (matched) {
       openRecitationPage2(matched.id);
     } else {
-      document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
-      $3("page-library")?.classList.add("active");
+      showPage("library");
       toast4("\u8BF7\u5728\u9898\u5E93\u5E95\u90E8\u9009\u62E9\u8981\u80CC\u8BF5\u7684\u53E4\u8BD7");
       showRecitationListInLibrary();
     }
   }
   function showRecitationListInLibrary() {
     Promise.resolve().then(() => (init_recitation(), recitation_exports)).then(({ getRecitationTexts: getRecitationTexts2, renderRecitationList: renderRecitationList2 }) => {
-      const existing = $3("library-recitation-section");
+      const existing = $4("library-recitation-section");
       if (existing) {
         existing.remove();
         return;
@@ -5100,7 +5871,7 @@
       inner.style.padding = "0 16px 16px";
       sec.appendChild(inner);
       renderRecitationList2(inner, "all");
-      $3("decks-list")?.after(sec);
+      $4("decks-list")?.after(sec);
     });
   }
   async function searchCards(query) {
@@ -5114,10 +5885,10 @@
     const results = all.filter(
       (c) => c.front?.toLowerCase().includes(q) || c.back?.toLowerCase().includes(q) || c.hint?.toLowerCase().includes(q) || c.example?.toLowerCase().includes(q) || c.phonetic?.includes(q) || c.tags?.some((t) => t.toLowerCase().includes(q))
     ).slice(0, 50);
-    const container = $3("search-results");
+    const container = $4("search-results");
     if (!container) return;
     if (!results.length) {
-      container.innerHTML = `<div class="search-empty">\u6CA1\u6709\u627E\u5230"${escapeHtml4(query)}"\u76F8\u5173\u5185\u5BB9</div>`;
+      container.innerHTML = `<div class="search-empty">\u6CA1\u6709\u627E\u5230"${escapeHtml5(query)}"\u76F8\u5173\u5185\u5BB9</div>`;
       show3(container);
       return;
     }
@@ -5127,15 +5898,15 @@
       item.className = "search-result-item";
       const hi = (text) => {
         if (!text) return "";
-        const re = new RegExp(`(${escapeHtml4(query).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi");
-        return escapeHtml4(text).replace(re, "<mark>$1</mark>");
+        const re = new RegExp(`(${escapeHtml5(query).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi");
+        return escapeHtml5(text).replace(re, "<mark>$1</mark>");
       };
       const subjectIcon_ = { chinese: "\u6587", english: "En", math: "\u2211", custom: "+" }[card.subject] || "?";
       const subjectColor = { chinese: "#E84848", english: "#3B82F6", math: "#8B5CF6", custom: "#10B981" }[card.subject] || "#aaa";
       item.innerHTML = `
       <div class="sri-subject" style="background:${subjectColor}">${subjectIcon_}</div>
       <div class="sri-content">
-        <div class="sri-front">${hi(card.front)}${card.phonetic ? `<span class="sri-phonetic"> ${escapeHtml4(card.phonetic)}</span>` : ""}</div>
+        <div class="sri-front">${hi(card.front)}${card.phonetic ? `<span class="sri-phonetic"> ${escapeHtml5(card.phonetic)}</span>` : ""}</div>
         <div class="sri-back">${hi(card.back)}</div>
         ${card.example ? `<div class="sri-example">${hi(card.example)}</div>` : ""}
         ${card.hint ? `<div class="sri-hint">\u{1F4A1} ${hi(card.hint)}</div>` : ""}
@@ -5163,7 +5934,7 @@
     App.studyQueue = queue;
     App.studyIndex = 0;
     App.sessionResults = [];
-    hide3($3("session-complete"));
+    hide3($4("session-complete"));
     showPage("study");
     switchStudyMode("flashcard");
     renderCard();
@@ -5186,10 +5957,21 @@
     { file: "data/builtin/math/middle/geometry.json", name: "\u521D\u4E2D\u51E0\u4F55\u516C\u5F0F", subject: "math", grade: "middle" },
     { file: "data/builtin/math/middle/algebra.json", name: "\u521D\u4E2D\u4EE3\u6570\u516C\u5F0F", subject: "math", grade: "middle" }
   ];
+  async function ensureBuiltinDeck(subject, nameKeyword) {
+    const def = BUILTIN_DECKS.find((d) => d.subject === subject && d.name.includes(nameKeyword));
+    if (!def) {
+      toast4(`\u672A\u627E\u5230\u9898\u5E93\uFF1A${nameKeyword}`);
+      return;
+    }
+    await loadBuiltinDeck(def);
+    const decks = await DeckManager.getByProfile(App.currentProfile.id);
+    const deck = decks.find((d) => d.name.includes(nameKeyword));
+    if (deck) startStudyFromDeck(deck.id, subject);
+  }
   async function showBuiltinLibrary() {
     const modal = document.createElement("div");
     modal.className = "modal-overlay";
-    const gradeFilterEl = $3("grade-filter");
+    const gradeFilterEl = $4("grade-filter");
     const gradeFilter = gradeFilterEl?.querySelector(".filter-btn.active")?.dataset.grade || "all";
     const filtered = gradeFilter === "all" ? BUILTIN_DECKS : BUILTIN_DECKS.filter((d) => d.grade === gradeFilter);
     modal.innerHTML = `
@@ -5269,23 +6051,23 @@
     const totalReviewed = allProg.reduce((s, p) => s + p.reviewed, 0);
     const totalCorrect = allProg.reduce((s, p) => s + p.correct, 0);
     const accuracy = totalReviewed ? Math.round(totalCorrect / totalReviewed * 100) : 0;
-    $3("total-reviewed").textContent = totalReviewed;
-    $3("total-accuracy").textContent = `${accuracy}%`;
-    $3("total-streak").textContent = profile.streak || 0;
+    $4("total-reviewed").textContent = totalReviewed;
+    $4("total-accuracy").textContent = `${accuracy}%`;
+    $4("total-streak").textContent = profile.streak || 0;
     renderWeeklyChart(allProg);
     const hard = cards.filter((c) => c.reviewCount > 2).sort((a, b) => a.correctCount / a.reviewCount - b.correctCount / b.reviewCount).slice(0, 10);
-    const list = $3("hard-cards-list");
+    const list = $4("hard-cards-list");
     list.innerHTML = "";
     hard.forEach((c) => {
       const rate = Math.round((c.correctCount || 0) / c.reviewCount * 100);
       const item = document.createElement("div");
       item.className = "hard-card-item";
-      item.innerHTML = `<span class="hard-card-front">${escapeHtml4(c.front)}</span><span class="hard-card-rate">\u6B63\u786E\u7387 ${rate}%</span>`;
+      item.innerHTML = `<span class="hard-card-front">${escapeHtml5(c.front)}</span><span class="hard-card-rate">\u6B63\u786E\u7387 ${rate}%</span>`;
       list.appendChild(item);
     });
   }
   function renderWeeklyChart(data) {
-    const container = $3("weekly-chart");
+    const container = $4("weekly-chart");
     container.innerHTML = "";
     const max = Math.max(...data.map((d) => d.reviewed), 1);
     data.forEach((d) => {
@@ -5303,52 +6085,52 @@
   async function renderSettings() {
     const profile = App.currentProfile;
     if (!profile) return;
-    $3("setting-grade").value = profile.grade?.replace(/\d+$/, "") || "primary";
-    $3("setting-algorithm").value = profile.algorithm || "auto";
-    $3("setting-new-per-day").value = profile.newPerDay || 10;
-    $3("new-per-day-value").textContent = profile.newPerDay || 10;
-    $3("setting-speech-rate").value = profile.speechRate || 0.8;
-    $3("speech-rate-value").textContent = `${profile.speechRate || 0.8}\xD7`;
-    $3("setting-azure-key").value = profile.azureKey || "";
-    $3("setting-azure-region").value = profile.azureRegion || "";
-    const adultToggle = $3("setting-adult-mode");
+    $4("setting-grade").value = profile.grade?.replace(/\d+$/, "") || "primary";
+    $4("setting-algorithm").value = profile.algorithm || "auto";
+    $4("setting-new-per-day").value = profile.newPerDay || 10;
+    $4("new-per-day-value").textContent = profile.newPerDay || 10;
+    $4("setting-speech-rate").value = profile.speechRate || 0.8;
+    $4("speech-rate-value").textContent = `${profile.speechRate || 0.8}\xD7`;
+    $4("setting-azure-key").value = profile.azureKey || "";
+    $4("setting-azure-region").value = profile.azureRegion || "";
+    const adultToggle = $4("setting-adult-mode");
     if (adultToggle) adultToggle.checked = localStorage.getItem("adult_mode") === "1";
     loadAISettingsUI();
     loadVoiceSelectors();
     ["setting-grade", "setting-algorithm"].forEach((id) => {
-      $3(id)?.addEventListener("change", saveProfileSettings);
+      $4(id)?.addEventListener("change", saveProfileSettings);
     });
     ["setting-new-per-day", "setting-speech-rate"].forEach((id) => {
-      $3(id)?.addEventListener("change", saveProfileSettings);
+      $4(id)?.addEventListener("change", saveProfileSettings);
     });
     const profiles = await ProfileManager.getAll();
-    const pList = $3("settings-profiles-list");
+    const pList = $4("settings-profiles-list");
     pList.innerHTML = "";
     profiles.forEach((p) => {
       const row = document.createElement("div");
       row.style.cssText = "display:flex;align-items:center;gap:10px;padding:8px 0";
-      row.innerHTML = `<span style="font-size:24px">${p.avatar}</span><span style="flex:1">${escapeHtml4(p.name)}</span>`;
+      row.innerHTML = `<span style="font-size:24px">${p.avatar}</span><span style="flex:1">${escapeHtml5(p.name)}</span>`;
       pList.appendChild(row);
     });
   }
   async function saveProfileSettings() {
     await ProfileManager.update(App.currentProfile.id, {
-      grade: $3("setting-grade").value,
-      algorithm: $3("setting-algorithm").value,
-      newPerDay: parseInt($3("setting-new-per-day").value),
-      speechRate: parseFloat($3("setting-speech-rate").value)
+      grade: $4("setting-grade").value,
+      algorithm: $4("setting-algorithm").value,
+      newPerDay: parseInt($4("setting-new-per-day").value),
+      speechRate: parseFloat($4("setting-speech-rate").value)
     });
     Object.assign(App.currentProfile, {
-      grade: $3("setting-grade").value,
-      algorithm: $3("setting-algorithm").value,
-      newPerDay: parseInt($3("setting-new-per-day").value),
-      speechRate: parseFloat($3("setting-speech-rate").value)
+      grade: $4("setting-grade").value,
+      algorithm: $4("setting-algorithm").value,
+      newPerDay: parseInt($4("setting-new-per-day").value),
+      speechRate: parseFloat($4("setting-speech-rate").value)
     });
     toast4("\u5DF2\u4FDD\u5B58");
   }
   function loadVoiceSelectors() {
     const populate = (selectId, lang) => {
-      const sel = $3(selectId);
+      const sel = $4(selectId);
       if (!sel) return;
       const voices = getAvailableVoices(lang);
       if (!voices.length) {
@@ -5359,7 +6141,7 @@
       sel.innerHTML = '<option value="">\uFF08\u81EA\u52A8\u9009\u6700\u4F73\uFF09</option>' + voices.map((v) => {
         const quality = v.name.toLowerCase().includes("google") ? " \u2B50" : v.name.toLowerCase().includes("microsoft") ? " \u2605" : "";
         const online = !v.localService ? " [\u5728\u7EBF]" : "";
-        return `<option value="${escapeHtml4(v.name)}" ${v.name === savedName ? "selected" : ""}>${escapeHtml4(v.name)}${quality}${online}</option>`;
+        return `<option value="${escapeHtml5(v.name)}" ${v.name === savedName ? "selected" : ""}>${escapeHtml5(v.name)}${quality}${online}</option>`;
       }).join("");
       sel.addEventListener("change", () => {
         setSavedVoiceName(lang, sel.value);
@@ -5378,9 +6160,9 @@
       }
     };
     tryLoad();
-    $3("btn-test-voice")?.addEventListener("click", () => {
-      const zhVoice = $3("setting-voice-zh")?.value;
-      const enVoice = $3("setting-voice-en")?.value;
+    $4("btn-test-voice")?.addEventListener("click", () => {
+      const zhVoice = $4("setting-voice-zh")?.value;
+      const enVoice = $4("setting-voice-en")?.value;
       if (zhVoice) setSavedVoiceName("zh-CN", zhVoice);
       if (enVoice) setSavedVoiceName("en-US", enVoice);
       speak2("\u5E8A\u524D\u660E\u6708\u5149\uFF0C\u7591\u662F\u5730\u4E0A\u971C\u3002", "zh-CN", 0.9);
@@ -5388,8 +6170,8 @@
     });
   }
   async function saveAzureConfig() {
-    const key = $3("setting-azure-key").value.trim();
-    const region = $3("setting-azure-region").value.trim();
+    const key = $4("setting-azure-key").value.trim();
+    const region = $4("setting-azure-region").value.trim();
     await ProfileManager.update(App.currentProfile.id, { azureKey: key, azureRegion: region });
     App.currentProfile.azureKey = key;
     App.currentProfile.azureRegion = region;
@@ -5425,21 +6207,21 @@
   var _editingProfileId = null;
   function openProfileEditModal(profile) {
     _editingProfileId = profile?.id || null;
-    $3("profile-modal-title").textContent = profile ? "\u7F16\u8F91\u6863\u6848" : "\u65B0\u5EFA\u6863\u6848";
-    $3("profile-name-input").value = profile?.name || "";
-    $3("profile-grade-input").value = profile?.grade?.replace(/\d+$/, "") || "primary";
+    $4("profile-modal-title").textContent = profile ? "\u7F16\u8F91\u6863\u6848" : "\u65B0\u5EFA\u6863\u6848";
+    $4("profile-name-input").value = profile?.name || "";
+    $4("profile-grade-input").value = profile?.grade?.replace(/\d+$/, "") || "primary";
     const avatar = profile?.avatar || "\u{1F43C}";
-    $3("profile-selected-avatar").textContent = avatar;
+    $4("profile-selected-avatar").textContent = avatar;
     document.querySelectorAll(".avatar-option").forEach((btn) => {
       btn.classList.toggle("selected", btn.dataset.emoji === avatar);
     });
-    show3($3("profile-edit-modal"));
-    setTimeout(() => $3("profile-name-input").focus(), 100);
+    show3($4("profile-edit-modal"));
+    setTimeout(() => $4("profile-name-input").focus(), 100);
   }
   async function saveProfileFromModal() {
-    const name = $3("profile-name-input").value.trim();
-    const grade = $3("profile-grade-input").value;
-    const avatar = $3("profile-selected-avatar").textContent;
+    const name = $4("profile-name-input").value.trim();
+    const grade = $4("profile-grade-input").value;
+    const avatar = $4("profile-selected-avatar").textContent;
     if (!name) {
       toast4("\u8BF7\u8F93\u5165\u540D\u5B57");
       return;
@@ -5448,8 +6230,8 @@
       await ProfileManager.update(_editingProfileId, { name, grade, avatar });
       if (App.currentProfile?.id === _editingProfileId) {
         Object.assign(App.currentProfile, { name, grade, avatar });
-        $3("current-avatar").textContent = avatar;
-        $3("current-name").textContent = name;
+        $4("current-avatar").textContent = avatar;
+        $4("current-name").textContent = name;
       }
       toast4(`\u5DF2\u66F4\u65B0\u6863\u6848\uFF1A${name}`);
     } else {
@@ -5457,12 +6239,12 @@
       await ProfileManager.update(profile.id, { grade });
       toast4(`\u5DF2\u521B\u5EFA\u6863\u6848\uFF1A${name}`);
     }
-    hide3($3("profile-edit-modal"));
+    hide3($4("profile-edit-modal"));
     await loadProfiles();
   }
   async function openManageProfiles() {
     const profiles = await ProfileManager.getAll();
-    const list = $3("manage-profiles-list");
+    const list = $4("manage-profiles-list");
     list.innerHTML = "";
     profiles.forEach((p) => {
       const row = document.createElement("div");
@@ -5470,12 +6252,12 @@
       row.innerHTML = `
       <div class="manage-profile-emoji">${p.avatar || "\u{1F423}"}</div>
       <div class="manage-profile-info">
-        <div class="manage-profile-name">${escapeHtml4(p.name)}</div>
+        <div class="manage-profile-name">${escapeHtml5(p.name)}</div>
         <div class="manage-profile-grade">${gradeLabel2(p.grade)}</div>
       </div>
       <div class="manage-profile-btns">
         <button class="btn-edit-sm" data-id="${p.id}">\u7F16\u8F91</button>
-        <button class="btn-delete-sm" data-id="${p.id}" data-name="${escapeHtml4(p.name)}">\u5220\u9664</button>
+        <button class="btn-delete-sm" data-id="${p.id}" data-name="${escapeHtml5(p.name)}">\u5220\u9664</button>
       </div>
     `;
       list.appendChild(row);
@@ -5483,7 +6265,7 @@
     list.querySelectorAll(".btn-edit-sm").forEach((btn) => {
       btn.addEventListener("click", async () => {
         const p = profiles.find((x) => x.id === btn.dataset.id);
-        hide3($3("manage-profiles-modal"));
+        hide3($4("manage-profiles-modal"));
         openProfileEditModal(p);
       });
     });
@@ -5493,17 +6275,17 @@
         await ProfileManager.delete(btn.dataset.id);
         if (App.currentProfile?.id === btn.dataset.id) App.currentProfile = null;
         toast4("\u6863\u6848\u5DF2\u5220\u9664");
-        hide3($3("manage-profiles-modal"));
+        hide3($4("manage-profiles-modal"));
         await loadProfiles();
       });
     });
-    show3($3("manage-profiles-modal"));
+    show3($4("manage-profiles-modal"));
   }
   async function saveAIConfig() {
-    const workerUrl = $3("setting-free-worker-url")?.value.trim() || "";
-    const provider = $3("setting-ai-provider").value;
-    const key = $3("setting-ai-key").value.trim();
-    const endpoint = $3("setting-ai-endpoint").value.trim();
+    const workerUrl = $4("setting-free-worker-url")?.value.trim() || "";
+    const provider = $4("setting-ai-provider").value;
+    const key = $4("setting-ai-key").value.trim();
+    const endpoint = $4("setting-ai-endpoint").value.trim();
     if (workerUrl) localStorage.setItem("free_worker_url", workerUrl);
     else localStorage.removeItem("free_worker_url");
     localStorage.setItem("ai_provider", provider || (workerUrl ? "free" : ""));
@@ -5518,21 +6300,21 @@
     const provider = localStorage.getItem("ai_provider") || "";
     const key = localStorage.getItem("ai_key") || "";
     const endpoint = localStorage.getItem("ai_endpoint") || "";
-    if ($3("setting-free-worker-url")) $3("setting-free-worker-url").value = workerUrl;
-    if ($3("setting-ai-provider")) $3("setting-ai-provider").value = provider === "free" ? "" : provider;
-    if ($3("setting-ai-key")) $3("setting-ai-key").value = key ? "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022" : "";
-    if ($3("setting-ai-endpoint")) $3("setting-ai-endpoint").value = endpoint;
+    if ($4("setting-free-worker-url")) $4("setting-free-worker-url").value = workerUrl;
+    if ($4("setting-ai-provider")) $4("setting-ai-provider").value = provider === "free" ? "" : provider;
+    if ($4("setting-ai-key")) $4("setting-ai-key").value = key ? "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022" : "";
+    if ($4("setting-ai-endpoint")) $4("setting-ai-endpoint").value = endpoint;
   }
   function openAIModal() {
     const workerUrl = localStorage.getItem("free_worker_url") || "";
     const savedKey = localStorage.getItem("ai_key") || "";
     const savedProvider = localStorage.getItem("ai_provider") || (workerUrl ? "free" : savedKey ? "deepseek" : "free");
-    const modal = $3("ai-generate-modal");
+    const modal = $4("ai-generate-modal");
     if (!modal) return;
     modal.querySelectorAll("[data-provider]").forEach((btn) => {
       btn.classList.toggle("active", btn.dataset.provider === savedProvider);
     });
-    const hintEl = $3("ai-key-hint");
+    const hintEl = $4("ai-key-hint");
     if (hintEl) {
       if (workerUrl) {
         hintEl.textContent = "\u5DF2\u914D\u7F6E\u514D\u8D39 Worker \u2713";
@@ -5556,7 +6338,7 @@
       middle2: "\u521D\u4E2D\u4E8C\u5E74\u7EA7",
       middle3: "\u521D\u4E2D\u4E09\u5E74\u7EA7"
     };
-    const gradeSelect = $3("ai-grade-select");
+    const gradeSelect = $4("ai-grade-select");
     if (gradeSelect) gradeSelect.value = gradeMap[grade] || "\u5C0F\u5B66\u4E09\u5E74\u7EA7";
     show3(modal);
   }
@@ -5608,7 +6390,7 @@
     osc.start(now);
     osc.stop(now + cfg.freq.length * cfg.dur + 0.2);
   }
-  function escapeHtml4(str) {
+  function escapeHtml5(str) {
     return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
   function gradeLabel2(grade) {
@@ -5671,7 +6453,7 @@
     const parts = splitSyllables(word.trim());
     if (parts.length <= 1) return null;
     return parts.map(
-      (p, i) => `<span class="syl syl-${i % 4 + 1}">${escapeHtml4(p)}</span>`
+      (p, i) => `<span class="syl syl-${i % 4 + 1}">${escapeHtml5(p)}</span>`
     ).join("");
   }
   function colorEnglishSyllables(text) {
@@ -5680,9 +6462,9 @@
     return tokens.map((tok) => {
       if (/^[a-zA-Z][a-zA-Z'-]*$/.test(tok)) {
         const colored = colorSyllables(tok);
-        return colored || escapeHtml4(tok);
+        return colored || escapeHtml5(tok);
       }
-      return escapeHtml4(tok);
+      return escapeHtml5(tok);
     }).join("");
   }
   function subjectLabel(subject) {
@@ -5701,7 +6483,7 @@
     App.studyQueue = queue;
     App.studyIndex = 0;
     App.sessionResults = [];
-    hide3($3("session-complete"));
+    hide3($4("session-complete"));
     showPage("study");
     switchStudyMode("flashcard");
     renderCard();
@@ -5709,7 +6491,7 @@
   document.addEventListener("ai-cards-ready", (e) => {
     const { cards, suggestedName } = e.detail;
     _importCache = cards;
-    if ($3("deck-name-input")) $3("deck-name-input").value = suggestedName;
+    if ($4("deck-name-input")) $4("deck-name-input").value = suggestedName;
     showImportPreview(cards);
     showPage("import");
     toast4(`AI \u751F\u6210\u4E86 ${cards.length} \u5F20\u5361\u7247\uFF0C\u8BF7\u786E\u8BA4\u540E\u5BFC\u5165`);
@@ -5726,8 +6508,8 @@
   var _searchIndex = null;
   var _searchPageInited = false;
   function initSearchPage() {
-    const input = $3("search-page-input");
-    const clearBtn = $3("btn-search-page-clear");
+    const input = $4("search-page-input");
+    const clearBtn = $4("btn-search-page-clear");
     if (!_searchPageInited) {
       _searchPageInited = true;
       document.querySelectorAll(".search-filter-btn").forEach((btn) => {
@@ -5756,9 +6538,9 @@
           _searchTimer = setTimeout(() => runSearch(q2), 250);
         } else {
           hide3(clearBtn);
-          hide3($3("search-page-results"));
-          show3($3("search-page-hint"));
-          if ($3("search-page-count")) $3("search-page-count").textContent = "";
+          hide3($4("search-page-results"));
+          show3($4("search-page-hint"));
+          if ($4("search-page-count")) $4("search-page-count").textContent = "";
         }
       });
       input?.addEventListener("keydown", (e) => {
@@ -5775,9 +6557,9 @@
       clearBtn?.addEventListener("click", () => {
         input.value = "";
         hide3(clearBtn);
-        hide3($3("search-page-results"));
-        show3($3("search-page-hint"));
-        if ($3("search-page-count")) $3("search-page-count").textContent = "";
+        hide3($4("search-page-results"));
+        show3($4("search-page-hint"));
+        if ($4("search-page-count")) $4("search-page-count").textContent = "";
         input.focus();
       });
     }
@@ -5785,9 +6567,9 @@
     if (q) {
       runSearch(q);
     } else {
-      hide3($3("search-page-results"));
-      show3($3("search-page-hint"));
-      if ($3("search-page-count")) $3("search-page-count").textContent = "";
+      hide3($4("search-page-results"));
+      show3($4("search-page-hint"));
+      if ($4("search-page-count")) $4("search-page-count").textContent = "";
     }
     setTimeout(() => input?.focus(), 150);
   }
@@ -5832,9 +6614,9 @@
     return index;
   }
   async function runSearch(query) {
-    const container = $3("search-page-results");
-    const hint = $3("search-page-hint");
-    const countEl = $3("search-page-count");
+    const container = $4("search-page-results");
+    const hint = $4("search-page-hint");
+    const countEl = $4("search-page-count");
     if (!container) return;
     const q = query.toLowerCase().trim();
     if (!q) return;
@@ -5852,8 +6634,8 @@
     const re = new RegExp(escapeRegex(q), "gi");
     const hiText = (text) => {
       if (!text) return "";
-      return escapeHtml4(text).replace(
-        new RegExp(`(${escapeRegex(escapeHtml4(q))})`, "gi"),
+      return escapeHtml5(text).replace(
+        new RegExp(`(${escapeRegex(escapeHtml5(q))})`, "gi"),
         "<mark>$1</mark>"
       );
     };
@@ -5878,7 +6660,7 @@
       }
     }
     if (!groupResults.length) {
-      container.innerHTML = `<div class="search-empty-full">\u6CA1\u6709\u627E\u5230 <strong>${escapeHtml4(query)}</strong> \u76F8\u5173\u5185\u5BB9<br><span style="font-size:var(--font-size-xs);color:var(--color-text-hint)">\u8BD5\u8BD5\u6362\u4E2A\u5173\u952E\u8BCD\uFF0C\u6216\u5148\u4E0B\u8F7D\u66F4\u591A\u8BCD\u5E93</span></div>`;
+      container.innerHTML = `<div class="search-empty-full">\u6CA1\u6709\u627E\u5230 <strong>${escapeHtml5(query)}</strong> \u76F8\u5173\u5185\u5BB9<br><span style="font-size:var(--font-size-xs);color:var(--color-text-hint)">\u8BD5\u8BD5\u6362\u4E2A\u5173\u952E\u8BCD\uFF0C\u6216\u5148\u4E0B\u8F7D\u66F4\u591A\u8BCD\u5E93</span></div>`;
       show3(container);
       hide3(hint);
       countEl.textContent = "\u65E0\u7ED3\u679C";
@@ -5896,7 +6678,7 @@
       section.innerHTML = `
       <div class="sq-deck-header">
         <span class="sq-deck-icon" style="background:${color}">${icon}</span>
-        <span class="sq-deck-name">${escapeHtml4(deck.name)}</span>
+        <span class="sq-deck-name">${escapeHtml5(deck.name)}</span>
         <span class="sq-deck-count">${matched.length} \u6761</span>
       </div>
     `;
@@ -5908,8 +6690,8 @@
           item.innerHTML = `
           <div class="sq-item-main">
             <div class="sq-front">${hiText(card.front)}</div>
-            <div class="sq-back sq-recite-preview">${escapeHtml4(previewText)}\u2026</div>
-            ${card.example ? `<div class="sq-example sq-recite-trans">${escapeHtml4(card.example.slice(0, 50))}\u2026</div>` : ""}
+            <div class="sq-back sq-recite-preview">${escapeHtml5(previewText)}\u2026</div>
+            ${card.example ? `<div class="sq-example sq-recite-trans">${escapeHtml5(card.example.slice(0, 50))}\u2026</div>` : ""}
           </div>
           <button class="sq-recite-btn" title="\u80CC\u8BF5">\u{1F4D6}</button>
         `;
@@ -5923,7 +6705,7 @@
         } else {
           item.innerHTML = `
           <div class="sq-item-main">
-            <div class="sq-front">${hiText(card.front)}${card.phonetic ? `<span class="sq-phonetic">${escapeHtml4(card.phonetic)}</span>` : ""}</div>
+            <div class="sq-front">${hiText(card.front)}${card.phonetic ? `<span class="sq-phonetic">${escapeHtml5(card.phonetic)}</span>` : ""}</div>
             <div class="sq-back">${hiText(card.back)}</div>
             ${card.example ? `<div class="sq-example">${hiText(card.example)}</div>` : ""}
             ${card.hint ? `<div class="sq-hint">\u{1F4A1} ${hiText(card.hint)}</div>` : ""}

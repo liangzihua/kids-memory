@@ -104,8 +104,8 @@ function bindEnglishEvents() {
 }
 
 function showEnglishPage() {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  $('page-english-adult')?.classList.add('active');
+  if (window._showPage) { window._showPage('english-adult'); }
+  else { document.querySelectorAll('.page').forEach(p => p.classList.remove('active')); $('page-english-adult')?.classList.add('active'); }
 }
 
 // ===== Tab 切换 =====
@@ -269,8 +269,8 @@ function startScenario(scenario) {
   E.scenario = scenario;
   E.exchangeIndex = 0;
 
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  $('page-scenario')?.classList.add('active');
+  if (window._showPage) { window._showPage('scenario'); }
+  else { document.querySelectorAll('.page').forEach(p => p.classList.remove('active')); $('page-scenario')?.classList.add('active'); }
 
   $('scenario-context').textContent = `场景：${scenario.title} — ${scenario.context}`;
   renderExchange();

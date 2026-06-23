@@ -37,13 +37,7 @@ function bindPassageEvents() {
   });
 
   $('btn-passage-back')?.addEventListener('click', () => {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    $('page-english-adult')?.classList.add('active');
-    document.querySelectorAll('.english-tab').forEach(t => t.classList.toggle('active', t.dataset.etab === 'passages'));
-    document.querySelectorAll('.english-section').forEach(s => {
-      s.classList.toggle('active', s.id === 'etab-passages');
-      s.classList.toggle('hidden', s.id !== 'etab-passages');
-    });
+    window._goBack?.();
   });
 
   $('btn-passage-speak')?.addEventListener('click', () => {
@@ -167,8 +161,8 @@ function openPassage(pid) {
   $('passage-translate-section')?.classList.add('hidden');
   $('passage-recite-section')?.classList.add('hidden');
 
-  document.querySelectorAll('.page').forEach(pg => pg.classList.remove('active'));
-  document.getElementById('page-passage')?.classList.add('active');
+  if (window._showPage) { window._showPage('passage'); }
+  else { document.querySelectorAll('.page').forEach(pg => pg.classList.remove('active')); document.getElementById('page-passage')?.classList.add('active'); }
 }
 
 let _passageStopRecord = null;

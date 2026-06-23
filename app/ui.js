@@ -10,6 +10,7 @@ import { speak, speakCard, speakEnglish, speakChinese, startListening, stopListe
 import { scorePronunciation, startRecording, stopRecording } from './pronunciation.js';
 import { initEnglish, openTodayCardsModal } from './english.js';
 import { initPassages } from './passages.js';
+import { openPinyinPage } from './pinyin.js';
 import { parseImageWithAI, hasAIKey, handleAIGenerate } from './ai.js';
 import { initVocabStore } from './vocab-store.js';
 import { initRecitation, renderRecitationList, openRecitationPage, openRecitationListPage } from './recitation.js';
@@ -45,10 +46,52 @@ function toast(msg, duration = 2500) {
 
 // ===== 路由 =====
 
+const _pageHistory = [];
+let _isGoingBack = false;
+
+function goBack() {
+  const prev = _pageHistory.pop();
+  _isGoingBack = true;
+  showPage(prev || 'home');
+  _isGoingBack = false;
+  if (!prev) loadHomeData();
+}
+window._goBack   = goBack;
+window._showPage = showPage;
+
 function showPage(pageId) {
+  // 记录来源页（返回时不记录，主页/档案页不记录）
+  if (!_isGoingBack) {
+    const cur = document.querySelector('.page.active')?.id?.replace('page-', '');
+    if (cur && cur !== pageId && cur !== 'profiles') {
+      _pageHistory.push(cur);
+      if (_pageHistory.length > 30) _pageHistory.shift();
+    }
+  }
+
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const target = $(`page-${pageId}`);
   if (target) target.classList.add('active');
+
+  // 非主页注入"返回主页"按钮（只注入一次）
+  if (target && pageId !== 'home' && pageId !== 'profiles') {
+    const header = target.querySelector('.page-header, .study-header, .home-header');
+    if (header && !header.querySelector('.btn-go-home')) {
+      const btn = document.createElement('button');
+      btn.className = 'btn-go-home btn-icon';
+      btn.title = '返回主页';
+      btn.innerHTML = '🏠';
+      btn.style.cssText = 'background:rgba(255,255,255,0.2);color:white;font-size:16px;flex-shrink:0;margin-left:auto';
+      btn.addEventListener('click', () => {
+        _pageHistory.length = 0;
+        _isGoingBack = true;
+        showPage('home');
+        _isGoingBack = false;
+        loadHomeData();
+      });
+      header.appendChild(btn);
+    }
+  }
 
   // 更新底部导航
   document.querySelectorAll('.nav-item').forEach(btn => {
@@ -81,8 +124,12 @@ async function init() {
   });
 
   // 所有「返回」按钮
-  document.querySelectorAll('.btn-back[data-page]').forEach(btn => {
-    btn.addEventListener('click', () => showPage(btn.dataset.page));
+  // 返回按钮：有 data-page 时跳到指定页，没有时用历史栈
+  document.querySelectorAll('.btn-back').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.page) showPage(btn.dataset.page);
+      else goBack();
+    });
   });
 
   // 题库年级过滤按钮 → 重新渲染
@@ -128,8 +175,25 @@ async function init() {
     import('./english.js').then(m => m.renderGrammarList?.('all'));
   });
 
-  $('btn-study-back')?.addEventListener('click', () => showPage('home'));
-  $('btn-back-home')?.addEventListener('click', () => { hide($('session-complete')); showPage('home'); loadHomeData(); });
+  // 语文快捷按钮 → 语文学习中心
+  $('btn-quick-chinese')?.addEventListener('click', () => openChineseLearningPage());
+
+  // 语文专项快捷按钮 → 打开语文学习中心并定位到对应 Tab
+  $('btn-quick-recite-tab')?.addEventListener('click', () => openChineseTab('recite'));
+  $('btn-quick-pinyin-tab')?.addEventListener('click', () => openChineseTab('pinyin'));
+  $('btn-quick-chars-tab')?.addEventListener('click', () => openChineseTab('chars'));
+  $('btn-quick-idioms-tab')?.addEventListener('click', () => openChineseTab('idioms'));
+
+  // 语文学习中心内部 Tab
+  document.querySelectorAll('.chinese-tab').forEach(btn => {
+    btn.addEventListener('click', () => switchChineseTab(btn.dataset.ctab));
+  });
+
+  // 语文学习中心各入口（生字/词语/成语/古诗题库走闪卡，其余内嵌）
+  // 生字/成语/古诗题库已改为内嵌，旧按钮不再存在，无需绑定
+
+  $('btn-study-back')?.addEventListener('click', () => goBack());
+  $('btn-back-home')?.addEventListener('click', () => { hide($('session-complete')); goBack(); loadHomeData(); });
   $('btn-continue')?.addEventListener('click', () => startStudySession());
 
   // 学科卡片（排除古诗文背诵，它单独处理）
@@ -619,6 +683,181 @@ async function startStudySession(subject) {
   renderCard();
 }
 
+// ===== 语文学习中心 =====
+
+function openChineseLearningPage() {
+  showPage('chinese-learning');
+  switchChineseTab('recite');
+}
+
+function openChineseTab(tab) {
+  showPage('chinese-learning');
+  // 更新 tab 按钮状态
+  document.querySelectorAll('.chinese-tab').forEach(b => b.classList.toggle('active', b.dataset.ctab === tab));
+  // 切换内容区
+  switchChineseTab(tab);
+}
+
+function switchChineseTab(tab) {
+  document.querySelectorAll('.chinese-tab').forEach(b => b.classList.toggle('active', b.dataset.ctab === tab));
+  document.querySelectorAll('.chinese-section').forEach(s => {
+    s.classList.toggle('active', s.id === `ctab-${tab}`);
+    s.classList.toggle('hidden', s.id !== `ctab-${tab}`);
+  });
+
+  if (tab === 'recite') initCtabRecite();
+  if (tab === 'pinyin') initCtabPinyin();
+  if (tab === 'chars')  initCtabChars();
+  if (tab === 'idioms') initCtabIdioms();
+  if (tab === 'poems')  initCtabPoems();
+}
+
+// ===== 内嵌古诗列表 =====
+function initCtabRecite() {
+  const list = document.getElementById('ctab-recite-list');
+  if (!list) return;
+
+  const { getRecitationTexts, openRecitationPage } = window._recitationAPI || {};
+  const texts = window._recitationTexts || [];
+  if (!texts.length) {
+    list.innerHTML = '<p style="text-align:center;padding:32px;color:var(--color-text-sub)">正在加载古诗数据…</p>';
+    // 等待数据就绪后重试
+    setTimeout(() => { if (window._recitationTexts?.length) initCtabRecite(); }, 500);
+    return;
+  }
+
+  function renderList(cat = 'all', query = '') {
+    let items = texts;
+    if (cat === 'primary') items = items.filter(t => t.grade?.startsWith('primary'));
+    else if (cat === 'middle') items = items.filter(t => t.grade?.startsWith('middle'));
+    else if (cat === 'poem') items = items.filter(t => t.category === '古诗' || t.category === '古诗词' || t.tags?.includes('古诗'));
+    if (query) {
+      const q = query.toLowerCase();
+      items = items.filter(t => t.title?.includes(query) || t.author?.toLowerCase().includes(q) || t.dynasty?.includes(query));
+    }
+
+    const gradeLabel = g => ({ primary1:'小学一年级', primary2:'小学二年级', primary3:'小学三年级', primary4:'小学四年级', primary5:'小学五年级', primary6:'小学六年级', middle1:'初中一年级', middle2:'初中二年级', middle3:'初中三年级' }[g] || g || '');
+
+    if (!items.length) { list.innerHTML = '<p style="text-align:center;padding:32px;color:var(--color-text-sub)">暂无内容</p>'; return; }
+
+    list.innerHTML = items.map(t => {
+      const isWenyan = t.category === '文言文' || t.tags?.includes('文言文');
+      return `<button class="recite-text-item" data-id="${t.id}" style="width:100%;text-align:left">
+        <div class="rti-cat" style="background:${isWenyan ? '#8B5CF6' : 'var(--color-chinese)'}">${isWenyan ? '文' : '诗'}</div>
+        <div class="rti-info">
+          <div class="rti-title">${t.title}</div>
+          <div class="rti-meta">${t.dynasty ? t.dynasty + ' · ' : ''}${t.author || ''}${t.category ? ' · ' + t.category : ''}</div>
+        </div>
+        <div class="rti-segs">${t.segments?.length || 0}段 ›</div>
+      </button>`;
+    }).join('');
+
+    list.querySelectorAll('.recite-text-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (window._openRecitationPage) window._openRecitationPage(btn.dataset.id);
+      });
+    });
+  }
+
+  // 绑定分类 tab（仅绑定一次）
+  const tabContainer = document.querySelector('#ctab-recite .recite-list-tabs');
+  if (tabContainer && !tabContainer.dataset.bound) {
+    tabContainer.dataset.bound = '1';
+    tabContainer.querySelectorAll('.recite-list-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabContainer.querySelectorAll('.recite-list-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const q = document.getElementById('ctab-recite-search')?.value.trim() || '';
+        renderList(btn.dataset.cat, q);
+      });
+    });
+  }
+
+  // 绑定搜索（仅绑定一次）
+  const searchInput = document.getElementById('ctab-recite-search');
+  if (searchInput && !searchInput.dataset.bound) {
+    searchInput.dataset.bound = '1';
+    let timer;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const cat = document.querySelector('#ctab-recite .recite-list-tab.active')?.dataset.cat || 'all';
+        renderList(cat, searchInput.value.trim());
+      }, 250);
+    });
+  }
+
+  const cat = document.querySelector('#ctab-recite .recite-list-tab.active')?.dataset.cat || 'all';
+  renderList(cat);
+}
+
+// ===== 内嵌拼音 =====
+let _ctabPinyinMode = 'table';
+let _ctabPinyinGrade = 'all';
+
+function initCtabPinyin() {
+  // 绑定模式 tab（仅绑定一次）
+  const modeTabs = document.getElementById('ctab-py-mode-tabs');
+  if (modeTabs && !modeTabs.dataset.bound) {
+    modeTabs.dataset.bound = '1';
+    modeTabs.querySelectorAll('.py-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeTabs.querySelectorAll('.py-mode-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        _ctabPinyinMode = btn.dataset.pymode;
+        const gradeRow = document.getElementById('ctab-py-grade-row');
+        if (gradeRow) gradeRow.style.display = (_ctabPinyinMode === 'p2w' || _ctabPinyinMode === 'w2p') ? 'flex' : 'none';
+        renderCtabPinyin();
+      });
+    });
+    // 年级 tab
+    document.getElementById('ctab-py-grade-row')?.querySelectorAll('.py-grade-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('ctab-py-grade-row').querySelectorAll('.py-grade-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        _ctabPinyinGrade = btn.dataset.pygrade;
+        renderCtabPinyin();
+      });
+    });
+  }
+
+  // 加载数据后渲染
+  if (window._pinyinData) {
+    renderCtabPinyin();
+  } else {
+    import('./pinyin.js').then(m => m.initPinyin?.()).then(() => renderCtabPinyin());
+  }
+}
+
+function renderCtabPinyin() {
+  const body = document.getElementById('ctab-py-body');
+  if (!body || !window._pinyinData) return;
+
+  // 复用 pinyin.js 的渲染逻辑，但渲染到 ctab-py-body
+  // 临时把 _currentMode/_gradeFilter 设置后调用同样的渲染函数
+  import('./pinyin.js').then(m => {
+    // pinyin.js 已初始化，直接调内部渲染函数（通过 window 暴露）
+    if (window._renderPinyinToElement) {
+      window._renderPinyinToElement(body, _ctabPinyinMode, _ctabPinyinGrade);
+    }
+  });
+}
+
+
+async function startStudyFromSubjectDeck(subject, deckNameKeyword) {
+  const profile = App.currentProfile;
+  if (!profile) return;
+  App._studyFromPage = 'chinese-learning';
+  const decks = await DeckManager.getByProfile(profile.id);
+  const deck = decks.find(d => d.subject === subject && d.name.includes(deckNameKeyword));
+  if (deck) {
+    startStudyFromDeck(deck.id, subject);
+  } else {
+    toast(`正在加载"${deckNameKeyword}"...`);
+    await ensureBuiltinDeck(subject, deckNameKeyword);
+  }
+}
+
 function startStudyBySubject(subject) {
   if (subject === 'custom') {
     showPage('library'); renderLibrary(); return;
@@ -634,6 +873,169 @@ async function openHomeRecitation() {
   try { await initRecitation(); } catch(_) {}
   // 直接进入独立清单页
   openRecitationListPage();
+}
+
+// ===== 生字词语内嵌 =====
+let _ctabCharsTab = 'chars';
+
+async function initCtabChars() {
+  // 绑定子 tab
+  const tabs = document.getElementById('ctab-chars-tabs');
+  if (tabs && !tabs.dataset.bound) {
+    tabs.dataset.bound = '1';
+    tabs.querySelectorAll('.py-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.querySelectorAll('.py-mode-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        _ctabCharsTab = btn.dataset.charstab;
+        renderCtabChars();
+      });
+    });
+  }
+  renderCtabChars();
+}
+
+async function renderCtabChars() {
+  const body = document.getElementById('ctab-chars-body');
+  if (!body) return;
+  body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">加载中…</p>';
+
+  const deckName = _ctabCharsTab === 'chars' ? '小学生字' : '小学语文词语';
+  const cards = await loadBuiltinCardsInline('chinese', deckName);
+  if (!cards.length) { body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">暂无数据，首次使用需加载</p>'; return; }
+
+  body.innerHTML = cards.slice(0, 100).map(c => `
+    <div class="ctab-card-item">
+      <div class="ctab-card-front">${escapeHtml(c.front)}</div>
+      <div class="ctab-card-back">${escapeHtml((c.back || '').split('｜')[0])}</div>
+      ${c.phonetic ? `<div class="ctab-card-phonetic">${escapeHtml(c.phonetic)}</div>` : ''}
+      <button class="ctab-card-speak" data-text="${escapeHtml(c.front)}">🔊</button>
+    </div>`).join('');
+
+  body.querySelectorAll('.ctab-card-speak').forEach(btn => {
+    btn.addEventListener('click', e => { e.stopPropagation(); speakChinese(btn.dataset.text, 0.8); });
+  });
+
+  if (cards.length > 100) {
+    const moreBtn = document.createElement('button');
+    moreBtn.className = 'btn-secondary';
+    moreBtn.style.cssText = 'width:100%;margin-top:8px';
+    moreBtn.textContent = `▶ 进入闪卡练习（共${cards.length}张）`;
+    moreBtn.addEventListener('click', () => startStudyFromSubjectDeck('chinese', deckName));
+    body.appendChild(moreBtn);
+  }
+}
+
+// ===== 成语内嵌 =====
+async function initCtabIdioms() {
+  const body = document.getElementById('ctab-idioms-body');
+  if (!body) return;
+
+  const search = document.getElementById('ctab-idioms-search');
+  if (search && !search.dataset.bound) {
+    search.dataset.bound = '1';
+    let timer;
+    search.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => renderCtabIdioms(search.value.trim()), 250);
+    });
+  }
+  renderCtabIdioms('');
+}
+
+async function renderCtabIdioms(query = '') {
+  const body = document.getElementById('ctab-idioms-body');
+  if (!body) return;
+  body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">加载中…</p>';
+
+  let cards = await loadBuiltinCardsInline('chinese', '小学成语');
+  if (query) cards = cards.filter(c => c.front?.includes(query) || c.back?.includes(query));
+  if (!cards.length) { body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">未找到相关成语</p>'; return; }
+
+  body.innerHTML = cards.slice(0, 80).map(c => `
+    <div class="ctab-card-item ctab-idiom-item">
+      <div class="ctab-idiom-word">${escapeHtml(c.front)}</div>
+      <div class="ctab-card-back">${escapeHtml(c.back || '')}</div>
+      ${c.example ? `<div class="ctab-idiom-ex">📝 ${escapeHtml(c.example)}</div>` : ''}
+      <button class="ctab-card-speak" data-text="${escapeHtml(c.front)}">🔊</button>
+    </div>`).join('');
+
+  body.querySelectorAll('.ctab-card-speak').forEach(btn => {
+    btn.addEventListener('click', e => { e.stopPropagation(); speakChinese(btn.dataset.text, 0.8); });
+  });
+
+  if (!query && cards.length > 80) {
+    const moreBtn = document.createElement('button');
+    moreBtn.className = 'btn-secondary';
+    moreBtn.style.cssText = 'width:100%;margin-top:8px';
+    moreBtn.textContent = `▶ 进入闪卡练习（共${cards.length}条）`;
+    moreBtn.addEventListener('click', () => startStudyFromSubjectDeck('chinese', '小学成语'));
+    body.appendChild(moreBtn);
+  }
+}
+
+// ===== 古诗题库内嵌 =====
+async function initCtabPoems() {
+  const body = document.getElementById('ctab-poems-body');
+  if (!body) return;
+  body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">加载中…</p>';
+
+  const cards = await loadBuiltinCardsInline('chinese', '小学必背古诗');
+  if (!cards.length) { body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">暂无数据</p>'; return; }
+
+  body.innerHTML = cards.slice(0, 60).map(c => `
+    <div class="ctab-card-item ctab-poem-item">
+      <div class="ctab-poem-q">${escapeHtml(c.front)}</div>
+      <div class="ctab-poem-a" style="display:none">${escapeHtml(c.back || '')}</div>
+      <div class="ctab-poem-hint">${escapeHtml(c.hint || '')}</div>
+      <button class="ctab-poem-reveal">显示答案</button>
+    </div>`).join('');
+
+  body.querySelectorAll('.ctab-poem-reveal').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ans = btn.previousElementSibling.previousElementSibling;
+      if (ans.style.display === 'none') { ans.style.display = 'block'; btn.textContent = '隐藏答案'; }
+      else { ans.style.display = 'none'; btn.textContent = '显示答案'; }
+    });
+  });
+
+  if (cards.length > 60) {
+    const moreBtn = document.createElement('button');
+    moreBtn.className = 'btn-secondary';
+    moreBtn.style.cssText = 'width:100%;margin-top:8px';
+    moreBtn.textContent = `▶ 进入闪卡练习（共${cards.length}题）`;
+    moreBtn.addEventListener('click', () => startStudyFromSubjectDeck('chinese', '小学必背古诗'));
+    body.appendChild(moreBtn);
+  }
+}
+
+// ===== 工具：加载内置题库卡片（不进入学习模式）=====
+const _builtinCardCache = {};
+async function loadBuiltinCardsInline(subject, nameKeyword) {
+  const key = subject + '|' + nameKeyword;
+  if (_builtinCardCache[key]) return _builtinCardCache[key];
+
+  // 先看 IndexedDB 有没有
+  if (App.currentProfile) {
+    const decks = await DeckManager.getByProfile(App.currentProfile.id);
+    const deck = decks.find(d => d.subject === subject && d.name.includes(nameKeyword));
+    if (deck) {
+      const cards = App.allProfileCards.filter(c => c.deckId === deck.id);
+      if (cards.length) { _builtinCardCache[key] = cards; return cards; }
+    }
+  }
+
+  // 没有就从 JSON 文件直接读
+  const def = BUILTIN_DECKS.find(d => d.subject === subject && d.name.includes(nameKeyword));
+  if (!def) return [];
+  try {
+    const res = await fetch(def.file);
+    if (!res.ok) return [];
+    const data = await res.json();
+    const cards = (data.cards || []).map(c => ({ ...c, subject }));
+    _builtinCardCache[key] = cards;
+    return cards;
+  } catch { return []; }
 }
 
 async function openSubjectDecksPage(subject) {
@@ -730,7 +1132,7 @@ async function openSubjectDecksPage(subject) {
   $('btn-study-all-subject').onclick = () => startStudySession(subject);
 
   // 返回按钮
-  $('btn-subject-decks-back').onclick = () => showPage('home');
+  $('btn-subject-decks-back').onclick = () => goBack();
 
   showPage('subject-decks');
 }
@@ -1297,46 +1699,26 @@ function setupSwipeGesture() {
 // 全局左边缘右划返回（iOS/Android 通用手势）
 function setupBackGesture() {
   let startX = 0, startY = 0;
-  const EDGE = 30; // 触发区域：屏幕左侧30px内开始滑动
+  const EDGE = 30;
 
-  // 页面返回映射
-  const pageBackMap = {
-    'page-library':         'home',
-    'page-import':          'home',
-    'page-search':          'home',
-    'page-stats':           'home',
-    'page-settings':        'home',
-    'page-study':           'home',
-    'page-scenario':        'english-adult',
-    'page-recitation':      'recitation-list',
-    'page-recitation-list': 'home',
-    'page-english-adult':   'home',
-    'page-vocab-store':     'library',
-    'page-subject-decks':   'home',
-  };
-
+  // 返回上一页（优先历史栈，否则返回 home）
   document.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
   }, { passive: true });
 
+  // 页面返回：优先历史栈，不再需要 pageBackMap
   document.addEventListener('touchend', e => {
     const dx = e.changedTouches[0].clientX - startX;
     const dy = Math.abs(e.changedTouches[0].clientY - startY);
 
-    // 右划超过 80px，且水平位移远大于垂直（不是上下滑动）
-    // 且触发点在左侧边缘（移动端系统手势区域）或 dx > 120px（全屏右划）
     if (dx > 80 && dy < dx * 0.8 && (startX < EDGE + 20 || dx > 120)) {
       const activePage = document.querySelector('.page.active');
       if (!activePage) return;
-
-      const pageId     = activePage.id;
-      const backTarget = pageBackMap[pageId];
-
-      if (backTarget) {
+      const pageId = activePage.id?.replace('page-', '');
+      if (pageId && pageId !== 'home' && pageId !== 'profiles') {
         e.preventDefault?.();
-        showPage(backTarget);
-        if (backTarget === 'home') loadHomeData();
+        goBack();
       }
     }
   }, { passive: true });
@@ -1704,9 +2086,7 @@ async function openRecitationFromDeck(deckId) {
   if (matched) {
     openRecitationPage(matched.id);
   } else {
-    // 显示全部可背诵列表
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    $('page-library')?.classList.add('active');
+    showPage('library');
     toast('请在题库底部选择要背诵的古诗');
     showRecitationListInLibrary();
   }
@@ -1835,6 +2215,17 @@ const BUILTIN_DECKS = [
   { file: 'data/builtin/math/middle/geometry.json',                name: '初中几何公式',         subject: 'math',    grade: 'middle'  },
   { file: 'data/builtin/math/middle/algebra.json',                 name: '初中代数公式',         subject: 'math',    grade: 'middle'  },
 ];
+
+// 自动加载内置题库并开始学习
+async function ensureBuiltinDeck(subject, nameKeyword) {
+  const def = BUILTIN_DECKS.find(d => d.subject === subject && d.name.includes(nameKeyword));
+  if (!def) { toast(`未找到题库：${nameKeyword}`); return; }
+  await loadBuiltinDeck(def);
+  // 重新查找并开始学习
+  const decks = await DeckManager.getByProfile(App.currentProfile.id);
+  const deck = decks.find(d => d.name.includes(nameKeyword));
+  if (deck) startStudyFromDeck(deck.id, subject);
+}
 
 async function showBuiltinLibrary() {
   const modal = document.createElement('div');

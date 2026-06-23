@@ -98,10 +98,12 @@
         <div class="profile-avatar-sm" id="current-avatar"></div>
         <div>
           <div class="home-greeting">你好 👋</div>
-          <div class="profile-name-sm" id="current-name">同学</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <div class="profile-name-sm" id="current-name">同学</div>
+            <button class="btn-switch-inline" id="btn-switch-profile" title="切换档案">⇄</button>
+          </div>
         </div>
       </div>
-      <button class="btn-icon btn-icon-white" id="btn-switch-profile" title="切换档案">⇄</button>
     </div>
     <div class="streak-badge">
       <span>🔥</span>
@@ -127,7 +129,7 @@
       <span class="subject-name">数学</span>
       <span class="subject-progress" id="prog-math">0%</span>
     </button>
-    <button class="subject-card subject-card-recite" id="btn-home-recite">
+    <button class="subject-card subject-card-recite" id="btn-home-recite" style="display:none">
       <span class="subject-icon">🏮</span>
       <span class="subject-name">古诗文背诵</span>
       <span class="subject-progress" id="prog-recite">点击进入</span>
@@ -149,6 +151,22 @@
     </button>
     <button class="english-quick-btn" id="btn-quick-grammar">
       <span>📖</span><span>语法要点</span>
+    </button>
+  </div>
+
+  <!-- 语文专项快捷区 -->
+  <div class="english-quick-row" style="margin-top:0">
+    <button class="english-quick-btn chinese-quick-btn" id="btn-quick-recite-tab">
+      <span>🏮</span><span>古诗背诵</span>
+    </button>
+    <button class="english-quick-btn chinese-quick-btn" id="btn-quick-pinyin-tab">
+      <span>🔡</span><span>拼音</span>
+    </button>
+    <button class="english-quick-btn chinese-quick-btn" id="btn-quick-chars-tab">
+      <span>📝</span><span>生字词语</span>
+    </button>
+    <button class="english-quick-btn chinese-quick-btn" id="btn-quick-idioms-tab">
+      <span>📜</span><span>成语</span>
     </button>
   </div>
 
@@ -373,7 +391,7 @@
 <!-- ===== 页面：题库管理 ===== -->
 <div id="page-library" class="page">
   <header class="page-header">
-    <button class="btn-back" data-page="home">←</button>
+    <button class="btn-back">←</button>
     <h2>题库</h2>
     <button class="btn-icon btn-vocab-store" id="btn-vocab-store" title="词库商店">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
@@ -459,7 +477,7 @@
 <!-- ===== 页面：导入 ===== -->
 <div id="page-import" class="page">
   <header class="page-header">
-    <button class="btn-back" data-page="home">←</button>
+    <button class="btn-back">←</button>
     <h2>导入素材</h2>
   </header>
 
@@ -551,7 +569,7 @@
 <div id="page-search" class="page">
   <header class="page-header" style="flex-direction:column;gap:10px;padding-bottom:0">
     <div style="display:flex;align-items:center;gap:10px;width:100%">
-      <button class="btn-back" data-page="home">←</button>
+      <button class="btn-back">←</button>
       <h2 style="flex:1">查询</h2>
       <span class="search-page-count" id="search-page-count"></span>
     </div>
@@ -591,7 +609,7 @@
 <!-- ===== 页面：统计 ===== -->
 <div id="page-stats" class="page">
   <header class="page-header">
-    <button class="btn-back" data-page="home">←</button>
+    <button class="btn-back">←</button>
     <h2>学习统计</h2>
   </header>
   <div class="stats-overview" id="stats-overview">
@@ -608,7 +626,7 @@
 <!-- ===== 页面：设置 ===== -->
 <div id="page-settings" class="page">
   <header class="page-header">
-    <button class="btn-back" data-page="home">←</button>
+    <button class="btn-back">←</button>
     <h2>设置</h2>
   </header>
   <div class="settings-list">
@@ -766,10 +784,101 @@
   </div>
 </div>
 
+<!-- ===== 页面：语文学习中心 ===== -->
+<div id="page-chinese-learning" class="page">
+  <header class="page-header" style="background:linear-gradient(135deg,#E84848,#C0392B)">
+    <button class="btn-back">←</button>
+    <h2>语文学习</h2>
+  </header>
+
+  <div class="chinese-tabs" id="chinese-tabs">
+    <button class="chinese-tab active" data-ctab="recite">
+      <span>🏮</span><span>古诗背诵</span>
+    </button>
+    <button class="chinese-tab" data-ctab="pinyin">
+      <span>🔤</span><span>拼音</span>
+    </button>
+    <button class="chinese-tab" data-ctab="chars">
+      <span>字</span><span>生字词语</span>
+    </button>
+    <button class="chinese-tab" data-ctab="idioms">
+      <span>📜</span><span>成语</span>
+    </button>
+    <button class="chinese-tab" data-ctab="poems">
+      <span>✍️</span><span>古诗题库</span>
+    </button>
+  </div>
+
+  <!-- 古诗背诵子页：直接内嵌列表 -->
+  <div class="chinese-section active" id="ctab-recite" style="flex:1;overflow:hidden;display:flex;flex-direction:column">
+    <!-- 分类过滤 -->
+    <div class="recite-list-tabs" style="padding:8px 14px 0;flex-shrink:0">
+      <button class="recite-list-tab active" data-cat="all">全部</button>
+      <button class="recite-list-tab" data-cat="primary">小学</button>
+      <button class="recite-list-tab" data-cat="middle">初中</button>
+      <button class="recite-list-tab" data-cat="poem">古诗词</button>
+    </div>
+    <!-- 搜索 -->
+    <div style="padding:8px 14px 6px;flex-shrink:0">
+      <input type="text" id="ctab-recite-search" placeholder="搜索诗名、作者…"
+        style="border-radius:20px;padding:8px 14px;font-size:13px">
+    </div>
+    <!-- 列表 -->
+    <div id="ctab-recite-list" style="flex:1;overflow-y:auto;padding:0 14px 80px"></div>
+  </div>
+
+  <!-- 拼音子页：直接内嵌拼音模块 -->
+  <div class="chinese-section hidden" id="ctab-pinyin" style="flex:1;overflow:hidden;display:flex;flex-direction:column">
+    <!-- 拼音模式 Tab -->
+    <div class="py-mode-tabs" id="ctab-py-mode-tabs">
+      <button class="py-mode-btn active" data-pymode="table">📋 声韵母</button>
+      <button class="py-mode-btn" data-pymode="tones">🎵 声调</button>
+      <button class="py-mode-btn" data-pymode="poly">🔀 多音字</button>
+      <button class="py-mode-btn" data-pymode="p2w">拼音→字</button>
+      <button class="py-mode-btn" data-pymode="w2p">字→拼音</button>
+    </div>
+    <!-- 年级过滤（练习模式） -->
+    <div class="py-grade-row" id="ctab-py-grade-row" style="display:none">
+      <button class="py-grade-btn active" data-pygrade="all">全部</button>
+      <button class="py-grade-btn" data-pygrade="primary1">一年级</button>
+      <button class="py-grade-btn" data-pygrade="primary2">二年级</button>
+      <button class="py-grade-btn" data-pygrade="primary3">三年级</button>
+      <button class="py-grade-btn" data-pygrade="primary4">四年级</button>
+      <button class="py-grade-btn" data-pygrade="primary5">五年级</button>
+      <button class="py-grade-btn" data-pygrade="primary6">六年级</button>
+    </div>
+    <!-- 内容区 -->
+    <div id="ctab-py-body" style="flex:1;overflow-y:auto;padding:12px 14px 80px"></div>
+  </div>
+
+  <!-- 生字词语子页 -->
+  <div class="chinese-section hidden" id="ctab-chars" style="flex:1;overflow:hidden;display:flex;flex-direction:column">
+    <div class="py-mode-tabs" id="ctab-chars-tabs">
+      <button class="py-mode-btn active" data-charstab="chars">🔤 生字</button>
+      <button class="py-mode-btn" data-charstab="words">📝 词语</button>
+    </div>
+    <div id="ctab-chars-body" style="flex:1;overflow-y:auto;padding:12px 14px 80px"></div>
+  </div>
+
+  <!-- 成语子页 -->
+  <div class="chinese-section hidden" id="ctab-idioms" style="flex:1;overflow:hidden;display:flex;flex-direction:column">
+    <div style="padding:10px 14px 6px;flex-shrink:0">
+      <input type="text" id="ctab-idioms-search" placeholder="搜索成语…"
+        style="border-radius:20px;padding:8px 14px;font-size:13px">
+    </div>
+    <div id="ctab-idioms-body" style="flex:1;overflow-y:auto;padding:0 14px 80px"></div>
+  </div>
+
+  <!-- 古诗题库子页 -->
+  <div class="chinese-section hidden" id="ctab-poems" style="flex:1;overflow-y:auto;padding:12px 14px 80px">
+    <div id="ctab-poems-body"></div>
+  </div>
+</div>
+
 <!-- ===== 页面：成人英语学习中心 ===== -->
 <div id="page-english-adult" class="page">
   <header class="page-header">
-    <button class="btn-back" data-page="home">←</button>
+    <button class="btn-back">←</button>
     <h2>英语学习</h2>
     <button class="btn-icon" id="btn-english-settings" title="设置">⚙</button>
   </header>
@@ -1059,6 +1168,37 @@
 </div>
 
 <!-- ===== 页面：古诗文清单 ===== -->
+<!-- ===== 页面：拼音学习 ===== -->
+<div id="page-pinyin" class="page">
+  <header class="page-header" style="background:linear-gradient(135deg,#E84848,#C0392B)">
+    <button class="btn-back" id="btn-pinyin-back">←</button>
+    <h2>拼音学习</h2>
+  </header>
+
+  <!-- 模式 Tab -->
+  <div class="py-mode-tabs">
+    <button class="py-mode-btn active" data-mode="table">📋 声韵母表</button>
+    <button class="py-mode-btn" data-mode="tones">🎵 声调</button>
+    <button class="py-mode-btn" data-mode="poly">🔀 多音字</button>
+    <button class="py-mode-btn" data-mode="p2w">🔤→字</button>
+    <button class="py-mode-btn" data-mode="w2p">字→🔤</button>
+  </div>
+
+  <!-- 年级过滤（仅练习模式显示）-->
+  <div class="py-grade-row" id="py-grade-row" style="display:none">
+    <button class="py-grade-btn active" data-grade="all">全部</button>
+    <button class="py-grade-btn" data-grade="primary1">一年级</button>
+    <button class="py-grade-btn" data-grade="primary2">二年级</button>
+    <button class="py-grade-btn" data-grade="primary3">三年级</button>
+    <button class="py-grade-btn" data-grade="primary4">四年级</button>
+    <button class="py-grade-btn" data-grade="primary5">五年级</button>
+    <button class="py-grade-btn" data-grade="primary6">六年级</button>
+  </div>
+
+  <!-- 内容区 -->
+  <div id="pinyin-body" style="flex:1;overflow-y:auto;padding:12px 14px 80px"></div>
+</div>
+
 <div id="page-recitation-list" class="page">
   <header class="page-header">
     <button class="btn-back" id="btn-recite-list-back">←</button>
