@@ -11,7 +11,6 @@ import { scorePronunciation, startRecording, stopRecording } from './pronunciati
 import { initEnglish, openTodayCardsModal } from './english.js';
 import { initPassages } from './passages.js';
 import { openPinyinPage } from './pinyin.js';
-import { parseImageWithAI, hasAIKey, handleAIGenerate } from './ai.js';
 import { initVocabStore } from './vocab-store.js';
 import { initRecitation, renderRecitationList, openRecitationPage, openRecitationListPage } from './recitation.js';
 
@@ -102,6 +101,13 @@ function showPage(pageId) {
 // ===== 初始化 =====
 
 async function init() {
+  // 首次启动：检查是否已同意隐私政策
+  const privacyKey = 'kids_memory_privacy_agreed';
+  const agreed = localStorage.getItem(privacyKey);
+  if (!agreed) {
+    await showPrivacyDialog(privacyKey);
+  }
+
   await loadProfiles();
 
   try {
@@ -235,24 +241,6 @@ async function init() {
     $('profile-selected-avatar').textContent = btn.dataset.emoji;
   });
 
-  // 导入 + AI
-  $('btn-ai-generate')?.addEventListener('click', openAIModal);
-
-  // AI 弹窗内部 provider tabs（限定在弹窗内，不影响其他元素）
-  $('ai-generate-modal')?.addEventListener('click', e => {
-    const tab = e.target.closest('[data-provider]');
-    if (!tab) return;
-    $('ai-generate-modal').querySelectorAll('[data-provider]').forEach(b => b.classList.remove('active'));
-    tab.classList.add('active');
-    localStorage.setItem('ai_provider', tab.dataset.provider);
-  });
-
-  // AI 弹窗取消
-  $('btn-ai-cancel')?.addEventListener('click', () => hide($('ai-generate-modal')));
-
-  // AI 弹窗生成按钮
-  $('btn-ai-submit')?.addEventListener('click', handleAIGenerate);
-
   // 模板下载
   document.querySelectorAll('.btn-tpl').forEach(btn => {
     btn.addEventListener('click', () => downloadTemplate(btn.dataset.tpl));
@@ -382,10 +370,6 @@ async function init() {
     hide($('import-to-library-modal'));
     show($('manual-modal'));
   });
-  $('btn-lib-ai')?.addEventListener('click', () => {
-    hide($('import-to-library-modal'));
-    openAIModal();
-  });
 
   // 设置
   $('setting-new-per-day')?.addEventListener('input', e => {
@@ -395,7 +379,6 @@ async function init() {
     $('speech-rate-value').textContent = `${e.target.value}×`;
   });
   $('btn-save-azure')?.addEventListener('click', saveAzureConfig);
-  $('btn-save-ai-config')?.addEventListener('click', saveAIConfig);
   $('btn-update-builtin')?.addEventListener('click', updateAllBuiltinDecks);
   $('btn-export-data')?.addEventListener('click', exportCurrentProfile);
   $('btn-clear-data')?.addEventListener('click', clearCurrentProfileData);
@@ -413,6 +396,30 @@ async function init() {
   $('privacy-overlay')?.addEventListener('click', e => {
     if (e.target === $('privacy-overlay')) $('privacy-overlay').classList.add('hidden');
   });
+
+  // 投诉与举报
+  $('btn-show-report')?.addEventListener('click', () => {
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+    overlay.innerHTML = `<div class="modal">
+      <h3>📢 投诉与举报</h3>
+      <p style="font-size:13px;color:var(--color-text-sub);line-height:1.8;margin:8px 0">
+        如您发现本应用存在违规内容，或需要投诉涉及未成年人的相关问题，请通过以下方式联系我们：
+      </p>
+      <div style="background:var(--color-surface2);border-radius:10px;padding:14px;margin:8px 0">
+        <div style="font-size:13px;margin-bottom:6px">📧 <strong>联系邮箱</strong></div>
+        <div style="font-size:14px;color:var(--color-primary);font-weight:600">zihua.liang@outlook.com</div>
+      </div>
+      <p style="font-size:12px;color:var(--color-text-hint);margin-top:8px">
+        我们承诺在收到投诉后 <strong>48小时内</strong> 响应处理，涉及未成年人保护的投诉将优先处理。
+      </p>
+      <button class="btn-primary" style="margin-top:16px;width:100%" id="btn-report-close">知道了</button>
+    </div>`;
+    document.body.appendChild(overlay);
+    overlay.querySelector('#btn-report-close').addEventListener('click', () => overlay.remove());
+    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+  });
+
   $('btn-add-profile')?.addEventListener('click', () => openProfileEditModal(null));
 
   // 手势：左右滑动 = 评分（闪卡）
@@ -1768,26 +1775,7 @@ function isImageFile(file) {
 async function handleImageInput(file) {
   if (!file) return;
 
-  // 优先用 AI 解析（配置了 Key 或 Worker URL）
-  if (hasAIKey()) {
-    show($('ocr-progress'));
-    try {
-      const { cards, suggestedName } = await parseImageWithAI(file, msg => {
-        $('ocr-status').textContent = msg;
-      });
-      _importCache = cards;
-      hide($('ocr-progress'));
-      $('deck-name-input').value = suggestedName;
-      showImportPreview(cards);
-      showPage('import');
-      return;
-    } catch (e) {
-      // AI 解析失败则降级到 Tesseract
-      $('ocr-status').textContent = `AI解析失败（${e.message}），切换到本地OCR...`;
-    }
-  }
-
-  // 降级：Tesseract 本地 OCR
+  // 本地 OCR 解析
   show($('ocr-progress'));
   try {
     const { cards: rawCards, suggestedName } = await parseImageOCR(file, msg => {
@@ -2396,9 +2384,6 @@ async function renderSettings() {
   const adultToggle = $('setting-adult-mode');
   if (adultToggle) adultToggle.checked = localStorage.getItem('adult_mode') === '1';
 
-  // AI 配置同步
-  loadAISettingsUI();
-
   // 声音选择器（延迟加载，等声音列表就绪）
   loadVoiceSelectors();
 
@@ -2619,78 +2604,6 @@ async function openManageProfiles() {
   show($('manage-profiles-modal'));
 }
 
-async function saveAIConfig() {
-  const workerUrl = $('setting-free-worker-url')?.value.trim() || '';
-  const provider  = $('setting-ai-provider').value;
-  const key       = $('setting-ai-key').value.trim();
-  const endpoint  = $('setting-ai-endpoint').value.trim();
-
-  if (workerUrl) localStorage.setItem('free_worker_url', workerUrl);
-  else           localStorage.removeItem('free_worker_url');
-
-  localStorage.setItem('ai_provider', provider || (workerUrl ? 'free' : ''));
-  localStorage.setItem('ai_key',      key);
-  localStorage.setItem('ai_endpoint', endpoint);
-
-  if (workerUrl)  toast('免费 Worker 已配置，AI 功能已启用');
-  else if (key)   toast('AI Key 已保存');
-  else            toast('AI 配置已清除');
-}
-
-function loadAISettingsUI() {
-  const workerUrl = localStorage.getItem('free_worker_url') || '';
-  const provider  = localStorage.getItem('ai_provider') || '';
-  const key       = localStorage.getItem('ai_key') || '';
-  const endpoint  = localStorage.getItem('ai_endpoint') || '';
-
-  if ($('setting-free-worker-url')) $('setting-free-worker-url').value = workerUrl;
-  if ($('setting-ai-provider'))     $('setting-ai-provider').value     = provider === 'free' ? '' : provider;
-  if ($('setting-ai-key'))          $('setting-ai-key').value          = key ? '••••••••' : '';
-  if ($('setting-ai-endpoint'))     $('setting-ai-endpoint').value     = endpoint;
-}
-
-function openAIModal() {
-  const workerUrl   = localStorage.getItem('free_worker_url') || '';
-  const savedKey    = localStorage.getItem('ai_key') || '';
-  // 优先免费 Worker，其次看有没有 Key，否则默认 deepseek
-  const savedProvider = localStorage.getItem('ai_provider')
-    || (workerUrl ? 'free' : savedKey ? 'deepseek' : 'free');
-
-  const modal = $('ai-generate-modal');
-  if (!modal) return;
-
-  // 只操作弹窗内部的 tabs（避免影响其他页面的同名属性）
-  modal.querySelectorAll('[data-provider]').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.provider === savedProvider);
-  });
-
-  // 显示 Key / Worker 状态
-  const hintEl = $('ai-key-hint');
-  if (hintEl) {
-    if (workerUrl) {
-      hintEl.textContent = '已配置免费 Worker ✓';
-      hintEl.style.display = 'block';
-    } else if (savedKey) {
-      hintEl.textContent = '已使用保存的 API Key ✓';
-      hintEl.style.display = 'block';
-    } else {
-      hintEl.style.display = 'none';
-    }
-  }
-
-  // 同步当前档案年级
-  const grade = App.currentProfile?.grade || 'primary3';
-  const gradeMap = {
-    primary1:'小学一年级', primary2:'小学二年级', primary3:'小学三年级',
-    primary4:'小学四年级', primary5:'小学五年级', primary6:'小学六年级',
-    middle1:'初中一年级', middle2:'初中二年级', middle3:'初中三年级'
-  };
-  const gradeSelect = $('ai-grade-select');
-  if (gradeSelect) gradeSelect.value = gradeMap[grade] || '小学三年级';
-
-  show(modal);
-}
-
 function downloadTemplate(type) {
   const files = {
     english: 'data/sample/template_english.csv',
@@ -2877,16 +2790,6 @@ document.addEventListener('start-english-vocab', e => {
   renderCard();
 });
 
-// 监听 AI 生成完成事件
-document.addEventListener('ai-cards-ready', e => {
-  const { cards, suggestedName } = e.detail;
-  _importCache = cards;
-  if ($('deck-name-input')) $('deck-name-input').value = suggestedName;
-  showImportPreview(cards);
-  showPage('import');
-  toast(`AI 生成了 ${cards.length} 张卡片，请确认后导入`);
-});
-
 // 从词库商店返回时刷新题库
 document.addEventListener('refresh-library', async () => {
   if (App.currentProfile) {
@@ -2896,7 +2799,6 @@ document.addEventListener('refresh-library', async () => {
   }
 });
 
-// AI 设置回显已在 saveAIConfig 上方定义，此处无需重复
 
 // ===== 全局查询页面 =====
 
@@ -3166,5 +3068,59 @@ document.addEventListener('refresh-library',  () => { _searchIndex = null; });
 
 // 暴露调试接口
 window._dbg = { runSearch, buildSearchIndex, get filter() { return _searchFilter; }, get index() { return _searchIndex; } };
+
+// ===== 隐私政策弹窗（首次启动必须同意）=====
+function showPrivacyDialog(storageKey) {
+  return new Promise(resolve => {
+    const overlay = document.createElement('div');
+    overlay.id = 'privacy-first-overlay';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:flex-end';
+    overlay.innerHTML = `
+      <div style="background:var(--color-surface);border-radius:20px 20px 0 0;width:100%;max-height:85vh;display:flex;flex-direction:column;padding:20px">
+        <div style="font-size:20px;font-weight:800;text-align:center;margin-bottom:4px">📋 隐私政策</div>
+        <div style="font-size:12px;color:var(--color-text-hint);text-align:center;margin-bottom:12px">请在使用前阅读并同意以下政策</div>
+        <div style="flex:1;overflow-y:auto;font-size:13px;line-height:1.8;color:var(--color-text-sub);margin-bottom:16px">
+          <p><strong>小记忆</strong>非常重视您和孩子的隐私保护。</p>
+          <p style="margin-top:8px"><strong>📌 我们承诺：</strong></p>
+          <p>• 所有学习数据仅存储在本设备，不上传任何服务器</p>
+          <p>• 不收集任何个人身份信息</p>
+          <p>• 不含任何广告和第三方追踪</p>
+          <p style="margin-top:8px"><strong>🎤 麦克风权限：</strong>仅在您主动使用语音跟读或背诵评分功能时申请，录音处理完毕后立即销毁</p>
+          <p style="margin-top:8px"><strong>📷 相机权限：</strong>仅在您主动拍照导入题目时申请，照片解析后立即销毁</p>
+          <p style="margin-top:8px"><strong>👶 儿童隐私：</strong>本应用专为儿童设计，严格遵守《儿童个人信息网络保护规定》，不收集任何儿童个人信息</p>
+          <p style="margin-top:8px">完整隐私政策：<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">点击查看</a></p>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--color-border)">
+          <input type="checkbox" id="privacy-check" style="width:18px;height:18px;flex-shrink:0">
+          <label for="privacy-check" style="font-size:13px;color:var(--color-text)">我已阅读并同意<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">《隐私政策》</a>和<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">《儿童隐私政策》</a></label>
+        </div>
+        <button id="privacy-agree-btn" style="width:100%;padding:14px;background:#ccc;color:white;border-radius:12px;font-size:15px;font-weight:700;margin-top:10px;transition:background 0.2s" disabled>同意并继续</button>
+        <button id="privacy-reject-btn" style="width:100%;padding:10px;background:none;color:var(--color-text-hint);font-size:13px;margin-top:6px">不同意（退出应用）</button>
+      </div>`;
+
+    document.body.appendChild(overlay);
+
+    const check = overlay.querySelector('#privacy-check');
+    const agreeBtn = overlay.querySelector('#privacy-agree-btn');
+
+    check.addEventListener('change', () => {
+      agreeBtn.disabled = !check.checked;
+      agreeBtn.style.background = check.checked ? 'var(--color-primary)' : '#ccc';
+    });
+
+    agreeBtn.addEventListener('click', () => {
+      localStorage.setItem(storageKey, Date.now().toString());
+      overlay.remove();
+      resolve();
+    });
+
+    overlay.querySelector('#privacy-reject-btn').addEventListener('click', () => {
+      // 在 WebView 里无法真正退出，显示提示
+      agreeBtn.textContent = '请同意隐私政策才能使用';
+      agreeBtn.style.background = 'var(--color-error)';
+      agreeBtn.disabled = false;
+    });
+  });
+}
 
 init();

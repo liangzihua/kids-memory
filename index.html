@@ -464,11 +464,6 @@
         <span class="import-name">手动输入</span>
         <span class="import-desc">直接添加卡片</span>
       </button>
-      <button class="import-card" id="btn-lib-ai" style="padding:16px">
-        <span class="import-icon">🤖</span>
-        <span class="import-name">AI生题</span>
-        <span class="import-desc">智能生成</span>
-      </button>
     </div>
     <button class="btn-secondary" id="btn-import-lib-cancel" style="margin-top:8px;width:100%">取消</button>
   </div>
@@ -502,10 +497,10 @@
       <span class="import-desc">直接添加卡片</span>
     </button>
 
-    <button class="import-card" id="btn-ai-generate">
+    <button class="import-card" id="btn-ai-generate" style="display:none">
       <span class="import-icon">🤖</span>
-      <span class="import-name">AI 智能生题</span>
-      <span class="import-desc">DeepSeek/豆包生成</span>
+      <span class="import-name">（已移除）</span>
+      <span class="import-desc"></span>
     </button>
   </div>
 
@@ -675,37 +670,6 @@
       <button class="btn-secondary" id="btn-test-voice" style="margin-top:8px;width:100%">🔊 试听</button>
     </div>
     <div class="settings-section">
-      <h3>AI 智能生题 / 图片解析</h3>
-      <p class="setting-desc">可免费使用，也可配置自己的 API Key 获得更好效果</p>
-
-      <!-- 免费方案 -->
-      <div class="ai-free-section">
-        <div class="ai-free-label">
-          <span class="free-badge">免费</span>
-          Cloudflare Workers AI
-        </div>
-        <p class="setting-desc" style="margin:4px 0 6px">一次性部署到你的 Cloudflare 免费账号，永久免费使用（每天 10万次）</p>
-        <input type="text" id="setting-free-worker-url" class="setting-input" placeholder="https://kids-memory-ai.xxx.workers.dev">
-        <div class="deploy-worker-hint">
-          Worker 代码在 <code>proxy/cloudflare-worker.js</code>，
-          <a href="https://workers.cloudflare.com" target="_blank" rel="noopener" style="color:var(--color-primary)">点此前往 Cloudflare 部署</a>
-        </div>
-      </div>
-
-      <!-- 自有 Key -->
-      <div class="ai-key-divider">— 或使用自己的 API Key（更强模型）—</div>
-      <select id="setting-ai-provider" class="setting-select">
-        <option value="">不使用</option>
-        <option value="deepseek">DeepSeek（推荐，价格低）</option>
-        <option value="doubao">豆包（字节）</option>
-        <option value="qwen">通义千问（阿里）</option>
-        <option value="openai">OpenAI / 兼容接口</option>
-      </select>
-      <input type="password" id="setting-ai-key" class="setting-input" placeholder="API Key" style="margin-top:8px">
-      <input type="text" id="setting-ai-endpoint" class="setting-input" placeholder="自定义 API 地址（可选）" style="margin-top:6px">
-      <button class="btn-secondary" id="btn-save-ai-config" style="margin-top:8px">保存 AI 配置</button>
-    </div>
-    <div class="settings-section">
       <h3>成人学习模式</h3>
       <p class="setting-desc">开启后底部导航增加"英语"Tab，解锁职场词汇、口语训练和音标课程</p>
       <label class="toggle-row">
@@ -735,10 +699,11 @@
       <h3>关于</h3>
       <div class="about-info">
         <div class="about-app-name">小记忆</div>
-        <div class="about-version">版本 1.0.0</div>
+        <div class="about-version">版本 1.2.0</div>
         <div class="about-desc">专为小朋友设计的语文、英语、数学记忆辅助应用，支持语音朗读、古诗背诵、单词速记等功能。</div>
       </div>
-      <button class="btn-secondary" id="btn-show-privacy" style="width:100%;margin-top:8px">📄 隐私政策</button>
+      <button class="btn-secondary" id="btn-show-privacy" style="width:100%;margin-top:8px">📄 隐私政策与儿童隐私</button>
+      <button class="btn-secondary" id="btn-show-report" style="width:100%;margin-top:8px">📢 投诉与举报</button>
     </div>
   </div>
 </div>
@@ -760,7 +725,6 @@
       <p>应用仅在以下情况使用网络：</p>
       <ul>
         <li>下载可选词库（用户主动触发）</li>
-        <li>使用 AI 生题功能（需用户配置 API Key）</li>
         <li>语音识别（调用系统语音服务）</li>
       </ul>
       <p>以上均为用户主动操作，应用不会在后台进行任何网络请求。</p>
@@ -1395,69 +1359,6 @@
     </div>
     <p id="voice-overlay-text">说出要切换的名字...</p>
     <button class="btn-secondary" id="btn-voice-cancel">取消</button>
-  </div>
-</div>
-
-<!-- ===== 全局：AI 生成弹窗 ===== -->
-<div class="modal-overlay hidden" id="ai-generate-modal">
-  <div class="modal ai-modal">
-    <h3>AI 智能生题</h3>
-
-    <div class="ai-provider-tabs" id="ai-provider-tabs">
-      <button class="ai-tab active" data-provider="free">免费</button>
-      <button class="ai-tab" data-provider="deepseek">DeepSeek</button>
-      <button class="ai-tab" data-provider="doubao">豆包</button>
-      <button class="ai-tab" data-provider="qwen">千问</button>
-      <button class="ai-tab" data-provider="openai">OpenAI兼容</button>
-    </div>
-
-    <div class="ai-key-hint" id="ai-key-hint">
-      已使用保存的 Key <span id="ai-saved-indicator">✓</span>
-    </div>
-
-    <select id="ai-subject-select" class="setting-select">
-      <option value="english">英语词汇/句型</option>
-      <option value="chinese">语文/古诗/成语</option>
-      <option value="math">数学公式/概念</option>
-      <option value="custom">自定义主题</option>
-    </select>
-
-    <select id="ai-grade-select" class="setting-select" style="margin-top:8px">
-      <option value="小学一年级">小学一年级</option>
-      <option value="小学二年级">小学二年级</option>
-      <option value="小学三年级" selected>小学三年级</option>
-      <option value="小学四年级">小学四年级</option>
-      <option value="小学五年级">小学五年级</option>
-      <option value="小学六年级">小学六年级</option>
-      <option value="初中一年级">初中一年级</option>
-      <option value="初中二年级">初中二年级</option>
-      <option value="初中三年级">初中三年级</option>
-    </select>
-
-    <textarea id="ai-prompt-input" rows="4" placeholder="描述你想要的卡片内容，例如：
-• 生成20个小学四年级英语单词，包含中文释义和音标
-• 生成《静夜思》相关的10道填空题
-• 生成初中几何公式卡片，要有例子" style="margin-top:8px"></textarea>
-
-    <div class="ai-count-row">
-      <label>生成数量：</label>
-      <input type="number" id="ai-count" value="20" min="5" max="50" style="width:70px;padding:8px">
-      <span>张</span>
-    </div>
-
-    <div class="ai-status hidden" id="ai-status">
-      <div class="ocr-spinner"></div>
-      <span id="ai-status-text">正在生成...</span>
-    </div>
-
-    <div class="modal-buttons" style="margin-top:12px">
-      <button class="btn-secondary" id="btn-ai-cancel">取消</button>
-      <button class="btn-primary" id="btn-ai-submit" style="flex:1">🤖 开始生成</button>
-    </div>
-
-    <p class="setting-desc" style="margin-top:8px;text-align:center">
-      如未配置 Key，请先在「设置→AI 智能生题」中填写
-    </p>
   </div>
 </div>
 

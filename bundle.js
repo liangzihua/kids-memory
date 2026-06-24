@@ -3263,304 +3263,6 @@
   init_passages();
   init_pinyin();
 
-  // app/ai.js
-  var FREE_WORKER_URL = localStorage.getItem("free_worker_url") || "";
-  var PROVIDERS = {
-    free: {
-      name: "\u514D\u8D39\uFF08Cloudflare\uFF09",
-      endpoint: FREE_WORKER_URL || "https://kids-memory-ai.YOUR-SUBDOMAIN.workers.dev",
-      model: "llama-3",
-      visionModel: "llava",
-      headers: () => ({ "Content-Type": "application/json" })
-    },
-    deepseek: {
-      name: "DeepSeek",
-      endpoint: "https://api.deepseek.com/v1/chat/completions",
-      model: "deepseek-chat",
-      visionModel: "deepseek-chat",
-      headers: (key) => ({ "Content-Type": "application/json", "Authorization": `Bearer ${key}` })
-    },
-    doubao: {
-      name: "\u8C46\u5305",
-      endpoint: "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
-      model: "ep-20250101-xxxxxx",
-      visionModel: "ep-vision-xxxxxx",
-      // 需用户填写视觉模型 endpoint
-      headers: (key) => ({ "Content-Type": "application/json", "Authorization": `Bearer ${key}` })
-    },
-    qwen: {
-      name: "\u901A\u4E49\u5343\u95EE",
-      endpoint: "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
-      model: "qwen-turbo",
-      visionModel: "qwen-vl-plus",
-      // 千问VL支持图片
-      headers: (key) => ({ "Content-Type": "application/json", "Authorization": `Bearer ${key}` })
-    },
-    openai: {
-      name: "OpenAI \u517C\u5BB9",
-      endpoint: "https://api.openai.com/v1/chat/completions",
-      model: "gpt-3.5-turbo",
-      visionModel: "gpt-4o",
-      headers: (key) => ({ "Content-Type": "application/json", "Authorization": `Bearer ${key}` })
-    }
-  };
-  function buildSystemPrompt() {
-    return `\u4F60\u662F\u4E00\u4E2A\u4E13\u4E1A\u7684\u513F\u7AE5\u6559\u80B2\u52A9\u624B\uFF0C\u64C5\u957F\u5236\u4F5C\u9002\u5408\u4E2D\u56FD\u4E2D\u5C0F\u5B66\u751F\u7684\u5B66\u4E60\u5361\u7247\u3002
-
-\u4F60\u7684\u4EFB\u52A1\u662F\u6839\u636E\u7528\u6237\u7684\u8981\u6C42\uFF0C\u751F\u6210\u9AD8\u8D28\u91CF\u7684\u8BB0\u5FC6\u5361\u7247\u3002
-
-\u8F93\u51FA\u683C\u5F0F\u8981\u6C42\uFF1A
-- \u4E25\u683C\u8F93\u51FA JSON \u6570\u7EC4\uFF0C\u4E0D\u8981\u6709\u4EFB\u4F55\u5176\u4ED6\u6587\u5B57
-- \u6BCF\u4E2A\u5361\u7247\u5BF9\u8C61\u5305\u542B\u4EE5\u4E0B\u5B57\u6BB5\uFF1A
-  - front: \u6B63\u9762\u5185\u5BB9\uFF08\u95EE\u9898/\u5355\u8BCD/\u6982\u5FF5\uFF09
-  - back: \u80CC\u9762\u5185\u5BB9\uFF08\u7B54\u6848/\u91CA\u4E49/\u89E3\u91CA\uFF09
-  - phonetic: \u97F3\u6807\uFF08\u4EC5\u82F1\u8BED\u5355\u8BCD\u9700\u8981\uFF0C\u5176\u4ED6\u7559\u7A7A\u5B57\u7B26\u4E32\uFF09
-  - hint: \u8BB0\u5FC6\u63D0\u793A\uFF08\u5E2E\u52A9\u8BB0\u5FC6\u7684\u8054\u60F3\u6216\u6280\u5DE7\uFF0C\u53EF\u4EE5\u7559\u7A7A\u5B57\u7B26\u4E32\uFF09
-  - example: \u4F8B\u53E5\u6216\u4F8B\u5B50\uFF08\u53EF\u4EE5\u7559\u7A7A\u5B57\u7B26\u4E32\uFF09
-  - tags: \u6807\u7B7E\u6570\u7EC4\uFF08\u5982 ["\u5C0F\u5B66\u56DB\u5E74\u7EA7","\u540D\u8BCD","\u52A8\u7269"]\uFF09
-  - type: \u5361\u7247\u7C7B\u578B\uFF08"word"=\u5355\u8BCD, "sentence"=\u53E5\u5B50, "poem"=\u53E4\u8BD7, "formula"=\u516C\u5F0F, "concept"=\u6982\u5FF5, "qa"=\u95EE\u7B54\uFF09
-
-\u793A\u4F8B\u8F93\u51FA\uFF1A
-[
-  {
-    "front": "beautiful",
-    "back": "\u7F8E\u4E3D\u7684 /\u02C8bju\u02D0t\u026Af\u0259l/",
-    "phonetic": "/\u02C8bju\u02D0t\u026Af\u0259l/",
-    "hint": "beau(\u7F8E)+ti+ful\uFF0C\u60F3\u8C61\u4E00\u4E2A\u7F8E\u4E3D\u7684\u4EBA",
-    "example": "She is a beautiful girl.",
-    "tags": ["\u5F62\u5BB9\u8BCD","\u5C0F\u5B66\u4E94\u5E74\u7EA7"],
-    "type": "word"
-  }
-]
-
-\u6CE8\u610F\u4E8B\u9879\uFF1A
-1. \u5361\u7247\u5185\u5BB9\u8981\u51C6\u786E\uFF0C\u9002\u5408\u76EE\u6807\u5E74\u7EA7
-2. \u63D0\u793A\u8981\u6709\u52A9\u4E8E\u8BB0\u5FC6\uFF08\u8054\u60F3\u6CD5\u3001\u8C10\u97F3\u3001\u56FE\u50CF\u7B49\uFF09
-3. \u4F8B\u53E5\u8981\u7B80\u5355\u6613\u61C2\uFF0C\u8D34\u8FD1\u5B66\u751F\u751F\u6D3B
-4. \u6570\u91CF\u8981\u7CBE\u786E\u7B26\u5408\u8981\u6C42`;
-  }
-  function buildUserPrompt(subject, grade, userInput, count) {
-    const subjectNames = {
-      english: "\u82F1\u8BED",
-      chinese: "\u8BED\u6587",
-      math: "\u6570\u5B66",
-      custom: "\u81EA\u5B9A\u4E49"
-    };
-    const subjectName = subjectNames[subject] || subject;
-    let basePrompt = `\u8BF7\u4E3A${grade}\u7684\u5B66\u751F\u751F\u6210 ${count} \u5F20${subjectName}\u5B66\u4E60\u5361\u7247\u3002`;
-    if (userInput?.trim()) {
-      basePrompt += `
-
-\u5177\u4F53\u8981\u6C42\uFF1A${userInput}`;
-    } else {
-      const defaults = {
-        english: `\u751F\u6210${count}\u4E2A\u5E38\u7528\u82F1\u8BED\u5355\u8BCD\uFF0C\u5305\u542B\u4E2D\u6587\u91CA\u4E49\u3001\u97F3\u6807\u548C\u4F8B\u53E5`,
-        chinese: `\u751F\u6210${count}\u5F20\u8BED\u6587\u5B66\u4E60\u5361\u7247\uFF0C\u53EF\u5305\u542B\u53E4\u8BD7\u586B\u7A7A\u3001\u6210\u8BED\u3001\u751F\u5B57\u7B49`,
-        math: `\u751F\u6210${count}\u5F20\u6570\u5B66\u516C\u5F0F\u6216\u6982\u5FF5\u5361\u7247\uFF0C\u8981\u6709\u4F8B\u5B50\u548C\u8BB0\u5FC6\u63D0\u793A`,
-        custom: `\u751F\u6210${count}\u5F20\u7EFC\u5408\u5B66\u4E60\u5361\u7247`
-      };
-      basePrompt += `
-
-\u9ED8\u8BA4\u8981\u6C42\uFF1A${defaults[subject] || defaults.custom}`;
-    }
-    basePrompt += `
-
-\u76F4\u63A5\u8F93\u51FA JSON \u6570\u7EC4\uFF0C\u4E0D\u8981\u6709\u4EFB\u4F55\u5176\u4ED6\u6587\u5B57\u3002`;
-    return basePrompt;
-  }
-  async function generateCards(config, onStatus) {
-    const { provider, apiKey, endpoint: customEndpoint, subject, grade, prompt: userPrompt, count } = config;
-    const workerUrl = localStorage.getItem("free_worker_url") || "";
-    const isFree = provider === "free" || !apiKey && workerUrl;
-    if (!apiKey && !workerUrl) throw new Error("\u672A\u914D\u7F6E AI\uFF0C\u8BF7\u5148\u5728\u8BBE\u7F6E\u4E2D\u586B\u5199 API Key \u6216 Worker URL");
-    const providerCfg = PROVIDERS[isFree ? "free" : provider || "deepseek"] || PROVIDERS.deepseek;
-    const endpoint = customEndpoint || (isFree ? workerUrl : providerCfg.endpoint);
-    const model = providerCfg.model;
-    onStatus?.("\u6B63\u5728\u8FDE\u63A5 AI \u670D\u52A1...");
-    const messages = [
-      { role: "system", content: buildSystemPrompt() },
-      { role: "user", content: buildUserPrompt(subject, grade, userPrompt, count) }
-    ];
-    const body = isFree ? JSON.stringify({ messages, subject, grade, count }) : JSON.stringify({ model, messages, temperature: 0.7, max_tokens: 4096, stream: false });
-    onStatus?.("AI \u6B63\u5728\u751F\u6210\u5361\u7247\uFF0C\u8BF7\u7A0D\u5019...");
-    let response;
-    try {
-      response = await fetch(endpoint, {
-        method: "POST",
-        headers: isFree ? { "Content-Type": "application/json" } : providerCfg.headers(apiKey),
-        body
-      });
-    } catch (e) {
-      throw new Error(`\u7F51\u7EDC\u8BF7\u6C42\u5931\u8D25\uFF1A${e.message}\u3002\u8BF7\u68C0\u67E5\u7F51\u7EDC\u8FDE\u63A5\u6216 API \u5730\u5740\u3002`);
-    }
-    if (!response.ok) {
-      const errText = await response.text().catch(() => "");
-      if (response.status === 401) throw new Error("API Key \u65E0\u6548\uFF0C\u8BF7\u68C0\u67E5\u8BBE\u7F6E");
-      if (response.status === 429) throw new Error("\u8BF7\u6C42\u592A\u9891\u7E41\uFF0C\u8BF7\u7A0D\u540E\u518D\u8BD5");
-      throw new Error(`AI \u63A5\u53E3\u9519\u8BEF ${response.status}\uFF1A${errText.slice(0, 100)}`);
-    }
-    const data = await response.json();
-    const content = data.choices?.[0]?.message?.content || "";
-    if (!content) throw new Error("AI \u8FD4\u56DE\u5185\u5BB9\u4E3A\u7A7A");
-    onStatus?.("\u6B63\u5728\u89E3\u6790\u751F\u6210\u7ED3\u679C...");
-    return parseAIResponse(content);
-  }
-  function parseAIResponse(content) {
-    let jsonStr = content.trim();
-    jsonStr = jsonStr.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "");
-    const start = jsonStr.indexOf("[");
-    const end = jsonStr.lastIndexOf("]");
-    if (start === -1 || end === -1) throw new Error("AI \u8FD4\u56DE\u683C\u5F0F\u9519\u8BEF\uFF0C\u672A\u627E\u5230 JSON \u6570\u7EC4");
-    jsonStr = jsonStr.slice(start, end + 1);
-    let cards;
-    try {
-      cards = JSON.parse(jsonStr);
-    } catch (e) {
-      jsonStr = jsonStr.replace(/,\s*([}\]])/g, "$1");
-      try {
-        cards = JSON.parse(jsonStr);
-      } catch (e2) {
-        throw new Error("AI \u8FD4\u56DE\u7684 JSON \u683C\u5F0F\u65E0\u6548\uFF0C\u8BF7\u91CD\u8BD5");
-      }
-    }
-    if (!Array.isArray(cards)) throw new Error("AI \u8FD4\u56DE\u6570\u636E\u683C\u5F0F\u9519\u8BEF");
-    return cards.map((c, i) => ({
-      front: String(c.front || c.question || c.word || "").trim(),
-      back: String(c.back || c.answer || c.meaning || "").trim(),
-      phonetic: String(c.phonetic || "").trim(),
-      hint: String(c.hint || c.tip || "").trim(),
-      example: String(c.example || c.eg || "").trim(),
-      tags: Array.isArray(c.tags) ? c.tags : c.tag ? [c.tag] : ["AI\u751F\u6210"],
-      type: c.type || "word"
-    })).filter((c) => c.front && c.back);
-  }
-  async function handleAIGenerate() {
-    const modal = document.getElementById("ai-generate-modal");
-    const provider = modal?.querySelector("[data-provider].active")?.dataset.provider || "free";
-    const apiKey = localStorage.getItem("ai_key") || "";
-    const workerUrl = localStorage.getItem("free_worker_url") || "";
-    const endpoint = localStorage.getItem("ai_endpoint") || "";
-    const subject = document.getElementById("ai-subject-select")?.value || "english";
-    const grade = document.getElementById("ai-grade-select")?.value || "\u5C0F\u5B66\u4E09\u5E74\u7EA7";
-    const userPrompt = document.getElementById("ai-prompt-input")?.value || "";
-    const count = parseInt(document.getElementById("ai-count")?.value || "20");
-    if (!apiKey && !workerUrl) {
-      alert("\u8BF7\u5148\u5728\u300C\u8BBE\u7F6E\u2192AI\u914D\u7F6E\u300D\u4E2D\u586B\u5199 API Key \u6216\u90E8\u7F72\u514D\u8D39 Worker");
-      return;
-    }
-    const statusEl = document.getElementById("ai-status");
-    const statusText = document.getElementById("ai-status-text");
-    const submitBtn = document.getElementById("btn-ai-submit");
-    statusEl?.classList.remove("hidden");
-    if (submitBtn) submitBtn.disabled = true;
-    try {
-      const cards = await generateCards(
-        { provider, apiKey, endpoint, subject, grade, prompt: userPrompt, count },
-        (msg) => {
-          if (statusText) statusText.textContent = msg;
-        }
-      );
-      if (!cards.length) throw new Error("\u751F\u6210\u4E860\u5F20\u5361\u7247\uFF0C\u8BF7\u8C03\u6574\u63D0\u793A\u8BCD\u540E\u91CD\u8BD5");
-      document.getElementById("ai-generate-modal")?.classList.add("hidden");
-      document.dispatchEvent(new CustomEvent("ai-cards-ready", {
-        detail: { cards, suggestedName: `AI\u751F\u6210-${grade}${subject === "english" ? "\u82F1\u8BED" : subject === "chinese" ? "\u8BED\u6587" : "\u6570\u5B66"}` }
-      }));
-    } catch (e) {
-      if (statusText) statusText.textContent = `\u751F\u6210\u5931\u8D25\uFF1A${e.message}`;
-      setTimeout(() => statusEl?.classList.add("hidden"), 3e3);
-    } finally {
-      submitBtn && (submitBtn.disabled = false);
-    }
-  }
-  async function parseImageWithAI(imageFile, onStatus) {
-    const apiKey = localStorage.getItem("ai_key") || "";
-    const provider = localStorage.getItem("ai_provider") || (apiKey ? "deepseek" : "free");
-    const customEndpoint = localStorage.getItem("ai_endpoint") || "";
-    const workerUrl = localStorage.getItem("free_worker_url") || "";
-    if (!apiKey && !workerUrl) {
-      throw new Error("\u8BF7\u5148\u5728\u8BBE\u7F6E\u4E2D\u914D\u7F6E AI\uFF08\u586B\u5199 API Key \u6216\u90E8\u7F72\u514D\u8D39 Worker\uFF09");
-    }
-    onStatus?.("\u6B63\u5728\u8BFB\u53D6\u56FE\u7247...");
-    const base64 = await fileToBase64(imageFile);
-    const mimeType = imageFile.type || "image/jpeg";
-    const providerCfg = PROVIDERS[provider] || PROVIDERS.free;
-    const useEndpoint = customEndpoint || (provider === "free" ? workerUrl : providerCfg.endpoint);
-    const model = providerCfg.visionModel || providerCfg.model;
-    onStatus?.(`\u6B63\u5728\u7528 AI \u8BC6\u522B\u56FE\u7247\uFF08${providerCfg.name}\uFF09...`);
-    const systemPrompt = `\u4F60\u662F\u4E00\u4E2A\u4E13\u4E1A\u7684\u6559\u80B2\u52A9\u624B\uFF0C\u64C5\u957F\u4ECE\u56FE\u7247\u4E2D\u63D0\u53D6\u5B66\u4E60\u5185\u5BB9\u5E76\u5236\u4F5C\u8BB0\u5FC6\u5361\u7247\u3002
-
-\u8BF7\u4ED4\u7EC6\u8BC6\u522B\u56FE\u7247\u4E2D\u7684\u6240\u6709\u6587\u5B57\u5185\u5BB9\uFF0C\u7136\u540E\u5C06\u5176\u6574\u7406\u6210\u5B66\u4E60\u5361\u7247\u3002
-
-\u8F93\u51FA\u8981\u6C42\uFF1A
-- \u4E25\u683C\u8F93\u51FA JSON \u6570\u7EC4\uFF0C\u4E0D\u8981\u6709\u4EFB\u4F55\u5176\u4ED6\u6587\u5B57
-- \u6BCF\u4E2A\u5BF9\u8C61\u5305\u542B\uFF1Afront\uFF08\u6B63\u9762/\u95EE\u9898\uFF09\u3001back\uFF08\u80CC\u9762/\u7B54\u6848\uFF09\u3001hint\uFF08\u8BB0\u5FC6\u63D0\u793A\uFF0C\u53EF\u7559\u7A7A\uFF09\u3001tags\uFF08\u6807\u7B7E\u6570\u7EC4\uFF09\u3001type\uFF08word/qa/poem/formula\uFF09
-- \u5982\u679C\u56FE\u7247\u662F\u5355\u8BCD\u8868\uFF1Afront=\u82F1\u6587\u5355\u8BCD\uFF0Cback=\u4E2D\u6587\u542B\u4E49+\u97F3\u6807
-- \u5982\u679C\u56FE\u7247\u662F\u53E4\u8BD7\uFF1Afront=\u4E0A\u53E5+"___"\uFF0Cback=\u4E0B\u53E5
-- \u5982\u679C\u56FE\u7247\u662F\u6570\u5B66\u516C\u5F0F\uFF1Afront=\u516C\u5F0F\u540D\u79F0\uFF0Cback=\u516C\u5F0F\u5185\u5BB9+\u793A\u4F8B
-- \u5982\u679C\u56FE\u7247\u662F\u95EE\u7B54\u9898\uFF1Afront=\u95EE\u9898\uFF0Cback=\u7B54\u6848
-- \u5185\u5BB9\u8981\u51C6\u786E\uFF0C\u4E0D\u8981\u731C\u6D4B\u770B\u4E0D\u6E05\u7684\u5B57
-
-\u76F4\u63A5\u8F93\u51FAJSON\u6570\u7EC4\u3002`;
-    const body = provider === "free" ? JSON.stringify({
-      type: "vision",
-      image: `data:${mimeType};base64,${base64}`,
-      prompt: systemPrompt + "\n\u8BF7\u8BC6\u522B\u56FE\u7247\u4E2D\u7684\u6240\u6709\u5B66\u4E60\u5185\u5BB9\uFF0C\u6574\u7406\u6210\u8BB0\u5FC6\u5361\u7247\u7684JSON\u683C\u5F0F\u3002"
-    }) : JSON.stringify({
-      model,
-      messages: [
-        { role: "system", content: systemPrompt },
-        {
-          role: "user",
-          content: [
-            { type: "image_url", image_url: { url: `data:${mimeType};base64,${base64}` } },
-            { type: "text", text: "\u8BF7\u8BC6\u522B\u56FE\u7247\u4E2D\u7684\u6240\u6709\u5B66\u4E60\u5185\u5BB9\uFF0C\u6574\u7406\u6210\u8BB0\u5FC6\u5361\u7247\u7684JSON\u683C\u5F0F\u3002" }
-          ]
-        }
-      ],
-      temperature: 0.3,
-      max_tokens: 4096
-    });
-    let response;
-    try {
-      response = await fetch(useEndpoint, {
-        method: "POST",
-        headers: provider === "free" ? { "Content-Type": "application/json" } : providerCfg.headers(apiKey),
-        body
-      });
-    } catch (e) {
-      throw new Error(`\u7F51\u7EDC\u8BF7\u6C42\u5931\u8D25\uFF1A${e.message}`);
-    }
-    if (!response.ok) {
-      const errText = await response.text().catch(() => "");
-      if (response.status === 401) throw new Error("API Key \u65E0\u6548\uFF0C\u8BF7\u68C0\u67E5\u8BBE\u7F6E");
-      if (response.status === 400) {
-        throw new Error(`\u8BE5\u6A21\u578B\u4E0D\u652F\u6301\u56FE\u7247\u8BC6\u522B\uFF0C\u8BF7\u5728\u8BBE\u7F6E\u4E2D\u914D\u7F6E\u652F\u6301\u89C6\u89C9\u7684\u6A21\u578B\uFF08\u5982 qwen-vl-plus\u3001gpt-4o\uFF09`);
-      }
-      throw new Error(`AI \u63A5\u53E3\u9519\u8BEF ${response.status}`);
-    }
-    const data = await response.json();
-    const content = data.choices?.[0]?.message?.content || "";
-    if (!content) throw new Error("AI \u8FD4\u56DE\u5185\u5BB9\u4E3A\u7A7A");
-    onStatus?.("\u6B63\u5728\u89E3\u6790 AI \u8BC6\u522B\u7ED3\u679C...");
-    const cards = parseAIResponse(content);
-    if (!cards.length) throw new Error("\u672A\u80FD\u4ECE\u56FE\u7247\u4E2D\u63D0\u53D6\u5230\u6709\u6548\u5185\u5BB9\uFF0C\u8BF7\u5C1D\u8BD5\u66F4\u6E05\u6670\u7684\u56FE\u7247");
-    return {
-      cards,
-      suggestedName: imageFile.name.replace(/\.[^.]+$/, "") + "-AI\u89E3\u6790"
-    };
-  }
-  function fileToBase64(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = (e) => resolve(e.target.result.split(",")[1]);
-      reader.onerror = reject;
-      reader.readAsDataURL(file);
-    });
-  }
-  function hasAIKey() {
-    return !!(localStorage.getItem("ai_key") || localStorage.getItem("free_worker_url"));
-  }
-
   // app/vocab-store.js
   init_core();
   var VOCAB_CATALOG = [
@@ -4260,6 +3962,11 @@
     });
   }
   async function init() {
+    const privacyKey = "kids_memory_privacy_agreed";
+    const agreed = localStorage.getItem(privacyKey);
+    if (!agreed) {
+      await showPrivacyDialog(privacyKey);
+    }
     await loadProfiles();
     try {
       document.querySelectorAll(".nav-item").forEach((btn) => {
@@ -4359,16 +4066,6 @@
         btn.classList.add("selected");
         $4("profile-selected-avatar").textContent = btn.dataset.emoji;
       });
-      $4("btn-ai-generate")?.addEventListener("click", openAIModal);
-      $4("ai-generate-modal")?.addEventListener("click", (e) => {
-        const tab = e.target.closest("[data-provider]");
-        if (!tab) return;
-        $4("ai-generate-modal").querySelectorAll("[data-provider]").forEach((b) => b.classList.remove("active"));
-        tab.classList.add("active");
-        localStorage.setItem("ai_provider", tab.dataset.provider);
-      });
-      $4("btn-ai-cancel")?.addEventListener("click", () => hide3($4("ai-generate-modal")));
-      $4("btn-ai-submit")?.addEventListener("click", handleAIGenerate);
       document.querySelectorAll(".btn-tpl").forEach((btn) => {
         btn.addEventListener("click", () => downloadTemplate(btn.dataset.tpl));
       });
@@ -4474,10 +4171,6 @@
         hide3($4("import-to-library-modal"));
         show3($4("manual-modal"));
       });
-      $4("btn-lib-ai")?.addEventListener("click", () => {
-        hide3($4("import-to-library-modal"));
-        openAIModal();
-      });
       $4("setting-new-per-day")?.addEventListener("input", (e) => {
         $4("new-per-day-value").textContent = e.target.value;
       });
@@ -4485,7 +4178,6 @@
         $4("speech-rate-value").textContent = `${e.target.value}\xD7`;
       });
       $4("btn-save-azure")?.addEventListener("click", saveAzureConfig);
-      $4("btn-save-ai-config")?.addEventListener("click", saveAIConfig);
       $4("btn-update-builtin")?.addEventListener("click", updateAllBuiltinDecks);
       $4("btn-export-data")?.addEventListener("click", exportCurrentProfile);
       $4("btn-clear-data")?.addEventListener("click", clearCurrentProfileData);
@@ -4500,6 +4192,29 @@
       });
       $4("privacy-overlay")?.addEventListener("click", (e) => {
         if (e.target === $4("privacy-overlay")) $4("privacy-overlay").classList.add("hidden");
+      });
+      $4("btn-show-report")?.addEventListener("click", () => {
+        const overlay = document.createElement("div");
+        overlay.className = "modal-overlay";
+        overlay.innerHTML = `<div class="modal">
+      <h3>\u{1F4E2} \u6295\u8BC9\u4E0E\u4E3E\u62A5</h3>
+      <p style="font-size:13px;color:var(--color-text-sub);line-height:1.8;margin:8px 0">
+        \u5982\u60A8\u53D1\u73B0\u672C\u5E94\u7528\u5B58\u5728\u8FDD\u89C4\u5185\u5BB9\uFF0C\u6216\u9700\u8981\u6295\u8BC9\u6D89\u53CA\u672A\u6210\u5E74\u4EBA\u7684\u76F8\u5173\u95EE\u9898\uFF0C\u8BF7\u901A\u8FC7\u4EE5\u4E0B\u65B9\u5F0F\u8054\u7CFB\u6211\u4EEC\uFF1A
+      </p>
+      <div style="background:var(--color-surface2);border-radius:10px;padding:14px;margin:8px 0">
+        <div style="font-size:13px;margin-bottom:6px">\u{1F4E7} <strong>\u8054\u7CFB\u90AE\u7BB1</strong></div>
+        <div style="font-size:14px;color:var(--color-primary);font-weight:600">zihua.liang@outlook.com</div>
+      </div>
+      <p style="font-size:12px;color:var(--color-text-hint);margin-top:8px">
+        \u6211\u4EEC\u627F\u8BFA\u5728\u6536\u5230\u6295\u8BC9\u540E <strong>48\u5C0F\u65F6\u5185</strong> \u54CD\u5E94\u5904\u7406\uFF0C\u6D89\u53CA\u672A\u6210\u5E74\u4EBA\u4FDD\u62A4\u7684\u6295\u8BC9\u5C06\u4F18\u5148\u5904\u7406\u3002
+      </p>
+      <button class="btn-primary" style="margin-top:16px;width:100%" id="btn-report-close">\u77E5\u9053\u4E86</button>
+    </div>`;
+        document.body.appendChild(overlay);
+        overlay.querySelector("#btn-report-close").addEventListener("click", () => overlay.remove());
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) overlay.remove();
+        });
       });
       $4("btn-add-profile")?.addEventListener("click", () => openProfileEditModal(null));
       setupSwipeGesture();
@@ -5605,22 +5320,6 @@
   }
   async function handleImageInput(file) {
     if (!file) return;
-    if (hasAIKey()) {
-      show3($4("ocr-progress"));
-      try {
-        const { cards, suggestedName } = await parseImageWithAI(file, (msg) => {
-          $4("ocr-status").textContent = msg;
-        });
-        _importCache = cards;
-        hide3($4("ocr-progress"));
-        $4("deck-name-input").value = suggestedName;
-        showImportPreview(cards);
-        showPage("import");
-        return;
-      } catch (e) {
-        $4("ocr-status").textContent = `AI\u89E3\u6790\u5931\u8D25\uFF08${e.message}\uFF09\uFF0C\u5207\u6362\u5230\u672C\u5730OCR...`;
-      }
-    }
     show3($4("ocr-progress"));
     try {
       const { cards: rawCards, suggestedName } = await parseImageOCR(file, (msg) => {
@@ -6095,7 +5794,6 @@
     $4("setting-azure-region").value = profile.azureRegion || "";
     const adultToggle = $4("setting-adult-mode");
     if (adultToggle) adultToggle.checked = localStorage.getItem("adult_mode") === "1";
-    loadAISettingsUI();
     loadVoiceSelectors();
     ["setting-grade", "setting-algorithm"].forEach((id) => {
       $4(id)?.addEventListener("change", saveProfileSettings);
@@ -6281,67 +5979,6 @@
     });
     show3($4("manage-profiles-modal"));
   }
-  async function saveAIConfig() {
-    const workerUrl = $4("setting-free-worker-url")?.value.trim() || "";
-    const provider = $4("setting-ai-provider").value;
-    const key = $4("setting-ai-key").value.trim();
-    const endpoint = $4("setting-ai-endpoint").value.trim();
-    if (workerUrl) localStorage.setItem("free_worker_url", workerUrl);
-    else localStorage.removeItem("free_worker_url");
-    localStorage.setItem("ai_provider", provider || (workerUrl ? "free" : ""));
-    localStorage.setItem("ai_key", key);
-    localStorage.setItem("ai_endpoint", endpoint);
-    if (workerUrl) toast4("\u514D\u8D39 Worker \u5DF2\u914D\u7F6E\uFF0CAI \u529F\u80FD\u5DF2\u542F\u7528");
-    else if (key) toast4("AI Key \u5DF2\u4FDD\u5B58");
-    else toast4("AI \u914D\u7F6E\u5DF2\u6E05\u9664");
-  }
-  function loadAISettingsUI() {
-    const workerUrl = localStorage.getItem("free_worker_url") || "";
-    const provider = localStorage.getItem("ai_provider") || "";
-    const key = localStorage.getItem("ai_key") || "";
-    const endpoint = localStorage.getItem("ai_endpoint") || "";
-    if ($4("setting-free-worker-url")) $4("setting-free-worker-url").value = workerUrl;
-    if ($4("setting-ai-provider")) $4("setting-ai-provider").value = provider === "free" ? "" : provider;
-    if ($4("setting-ai-key")) $4("setting-ai-key").value = key ? "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022" : "";
-    if ($4("setting-ai-endpoint")) $4("setting-ai-endpoint").value = endpoint;
-  }
-  function openAIModal() {
-    const workerUrl = localStorage.getItem("free_worker_url") || "";
-    const savedKey = localStorage.getItem("ai_key") || "";
-    const savedProvider = localStorage.getItem("ai_provider") || (workerUrl ? "free" : savedKey ? "deepseek" : "free");
-    const modal = $4("ai-generate-modal");
-    if (!modal) return;
-    modal.querySelectorAll("[data-provider]").forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.provider === savedProvider);
-    });
-    const hintEl = $4("ai-key-hint");
-    if (hintEl) {
-      if (workerUrl) {
-        hintEl.textContent = "\u5DF2\u914D\u7F6E\u514D\u8D39 Worker \u2713";
-        hintEl.style.display = "block";
-      } else if (savedKey) {
-        hintEl.textContent = "\u5DF2\u4F7F\u7528\u4FDD\u5B58\u7684 API Key \u2713";
-        hintEl.style.display = "block";
-      } else {
-        hintEl.style.display = "none";
-      }
-    }
-    const grade = App.currentProfile?.grade || "primary3";
-    const gradeMap = {
-      primary1: "\u5C0F\u5B66\u4E00\u5E74\u7EA7",
-      primary2: "\u5C0F\u5B66\u4E8C\u5E74\u7EA7",
-      primary3: "\u5C0F\u5B66\u4E09\u5E74\u7EA7",
-      primary4: "\u5C0F\u5B66\u56DB\u5E74\u7EA7",
-      primary5: "\u5C0F\u5B66\u4E94\u5E74\u7EA7",
-      primary6: "\u5C0F\u5B66\u516D\u5E74\u7EA7",
-      middle1: "\u521D\u4E2D\u4E00\u5E74\u7EA7",
-      middle2: "\u521D\u4E2D\u4E8C\u5E74\u7EA7",
-      middle3: "\u521D\u4E2D\u4E09\u5E74\u7EA7"
-    };
-    const gradeSelect = $4("ai-grade-select");
-    if (gradeSelect) gradeSelect.value = gradeMap[grade] || "\u5C0F\u5B66\u4E09\u5E74\u7EA7";
-    show3(modal);
-  }
   function downloadTemplate(type) {
     const files = {
       english: "data/sample/template_english.csv",
@@ -6487,14 +6124,6 @@
     showPage("study");
     switchStudyMode("flashcard");
     renderCard();
-  });
-  document.addEventListener("ai-cards-ready", (e) => {
-    const { cards, suggestedName } = e.detail;
-    _importCache = cards;
-    if ($4("deck-name-input")) $4("deck-name-input").value = suggestedName;
-    showImportPreview(cards);
-    showPage("import");
-    toast4(`AI \u751F\u6210\u4E86 ${cards.length} \u5F20\u5361\u7247\uFF0C\u8BF7\u786E\u8BA4\u540E\u5BFC\u5165`);
   });
   document.addEventListener("refresh-library", async () => {
     if (App.currentProfile) {
@@ -6740,5 +6369,51 @@
   }, get index() {
     return _searchIndex;
   } };
+  function showPrivacyDialog(storageKey) {
+    return new Promise((resolve) => {
+      const overlay = document.createElement("div");
+      overlay.id = "privacy-first-overlay";
+      overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:flex-end";
+      overlay.innerHTML = `
+      <div style="background:var(--color-surface);border-radius:20px 20px 0 0;width:100%;max-height:85vh;display:flex;flex-direction:column;padding:20px">
+        <div style="font-size:20px;font-weight:800;text-align:center;margin-bottom:4px">\u{1F4CB} \u9690\u79C1\u653F\u7B56</div>
+        <div style="font-size:12px;color:var(--color-text-hint);text-align:center;margin-bottom:12px">\u8BF7\u5728\u4F7F\u7528\u524D\u9605\u8BFB\u5E76\u540C\u610F\u4EE5\u4E0B\u653F\u7B56</div>
+        <div style="flex:1;overflow-y:auto;font-size:13px;line-height:1.8;color:var(--color-text-sub);margin-bottom:16px">
+          <p><strong>\u5C0F\u8BB0\u5FC6</strong>\u975E\u5E38\u91CD\u89C6\u60A8\u548C\u5B69\u5B50\u7684\u9690\u79C1\u4FDD\u62A4\u3002</p>
+          <p style="margin-top:8px"><strong>\u{1F4CC} \u6211\u4EEC\u627F\u8BFA\uFF1A</strong></p>
+          <p>\u2022 \u6240\u6709\u5B66\u4E60\u6570\u636E\u4EC5\u5B58\u50A8\u5728\u672C\u8BBE\u5907\uFF0C\u4E0D\u4E0A\u4F20\u4EFB\u4F55\u670D\u52A1\u5668</p>
+          <p>\u2022 \u4E0D\u6536\u96C6\u4EFB\u4F55\u4E2A\u4EBA\u8EAB\u4EFD\u4FE1\u606F</p>
+          <p>\u2022 \u4E0D\u542B\u4EFB\u4F55\u5E7F\u544A\u548C\u7B2C\u4E09\u65B9\u8FFD\u8E2A</p>
+          <p style="margin-top:8px"><strong>\u{1F3A4} \u9EA6\u514B\u98CE\u6743\u9650\uFF1A</strong>\u4EC5\u5728\u60A8\u4E3B\u52A8\u4F7F\u7528\u8BED\u97F3\u8DDF\u8BFB\u6216\u80CC\u8BF5\u8BC4\u5206\u529F\u80FD\u65F6\u7533\u8BF7\uFF0C\u5F55\u97F3\u5904\u7406\u5B8C\u6BD5\u540E\u7ACB\u5373\u9500\u6BC1</p>
+          <p style="margin-top:8px"><strong>\u{1F4F7} \u76F8\u673A\u6743\u9650\uFF1A</strong>\u4EC5\u5728\u60A8\u4E3B\u52A8\u62CD\u7167\u5BFC\u5165\u9898\u76EE\u65F6\u7533\u8BF7\uFF0C\u7167\u7247\u89E3\u6790\u540E\u7ACB\u5373\u9500\u6BC1</p>
+          <p style="margin-top:8px"><strong>\u{1F476} \u513F\u7AE5\u9690\u79C1\uFF1A</strong>\u672C\u5E94\u7528\u4E13\u4E3A\u513F\u7AE5\u8BBE\u8BA1\uFF0C\u4E25\u683C\u9075\u5B88\u300A\u513F\u7AE5\u4E2A\u4EBA\u4FE1\u606F\u7F51\u7EDC\u4FDD\u62A4\u89C4\u5B9A\u300B\uFF0C\u4E0D\u6536\u96C6\u4EFB\u4F55\u513F\u7AE5\u4E2A\u4EBA\u4FE1\u606F</p>
+          <p style="margin-top:8px">\u5B8C\u6574\u9690\u79C1\u653F\u7B56\uFF1A<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">\u70B9\u51FB\u67E5\u770B</a></p>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--color-border)">
+          <input type="checkbox" id="privacy-check" style="width:18px;height:18px;flex-shrink:0">
+          <label for="privacy-check" style="font-size:13px;color:var(--color-text)">\u6211\u5DF2\u9605\u8BFB\u5E76\u540C\u610F<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">\u300A\u9690\u79C1\u653F\u7B56\u300B</a>\u548C<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">\u300A\u513F\u7AE5\u9690\u79C1\u653F\u7B56\u300B</a></label>
+        </div>
+        <button id="privacy-agree-btn" style="width:100%;padding:14px;background:#ccc;color:white;border-radius:12px;font-size:15px;font-weight:700;margin-top:10px;transition:background 0.2s" disabled>\u540C\u610F\u5E76\u7EE7\u7EED</button>
+        <button id="privacy-reject-btn" style="width:100%;padding:10px;background:none;color:var(--color-text-hint);font-size:13px;margin-top:6px">\u4E0D\u540C\u610F\uFF08\u9000\u51FA\u5E94\u7528\uFF09</button>
+      </div>`;
+      document.body.appendChild(overlay);
+      const check = overlay.querySelector("#privacy-check");
+      const agreeBtn = overlay.querySelector("#privacy-agree-btn");
+      check.addEventListener("change", () => {
+        agreeBtn.disabled = !check.checked;
+        agreeBtn.style.background = check.checked ? "var(--color-primary)" : "#ccc";
+      });
+      agreeBtn.addEventListener("click", () => {
+        localStorage.setItem(storageKey, Date.now().toString());
+        overlay.remove();
+        resolve();
+      });
+      overlay.querySelector("#privacy-reject-btn").addEventListener("click", () => {
+        agreeBtn.textContent = "\u8BF7\u540C\u610F\u9690\u79C1\u653F\u7B56\u624D\u80FD\u4F7F\u7528";
+        agreeBtn.style.background = "var(--color-error)";
+        agreeBtn.disabled = false;
+      });
+    });
+  }
   init();
 })();
