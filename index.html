@@ -39,6 +39,11 @@
       <span>管理档案</span>
     </button>
   </div>
+  <!-- 底部辅助链接 -->
+  <div style="margin-top:16px;display:flex;gap:16px;justify-content:center">
+    <button id="btn-profiles-privacy" style="font-size:11px;color:rgba(255,255,255,0.7);background:none;border:none;text-decoration:underline">隐私政策</button>
+    <button id="btn-profiles-report" style="font-size:11px;color:rgba(255,255,255,0.7);background:none;border:none;text-decoration:underline">📢 投诉举报</button>
+  </div>
 </div>
 
 <!-- ===== 弹窗：新建/编辑档案 ===== -->
@@ -170,6 +175,22 @@
     </button>
   </div>
 
+  <!-- 数学专项快捷区 -->
+  <div class="english-quick-row" style="margin-top:0">
+    <button class="english-quick-btn math-quick-btn" id="btn-quick-multiply">
+      <span>✖️</span><span>乘法口诀</span>
+    </button>
+    <button class="english-quick-btn math-quick-btn" id="btn-quick-formula">
+      <span>📐</span><span>数学公式</span>
+    </button>
+    <button class="english-quick-btn math-quick-btn" id="btn-quick-geometry">
+      <span>📏</span><span>几何图形</span>
+    </button>
+    <button class="english-quick-btn math-quick-btn" id="btn-quick-algebra">
+      <span>🔢</span><span>代数公式</span>
+    </button>
+  </div>
+
   <section class="today-section">
     <h2 class="section-title">今日待复习</h2>
     <div class="today-stats" id="today-stats">
@@ -217,8 +238,11 @@
 <div id="page-study" class="page">
   <header class="study-header">
     <button class="btn-back" id="btn-study-back">←</button>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" id="study-progress-bar"></div>
+    <div style="flex:1;min-width:0">
+      <div id="study-deck-name" style="font-size:12px;color:rgba(255,255,255,0.85);overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></div>
+      <div class="progress-bar-wrap" style="margin-top:4px">
+        <div class="progress-bar" id="study-progress-bar"></div>
+      </div>
     </div>
     <span class="progress-text" id="study-progress-text">0/0</span>
   </header>
@@ -748,6 +772,42 @@
   </div>
 </div>
 
+<!-- ===== 页面：数学学习中心 ===== -->
+<div id="page-math-learning" class="page">
+  <header class="page-header" style="background:linear-gradient(135deg,#8B5CF6,#6D28D9)">
+    <button class="btn-back">←</button>
+    <h2>数学学习</h2>
+  </header>
+
+  <div class="chinese-tabs" id="math-tabs">
+    <button class="chinese-tab active" data-mtab="multiply">
+      <span>✖️</span><span>乘法口诀</span>
+    </button>
+    <button class="chinese-tab" data-mtab="primary">
+      <span>📐</span><span>小学公式</span>
+    </button>
+    <button class="chinese-tab" data-mtab="geometry">
+      <span>📏</span><span>初中几何</span>
+    </button>
+    <button class="chinese-tab" data-mtab="algebra">
+      <span>🔢</span><span>初中代数</span>
+    </button>
+  </div>
+
+  <div class="chinese-section active" id="mtab-multiply" style="flex:1;overflow-y:auto;padding:12px 14px 80px">
+    <div id="mtab-multiply-body"></div>
+  </div>
+  <div class="chinese-section hidden" id="mtab-primary" style="flex:1;overflow-y:auto;padding:12px 14px 80px">
+    <div id="mtab-primary-body"></div>
+  </div>
+  <div class="chinese-section hidden" id="mtab-geometry" style="flex:1;overflow-y:auto;padding:12px 14px 80px">
+    <div id="mtab-geometry-body"></div>
+  </div>
+  <div class="chinese-section hidden" id="mtab-algebra" style="flex:1;overflow-y:auto;padding:12px 14px 80px">
+    <div id="mtab-algebra-body"></div>
+  </div>
+</div>
+
 <!-- ===== 页面：语文学习中心 ===== -->
 <div id="page-chinese-learning" class="page">
   <header class="page-header" style="background:linear-gradient(135deg,#E84848,#C0392B)">
@@ -760,13 +820,16 @@
       <span>🏮</span><span>古诗背诵</span>
     </button>
     <button class="chinese-tab" data-ctab="pinyin">
-      <span>🔤</span><span>拼音</span>
+      <span>🔡</span><span>拼音</span>
     </button>
     <button class="chinese-tab" data-ctab="chars">
-      <span>字</span><span>生字词语</span>
+      <span>📝</span><span>生字词语</span>
     </button>
     <button class="chinese-tab" data-ctab="idioms">
       <span>📜</span><span>成语</span>
+    </button>
+    <button class="chinese-tab" data-ctab="daily">
+      <span>💡</span><span>日积月累</span>
     </button>
     <button class="chinese-tab" data-ctab="poems">
       <span>✍️</span><span>古诗题库</span>
@@ -817,9 +880,21 @@
 
   <!-- 生字词语子页 -->
   <div class="chinese-section hidden" id="ctab-chars" style="flex:1;overflow:hidden;display:flex;flex-direction:column">
+    <!-- 类型 Tab：生字 / 词语 -->
     <div class="py-mode-tabs" id="ctab-chars-tabs">
-      <button class="py-mode-btn active" data-charstab="chars">🔤 生字</button>
-      <button class="py-mode-btn" data-charstab="words">📝 词语</button>
+      <button class="py-mode-btn active" data-charstab="all">全部</button>
+      <button class="py-mode-btn" data-charstab="chars">生字</button>
+      <button class="py-mode-btn" data-charstab="words">词语</button>
+    </div>
+    <!-- 年级 Tab -->
+    <div class="py-grade-row" id="ctab-chars-grades">
+      <button class="py-grade-btn active" data-chargrade="all">全部</button>
+      <button class="py-grade-btn" data-chargrade="primary1">一年级</button>
+      <button class="py-grade-btn" data-chargrade="primary2">二年级</button>
+      <button class="py-grade-btn" data-chargrade="primary3">三年级</button>
+      <button class="py-grade-btn" data-chargrade="primary4">四年级</button>
+      <button class="py-grade-btn" data-chargrade="primary5">五年级</button>
+      <button class="py-grade-btn" data-chargrade="primary6">六年级</button>
     </div>
     <div id="ctab-chars-body" style="flex:1;overflow-y:auto;padding:12px 14px 80px"></div>
   </div>
@@ -831,6 +906,21 @@
         style="border-radius:20px;padding:8px 14px;font-size:13px">
     </div>
     <div id="ctab-idioms-body" style="flex:1;overflow-y:auto;padding:0 14px 80px"></div>
+  </div>
+
+  <!-- 日积月累子页 -->
+  <div class="chinese-section hidden" id="ctab-daily" style="flex:1;overflow:hidden;display:flex;flex-direction:column">
+    <div style="padding:10px 14px 6px;flex-shrink:0">
+      <input type="text" id="ctab-daily-search" placeholder="搜索名言、谚语、古诗句…"
+        style="border-radius:20px;padding:8px 14px;font-size:13px">
+    </div>
+    <div class="py-mode-tabs" id="ctab-daily-tabs" style="padding-top:0">
+      <button class="py-mode-btn active" data-dailytab="all">全部</button>
+      <button class="py-mode-btn" data-dailytab="名言">名言</button>
+      <button class="py-mode-btn" data-dailytab="谚语">谚语</button>
+      <button class="py-mode-btn" data-dailytab="古诗名句">古诗名句</button>
+    </div>
+    <div id="ctab-daily-body" style="flex:1;overflow-y:auto;padding:0 14px 80px"></div>
   </div>
 
   <!-- 古诗题库子页 -->

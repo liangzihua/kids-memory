@@ -1,0 +1,1232 @@
+{
+  "meta": {
+    "subject": "chinese",
+    "grade": "primary",
+    "name": "小学四年级生字词",
+    "version": "2024",
+    "count": 300,
+    "description": "小学小学四年级上下册生字、词语"
+  },
+  "cards": [
+    {
+      "id": "hz4_001",
+      "type": "char",
+      "front": "联",
+      "back": "lián｜联系；联合",
+      "phonetic": "lián",
+      "radical": "耳",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "耳旁加关，联系",
+      "example": "联系·联合·联想",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_002",
+      "type": "char",
+      "front": "系",
+      "back": "xì｜联系；关系｜jì 系上",
+      "phonetic": "xì",
+      "radical": "纟",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "绞丝旁，联系",
+      "example": "联系·关系·体系",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_003",
+      "type": "char",
+      "front": "欢",
+      "back": "huān｜欢乐；欢迎",
+      "phonetic": "huān",
+      "radical": "又",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "又旁加欠，欢喜",
+      "example": "欢乐·欢迎·欢快",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_004",
+      "type": "char",
+      "front": "迎",
+      "back": "yíng｜迎接；欢迎",
+      "phonetic": "yíng",
+      "radical": "辶",
+      "strokes": 7,
+      "structure": "半包围",
+      "hint": "走之旁加卬，迎接",
+      "example": "迎接·欢迎·迎来",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_005",
+      "type": "char",
+      "front": "宾",
+      "back": "bīn｜宾客；宾馆",
+      "phonetic": "bīn",
+      "radical": "宀",
+      "strokes": 10,
+      "structure": "上下",
+      "hint": "宝盖头下，宾客",
+      "example": "宾客·宾馆·来宾",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_006",
+      "type": "char",
+      "front": "贵",
+      "back": "guì｜珍贵；贵重",
+      "phonetic": "guì",
+      "radical": "贝",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "贝字底，珍贵",
+      "example": "珍贵·贵重·尊贵",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_007",
+      "type": "char",
+      "front": "珍",
+      "back": "zhēn｜珍惜；珍贵",
+      "phonetic": "zhēn",
+      "radical": "王",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "王旁加珍，珍宝",
+      "example": "珍贵·珍惜·珍宝",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_008",
+      "type": "char",
+      "front": "宝",
+      "back": "bǎo｜宝贝；宝贵",
+      "phonetic": "bǎo",
+      "radical": "宀",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "宝盖头下有玉，宝贝",
+      "example": "宝贝·宝贵·国宝",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_009",
+      "type": "char",
+      "front": "访",
+      "back": "fǎng｜访问；拜访",
+      "phonetic": "fǎng",
+      "radical": "讠",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "言字旁加方，访问",
+      "example": "访问·拜访·采访",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_010",
+      "type": "char",
+      "front": "调",
+      "back": "diào｜调查；音调｜tiáo 调节",
+      "phonetic": "diào",
+      "radical": "讠",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "言字旁加周，调查",
+      "example": "调查·调节·音调",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_011",
+      "type": "char",
+      "front": "查",
+      "back": "chá｜查找；调查",
+      "phonetic": "chá",
+      "radical": "木",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "木字底加且，查找",
+      "example": "调查·查找·检查",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_012",
+      "type": "char",
+      "front": "研",
+      "back": "yán｜研究；研磨",
+      "phonetic": "yán",
+      "radical": "石",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "石旁加开，研究",
+      "example": "研究·研磨·钻研",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_013",
+      "type": "char",
+      "front": "究",
+      "back": "jiū｜研究；究竟",
+      "phonetic": "jiū",
+      "radical": "穴",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "穴字头加九，研究",
+      "example": "研究·究竟·讲究",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_014",
+      "type": "char",
+      "front": "测",
+      "back": "cè｜测量；预测",
+      "phonetic": "cè",
+      "radical": "氵",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "三点水加则，测量",
+      "example": "测量·预测·检测",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_015",
+      "type": "char",
+      "front": "量",
+      "back": "liàng｜数量；liáng 量一量",
+      "phonetic": "liàng",
+      "radical": "里",
+      "strokes": 12,
+      "structure": "上下",
+      "hint": "日字上加重，量度",
+      "example": "数量·重量·测量",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_016",
+      "type": "char",
+      "front": "报",
+      "back": "bào｜报告；报纸",
+      "phonetic": "bào",
+      "radical": "扌",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "提手旁加卩，报告",
+      "example": "报告·报纸·汇报",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_017",
+      "type": "char",
+      "front": "告",
+      "back": "gào｜告诉；报告",
+      "phonetic": "gào",
+      "radical": "口",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "牛字底加口，告诉",
+      "example": "告诉·报告·公告",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_018",
+      "type": "char",
+      "front": "总",
+      "back": "zǒng｜总结；总共",
+      "phonetic": "zǒng",
+      "radical": "心",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "心字底，总括",
+      "example": "总结·总共·总理",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_019",
+      "type": "char",
+      "front": "结",
+      "back": "jié｜结束；总结｜jiē 结果",
+      "phonetic": "jié",
+      "radical": "纟",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "绞丝旁加吉，结合",
+      "example": "总结·结束·结果",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_020",
+      "type": "char",
+      "front": "归",
+      "back": "guī｜回归；归纳",
+      "phonetic": "guī",
+      "radical": "刀",
+      "strokes": 5,
+      "structure": "左右",
+      "hint": "刀字旁加ヨ，归来",
+      "example": "归纳·回归·归来",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_021",
+      "type": "char",
+      "front": "纳",
+      "back": "nà｜接纳；归纳",
+      "phonetic": "nà",
+      "radical": "纟",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "绞丝旁加内，接纳",
+      "example": "归纳·接纳·容纳",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_022",
+      "type": "char",
+      "front": "分",
+      "back": "fēn｜分开；分钟｜fèn 成分",
+      "phonetic": "fēn",
+      "radical": "刀",
+      "strokes": 4,
+      "structure": "上下",
+      "hint": "刀字底，分开",
+      "example": "分开·分钟·成分",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_023",
+      "type": "char",
+      "front": "析",
+      "back": "xī｜分析；解析",
+      "phonetic": "xī",
+      "radical": "木",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "木旁加斤，分析",
+      "example": "分析·解析·剖析",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_024",
+      "type": "char",
+      "front": "比",
+      "back": "bǐ｜比较；比赛",
+      "phonetic": "bǐ",
+      "radical": "比",
+      "strokes": 4,
+      "structure": "左右",
+      "hint": "两个人并列，比较",
+      "example": "比较·比赛·对比",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_025",
+      "type": "char",
+      "front": "较",
+      "back": "jiào｜比较；较量",
+      "phonetic": "jiào",
+      "radical": "车",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "车旁加交，比较",
+      "example": "比较·较量·计较",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_026",
+      "type": "char",
+      "front": "评",
+      "back": "píng｜评价；评论",
+      "phonetic": "píng",
+      "radical": "讠",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "言字旁加平，评价",
+      "example": "评价·评论·点评",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_027",
+      "type": "char",
+      "front": "价",
+      "back": "jià｜价格；价值",
+      "phonetic": "jià",
+      "radical": "亻",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "人旁加介，价格",
+      "example": "价格·价值·评价",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_028",
+      "type": "char",
+      "front": "值",
+      "back": "zhí｜价值；值得",
+      "phonetic": "zhí",
+      "radical": "亻",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "人旁加直，价值",
+      "example": "价值·值得·数值",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_029",
+      "type": "char",
+      "front": "得",
+      "back": "dé｜得到；de助词｜děi 得去",
+      "phonetic": "dé",
+      "radical": "彳",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "双人旁，得到",
+      "example": "得到·觉得·心得",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_030",
+      "type": "char",
+      "front": "推",
+      "back": "tuī｜推进；推断",
+      "phonetic": "tuī",
+      "radical": "扌",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "提手旁加隹，推动",
+      "example": "推进·推断·推广",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_031",
+      "type": "char",
+      "front": "断",
+      "back": "duàn｜判断；中断",
+      "phonetic": "duàn",
+      "radical": "斤",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "斤字旁加继，断开",
+      "example": "判断·中断·断定",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_032",
+      "type": "char",
+      "front": "判",
+      "back": "pàn｜判断；裁判",
+      "phonetic": "pàn",
+      "radical": "刀",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "刀字旁加半，判断",
+      "example": "判断·裁判·判定",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_033",
+      "type": "char",
+      "front": "建",
+      "back": "jiàn｜建设；建议",
+      "phonetic": "jiàn",
+      "radical": "廴",
+      "strokes": 8,
+      "structure": "半包围",
+      "hint": "建字旁，建造",
+      "example": "建设·建议·建立",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_034",
+      "type": "char",
+      "front": "设",
+      "back": "shè｜设计；设备",
+      "phonetic": "shè",
+      "radical": "讠",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "言字旁加殳，设置",
+      "example": "设计·设备·建设",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_035",
+      "type": "char",
+      "front": "议",
+      "back": "yì｜议论；会议",
+      "phonetic": "yì",
+      "radical": "讠",
+      "strokes": 5,
+      "structure": "左右",
+      "hint": "言字旁加义，议论",
+      "example": "议论·会议·建议",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_036",
+      "type": "char",
+      "front": "论",
+      "back": "lùn｜论点；议论",
+      "phonetic": "lùn",
+      "radical": "讠",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "言字旁加仑，论点",
+      "example": "论点·议论·讨论",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_037",
+      "type": "char",
+      "front": "讨",
+      "back": "tǎo｜讨论；讨好",
+      "phonetic": "tǎo",
+      "radical": "讠",
+      "strokes": 5,
+      "structure": "左右",
+      "hint": "言字旁加寸，讨论",
+      "example": "讨论·讨好·讨厌",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_038",
+      "type": "char",
+      "front": "执",
+      "back": "zhí｜执行；坚持",
+      "phonetic": "zhí",
+      "radical": "扌",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "提手旁加丸，执行",
+      "example": "执行·坚持·执法",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_039",
+      "type": "char",
+      "front": "行",
+      "back": "xíng｜行走；行动｜háng 行业",
+      "phonetic": "xíng",
+      "radical": "行",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "双人旁，行走",
+      "example": "行走·执行·行动",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_040",
+      "type": "char",
+      "front": "检",
+      "back": "jiǎn｜检查；检验",
+      "phonetic": "jiǎn",
+      "radical": "木",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "木旁加佥，检查",
+      "example": "检查·检验·检测",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_041",
+      "type": "char",
+      "front": "验",
+      "back": "yàn｜验证；经验",
+      "phonetic": "yàn",
+      "radical": "马",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "马旁加佥，验证",
+      "example": "验证·经验·检验",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_042",
+      "type": "char",
+      "front": "经",
+      "back": "jīng｜经过；经验",
+      "phonetic": "jīng",
+      "radical": "纟",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "绞丝旁加巠，经过",
+      "example": "经过·经验·经济",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_043",
+      "type": "char",
+      "front": "改",
+      "back": "gǎi｜改变；改正",
+      "phonetic": "gǎi",
+      "radical": "攴",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "攴字旁加己，改变",
+      "example": "改变·改正·改进",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_044",
+      "type": "char",
+      "front": "进",
+      "back": "jìn｜进入；改进",
+      "phonetic": "jìn",
+      "radical": "辶",
+      "strokes": 7,
+      "structure": "半包围",
+      "hint": "走之旁加井，前进",
+      "example": "进入·前进·改进",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_045",
+      "type": "char",
+      "front": "步",
+      "back": "bù｜步骤；步伐",
+      "phonetic": "bù",
+      "radical": "止",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "止字底，步骤",
+      "example": "步骤·步伐·进步",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_046",
+      "type": "char",
+      "front": "骤",
+      "back": "zhòu｜步骤；骤然",
+      "phonetic": "zhòu",
+      "radical": "马",
+      "strokes": 18,
+      "structure": "左右",
+      "hint": "马旁加聚，骤然",
+      "example": "步骤·骤然·骤雨",
+      "tags": [
+        "生字",
+        "四年级上"
+      ]
+    },
+    {
+      "id": "hz4_047",
+      "type": "char",
+      "front": "获",
+      "back": "huò｜获得；收获",
+      "phonetic": "huò",
+      "radical": "艹",
+      "strokes": 10,
+      "structure": "上下",
+      "hint": "草字头加隻，获得",
+      "example": "获得·收获·获奖",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_048",
+      "type": "char",
+      "front": "奖",
+      "back": "jiǎng｜奖励；奖品",
+      "phonetic": "jiǎng",
+      "radical": "大",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "大字底加爿，奖励",
+      "example": "奖励·奖品·得奖",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_049",
+      "type": "char",
+      "front": "励",
+      "back": "lì｜励志；鼓励",
+      "phonetic": "lì",
+      "radical": "力",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "力字旁，励志",
+      "example": "鼓励·励志·激励",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_050",
+      "type": "char",
+      "front": "鼓",
+      "back": "gǔ｜鼓励；鼓掌",
+      "phonetic": "gǔ",
+      "radical": "鼓",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "象形字，打鼓",
+      "example": "鼓励·鼓掌·打鼓",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_051",
+      "type": "char",
+      "front": "掌",
+      "back": "zhǎng｜手掌；掌握",
+      "phonetic": "zhǎng",
+      "radical": "手",
+      "strokes": 12,
+      "structure": "上下",
+      "hint": "手字底，手掌",
+      "example": "手掌·掌握·鼓掌",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_052",
+      "type": "char",
+      "front": "握",
+      "back": "wò｜握手；掌握",
+      "phonetic": "wò",
+      "radical": "扌",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "提手旁加屋，握住",
+      "example": "握手·掌握·把握",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_053",
+      "type": "char",
+      "front": "挑",
+      "back": "tiāo｜挑选；挑担｜tiǎo 挑战",
+      "phonetic": "tiāo",
+      "radical": "扌",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "提手旁加兆，挑选",
+      "example": "挑选·挑战·挑剔",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_054",
+      "type": "char",
+      "front": "战",
+      "back": "zhàn｜战争；挑战",
+      "phonetic": "zhàn",
+      "radical": "戈",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "戈字旁加占，战争",
+      "example": "战争·挑战·战斗",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_055",
+      "type": "char",
+      "front": "斗",
+      "back": "dòu｜战斗；斗争｜dǒu 斗米",
+      "phonetic": "dòu",
+      "radical": "斗",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，两人相斗",
+      "example": "战斗·斗争·斗志",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_056",
+      "type": "char",
+      "front": "志",
+      "back": "zhì｜志气；意志",
+      "phonetic": "zhì",
+      "radical": "心",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "心字底，志向",
+      "example": "志气·意志·立志",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_057",
+      "type": "char",
+      "front": "意",
+      "back": "yì｜意思；意义",
+      "phonetic": "yì",
+      "radical": "心",
+      "strokes": 13,
+      "structure": "上下",
+      "hint": "心字底加音，意思",
+      "example": "意思·意义·意见",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_058",
+      "type": "char",
+      "front": "义",
+      "back": "yì｜意义；义气",
+      "phonetic": "yì",
+      "radical": "丶",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "简化字，意义",
+      "example": "意义·义气·正义",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_059",
+      "type": "char",
+      "front": "正",
+      "back": "zhèng｜正确；正直",
+      "phonetic": "zhèng",
+      "radical": "止",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "止字上加一，正确",
+      "example": "正确·正直·改正",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_060",
+      "type": "char",
+      "front": "直",
+      "back": "zhí｜正直；直接",
+      "phonetic": "zhí",
+      "radical": "目",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "目字底，正直",
+      "example": "正直·直接·笔直",
+      "tags": [
+        "生字",
+        "四年级下"
+      ]
+    },
+    {
+      "id": "hz4_061",
+      "type": "word",
+      "front": "联系",
+      "back": "lián xì",
+      "phonetic": "lián xì",
+      "hint": "相互有关系，有所往来",
+      "example": "我们要经常与同学保持联系。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_062",
+      "type": "word",
+      "front": "调查",
+      "back": "diào chá",
+      "phonetic": "diào chá",
+      "hint": "为了解情况而进行考察",
+      "example": "我们对水质进行了调查。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_063",
+      "type": "word",
+      "front": "研究",
+      "back": "yán jiū",
+      "phonetic": "yán jiū",
+      "hint": "仔细探求，深入分析",
+      "example": "科学家认真研究新发现。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_064",
+      "type": "word",
+      "front": "报告",
+      "back": "bào gào",
+      "phonetic": "bào gào",
+      "hint": "把情况告诉上级或大家",
+      "example": "他做了一份详细的研究报告。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_065",
+      "type": "word",
+      "front": "总结",
+      "back": "zǒng jié",
+      "phonetic": "zǒng jié",
+      "hint": "对一段工作或学习做归纳",
+      "example": "期末要对本学期学习进行总结。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_066",
+      "type": "word",
+      "front": "分析",
+      "back": "fēn xī",
+      "phonetic": "fēn xī",
+      "hint": "把事物分解，找出各部分关系",
+      "example": "我们要分析失败的原因。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_067",
+      "type": "word",
+      "front": "推断",
+      "back": "tuī duàn",
+      "phonetic": "tuī duàn",
+      "hint": "根据已知情况推论判断",
+      "example": "根据线索，他推断出了结果。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_068",
+      "type": "word",
+      "front": "建议",
+      "back": "jiàn yì",
+      "phonetic": "jiàn yì",
+      "hint": "提出意见供人考虑",
+      "example": "我建议大家多读课外书。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_069",
+      "type": "word",
+      "front": "执行",
+      "back": "zhí xíng",
+      "phonetic": "zhí xíng",
+      "hint": "按照计划或命令做",
+      "example": "我们要认真执行学校的规定。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_070",
+      "type": "word",
+      "front": "检验",
+      "back": "jiǎn yàn",
+      "phonetic": "jiǎn yàn",
+      "hint": "检查验证是否符合要求",
+      "example": "实验结果需要经过反复检验。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_071",
+      "type": "word",
+      "front": "改进",
+      "back": "gǎi jìn",
+      "phonetic": "gǎi jìn",
+      "hint": "改变使其更好",
+      "example": "我们要不断改进学习方法。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_072",
+      "type": "word",
+      "front": "鼓励",
+      "back": "gǔ lì",
+      "phonetic": "gǔ lì",
+      "hint": "激励人上进",
+      "example": "老师经常鼓励我们勇敢尝试。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_073",
+      "type": "word",
+      "front": "挑战",
+      "back": "tiǎo zhàn",
+      "phonetic": "tiǎo zhàn",
+      "hint": "主动迎接困难或竞争",
+      "example": "面对困难，我们要敢于挑战。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_074",
+      "type": "word",
+      "front": "意志",
+      "back": "yì zhì",
+      "phonetic": "yì zhì",
+      "hint": "决心和毅力",
+      "example": "成功需要坚强的意志。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_075",
+      "type": "word",
+      "front": "正直",
+      "back": "zhèng zhí",
+      "phonetic": "zhèng zhí",
+      "hint": "为人公正，不偏邪",
+      "example": "他是一个正直的人。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_076",
+      "type": "word",
+      "front": "珍贵",
+      "back": "zhēn guì",
+      "phonetic": "zhēn guì",
+      "hint": "稀少而有价值",
+      "example": "这份友谊对我来说非常珍贵。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_077",
+      "type": "word",
+      "front": "经验",
+      "back": "jīng yàn",
+      "phonetic": "jīng yàn",
+      "hint": "从实践中得到的知识",
+      "example": "老工人有丰富的工作经验。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_078",
+      "type": "word",
+      "front": "收获",
+      "back": "shōu huò",
+      "phonetic": "shōu huò",
+      "hint": "取得成果，有所得",
+      "example": "这次旅行让我收获很多。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_079",
+      "type": "word",
+      "front": "目标",
+      "back": "mù biāo",
+      "phonetic": "mù biāo",
+      "hint": "想要达到的结果",
+      "example": "我的目标是考上好大学。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    },
+    {
+      "id": "hz4_080",
+      "type": "word",
+      "front": "坚持",
+      "back": "jiān chí",
+      "phonetic": "jiān chí",
+      "hint": "持续不放弃地做某事",
+      "example": "坚持就是胜利。",
+      "tags": [
+        "词语",
+        "四年级"
+      ]
+    }
+  ]
+}

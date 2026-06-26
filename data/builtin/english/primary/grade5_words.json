@@ -1,45 +1,791 @@
 {
-  "meta": { "subject": "english", "grade": "primary", "name": "小学五年级英语词汇", "version": "2024", "count": 40 },
+  "meta": {
+    "subject": "english",
+    "grade": "primary5",
+    "name": "小学五年级英语词汇",
+    "version": "2024",
+    "count": 60
+  },
   "cards": [
-    { "id": "ep5_001", "type": "word", "front": "agree", "back": "同意；赞成", "phonetic": "/əˈɡriː/", "hint": "agree with sb. 同意某人", "tags": ["动词","小学五年级"] },
-    { "id": "ep5_002", "type": "word", "front": "answer", "back": "回答；答案", "phonetic": "/ˈænsər/", "hint": "回答问题", "tags": ["动词/名词","小学五年级"] },
-    { "id": "ep5_003", "type": "word", "front": "clean", "back": "打扫；干净的", "phonetic": "/kliːn/", "hint": "把房间弄干净", "tags": ["动词/形容词","小学五年级"] },
-    { "id": "ep5_004", "type": "word", "front": "collect", "back": "收集；采集", "phonetic": "/kəˈlekt/", "hint": "收集邮票 collect stamps", "tags": ["动词","小学五年级"] },
-    { "id": "ep5_005", "type": "word", "front": "cook", "back": "做饭；厨师", "phonetic": "/kʊk/", "hint": "在厨房做饭", "tags": ["动词/名词","小学五年级"] },
-    { "id": "ep5_006", "type": "word", "front": "delicious", "back": "美味的；可口的", "phonetic": "/dɪˈlɪʃəs/", "hint": "非常好吃", "tags": ["形容词","小学五年级","食物"] },
-    { "id": "ep5_007", "type": "word", "front": "difficult", "back": "困难的；难做的", "phonetic": "/ˈdɪfɪkəlt/", "hint": "与 easy 相对", "tags": ["形容词","小学五年级"] },
-    { "id": "ep5_008", "type": "word", "front": "dream", "back": "梦；梦想；做梦", "phonetic": "/driːm/", "hint": "有一个梦想 have a dream", "tags": ["名词/动词","小学五年级"] },
-    { "id": "ep5_009", "type": "word", "front": "exercise", "back": "锻炼；练习", "phonetic": "/ˈeksərsaɪz/", "hint": "每天锻炼 exercise every day", "tags": ["名词/动词","小学五年级","运动"] },
-    { "id": "ep5_010", "type": "word", "front": "expensive", "back": "昂贵的；费用高的", "phonetic": "/ɪkˈspensɪv/", "hint": "价格高=贵", "tags": ["形容词","小学五年级"] },
-    { "id": "ep5_011", "type": "word", "front": "famous", "back": "著名的；有名的", "phonetic": "/ˈfeɪməs/", "hint": "famous for... 以...著名", "tags": ["形容词","小学五年级"] },
-    { "id": "ep5_012", "type": "word", "front": "favourite", "back": "最喜爱的；最喜欢的", "phonetic": "/ˈfeɪvərɪt/", "hint": "My favourite... = 我最喜欢的...", "tags": ["形容词","小学五年级"] },
-    { "id": "ep5_013", "type": "word", "front": "forest", "back": "森林", "phonetic": "/ˈfɒrɪst/", "hint": "有很多树的地方", "tags": ["名词","小学五年级","自然"] },
-    { "id": "ep5_014", "type": "word", "front": "geography", "back": "地理（学科）", "phonetic": "/dʒiˈɒɡrəfi/", "hint": "地理课", "tags": ["名词","小学五年级","学科"] },
-    { "id": "ep5_015", "type": "word", "front": "history", "back": "历史（学科）", "phonetic": "/ˈhɪstəri/", "hint": "历史课", "tags": ["名词","小学五年级","学科"] },
-    { "id": "ep5_016", "type": "word", "front": "internet", "back": "互联网；网络", "phonetic": "/ˈɪntənet/", "hint": "on the internet = 在网上", "tags": ["名词","小学五年级","科技"] },
-    { "id": "ep5_017", "type": "word", "front": "juice", "back": "果汁；蔬菜汁", "phonetic": "/dʒuːs/", "hint": "苹果汁 apple juice", "tags": ["名词","小学五年级","饮料"] },
-    { "id": "ep5_018", "type": "word", "front": "kitchen", "back": "厨房", "phonetic": "/ˈkɪtʃɪn/", "hint": "做饭的房间", "tags": ["名词","小学五年级","家居"] },
-    { "id": "ep5_019", "type": "word", "front": "mathematics", "back": "数学（正式）", "phonetic": "/ˌmæθəˈmætɪks/", "hint": "简称 maths(英) / math(美)", "tags": ["名词","小学五年级","学科"] },
-    { "id": "ep5_020", "type": "word", "front": "mountain", "back": "山；山脉", "phonetic": "/ˈmaʊntən/", "hint": "山上爬山", "tags": ["名词","小学五年级","自然"] },
-    { "id": "ep5_021", "type": "word", "front": "museum", "back": "博物馆", "phonetic": "/mjuˈziːəm/", "hint": "去博物馆参观", "tags": ["名词","小学五年级","场所"] },
-    { "id": "ep5_022", "type": "word", "front": "nature", "back": "自然；大自然", "phonetic": "/ˈneɪtʃər/", "hint": "in nature = 在大自然中", "tags": ["名词","小学五年级","自然"] },
-    { "id": "ep5_023", "type": "word", "front": "noodle", "back": "面条", "phonetic": "/ˈnuːdəl/", "hint": "通常用复数 noodles", "tags": ["名词","小学五年级","食物"] },
-    { "id": "ep5_024", "type": "word", "front": "ocean", "back": "海洋；大海", "phonetic": "/ˈoʊʃən/", "hint": "比 sea 更大的水域", "tags": ["名词","小学五年级","自然"] },
-    { "id": "ep5_025", "type": "word", "front": "people", "back": "人们；人民", "phonetic": "/ˈpiːpəl/", "hint": "本身是复数，不说 peoples", "tags": ["名词","小学五年级"] },
-    { "id": "ep5_026", "type": "word", "front": "plant", "back": "植物；种植", "phonetic": "/plɑːnt/", "hint": "plant trees = 种树", "tags": ["名词/动词","小学五年级","自然"] },
-    { "id": "ep5_027", "type": "word", "front": "police", "back": "警察（集合名词）", "phonetic": "/pəˈliːs/", "hint": "the police = 警方（复数意义）", "tags": ["名词","小学五年级","职业"] },
-    { "id": "ep5_028", "type": "word", "front": "protect", "back": "保护；防护", "phonetic": "/prəˈtekt/", "hint": "protect the environment = 保护环境", "tags": ["动词","小学五年级"] },
-    { "id": "ep5_029", "type": "word", "front": "question", "back": "问题；疑问", "phonetic": "/ˈkwestʃən/", "hint": "ask a question = 提问", "tags": ["名词","小学五年级"] },
-    { "id": "ep5_030", "type": "word", "front": "recycle", "back": "回收利用；再循环", "phonetic": "/ˌriːˈsaɪkəl/", "hint": "垃圾分类 recycle rubbish", "tags": ["动词","小学五年级","环保"] },
-    { "id": "ep5_031", "type": "word", "front": "report", "back": "报告；汇报；报道", "phonetic": "/rɪˈpɔːrt/", "hint": "write a report = 写报告", "tags": ["名词/动词","小学五年级"] },
-    { "id": "ep5_032", "type": "word", "front": "season", "back": "季节；赛季", "phonetic": "/ˈsiːzən/", "hint": "四个季节：spring/summer/autumn/winter", "tags": ["名词","小学五年级","季节"] },
-    { "id": "ep5_033", "type": "word", "front": "subject", "back": "学科；主题；科目", "phonetic": "/ˈsʌbdʒɪkt/", "hint": "favourite subject = 最喜欢的科目", "tags": ["名词","小学五年级","学科"] },
-    { "id": "ep5_034", "type": "word", "front": "technology", "back": "技术；科技", "phonetic": "/tekˈnɒlədʒi/", "hint": "information technology = 信息技术", "tags": ["名词","小学五年级","科技"] },
-    { "id": "ep5_035", "type": "word", "front": "tourist", "back": "游客；旅游者", "phonetic": "/ˈtʊərɪst/", "hint": "tourist spot = 旅游景点", "tags": ["名词","小学五年级"] },
-    { "id": "ep5_036", "type": "word", "front": "traffic", "back": "交通；来往车辆", "phonetic": "/ˈtræfɪk/", "hint": "traffic jam = 交通堵塞", "tags": ["名词","小学五年级"] },
-    { "id": "ep5_037", "type": "word", "front": "understand", "back": "理解；明白", "phonetic": "/ˌʌndəˈstænd/", "hint": "Do you understand? = 你明白了吗？", "tags": ["动词","小学五年级"] },
-    { "id": "ep5_038", "type": "word", "front": "volunteer", "back": "志愿者；自愿", "phonetic": "/ˌvɒlənˈtɪər/", "hint": "volunteer work = 志愿工作", "tags": ["名词/动词","小学五年级"] },
-    { "id": "ep5_039", "type": "word", "front": "waste", "back": "浪费；废料", "phonetic": "/weɪst/", "hint": "waste water = 废水；浪费水", "tags": ["动词/名词","小学五年级","环保"] },
-    { "id": "ep5_040", "type": "word", "front": "wonderful", "back": "精彩的；极好的；美妙的", "phonetic": "/ˈwʌndəfəl/", "hint": "What a wonderful day! = 多美妙的一天！", "tags": ["形容词","小学五年级"] }
+    {
+      "id": "pe5_001",
+      "type": "word",
+      "front": "environment",
+      "back": "环境",
+      "phonetic": "/ɪnˈvaɪrənmənt/",
+      "hint": "周围的自然和社会条件",
+      "example": "We must protect the environment.",
+      "tags": [
+        "词汇",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_002",
+      "type": "word",
+      "front": "pollution",
+      "back": "污染",
+      "phonetic": "/pəˈluːʃn/",
+      "hint": "环境被有害物质破坏",
+      "example": "Air pollution is serious.",
+      "tags": [
+        "词汇",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_003",
+      "type": "word",
+      "front": "recycle",
+      "back": "回收利用",
+      "phonetic": "/ˌriːˈsaɪkl/",
+      "hint": "把废物再次利用",
+      "example": "We should recycle paper.",
+      "tags": [
+        "词汇",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_004",
+      "type": "word",
+      "front": "protect",
+      "back": "保护",
+      "phonetic": "/prəˈtekt/",
+      "hint": "使不受伤害",
+      "example": "Protect the animals.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_005",
+      "type": "word",
+      "front": "energy",
+      "back": "能量；精力",
+      "phonetic": "/ˈenədʒi/",
+      "hint": "做事的动力来源",
+      "example": "Save energy every day.",
+      "tags": [
+        "词汇",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_006",
+      "type": "word",
+      "front": "technology",
+      "back": "技术；科技",
+      "phonetic": "/tekˈnɒlədʒi/",
+      "hint": "应用科学的技术",
+      "example": "Technology changes our life.",
+      "tags": [
+        "词汇",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_007",
+      "type": "word",
+      "front": "internet",
+      "back": "互联网",
+      "phonetic": "/ˈɪntənet/",
+      "hint": "全球计算机网络",
+      "example": "I use the internet every day.",
+      "tags": [
+        "词汇",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_008",
+      "type": "word",
+      "front": "computer",
+      "back": "电脑",
+      "phonetic": "/kəmˈpjuːtə/",
+      "hint": "处理信息的机器",
+      "example": "I learn on the computer.",
+      "tags": [
+        "词汇",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_009",
+      "type": "word",
+      "front": "mobile phone",
+      "back": "手机",
+      "phonetic": "/ˈməʊbaɪl fəʊn/",
+      "hint": "可以移动的电话",
+      "example": "My mother has a mobile phone.",
+      "tags": [
+        "词汇",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_010",
+      "type": "word",
+      "front": "health",
+      "back": "健康",
+      "phonetic": "/helθ/",
+      "hint": "身体和精神的良好状态",
+      "example": "Health is very important.",
+      "tags": [
+        "词汇",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_011",
+      "type": "word",
+      "front": "exercise",
+      "back": "锻炼；运动",
+      "phonetic": "/ˈeksəsaɪz/",
+      "hint": "体育活动",
+      "example": "Exercise keeps us healthy.",
+      "tags": [
+        "词汇",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_012",
+      "type": "word",
+      "front": "medicine",
+      "back": "药；医学",
+      "phonetic": "/ˈmedɪsn/",
+      "hint": "治病的药物",
+      "example": "Take your medicine.",
+      "tags": [
+        "词汇",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_013",
+      "type": "word",
+      "front": "doctor",
+      "back": "医生",
+      "phonetic": "/ˈdɒktə/",
+      "hint": "治病的专业人员",
+      "example": "The doctor is kind.",
+      "tags": [
+        "职业",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_014",
+      "type": "word",
+      "front": "nurse",
+      "back": "护士",
+      "phonetic": "/nɜːs/",
+      "hint": "照顾病人的人",
+      "example": "The nurse helps patients.",
+      "tags": [
+        "职业",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_015",
+      "type": "word",
+      "front": "engineer",
+      "back": "工程师",
+      "phonetic": "/ˌendʒɪˈnɪə/",
+      "hint": "设计建造的专业人员",
+      "example": "He is an engineer.",
+      "tags": [
+        "职业",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_016",
+      "type": "word",
+      "front": "scientist",
+      "back": "科学家",
+      "phonetic": "/ˈsaɪəntɪst/",
+      "hint": "研究科学的人",
+      "example": "She wants to be a scientist.",
+      "tags": [
+        "职业",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_017",
+      "type": "word",
+      "front": "artist",
+      "back": "艺术家",
+      "phonetic": "/ˈɑːtɪst/",
+      "hint": "从事艺术创作的人",
+      "example": "The artist draws well.",
+      "tags": [
+        "职业",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_018",
+      "type": "word",
+      "front": "pilot",
+      "back": "飞行员",
+      "phonetic": "/ˈpaɪlət/",
+      "hint": "驾驶飞机的人",
+      "example": "The pilot flies the plane.",
+      "tags": [
+        "职业",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_019",
+      "type": "word",
+      "front": "happy",
+      "back": "高兴的",
+      "phonetic": "/ˈhæpi/",
+      "hint": "心情好",
+      "example": "I am happy today.",
+      "tags": [
+        "情感",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_020",
+      "type": "word",
+      "front": "excited",
+      "back": "兴奋的",
+      "phonetic": "/ɪkˈsaɪtɪd/",
+      "hint": "非常高兴期待",
+      "example": "I am excited about the trip.",
+      "tags": [
+        "情感",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_021",
+      "type": "word",
+      "front": "nervous",
+      "back": "紧张的",
+      "phonetic": "/ˈnɜːvəs/",
+      "hint": "感到不安担心",
+      "example": "I feel nervous before the exam.",
+      "tags": [
+        "情感",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_022",
+      "type": "word",
+      "front": "angry",
+      "back": "生气的",
+      "phonetic": "/ˈæŋɡri/",
+      "hint": "非常不满意",
+      "example": "Don not be angry.",
+      "tags": [
+        "情感",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_023",
+      "type": "word",
+      "front": "worried",
+      "back": "担心的",
+      "phonetic": "/ˈwʌrid/",
+      "hint": "感到焦虑",
+      "example": "She is worried about the test.",
+      "tags": [
+        "情感",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_024",
+      "type": "word",
+      "front": "surprised",
+      "back": "惊讶的",
+      "phonetic": "/səˈpraɪzd/",
+      "hint": "感到意外",
+      "example": "I was surprised to see him.",
+      "tags": [
+        "情感",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_025",
+      "type": "word",
+      "front": "because",
+      "back": "因为",
+      "phonetic": "/bɪˈkɒz/",
+      "hint": "表示原因的连词",
+      "example": "I stay home because it rains.",
+      "tags": [
+        "连词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_026",
+      "type": "word",
+      "front": "although",
+      "back": "虽然；尽管",
+      "phonetic": "/ɔːlˈðəʊ/",
+      "hint": "表示让步",
+      "example": "Although it is cold, I go out.",
+      "tags": [
+        "连词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_027",
+      "type": "word",
+      "front": "however",
+      "back": "然而；但是",
+      "phonetic": "/haʊˈevə/",
+      "hint": "表示转折",
+      "example": "I like it. However, it is too expensive.",
+      "tags": [
+        "连词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_028",
+      "type": "word",
+      "front": "therefore",
+      "back": "因此；所以",
+      "phonetic": "/ˈðeəfɔː/",
+      "hint": "表示结果",
+      "example": "I was tired, therefore I slept.",
+      "tags": [
+        "连词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_029",
+      "type": "word",
+      "front": "suddenly",
+      "back": "突然",
+      "phonetic": "/ˈsʌdənli/",
+      "hint": "出乎意料地",
+      "example": "Suddenly it started to rain.",
+      "tags": [
+        "副词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_030",
+      "type": "word",
+      "front": "carefully",
+      "back": "仔细地；小心地",
+      "phonetic": "/ˈkeəfəli/",
+      "hint": "做事认真谨慎",
+      "example": "Read the question carefully.",
+      "tags": [
+        "副词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_031",
+      "type": "word",
+      "front": "quickly",
+      "back": "迅速地",
+      "phonetic": "/ˈkwɪkli/",
+      "hint": "速度快地",
+      "example": "Run quickly!",
+      "tags": [
+        "副词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_032",
+      "type": "word",
+      "front": "slowly",
+      "back": "缓慢地",
+      "phonetic": "/ˈsləʊli/",
+      "hint": "速度慢地",
+      "example": "Walk slowly.",
+      "tags": [
+        "副词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_033",
+      "type": "word",
+      "front": "quietly",
+      "back": "安静地",
+      "phonetic": "/ˈkwaɪətli/",
+      "hint": "不发出声音地",
+      "example": "Speak quietly in the library.",
+      "tags": [
+        "副词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_034",
+      "type": "word",
+      "front": "loudly",
+      "back": "大声地",
+      "phonetic": "/ˈlaʊdli/",
+      "hint": "声音大地",
+      "example": "He speaks loudly.",
+      "tags": [
+        "副词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_035",
+      "type": "word",
+      "front": "mountain",
+      "back": "山；山脉",
+      "phonetic": "/ˈmaʊntɪn/",
+      "hint": "地面上很高的地形",
+      "example": "We climbed the mountain.",
+      "tags": [
+        "自然",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_036",
+      "type": "word",
+      "front": "river",
+      "back": "河流",
+      "phonetic": "/ˈrɪvə/",
+      "hint": "流动的淡水",
+      "example": "The river is long.",
+      "tags": [
+        "自然",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_037",
+      "type": "word",
+      "front": "ocean",
+      "back": "海洋",
+      "phonetic": "/ˈəʊʃn/",
+      "hint": "大片的咸水",
+      "example": "The ocean is deep.",
+      "tags": [
+        "自然",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_038",
+      "type": "word",
+      "front": "forest",
+      "back": "森林",
+      "phonetic": "/ˈfɒrɪst/",
+      "hint": "大片的树林",
+      "example": "The forest is green.",
+      "tags": [
+        "自然",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_039",
+      "type": "word",
+      "front": "desert",
+      "back": "沙漠",
+      "phonetic": "/ˈdezət/",
+      "hint": "干旱少雨的地区",
+      "example": "The desert is hot and dry.",
+      "tags": [
+        "自然",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_040",
+      "type": "word",
+      "front": "wild",
+      "back": "野生的；荒野的",
+      "phonetic": "/waɪld/",
+      "hint": "自然状态的",
+      "example": "Wild animals live in the forest.",
+      "tags": [
+        "形容词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_041",
+      "type": "word",
+      "front": "danger",
+      "back": "危险",
+      "phonetic": "/ˈdeɪndʒə/",
+      "hint": "可能造成伤害的情况",
+      "example": "There is danger ahead.",
+      "tags": [
+        "名词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_042",
+      "type": "word",
+      "front": "safe",
+      "back": "安全的",
+      "phonetic": "/seɪf/",
+      "hint": "没有危险的",
+      "example": "It is safe to cross here.",
+      "tags": [
+        "形容词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_043",
+      "type": "word",
+      "front": "important",
+      "back": "重要的",
+      "phonetic": "/ɪmˈpɔːtnt/",
+      "hint": "有重大意义的",
+      "example": "English is important.",
+      "tags": [
+        "形容词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_044",
+      "type": "word",
+      "front": "necessary",
+      "back": "必要的",
+      "phonetic": "/ˈnesəsəri/",
+      "hint": "不可缺少的",
+      "example": "Sleep is necessary.",
+      "tags": [
+        "形容词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_045",
+      "type": "word",
+      "front": "possible",
+      "back": "可能的",
+      "phonetic": "/ˈpɒsɪbl/",
+      "hint": "有可能发生的",
+      "example": "It is possible to learn.",
+      "tags": [
+        "形容词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_046",
+      "type": "word",
+      "front": "impossible",
+      "back": "不可能的",
+      "phonetic": "/ɪmˈpɒsɪbl/",
+      "hint": "不可能发生的",
+      "example": "Nothing is impossible.",
+      "tags": [
+        "形容词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_047",
+      "type": "word",
+      "front": "agree",
+      "back": "同意；赞成",
+      "phonetic": "/əˈɡriː/",
+      "hint": "表示赞同",
+      "example": "I agree with you.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_048",
+      "type": "word",
+      "front": "disagree",
+      "back": "不同意",
+      "phonetic": "/ˌdɪsəˈɡriː/",
+      "hint": "表示不赞同",
+      "example": "I disagree with this.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_049",
+      "type": "word",
+      "front": "believe",
+      "back": "相信",
+      "phonetic": "/bɪˈliːv/",
+      "hint": "认为某事是真的",
+      "example": "I believe you.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_050",
+      "type": "word",
+      "front": "choose",
+      "back": "选择",
+      "phonetic": "/tʃuːz/",
+      "hint": "从多个中挑一个",
+      "example": "Choose your answer carefully.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_051",
+      "type": "word",
+      "front": "decide",
+      "back": "决定",
+      "phonetic": "/dɪˈsaɪd/",
+      "hint": "做出决定",
+      "example": "I decided to study harder.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_052",
+      "type": "word",
+      "front": "improve",
+      "back": "改善；提高",
+      "phonetic": "/ɪmˈpruːv/",
+      "hint": "变得更好",
+      "example": "I want to improve my English.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_053",
+      "type": "word",
+      "front": "achieve",
+      "back": "实现；达到",
+      "phonetic": "/əˈtʃiːv/",
+      "hint": "通过努力获得",
+      "example": "Work hard to achieve your dream.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_054",
+      "type": "word",
+      "front": "success",
+      "back": "成功",
+      "phonetic": "/səkˈses/",
+      "hint": "达到目标",
+      "example": "Hard work leads to success.",
+      "tags": [
+        "名词",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_055",
+      "type": "word",
+      "front": "fail",
+      "back": "失败；不及格",
+      "phonetic": "/feɪl/",
+      "hint": "没有成功",
+      "example": "Do not be afraid to fail.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_056",
+      "type": "word",
+      "front": "try",
+      "back": "尝试",
+      "phonetic": "/traɪ/",
+      "hint": "试着做某事",
+      "example": "Try your best.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_057",
+      "type": "word",
+      "front": "remember",
+      "back": "记得；记住",
+      "phonetic": "/rɪˈmembə/",
+      "hint": "不忘记",
+      "example": "Remember to do your homework.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_058",
+      "type": "word",
+      "front": "forget",
+      "back": "忘记",
+      "phonetic": "/fəˈɡet/",
+      "hint": "不记得了",
+      "example": "Do not forget your key.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_059",
+      "type": "word",
+      "front": "understand",
+      "back": "理解；明白",
+      "phonetic": "/ˌʌndəˈstænd/",
+      "hint": "弄明白意思",
+      "example": "I understand the question.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    },
+    {
+      "id": "pe5_060",
+      "type": "word",
+      "front": "explain",
+      "back": "解释",
+      "phonetic": "/ɪkˈspleɪn/",
+      "hint": "说清楚",
+      "example": "Please explain the rule.",
+      "tags": [
+        "动作",
+        "五年级"
+      ]
+    }
   ]
 }

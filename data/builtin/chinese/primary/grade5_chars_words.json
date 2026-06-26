@@ -1,0 +1,1087 @@
+{
+  "meta": {
+    "subject": "chinese",
+    "grade": "primary",
+    "name": "小学五年级生字词",
+    "version": "2024",
+    "count": 300,
+    "description": "小学小学五年级上下册生字、词语"
+  },
+  "cards": [
+    {
+      "id": "hz5_001",
+      "type": "char",
+      "front": "崇",
+      "back": "chóng｜崇高；崇拜",
+      "phonetic": "chóng",
+      "radical": "山",
+      "strokes": 11,
+      "structure": "上下",
+      "hint": "山字底，崇高的山",
+      "example": "崇高·崇拜·推崇",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_002",
+      "type": "char",
+      "front": "峻",
+      "back": "jùn｜险峻；峻峭",
+      "phonetic": "jùn",
+      "radical": "山",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "山旁加俊，高峻",
+      "example": "险峻·峻峭·高峻",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_003",
+      "type": "char",
+      "front": "峭",
+      "back": "qiào｜峭壁；峻峭",
+      "phonetic": "qiào",
+      "radical": "山",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "山旁加肖，峭壁",
+      "example": "峭壁·峻峭·陡峭",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_004",
+      "type": "char",
+      "front": "陡",
+      "back": "dǒu｜陡峭；陡然",
+      "phonetic": "dǒu",
+      "radical": "阝",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "耳旁加走，陡峭",
+      "example": "陡峭·陡然·陡坡",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_005",
+      "type": "char",
+      "front": "峡",
+      "back": "xiá｜峡谷；海峡",
+      "phonetic": "xiá",
+      "radical": "山",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "山旁加夹，峡谷",
+      "example": "峡谷·三峡·海峡",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_006",
+      "type": "char",
+      "front": "谷",
+      "back": "gǔ｜峡谷；山谷",
+      "phonetic": "gǔ",
+      "radical": "谷",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "山谷中，山谷",
+      "example": "峡谷·山谷·深谷",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_007",
+      "type": "char",
+      "front": "壁",
+      "back": "bì｜峭壁；墙壁",
+      "phonetic": "bì",
+      "radical": "土",
+      "strokes": 16,
+      "structure": "上下",
+      "hint": "土字底，壁立",
+      "example": "峭壁·墙壁·绝壁",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_008",
+      "type": "char",
+      "front": "澎",
+      "back": "péng｜澎湃",
+      "phonetic": "péng",
+      "radical": "氵",
+      "strokes": 16,
+      "structure": "左右",
+      "hint": "三点水加彭，澎湃",
+      "example": "澎湃·汹涌澎湃",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_009",
+      "type": "char",
+      "front": "湃",
+      "back": "pài｜澎湃",
+      "phonetic": "pài",
+      "radical": "氵",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "三点水加拜，澎湃",
+      "example": "澎湃·汹涌澎湃",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_010",
+      "type": "char",
+      "front": "汹",
+      "back": "xiōng｜汹涌",
+      "phonetic": "xiōng",
+      "radical": "氵",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "三点水加凶，汹涌",
+      "example": "汹涌·汹涌澎湃",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_011",
+      "type": "char",
+      "front": "涌",
+      "back": "yǒng｜涌现；汹涌",
+      "phonetic": "yǒng",
+      "radical": "氵",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "三点水加甬，涌出",
+      "example": "涌现·汹涌·奔涌",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_012",
+      "type": "char",
+      "front": "奔",
+      "back": "bēn｜奔跑；奔腾｜bèn 投奔",
+      "phonetic": "bēn",
+      "radical": "大",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "大字底加三横，奔跑",
+      "example": "奔跑·奔腾·奔波",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_013",
+      "type": "char",
+      "front": "腾",
+      "back": "téng｜奔腾；腾飞",
+      "phonetic": "téng",
+      "radical": "月",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "月旁加朕，腾跃",
+      "example": "奔腾·腾飞·翻腾",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_014",
+      "type": "char",
+      "front": "滔",
+      "back": "tāo｜滔滔；洪涛",
+      "phonetic": "tāo",
+      "radical": "氵",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "三点水加舀，滔滔",
+      "example": "滔滔·波涛·滔天",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_015",
+      "type": "char",
+      "front": "涛",
+      "back": "tāo｜波涛；涛声",
+      "phonetic": "tāo",
+      "radical": "氵",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "三点水加寿，波涛",
+      "example": "波涛·涛声·浪涛",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_016",
+      "type": "char",
+      "front": "蜿",
+      "back": "wān｜蜿蜒",
+      "phonetic": "wān",
+      "radical": "虫",
+      "strokes": 14,
+      "structure": "左右",
+      "hint": "虫旁加宛，蜿蜒",
+      "example": "蜿蜒·蜿蜒曲折",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_017",
+      "type": "char",
+      "front": "蜒",
+      "back": "yán｜蜿蜒",
+      "phonetic": "yán",
+      "radical": "虫",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "虫旁加延，蜿蜒",
+      "example": "蜿蜒·蜿蜒而行",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_018",
+      "type": "char",
+      "front": "盘",
+      "back": "pán｜盘旋；盘子",
+      "phonetic": "pán",
+      "radical": "皿",
+      "strokes": 11,
+      "structure": "上下",
+      "hint": "皿字底，盘旋",
+      "example": "盘旋·盘子·盘山",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_019",
+      "type": "char",
+      "front": "旋",
+      "back": "xuán｜旋转；盘旋",
+      "phonetic": "xuán",
+      "radical": "方",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "方旁加旋，旋转",
+      "example": "旋转·盘旋·螺旋",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_020",
+      "type": "char",
+      "front": "萦",
+      "back": "yíng｜萦绕；萦回",
+      "phonetic": "yíng",
+      "radical": "艹",
+      "strokes": 11,
+      "structure": "上下",
+      "hint": "草字头加荧，萦绕",
+      "example": "萦绕·萦回",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_021",
+      "type": "char",
+      "front": "绕",
+      "back": "rào｜萦绕；绕行",
+      "phonetic": "rào",
+      "radical": "纟",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "绞丝旁加尧，绕行",
+      "example": "萦绕·绕行·围绕",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_022",
+      "type": "char",
+      "front": "徜",
+      "back": "cháng｜徜徉",
+      "phonetic": "cháng",
+      "radical": "彳",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "双人旁加常，徜徉",
+      "example": "徜徉·自由徜徉",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_023",
+      "type": "char",
+      "front": "徉",
+      "back": "yáng｜徜徉",
+      "phonetic": "yáng",
+      "radical": "彳",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "双人旁加羊，徜徉",
+      "example": "徜徉·徜徉其间",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_024",
+      "type": "char",
+      "front": "徘",
+      "back": "pái｜徘徊",
+      "phonetic": "pái",
+      "radical": "彳",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "双人旁加非，徘徊",
+      "example": "徘徊·踟蹰徘徊",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_025",
+      "type": "char",
+      "front": "徊",
+      "back": "huái｜徘徊",
+      "phonetic": "huái",
+      "radical": "彳",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "双人旁加回，徘徊",
+      "example": "徘徊·低回徘徊",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_026",
+      "type": "char",
+      "front": "伫",
+      "back": "zhù｜伫立；伫候",
+      "phonetic": "zhù",
+      "radical": "亻",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "人旁加宁，伫立",
+      "example": "伫立·伫候",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_027",
+      "type": "char",
+      "front": "凝",
+      "back": "níng｜凝望；凝固",
+      "phonetic": "níng",
+      "radical": "冫",
+      "strokes": 16,
+      "structure": "左右",
+      "hint": "冰旁，凝结",
+      "example": "凝望·凝固·凝神",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_028",
+      "type": "char",
+      "front": "眺",
+      "back": "tiào｜眺望；远眺",
+      "phonetic": "tiào",
+      "radical": "目",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "目旁加兆，远眺",
+      "example": "眺望·远眺·极目远眺",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_029",
+      "type": "char",
+      "front": "磅",
+      "back": "páng｜磅礴；磅秤｜bàng 磅",
+      "phonetic": "páng",
+      "radical": "石",
+      "strokes": 15,
+      "structure": "左右",
+      "hint": "石旁加旁，磅礴",
+      "example": "磅礴·气势磅礴",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_030",
+      "type": "char",
+      "front": "礴",
+      "back": "bó｜磅礴",
+      "phonetic": "bó",
+      "radical": "石",
+      "strokes": 21,
+      "structure": "左右",
+      "hint": "石旁加薄，磅礴",
+      "example": "磅礴·气势磅礴",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_031",
+      "type": "char",
+      "front": "巍",
+      "back": "wēi｜巍峨；巍然",
+      "phonetic": "wēi",
+      "radical": "山",
+      "strokes": 21,
+      "structure": "上下",
+      "hint": "山字底，巍峨高耸",
+      "example": "巍峨·巍然·巍巍",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_032",
+      "type": "char",
+      "front": "峨",
+      "back": "é｜巍峨；峨眉",
+      "phonetic": "é",
+      "radical": "山",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "山旁加我，峨眉山",
+      "example": "巍峨·峨眉山",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_033",
+      "type": "char",
+      "front": "雄",
+      "back": "xióng｜雄壮；英雄",
+      "phonetic": "xióng",
+      "radical": "隹",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "隹旁加厶，雄壮",
+      "example": "雄壮·英雄·雄伟",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_034",
+      "type": "char",
+      "front": "壮",
+      "back": "zhuàng｜壮观；强壮",
+      "phonetic": "zhuàng",
+      "radical": "士",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "士旁加爿，壮观",
+      "example": "壮观·强壮·壮丽",
+      "tags": [
+        "生字",
+        "五年级上"
+      ]
+    },
+    {
+      "id": "hz5_035",
+      "type": "char",
+      "front": "壮",
+      "back": "zhuàng｜壮丽；雄壮",
+      "phonetic": "zhuàng",
+      "radical": "士",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "士旁加爿，壮丽",
+      "example": "壮丽·雄壮·壮观",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_036",
+      "type": "char",
+      "front": "磅",
+      "back": "páng｜磅礴",
+      "phonetic": "páng",
+      "radical": "石",
+      "strokes": 15,
+      "structure": "左右",
+      "hint": "气势磅礴",
+      "example": "磅礴·气势磅礴",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_037",
+      "type": "char",
+      "front": "瀑",
+      "back": "pù｜瀑布",
+      "phonetic": "pù",
+      "radical": "氵",
+      "strokes": 19,
+      "structure": "左右",
+      "hint": "三点水加暴，瀑布",
+      "example": "瀑布·飞瀑",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_038",
+      "type": "char",
+      "front": "泉",
+      "back": "quán｜泉水；甘泉",
+      "phonetic": "quán",
+      "radical": "水",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "水字底，泉水",
+      "example": "泉水·甘泉·泉眼",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_039",
+      "type": "char",
+      "front": "溪",
+      "back": "xī｜溪流；小溪",
+      "phonetic": "xī",
+      "radical": "氵",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "三点水加奚，溪流",
+      "example": "溪流·小溪·山溪",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_040",
+      "type": "char",
+      "front": "沧",
+      "back": "cāng｜沧桑；苍茫",
+      "phonetic": "cāng",
+      "radical": "氵",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "三点水加仓，沧海",
+      "example": "沧桑·沧海·沧浪",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_041",
+      "type": "char",
+      "front": "桑",
+      "back": "sāng｜桑树；沧桑",
+      "phonetic": "sāng",
+      "radical": "木",
+      "strokes": 10,
+      "structure": "上下",
+      "hint": "木字底，桑树",
+      "example": "桑树·沧桑·桑田",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_042",
+      "type": "char",
+      "front": "渺",
+      "back": "miǎo｜渺小；渺茫",
+      "phonetic": "miǎo",
+      "radical": "氵",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "三点水加眇，渺小",
+      "example": "渺小·渺茫·渺无",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_043",
+      "type": "char",
+      "front": "藐",
+      "back": "miǎo｜藐视；藐小",
+      "phonetic": "miǎo",
+      "radical": "艹",
+      "strokes": 18,
+      "structure": "上下",
+      "hint": "草字头加貌，藐视",
+      "example": "藐视·藐小·藐然",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_044",
+      "type": "char",
+      "front": "恢",
+      "back": "huī｜恢复；恢弘",
+      "phonetic": "huī",
+      "radical": "忄",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "竖心旁加灰，恢复",
+      "example": "恢复·恢弘·恢宏",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_045",
+      "type": "char",
+      "front": "弘",
+      "back": "hóng｜弘扬；恢弘",
+      "phonetic": "hóng",
+      "radical": "弓",
+      "strokes": 5,
+      "structure": "左右",
+      "hint": "弓旁加厶，宏大",
+      "example": "弘扬·恢弘·发扬光大",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_046",
+      "type": "char",
+      "front": "豪",
+      "back": "háo｜豪迈；豪情",
+      "phonetic": "háo",
+      "radical": "豕",
+      "strokes": 14,
+      "structure": "上下",
+      "hint": "豕字底，豪放",
+      "example": "豪迈·豪情·豪壮",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_047",
+      "type": "char",
+      "front": "迈",
+      "back": "mài｜豪迈；迈步",
+      "phonetic": "mài",
+      "radical": "辶",
+      "strokes": 7,
+      "structure": "半包围",
+      "hint": "走之旁加万，迈步",
+      "example": "豪迈·迈步·迈进",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_048",
+      "type": "char",
+      "front": "振",
+      "back": "zhèn｜振奋；振作",
+      "phonetic": "zhèn",
+      "radical": "扌",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "提手旁加辰，振奋",
+      "example": "振奋·振作·振兴",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_049",
+      "type": "char",
+      "front": "奋",
+      "back": "fèn｜奋斗；振奋",
+      "phonetic": "fèn",
+      "radical": "大",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "大字底，奋发",
+      "example": "奋斗·振奋·奋进",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_050",
+      "type": "char",
+      "front": "慷",
+      "back": "kāng｜慷慨",
+      "phonetic": "kāng",
+      "radical": "忄",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "竖心旁加康，慷慨",
+      "example": "慷慨·慷慨激昂",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_051",
+      "type": "char",
+      "front": "慨",
+      "back": "kǎi｜慷慨；感慨",
+      "phonetic": "kǎi",
+      "radical": "忄",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "竖心旁加既，慷慨",
+      "example": "慷慨·感慨·慨然",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_052",
+      "type": "char",
+      "front": "激",
+      "back": "jī｜激动；激昂",
+      "phonetic": "jī",
+      "radical": "氵",
+      "strokes": 16,
+      "structure": "左右",
+      "hint": "三点水加敫，激动",
+      "example": "激动·激昂·激励",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_053",
+      "type": "char",
+      "front": "昂",
+      "back": "áng｜昂首；激昂",
+      "phonetic": "áng",
+      "radical": "日",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "日字上加卬，昂首",
+      "example": "昂首·激昂·高昂",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_054",
+      "type": "char",
+      "front": "铿",
+      "back": "kēng｜铿锵",
+      "phonetic": "kēng",
+      "radical": "钅",
+      "strokes": 14,
+      "structure": "左右",
+      "hint": "金字旁加坚，铿锵",
+      "example": "铿锵·铿锵有力",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_055",
+      "type": "char",
+      "front": "锵",
+      "back": "qiāng｜铿锵",
+      "phonetic": "qiāng",
+      "radical": "钅",
+      "strokes": 16,
+      "structure": "左右",
+      "hint": "金字旁加将，铿锵",
+      "example": "铿锵·铿锵有力",
+      "tags": [
+        "生字",
+        "五年级下"
+      ]
+    },
+    {
+      "id": "hz5_056",
+      "type": "word",
+      "front": "气势磅礴",
+      "back": "qì shì páng bó",
+      "phonetic": "qì shì páng bó",
+      "hint": "气势宏大，有震撼力",
+      "example": "黄河的气势磅礴，令人震撼。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_057",
+      "type": "word",
+      "front": "蜿蜒曲折",
+      "back": "wān yán qū zhé",
+      "phonetic": "wān yán qū zhé",
+      "hint": "弯曲延伸，形容路或河流",
+      "example": "山路蜿蜒曲折，非常难走。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_058",
+      "type": "word",
+      "front": "峰回路转",
+      "back": "fēng huí lù zhuǎn",
+      "phonetic": "fēng huí lù zhuǎn",
+      "hint": "山峰连绵，路也跟着转弯；比喻出现转机",
+      "example": "经过努力，我们终于峰回路转，看到了希望。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_059",
+      "type": "word",
+      "front": "汹涌澎湃",
+      "back": "xiōng yǒng péng pài",
+      "phonetic": "xiōng yǒng péng pài",
+      "hint": "水势浩大，波涛汹涌",
+      "example": "大海的波浪汹涌澎湃，令人敬畏。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_060",
+      "type": "word",
+      "front": "巍峨壮观",
+      "back": "wēi é zhuàng guān",
+      "phonetic": "wēi é zhuàng guān",
+      "hint": "高大雄伟，令人震撼",
+      "example": "长城巍峨壮观，是中华民族的骄傲。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_061",
+      "type": "word",
+      "front": "豪迈奔放",
+      "back": "háo mài bēn fàng",
+      "phonetic": "háo mài bēn fàng",
+      "hint": "气概雄壮，无所拘束",
+      "example": "这首诗豪迈奔放，充满激情。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_062",
+      "type": "word",
+      "front": "慷慨激昂",
+      "back": "kāng kǎi jī áng",
+      "phonetic": "kāng kǎi jī áng",
+      "hint": "情绪激动，充满正气",
+      "example": "他慷慨激昂地发表了演讲。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_063",
+      "type": "word",
+      "front": "铿锵有力",
+      "back": "kēng qiāng yǒu lì",
+      "phonetic": "kēng qiāng yǒu lì",
+      "hint": "声音响亮有力",
+      "example": "他铿锵有力地宣读了誓言。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_064",
+      "type": "word",
+      "front": "沧海桑田",
+      "back": "cāng hǎi sāng tián",
+      "phonetic": "cāng hǎi sāng tián",
+      "hint": "大海变成桑田，比喻世事变化巨大",
+      "example": "沧海桑田，这个地方已经面目全非了。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_065",
+      "type": "word",
+      "front": "渺小",
+      "back": "miǎo xiǎo",
+      "phonetic": "miǎo xiǎo",
+      "hint": "极其微小，微不足道",
+      "example": "人类在宇宙面前显得非常渺小。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_066",
+      "type": "word",
+      "front": "恢弘",
+      "back": "huī hóng",
+      "phonetic": "huī hóng",
+      "hint": "宏大，气度广阔",
+      "example": "这座宫殿气势恢弘，令人叹为观止。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_067",
+      "type": "word",
+      "front": "振奋人心",
+      "back": "zhèn fèn rén xīn",
+      "phonetic": "zhèn fèn rén xīn",
+      "hint": "使人精神振作，兴奋",
+      "example": "这个好消息真是振奋人心！",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_068",
+      "type": "word",
+      "front": "叹为观止",
+      "back": "tàn wéi guān zhǐ",
+      "phonetic": "tàn wéi guān zhǐ",
+      "hint": "赞叹所见极好，无以复加",
+      "example": "这幅画技艺精湛，令人叹为观止。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_069",
+      "type": "word",
+      "front": "蓬勃",
+      "back": "péng bó",
+      "phonetic": "péng bó",
+      "hint": "旺盛有活力",
+      "example": "春天，万物蓬勃生长。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    },
+    {
+      "id": "hz5_070",
+      "type": "word",
+      "front": "屹立",
+      "back": "yì lì",
+      "phonetic": "yì lì",
+      "hint": "高耸而稳固地立着",
+      "example": "长城屹立在群山之间。",
+      "tags": [
+        "词语",
+        "五年级"
+      ]
+    }
+  ]
+}

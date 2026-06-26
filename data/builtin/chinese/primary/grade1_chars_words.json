@@ -1,0 +1,1552 @@
+{
+  "meta": {
+    "subject": "chinese",
+    "grade": "primary",
+    "name": "小学一年级生字词",
+    "version": "2024",
+    "count": 300,
+    "description": "小学小学一年级上下册生字、词语"
+  },
+  "cards": [
+    {
+      "id": "hz1_001",
+      "type": "char",
+      "front": "人",
+      "back": "rén｜人类；别人",
+      "phonetic": "rén",
+      "radical": "人",
+      "strokes": 2,
+      "structure": "独体字",
+      "hint": "象形字，像站立的人",
+      "example": "人们·大人·工人",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_002",
+      "type": "char",
+      "front": "口",
+      "back": "kǒu｜嘴巴；出入的地方",
+      "phonetic": "kǒu",
+      "radical": "口",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "象形字，像张开的嘴",
+      "example": "口水·门口·人口",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_003",
+      "type": "char",
+      "front": "手",
+      "back": "shǒu｜手，身体的一部分",
+      "phonetic": "shǒu",
+      "radical": "手",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，像伸开的手",
+      "example": "手心·手指·双手",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_004",
+      "type": "char",
+      "front": "目",
+      "back": "mù｜眼睛；看",
+      "phonetic": "mù",
+      "radical": "目",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "象形字，像眼睛的形状",
+      "example": "目光·注目·耳目",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_005",
+      "type": "char",
+      "front": "耳",
+      "back": "ěr｜耳朵，听觉器官",
+      "phonetic": "ěr",
+      "radical": "耳",
+      "strokes": 6,
+      "structure": "独体字",
+      "hint": "象形字，像耳朵的形状",
+      "example": "耳朵·耳边·耳环",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_006",
+      "type": "char",
+      "front": "足",
+      "back": "zú｜脚；够，充分",
+      "phonetic": "zú",
+      "radical": "足",
+      "strokes": 7,
+      "structure": "独体字",
+      "hint": "象形字，像脚的形状",
+      "example": "足球·手足·不足",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_007",
+      "type": "char",
+      "front": "日",
+      "back": "rì｜太阳；白天；每天",
+      "phonetic": "rì",
+      "radical": "日",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，太阳的形状",
+      "example": "日出·日记·生日",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_008",
+      "type": "char",
+      "front": "月",
+      "back": "yuè｜月亮；月份",
+      "phonetic": "yuè",
+      "radical": "月",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，月亮的形状",
+      "example": "月亮·月份·月饼",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_009",
+      "type": "char",
+      "front": "水",
+      "back": "shuǐ｜水，液体",
+      "phonetic": "shuǐ",
+      "radical": "水",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，像水流的样子",
+      "example": "水果·水中·洪水",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_010",
+      "type": "char",
+      "front": "火",
+      "back": "huǒ｜火，燃烧产生的光和热",
+      "phonetic": "huǒ",
+      "radical": "火",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，像火焰的形状",
+      "example": "火山·火车·火花",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_011",
+      "type": "char",
+      "front": "山",
+      "back": "shān｜山，地面上高起的部分",
+      "phonetic": "shān",
+      "radical": "山",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "象形字，像山峰的形状",
+      "example": "山水·火山·山顶",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_012",
+      "type": "char",
+      "front": "土",
+      "back": "tǔ｜土地；泥土",
+      "phonetic": "tǔ",
+      "radical": "土",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "象形字，像土地",
+      "example": "土地·泥土·国土",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_013",
+      "type": "char",
+      "front": "木",
+      "back": "mù｜树木；木材",
+      "phonetic": "mù",
+      "radical": "木",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，像一棵树",
+      "example": "木头·树木·木材",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_014",
+      "type": "char",
+      "front": "禾",
+      "back": "hé｜禾苗，谷物",
+      "phonetic": "hé",
+      "radical": "禾",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "象形字，像禾苗的形状",
+      "example": "禾苗·禾田",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_015",
+      "type": "char",
+      "front": "大",
+      "back": "dà｜大，与小相对",
+      "phonetic": "dà",
+      "radical": "大",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "象形字，像张开四肢的人",
+      "example": "大小·大人·大家",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_016",
+      "type": "char",
+      "front": "小",
+      "back": "xiǎo｜小，与大相对",
+      "phonetic": "xiǎo",
+      "radical": "小",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "小的本义是细小的沙",
+      "example": "小心·小学·大小",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_017",
+      "type": "char",
+      "front": "多",
+      "back": "duō｜多，数量大",
+      "phonetic": "duō",
+      "radical": "夕",
+      "strokes": 6,
+      "structure": "上下",
+      "hint": "两个夕字，多的意思",
+      "example": "多少·多么·很多",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_018",
+      "type": "char",
+      "front": "少",
+      "back": "shǎo｜少，数量小；shào 年少",
+      "phonetic": "shǎo",
+      "radical": "小",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "小字去掉一横，比小还少",
+      "example": "多少·少年·减少",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_019",
+      "type": "char",
+      "front": "上",
+      "back": "shàng｜上面，位置高",
+      "phonetic": "shàng",
+      "radical": "一",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "指事字，横线上方有一点",
+      "example": "上面·上学·以上",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_020",
+      "type": "char",
+      "front": "下",
+      "back": "xià｜下面，位置低",
+      "phonetic": "xià",
+      "radical": "一",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "指事字，横线下方有一点",
+      "example": "下面·下雨·以下",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_021",
+      "type": "char",
+      "front": "中",
+      "back": "zhōng｜中间；zhòng 中了",
+      "phonetic": "zhōng",
+      "radical": "｜",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，旗杆立于中间",
+      "example": "中间·中国·其中",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_022",
+      "type": "char",
+      "front": "天",
+      "back": "tiān｜天空；白天",
+      "phonetic": "tiān",
+      "radical": "大",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "大字上面一横，指天",
+      "example": "天空·天气·今天",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_023",
+      "type": "char",
+      "front": "地",
+      "back": "dì｜地面；de助词",
+      "phonetic": "dì",
+      "radical": "土",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "土旁加也，地的意思",
+      "example": "土地·大地·地方",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_024",
+      "type": "char",
+      "front": "来",
+      "back": "lái｜来，从别处到这里",
+      "phonetic": "lái",
+      "radical": "木",
+      "strokes": 7,
+      "structure": "独体字",
+      "hint": "本义是麦子",
+      "example": "来到·来回·原来",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_025",
+      "type": "char",
+      "front": "去",
+      "back": "qù｜去，离开当前地方",
+      "phonetic": "qù",
+      "radical": "厶",
+      "strokes": 5,
+      "structure": "上下",
+      "hint": "人离开土地，即去",
+      "example": "去年·来去·回去",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_026",
+      "type": "char",
+      "front": "花",
+      "back": "huā｜花朵；开花",
+      "phonetic": "huā",
+      "radical": "艹",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "草字头加化，花朵",
+      "example": "花朵·开花·花园",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_027",
+      "type": "char",
+      "front": "草",
+      "back": "cǎo｜草，植物的统称",
+      "phonetic": "cǎo",
+      "radical": "艹",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "草字头加早",
+      "example": "草地·小草·花草",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_028",
+      "type": "char",
+      "front": "树",
+      "back": "shù｜树木",
+      "phonetic": "shù",
+      "radical": "木",
+      "strokes": 16,
+      "structure": "左右",
+      "hint": "木旁加又加寸",
+      "example": "树木·树叶·大树",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_029",
+      "type": "char",
+      "front": "叶",
+      "back": "yè｜叶子；页",
+      "phonetic": "yè",
+      "radical": "口",
+      "strokes": 5,
+      "structure": "左右",
+      "hint": "口旁加十，叶子",
+      "example": "树叶·叶子·叶片",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_030",
+      "type": "char",
+      "front": "鸟",
+      "back": "niǎo｜鸟，有羽毛的动物",
+      "phonetic": "niǎo",
+      "radical": "鸟",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "象形字，像鸟的形状",
+      "example": "小鸟·鸟巢·鸟类",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_031",
+      "type": "char",
+      "front": "虫",
+      "back": "chóng｜虫子，昆虫",
+      "phonetic": "chóng",
+      "radical": "虫",
+      "strokes": 6,
+      "structure": "独体字",
+      "hint": "象形字，像虫子的形状",
+      "example": "昆虫·虫子·害虫",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_032",
+      "type": "char",
+      "front": "鱼",
+      "back": "yú｜鱼，水生动物",
+      "phonetic": "yú",
+      "radical": "鱼",
+      "strokes": 8,
+      "structure": "独体字",
+      "hint": "象形字，像鱼的形状",
+      "example": "金鱼·鱼儿·鱼塘",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_033",
+      "type": "char",
+      "front": "羊",
+      "back": "yáng｜羊，动物",
+      "phonetic": "yáng",
+      "radical": "羊",
+      "strokes": 6,
+      "structure": "独体字",
+      "hint": "象形字，像羊角的形状",
+      "example": "小羊·羊毛·山羊",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_034",
+      "type": "char",
+      "front": "马",
+      "back": "mǎ｜马，动物；姓马",
+      "phonetic": "mǎ",
+      "radical": "马",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "象形字，像马的形状",
+      "example": "马上·骑马·大马",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_035",
+      "type": "char",
+      "front": "牛",
+      "back": "niú｜牛，动物",
+      "phonetic": "niú",
+      "radical": "牛",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，像牛角的形状",
+      "example": "牛奶·水牛·牛肉",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_036",
+      "type": "char",
+      "front": "父",
+      "back": "fù｜父亲",
+      "phonetic": "fù",
+      "radical": "父",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "手持棒，象征父亲",
+      "example": "父亲·父母·祖父",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_037",
+      "type": "char",
+      "front": "母",
+      "back": "mǔ｜母亲",
+      "phonetic": "mǔ",
+      "radical": "母",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "象形字，像哺乳的女性",
+      "example": "母亲·母校·父母",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_038",
+      "type": "char",
+      "front": "子",
+      "back": "zǐ｜儿子；种子",
+      "phonetic": "zǐ",
+      "radical": "子",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "象形字，像婴儿的形状",
+      "example": "孩子·子女·种子",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_039",
+      "type": "char",
+      "front": "女",
+      "back": "nǚ｜女，女性",
+      "phonetic": "nǚ",
+      "radical": "女",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "象形字，像女性的形状",
+      "example": "女儿·女士·男女",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_040",
+      "type": "char",
+      "front": "男",
+      "back": "nán｜男，男性",
+      "phonetic": "nán",
+      "radical": "田",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "田间出力，男子",
+      "example": "男女·男孩·男生",
+      "tags": [
+        "生字",
+        "一年级上"
+      ]
+    },
+    {
+      "id": "hz1_041",
+      "type": "char",
+      "front": "王",
+      "back": "wáng｜王，国王；姓王",
+      "phonetic": "wáng",
+      "radical": "王",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，三横一竖，顶天立地",
+      "example": "王国·大王·王子",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_042",
+      "type": "char",
+      "front": "玉",
+      "back": "yù｜玉石，珍贵的石头",
+      "phonetic": "yù",
+      "radical": "王",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "王字加一点，珍贵",
+      "example": "玉石·玉米·玉兰",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_043",
+      "type": "char",
+      "front": "云",
+      "back": "yún｜云，天上的云彩",
+      "phonetic": "yún",
+      "radical": "二",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，像云朵的形状",
+      "example": "白云·云彩·乌云",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_044",
+      "type": "char",
+      "front": "雨",
+      "back": "yǔ｜雨，从天上落下的水",
+      "phonetic": "yǔ",
+      "radical": "雨",
+      "strokes": 8,
+      "structure": "独体字",
+      "hint": "象形字，像雨滴落下",
+      "example": "下雨·春雨·雨水",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_045",
+      "type": "char",
+      "front": "风",
+      "back": "fēng｜风，空气流动",
+      "phonetic": "fēng",
+      "radical": "风",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，风的感觉",
+      "example": "刮风·风景·台风",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_046",
+      "type": "char",
+      "front": "雪",
+      "back": "xuě｜雪，白色的雪花",
+      "phonetic": "xuě",
+      "radical": "雨",
+      "strokes": 11,
+      "structure": "上下",
+      "hint": "雨字头加彐，雪",
+      "example": "下雪·雪花·白雪",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_047",
+      "type": "char",
+      "front": "冰",
+      "back": "bīng｜冰，水冻结而成",
+      "phonetic": "bīng",
+      "radical": "冫",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "冰旁加水，结冰",
+      "example": "冰块·溜冰·冰雪",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_048",
+      "type": "char",
+      "front": "春",
+      "back": "chūn｜春天，第一个季节",
+      "phonetic": "chūn",
+      "radical": "日",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "日字底，有阳光的季节",
+      "example": "春天·春节·春风",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_049",
+      "type": "char",
+      "front": "夏",
+      "back": "xià｜夏天，第二个季节",
+      "phonetic": "xià",
+      "radical": "夂",
+      "strokes": 10,
+      "structure": "上下",
+      "hint": "表示夏季炎热",
+      "example": "夏天·夏日·初夏",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_050",
+      "type": "char",
+      "front": "秋",
+      "back": "qiū｜秋天，第三个季节",
+      "phonetic": "qiū",
+      "radical": "禾",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "禾苗加火，收获季节",
+      "example": "秋天·秋风·秋收",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_051",
+      "type": "char",
+      "front": "冬",
+      "back": "dōng｜冬天，第四个季节",
+      "phonetic": "dōng",
+      "radical": "冫",
+      "strokes": 5,
+      "structure": "上下",
+      "hint": "表示寒冷的季节",
+      "example": "冬天·冬季·严冬",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_052",
+      "type": "char",
+      "front": "早",
+      "back": "zǎo｜早，时间靠前",
+      "phonetic": "zǎo",
+      "radical": "日",
+      "strokes": 6,
+      "structure": "上下",
+      "hint": "日出草中，早晨",
+      "example": "早上·早晨·早饭",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_053",
+      "type": "char",
+      "front": "晚",
+      "back": "wǎn｜晚，时间靠后",
+      "phonetic": "wǎn",
+      "radical": "日",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "日旁加免，日落之时",
+      "example": "晚上·夜晚·傍晚",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_054",
+      "type": "char",
+      "front": "年",
+      "back": "nián｜年，时间单位",
+      "phonetic": "nián",
+      "radical": "干",
+      "strokes": 6,
+      "structure": "独体字",
+      "hint": "象形字，人背禾，丰收一年",
+      "example": "今年·年级·新年",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_055",
+      "type": "char",
+      "front": "月",
+      "back": "yuè｜月份；月亮",
+      "phonetic": "yuè",
+      "radical": "月",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，像月亮形状",
+      "example": "月亮·月份·一月",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_056",
+      "type": "char",
+      "front": "日",
+      "back": "rì｜太阳；日期",
+      "phonetic": "rì",
+      "radical": "日",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，太阳形状",
+      "example": "今日·生日·日记",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_057",
+      "type": "char",
+      "front": "出",
+      "back": "chū｜出，从里向外",
+      "phonetic": "chū",
+      "radical": "凵",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "从土地里长出来",
+      "example": "出来·出去·出现",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_058",
+      "type": "char",
+      "front": "入",
+      "back": "rù｜入，从外向里",
+      "phonetic": "rù",
+      "radical": "入",
+      "strokes": 2,
+      "structure": "独体字",
+      "hint": "象形字，像进入的形状",
+      "example": "入门·进入·收入",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_059",
+      "type": "char",
+      "front": "开",
+      "back": "kāi｜开，打开；开始",
+      "phonetic": "kāi",
+      "radical": "廾",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "门闩打开的样子",
+      "example": "开门·开始·开心",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_060",
+      "type": "char",
+      "front": "关",
+      "back": "guān｜关，关上；关心",
+      "phonetic": "guān",
+      "radical": "八",
+      "strokes": 6,
+      "structure": "上下",
+      "hint": "把门关起来",
+      "example": "关门·关心·关系",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_061",
+      "type": "char",
+      "front": "看",
+      "back": "kàn｜看，用眼睛观察；kān看守",
+      "phonetic": "kàn",
+      "radical": "目",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "手在目上遮挡，观看",
+      "example": "看书·看见·看望",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_062",
+      "type": "char",
+      "front": "听",
+      "back": "tīng｜听，用耳朵感受声音",
+      "phonetic": "tīng",
+      "radical": "口",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "口旁加斤，认真听",
+      "example": "听话·听见·好听",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_063",
+      "type": "char",
+      "front": "说",
+      "back": "shuō｜说，用嘴表达",
+      "phonetic": "shuō",
+      "radical": "讠",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "言字旁，说话",
+      "example": "说话·说明·小说",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_064",
+      "type": "char",
+      "front": "写",
+      "back": "xiě｜写，用笔记录",
+      "phonetic": "xiě",
+      "radical": "宀",
+      "strokes": 5,
+      "structure": "上下",
+      "hint": "宝盖头加写字",
+      "example": "写字·书写·写作",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_065",
+      "type": "char",
+      "front": "读",
+      "back": "dú｜读，看书；dòu句读",
+      "phonetic": "dú",
+      "radical": "讠",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "言字旁加卖，读书",
+      "example": "读书·阅读·朗读",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_066",
+      "type": "char",
+      "front": "书",
+      "back": "shū｜书，书本",
+      "phonetic": "shū",
+      "radical": "乙",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，简化自繁体书",
+      "example": "书本·读书·图书",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_067",
+      "type": "char",
+      "front": "本",
+      "back": "běn｜本，根本；书本",
+      "phonetic": "běn",
+      "radical": "木",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "木字下加横，根部",
+      "example": "本来·课本·根本",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_068",
+      "type": "char",
+      "front": "画",
+      "back": "huà｜画，图画；画画",
+      "phonetic": "huà",
+      "radical": "凵",
+      "strokes": 8,
+      "structure": "上中下",
+      "hint": "手拿笔画画",
+      "example": "画画·图画·漫画",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_069",
+      "type": "char",
+      "front": "唱",
+      "back": "chàng｜唱，歌唱",
+      "phonetic": "chàng",
+      "radical": "口",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "口旁加昌，唱歌",
+      "example": "唱歌·演唱·歌唱",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_070",
+      "type": "char",
+      "front": "跳",
+      "back": "tiào｜跳，向上或向前跳",
+      "phonetic": "tiào",
+      "radical": "足",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "足旁加兆，跳跃",
+      "example": "跳跃·跳舞·跳远",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_071",
+      "type": "char",
+      "front": "跑",
+      "back": "pǎo｜跑，快速移动",
+      "phonetic": "pǎo",
+      "radical": "足",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "足旁加包，跑步",
+      "example": "跑步·奔跑·跑道",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_072",
+      "type": "char",
+      "front": "飞",
+      "back": "fēi｜飞，在空中运动",
+      "phonetic": "fēi",
+      "radical": "飞",
+      "strokes": 3,
+      "structure": "独体字",
+      "hint": "象形字，像鸟飞翔",
+      "example": "飞翔·飞机·飞快",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_073",
+      "type": "char",
+      "front": "走",
+      "back": "zǒu｜走，行走",
+      "phonetic": "zǒu",
+      "radical": "走",
+      "strokes": 7,
+      "structure": "独体字",
+      "hint": "象形字，像人行走",
+      "example": "走路·走开·走动",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_074",
+      "type": "char",
+      "front": "坐",
+      "back": "zuò｜坐，把身体放在某处",
+      "phonetic": "zuò",
+      "radical": "土",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "两人坐在土上",
+      "example": "坐下·坐车·请坐",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_075",
+      "type": "char",
+      "front": "站",
+      "back": "zhàn｜站，直立",
+      "phonetic": "zhàn",
+      "radical": "立",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "立字旁加占，站立",
+      "example": "站起·车站·站立",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_076",
+      "type": "char",
+      "front": "吃",
+      "back": "chī｜吃，把食物放入口中",
+      "phonetic": "chī",
+      "radical": "口",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "口旁加乞，吃东西",
+      "example": "吃饭·吃苦·好吃",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_077",
+      "type": "char",
+      "front": "喝",
+      "back": "hē｜喝，饮用液体",
+      "phonetic": "hē",
+      "radical": "口",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "口旁加曷，喝水",
+      "example": "喝水·喝茶·好喝",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_078",
+      "type": "char",
+      "front": "爱",
+      "back": "ài｜爱，喜爱；热爱",
+      "phonetic": "ài",
+      "radical": "爫",
+      "strokes": 10,
+      "structure": "上中下",
+      "hint": "心中有爱，用手给予",
+      "example": "爱心·爱好·热爱",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_079",
+      "type": "char",
+      "front": "家",
+      "back": "jiā｜家，住所；家庭",
+      "phonetic": "jiā",
+      "radical": "宀",
+      "strokes": 10,
+      "structure": "上下",
+      "hint": "宝盖头下有猪，古代有猪才算家",
+      "example": "家人·家乡·回家",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_080",
+      "type": "char",
+      "front": "学",
+      "back": "xué｜学，学习",
+      "phonetic": "xué",
+      "radical": "子",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "子字底，学习",
+      "example": "学习·上学·同学",
+      "tags": [
+        "生字",
+        "一年级下"
+      ]
+    },
+    {
+      "id": "hz1_081",
+      "type": "word",
+      "front": "春天",
+      "back": "chūn tiān",
+      "phonetic": "chūn tiān",
+      "hint": "四季中的第一个季节，万物复苏",
+      "example": "春天来了，百花盛开。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_082",
+      "type": "word",
+      "front": "夏天",
+      "back": "xià tiān",
+      "phonetic": "xià tiān",
+      "hint": "四季中的第二个季节，天气炎热",
+      "example": "夏天到了，我们去游泳吧。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_083",
+      "type": "word",
+      "front": "秋天",
+      "back": "qiū tiān",
+      "phonetic": "qiū tiān",
+      "hint": "四季中的第三个季节，收获的季节",
+      "example": "秋天，树叶变黄了。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_084",
+      "type": "word",
+      "front": "冬天",
+      "back": "dōng tiān",
+      "phonetic": "dōng tiān",
+      "hint": "四季中的第四个季节，天气寒冷",
+      "example": "冬天下雪了，真美啊。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_085",
+      "type": "word",
+      "front": "小朋友",
+      "back": "xiǎo péng you",
+      "phonetic": "xiǎo péng you",
+      "hint": "对小孩子的亲切称呼",
+      "example": "小朋友们在操场上玩耍。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_086",
+      "type": "word",
+      "front": "老师",
+      "back": "lǎo shī",
+      "phonetic": "lǎo shī",
+      "hint": "传授知识的人",
+      "example": "我们的老师很亲切。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_087",
+      "type": "word",
+      "front": "同学",
+      "back": "tóng xué",
+      "phonetic": "tóng xué",
+      "hint": "在同一学校或班级学习的人",
+      "example": "我和同学一起做作业。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_088",
+      "type": "word",
+      "front": "花朵",
+      "back": "huā duǒ",
+      "phonetic": "huā duǒ",
+      "hint": "植物开出的花",
+      "example": "花朵开放，香气扑鼻。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_089",
+      "type": "word",
+      "front": "小草",
+      "back": "xiǎo cǎo",
+      "phonetic": "xiǎo cǎo",
+      "hint": "细小的草",
+      "example": "春天来了，小草发芽了。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_090",
+      "type": "word",
+      "front": "大树",
+      "back": "dà shù",
+      "phonetic": "dà shù",
+      "hint": "高大的树木",
+      "example": "公园里有一棵大树。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_091",
+      "type": "word",
+      "front": "白云",
+      "back": "bái yún",
+      "phonetic": "bái yún",
+      "hint": "白色的云",
+      "example": "蓝天上飘着白云。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_092",
+      "type": "word",
+      "front": "太阳",
+      "back": "tài yáng",
+      "phonetic": "tài yáng",
+      "hint": "天空中发光发热的星球",
+      "example": "太阳从东方升起。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_093",
+      "type": "word",
+      "front": "月亮",
+      "back": "yuè liang",
+      "phonetic": "yuè liang",
+      "hint": "地球的卫星，夜晚发光",
+      "example": "圆圆的月亮挂在天上。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_094",
+      "type": "word",
+      "front": "星星",
+      "back": "xīng xing",
+      "phonetic": "xīng xing",
+      "hint": "夜空中闪闪发光的天体",
+      "example": "夜晚，天上的星星真多。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_095",
+      "type": "word",
+      "front": "雨水",
+      "back": "yǔ shuǐ",
+      "phonetic": "yǔ shuǐ",
+      "hint": "下雨时落下的水",
+      "example": "雨水滋润了大地。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_096",
+      "type": "word",
+      "front": "雪花",
+      "back": "xuě huā",
+      "phonetic": "xuě huā",
+      "hint": "雪的结晶，像花一样",
+      "example": "雪花从天上飘落下来。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_097",
+      "type": "word",
+      "front": "小鸟",
+      "back": "xiǎo niǎo",
+      "phonetic": "xiǎo niǎo",
+      "hint": "小的鸟",
+      "example": "树上的小鸟在唱歌。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_098",
+      "type": "word",
+      "front": "鱼儿",
+      "back": "yú ér",
+      "phonetic": "yú ér",
+      "hint": "小鱼，对鱼的爱称",
+      "example": "鱼儿在水里游来游去。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_099",
+      "type": "word",
+      "front": "爸爸",
+      "back": "bà ba",
+      "phonetic": "bà ba",
+      "hint": "父亲的口语叫法",
+      "example": "爸爸带我去公园玩。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    },
+    {
+      "id": "hz1_100",
+      "type": "word",
+      "front": "妈妈",
+      "back": "mā ma",
+      "phonetic": "mā ma",
+      "hint": "母亲的口语叫法",
+      "example": "妈妈做的饭真好吃。",
+      "tags": [
+        "词语",
+        "一年级"
+      ]
+    }
+  ]
+}

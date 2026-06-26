@@ -3919,6 +3919,7 @@
   }
   var _pageHistory = [];
   var _isGoingBack = false;
+  var _studyBackPage = "home";
   function goBack() {
     const prev = _pageHistory.pop();
     _isGoingBack = true;
@@ -3932,8 +3933,10 @@
     if (!_isGoingBack) {
       const cur = document.querySelector(".page.active")?.id?.replace("page-", "");
       if (cur && cur !== pageId && cur !== "profiles") {
-        _pageHistory.push(cur);
-        if (_pageHistory.length > 30) _pageHistory.shift();
+        if (_pageHistory[_pageHistory.length - 1] !== cur) {
+          _pageHistory.push(cur);
+          if (_pageHistory.length > 30) _pageHistory.shift();
+        }
       }
     }
     document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
@@ -4033,14 +4036,28 @@
       $4("btn-quick-pinyin-tab")?.addEventListener("click", () => openChineseTab("pinyin"));
       $4("btn-quick-chars-tab")?.addEventListener("click", () => openChineseTab("chars"));
       $4("btn-quick-idioms-tab")?.addEventListener("click", () => openChineseTab("idioms"));
-      document.querySelectorAll(".chinese-tab").forEach((btn) => {
+      $4("btn-quick-multiply")?.addEventListener("click", () => openMathTab("multiply"));
+      $4("btn-quick-formula")?.addEventListener("click", () => openMathTab("primary"));
+      $4("btn-quick-geometry")?.addEventListener("click", () => openMathTab("geometry"));
+      $4("btn-quick-algebra")?.addEventListener("click", () => openMathTab("algebra"));
+      document.querySelectorAll(".chinese-tab[data-ctab]").forEach((btn) => {
         btn.addEventListener("click", () => switchChineseTab(btn.dataset.ctab));
       });
-      $4("btn-study-back")?.addEventListener("click", () => goBack());
+      document.querySelectorAll(".chinese-tab[data-mtab]").forEach((btn) => {
+        btn.addEventListener("click", () => openMathTab(btn.dataset.mtab));
+      });
+      $4("btn-study-back")?.addEventListener("click", () => {
+        const back = _studyBackPage || "home";
+        _studyBackPage = null;
+        showPage(back);
+        if (back === "home") loadHomeData();
+      });
       $4("btn-back-home")?.addEventListener("click", () => {
         hide3($4("session-complete"));
-        goBack();
-        loadHomeData();
+        const back = _studyBackPage || "home";
+        _studyBackPage = null;
+        showPage(back);
+        if (_studyBackPage === "home") loadHomeData();
       });
       $4("btn-continue")?.addEventListener("click", () => startStudySession());
       document.querySelectorAll(".subject-card[data-subject]").forEach((btn) => {
@@ -4057,6 +4074,10 @@
         hide3($4("manage-profiles-modal"));
         openProfileEditModal(null);
       });
+      $4("btn-profiles-privacy")?.addEventListener("click", () => {
+        $4("privacy-overlay")?.classList.remove("hidden");
+      });
+      $4("btn-profiles-report")?.addEventListener("click", () => showReportDialog());
       $4("btn-profile-cancel").addEventListener("click", () => hide3($4("profile-edit-modal")));
       $4("btn-profile-save").addEventListener("click", saveProfileFromModal);
       $4("avatar-picker").addEventListener("click", (e) => {
@@ -4193,29 +4214,7 @@
       $4("privacy-overlay")?.addEventListener("click", (e) => {
         if (e.target === $4("privacy-overlay")) $4("privacy-overlay").classList.add("hidden");
       });
-      $4("btn-show-report")?.addEventListener("click", () => {
-        const overlay = document.createElement("div");
-        overlay.className = "modal-overlay";
-        overlay.innerHTML = `<div class="modal">
-      <h3>\u{1F4E2} \u6295\u8BC9\u4E0E\u4E3E\u62A5</h3>
-      <p style="font-size:13px;color:var(--color-text-sub);line-height:1.8;margin:8px 0">
-        \u5982\u60A8\u53D1\u73B0\u672C\u5E94\u7528\u5B58\u5728\u8FDD\u89C4\u5185\u5BB9\uFF0C\u6216\u9700\u8981\u6295\u8BC9\u6D89\u53CA\u672A\u6210\u5E74\u4EBA\u7684\u76F8\u5173\u95EE\u9898\uFF0C\u8BF7\u901A\u8FC7\u4EE5\u4E0B\u65B9\u5F0F\u8054\u7CFB\u6211\u4EEC\uFF1A
-      </p>
-      <div style="background:var(--color-surface2);border-radius:10px;padding:14px;margin:8px 0">
-        <div style="font-size:13px;margin-bottom:6px">\u{1F4E7} <strong>\u8054\u7CFB\u90AE\u7BB1</strong></div>
-        <div style="font-size:14px;color:var(--color-primary);font-weight:600">zihua.liang@outlook.com</div>
-      </div>
-      <p style="font-size:12px;color:var(--color-text-hint);margin-top:8px">
-        \u6211\u4EEC\u627F\u8BFA\u5728\u6536\u5230\u6295\u8BC9\u540E <strong>48\u5C0F\u65F6\u5185</strong> \u54CD\u5E94\u5904\u7406\uFF0C\u6D89\u53CA\u672A\u6210\u5E74\u4EBA\u4FDD\u62A4\u7684\u6295\u8BC9\u5C06\u4F18\u5148\u5904\u7406\u3002
-      </p>
-      <button class="btn-primary" style="margin-top:16px;width:100%" id="btn-report-close">\u77E5\u9053\u4E86</button>
-    </div>`;
-        document.body.appendChild(overlay);
-        overlay.querySelector("#btn-report-close").addEventListener("click", () => overlay.remove());
-        overlay.addEventListener("click", (e) => {
-          if (e.target === overlay) overlay.remove();
-        });
-      });
+      $4("btn-show-report")?.addEventListener("click", () => showReportDialog());
       $4("btn-add-profile")?.addEventListener("click", () => openProfileEditModal(null));
       setupSwipeGesture();
       setupBackGesture();
@@ -4373,6 +4372,7 @@
   async function startStudySession(subject) {
     const profile = App.currentProfile;
     if (!profile) return;
+    _studyBackPage = document.querySelector(".page.active")?.id?.replace("page-", "") || "home";
     App.allProfileCards = await CardManager.getByProfile(profile.id);
     const due = await CardManager.getDueCards(profile.id);
     const newCards = App.allProfileCards.filter((c) => c.reviewCount === 0);
@@ -4418,6 +4418,87 @@
     switchStudyMode("flashcard");
     renderCard();
   }
+  function openMathTab(tab) {
+    showPage("math-learning");
+    document.querySelectorAll(".chinese-tab[data-mtab]").forEach((b) => b.classList.toggle("active", b.dataset.mtab === tab));
+    document.querySelectorAll("#page-math-learning .chinese-section").forEach((s) => {
+      s.classList.toggle("active", s.id === `mtab-${tab}`);
+      s.classList.toggle("hidden", s.id !== `mtab-${tab}`);
+    });
+    renderMathTab(tab);
+  }
+  async function renderMathTab(tab) {
+    const body = document.getElementById(`mtab-${tab}-body`);
+    if (!body) return;
+    if (body.children.length > 0) return;
+    body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u52A0\u8F7D\u4E2D\u2026</p>';
+    const deckMap = {
+      multiply: "\u4E58\u6CD5\u53E3\u8BC0",
+      primary: "\u5C0F\u5B66\u6570\u5B66\u516C\u5F0F",
+      geometry: "\u521D\u4E2D\u51E0\u4F55\u516C\u5F0F",
+      algebra: "\u521D\u4E2D\u4EE3\u6570\u516C\u5F0F"
+    };
+    const deckName = deckMap[tab];
+    const cards = await loadBuiltinCardsInline("math", deckName);
+    if (!cards.length) {
+      body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u6682\u65E0\u6570\u636E</p>';
+      return;
+    }
+    if (tab === "multiply") {
+      const rowColors = ["#FEE2E2", "#FEF3C7", "#D1FAE5", "#DBEAFE", "#EDE9FE", "#FCE7F3", "#FFEDD5", "#ECFDF5", "#E0F2FE"];
+      let tableHtml = '<div style="overflow-x:auto">';
+      tableHtml += '<table class="multiply-table">';
+      tableHtml += '<tr><th class="mt-header">\xD7</th>';
+      for (let i = 1; i <= 9; i++) tableHtml += `<th class="mt-header">${i}</th>`;
+      tableHtml += "</tr>";
+      for (let row = 1; row <= 9; row++) {
+        tableHtml += `<tr>`;
+        tableHtml += `<th class="mt-row-header" style="background:${rowColors[row - 1]}">${row}</th>`;
+        for (let col = 1; col <= 9; col++) {
+          if (col < row) {
+            tableHtml += `<td class="mt-cell mt-empty"></td>`;
+          } else {
+            const result = row * col;
+            const formula = `${row}\xD7${col}=${result}`;
+            tableHtml += `<td class="mt-cell" style="background:${rowColors[row - 1]}" data-formula="${escapeHtml5(formula)}">${result}</td>`;
+          }
+        }
+        tableHtml += "</tr>";
+      }
+      tableHtml += "</table></div>";
+      body.innerHTML = `
+      <div style="margin-bottom:12px">
+        <button class="btn-primary" style="width:100%" data-math-study="${escapeHtml5(deckName)}">\u25B6 \u8FDB\u5165\u95EA\u5361\u7EC3\u4E60\uFF08${cards.length}\u7EC4\u53E3\u8BC0\uFF09</button>
+      </div>
+      <div style="font-size:12px;color:var(--color-text-hint);text-align:center;margin-bottom:8px">\u70B9\u51FB\u683C\u5B50\u67E5\u770B\u53E3\u8BC0</div>
+      ${tableHtml}
+      <div id="mt-tooltip" style="display:none;margin-top:12px;background:white;border-radius:12px;padding:12px 16px;text-align:center;border:2px solid var(--color-math);font-size:18px;font-weight:700;color:var(--color-math)"></div>
+    `;
+      body.querySelectorAll(".mt-cell[data-formula]").forEach((cell) => {
+        cell.addEventListener("click", () => {
+          const tt = document.getElementById("mt-tooltip");
+          if (tt) {
+            tt.textContent = cell.dataset.formula;
+            tt.style.display = "block";
+            tt.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+        });
+      });
+    } else {
+      let html = `<button class="btn-primary" style="width:100%;margin-bottom:12px"
+      data-math-study="${escapeHtml5(deckName)}">\u25B6 \u8FDB\u5165\u95EA\u5361\u7EC3\u4E60\uFF08\u5171${cards.length}\u9898\uFF09</button>`;
+      html += cards.map((c) => `
+      <div class="ctab-card-item ctab-math-item">
+        <div class="ctab-math-front">${escapeHtml5(c.front)}</div>
+        <div class="ctab-math-back">${escapeHtml5(c.back || "")}</div>
+        ${c.example ? `<div class="ctab-math-example">\u4F8B\uFF1A${escapeHtml5(c.example)}</div>` : ""}
+      </div>`).join("");
+      body.innerHTML = html;
+    }
+    body.querySelectorAll("[data-math-study]").forEach((btn) => {
+      btn.addEventListener("click", () => startStudyFromSubjectDeck("math", btn.dataset.mathStudy));
+    });
+  }
   function openChineseLearningPage() {
     showPage("chinese-learning");
     switchChineseTab("recite");
@@ -4437,6 +4518,7 @@
     if (tab === "pinyin") initCtabPinyin();
     if (tab === "chars") initCtabChars();
     if (tab === "idioms") initCtabIdioms();
+    if (tab === "daily") initCtabDaily();
     if (tab === "poems") initCtabPoems();
   }
   function initCtabRecite() {
@@ -4552,7 +4634,7 @@
   async function startStudyFromSubjectDeck(subject, deckNameKeyword) {
     const profile = App.currentProfile;
     if (!profile) return;
-    App._studyFromPage = "chinese-learning";
+    _studyBackPage = document.querySelector(".page.active")?.id?.replace("page-", "") || "home";
     const decks = await DeckManager.getByProfile(profile.id);
     const deck = decks.find((d) => d.subject === subject && d.name.includes(deckNameKeyword));
     if (deck) {
@@ -4577,16 +4659,29 @@
     }
     openRecitationListPage();
   }
-  var _ctabCharsTab = "chars";
+  var _ctabCharsTab = "all";
+  var _ctabCharsGrade = "all";
   async function initCtabChars() {
-    const tabs = document.getElementById("ctab-chars-tabs");
-    if (tabs && !tabs.dataset.bound) {
-      tabs.dataset.bound = "1";
-      tabs.querySelectorAll(".py-mode-btn").forEach((btn) => {
+    const typeTabs = document.getElementById("ctab-chars-tabs");
+    if (typeTabs && !typeTabs.dataset.bound) {
+      typeTabs.dataset.bound = "1";
+      typeTabs.querySelectorAll(".py-mode-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
-          tabs.querySelectorAll(".py-mode-btn").forEach((b) => b.classList.remove("active"));
+          typeTabs.querySelectorAll(".py-mode-btn").forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
           _ctabCharsTab = btn.dataset.charstab;
+          renderCtabChars();
+        });
+      });
+    }
+    const gradeTabs = document.getElementById("ctab-chars-grades");
+    if (gradeTabs && !gradeTabs.dataset.bound) {
+      gradeTabs.dataset.bound = "1";
+      gradeTabs.querySelectorAll(".py-grade-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          gradeTabs.querySelectorAll(".py-grade-btn").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          _ctabCharsGrade = btn.dataset.chargrade;
           renderCtabChars();
         });
       });
@@ -4597,33 +4692,61 @@
     const body = document.getElementById("ctab-chars-body");
     if (!body) return;
     body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u52A0\u8F7D\u4E2D\u2026</p>';
-    const deckName = _ctabCharsTab === "chars" ? "\u5C0F\u5B66\u751F\u5B57" : "\u5C0F\u5B66\u8BED\u6587\u8BCD\u8BED";
-    const cards = await loadBuiltinCardsInline("chinese", deckName);
-    if (!cards.length) {
-      body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u6682\u65E0\u6570\u636E\uFF0C\u9996\u6B21\u4F7F\u7528\u9700\u52A0\u8F7D</p>';
+    const gradeLabel3 = {
+      primary1: "\u4E00\u5E74\u7EA7",
+      primary2: "\u4E8C\u5E74\u7EA7",
+      primary3: "\u4E09\u5E74\u7EA7",
+      primary4: "\u56DB\u5E74\u7EA7",
+      primary5: "\u4E94\u5E74\u7EA7",
+      primary6: "\u516D\u5E74\u7EA7",
+      primary: "\u901A\u7528"
+    };
+    const gradeFiles = [
+      { name: "\u4E00\u5E74\u7EA7\u751F\u5B57\u8BCD", grade: "primary1" },
+      { name: "\u4E8C\u5E74\u7EA7\u751F\u5B57\u8BCD", grade: "primary2" },
+      { name: "\u4E09\u5E74\u7EA7\u751F\u5B57\u8BCD", grade: "primary3" },
+      { name: "\u56DB\u5E74\u7EA7\u751F\u5B57\u8BCD", grade: "primary4" },
+      { name: "\u4E94\u5E74\u7EA7\u751F\u5B57\u8BCD", grade: "primary5" },
+      { name: "\u516D\u5E74\u7EA7\u751F\u5B57\u8BCD", grade: "primary6" },
+      { name: "\u5C0F\u5B66\u751F\u5B57", grade: "primary" },
+      { name: "\u5C0F\u5B66\u8BED\u6587\u8BCD\u8BED", grade: "primary" }
+    ];
+    const filesToLoad = _ctabCharsGrade === "all" ? gradeFiles : gradeFiles.filter((f) => f.grade === _ctabCharsGrade);
+    let allCards = [];
+    for (const gf of filesToLoad) {
+      const cards = await loadBuiltinCardsInline("chinese", gf.name);
+      allCards.push(...cards.map((c) => ({ ...c, _grade: gf.grade, _deckName: gf.name })));
+    }
+    if (_ctabCharsTab === "chars") allCards = allCards.filter((c) => c.type === "char");
+    else if (_ctabCharsTab === "words") allCards = allCards.filter((c) => c.type === "word");
+    if (!allCards.length) {
+      body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u6682\u65E0\u6570\u636E</p>';
       return;
     }
-    body.innerHTML = cards.slice(0, 100).map((c) => `
+    const deckNameForStudy = _ctabCharsGrade === "all" ? null : gradeFiles.find((f) => f.grade === _ctabCharsGrade)?.name;
+    let html = "";
+    if (deckNameForStudy) {
+      html += `<button class="btn-primary ctab-grade-study" data-deckname="${deckNameForStudy}"
+      style="width:100%;margin-bottom:12px">\u25B6 \u8FDB\u5165${gradeLabel3[_ctabCharsGrade] || ""}\u95EA\u5361\u7EC3\u4E60\uFF08\u5171${allCards.length}\u5F20\uFF09</button>`;
+    }
+    html += allCards.slice(0, 80).map((c) => `
     <div class="ctab-card-item">
       <div class="ctab-card-front">${escapeHtml5(c.front)}</div>
       <div class="ctab-card-back">${escapeHtml5((c.back || "").split("\uFF5C")[0])}</div>
       ${c.phonetic ? `<div class="ctab-card-phonetic">${escapeHtml5(c.phonetic)}</div>` : ""}
+      ${c.hint ? `<div style="font-size:11px;color:var(--color-text-hint)">${escapeHtml5(c.hint)}</div>` : ""}
       <button class="ctab-card-speak" data-text="${escapeHtml5(c.front)}">\u{1F50A}</button>
     </div>`).join("");
+    body.innerHTML = html;
     body.querySelectorAll(".ctab-card-speak").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         speakChinese(btn.dataset.text, 0.8);
       });
     });
-    if (cards.length > 100) {
-      const moreBtn = document.createElement("button");
-      moreBtn.className = "btn-secondary";
-      moreBtn.style.cssText = "width:100%;margin-top:8px";
-      moreBtn.textContent = `\u25B6 \u8FDB\u5165\u95EA\u5361\u7EC3\u4E60\uFF08\u5171${cards.length}\u5F20\uFF09`;
-      moreBtn.addEventListener("click", () => startStudyFromSubjectDeck("chinese", deckName));
-      body.appendChild(moreBtn);
-    }
+    body.querySelectorAll(".ctab-grade-study").forEach((btn) => {
+      btn.addEventListener("click", () => startStudyFromSubjectDeck("chinese", btn.dataset.deckname));
+    });
   }
   async function initCtabIdioms() {
     const body = document.getElementById("ctab-idioms-body");
@@ -4670,6 +4793,56 @@
       moreBtn.addEventListener("click", () => startStudyFromSubjectDeck("chinese", "\u5C0F\u5B66\u6210\u8BED"));
       body.appendChild(moreBtn);
     }
+  }
+  var _ctabDailyFilter = "all";
+  async function initCtabDaily() {
+    const tabs = document.getElementById("ctab-daily-tabs");
+    if (tabs && !tabs.dataset.bound) {
+      tabs.dataset.bound = "1";
+      tabs.querySelectorAll(".py-mode-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          tabs.querySelectorAll(".py-mode-btn").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          _ctabDailyFilter = btn.dataset.dailytab;
+          renderCtabDaily();
+        });
+      });
+    }
+    const search = document.getElementById("ctab-daily-search");
+    if (search && !search.dataset.bound) {
+      search.dataset.bound = "1";
+      let timer;
+      search.addEventListener("input", () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => renderCtabDaily(search.value.trim()), 250);
+      });
+    }
+    renderCtabDaily();
+  }
+  async function renderCtabDaily(query = "") {
+    const body = document.getElementById("ctab-daily-body");
+    if (!body) return;
+    body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u52A0\u8F7D\u4E2D\u2026</p>';
+    let cards = await loadBuiltinCardsInline("chinese", "\u65E5\u79EF\u6708\u7D2F");
+    if (_ctabDailyFilter !== "all") cards = cards.filter((c) => (c.tags || []).some((t) => t.includes(_ctabDailyFilter)));
+    if (query) cards = cards.filter((c) => c.front?.includes(query) || c.back?.includes(query));
+    if (!cards.length) {
+      body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">\u6682\u65E0\u6570\u636E</p>';
+      return;
+    }
+    body.innerHTML = cards.map((c) => `
+    <div class="ctab-card-item ctab-daily-item">
+      <div class="ctab-daily-text">${escapeHtml5(c.front)}</div>
+      <div class="ctab-card-back">${escapeHtml5(c.back || "")}</div>
+      ${c.hint ? `<div style="font-size:11px;color:var(--color-primary);margin-top:4px">\u{1F4A1} ${escapeHtml5(c.hint)}</div>` : ""}
+      <button class="ctab-card-speak" data-text="${escapeHtml5(c.front)}">\u{1F50A}</button>
+    </div>`).join("");
+    body.querySelectorAll(".ctab-card-speak").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        speakChinese(btn.dataset.text, 0.8);
+      });
+    });
   }
   async function initCtabPoems() {
     const body = document.getElementById("ctab-poems-body");
@@ -4814,6 +4987,9 @@
   }
   async function startStudyFromDeck(deckId, subject) {
     const profile = App.currentProfile;
+    if (!_studyBackPage) {
+      _studyBackPage = document.querySelector(".page.active")?.id?.replace("page-", "") || "home";
+    }
     const deckCards = App.allProfileCards.filter((c) => c.deckId === deckId);
     const due = deckCards.filter((c) => c.nextReview <= todayStr());
     const newCards = deckCards.filter((c) => c.reviewCount === 0);
@@ -4825,6 +5001,9 @@
     App.studyQueue = queue;
     App.studyIndex = 0;
     App.sessionResults = [];
+    const decks = await DeckManager.getByProfile(profile.id);
+    const deck = decks.find((d) => d.id === deckId);
+    if ($4("study-deck-name")) $4("study-deck-name").textContent = deck?.name || "";
     hide3($4("session-complete"));
     showPage("study");
     switchStudyMode("flashcard");
@@ -4958,15 +5137,155 @@
         _voiceAnswerStop = null;
         if (!spokenText) return;
         const target = App.cardDirection === "reverse" ? card.front : card.back;
-        const dist = levenshtein2(target.toLowerCase(), spokenText.toLowerCase());
-        const score = Math.max(0, Math.round((1 - dist / Math.max(target.length, spokenText.length)) * 100));
-        const isCorrect = score >= 65 || spokenText.toLowerCase().includes(target.toLowerCase().slice(0, 4));
+        const frontText = card.front || "";
+        const numToCN = (n) => [
+          "\u96F6",
+          "\u4E00",
+          "\u4E8C",
+          "\u4E09",
+          "\u56DB",
+          "\u4E94",
+          "\u516D",
+          "\u4E03",
+          "\u516B",
+          "\u4E5D",
+          "\u5341",
+          "\u5341\u4E00",
+          "\u5341\u4E8C",
+          "\u5341\u4E09",
+          "\u5341\u56DB",
+          "\u5341\u4E94",
+          "\u5341\u516D",
+          "\u5341\u4E03",
+          "\u5341\u516B",
+          "\u5341\u4E5D",
+          "\u4E8C\u5341",
+          "\u4E8C\u5341\u4E00",
+          "\u4E8C\u5341\u4E8C",
+          "\u4E8C\u5341\u4E09",
+          "\u4E8C\u5341\u56DB",
+          "\u4E8C\u5341\u4E94",
+          "\u4E8C\u5341\u516D",
+          "\u4E8C\u5341\u4E03",
+          "\u4E8C\u5341\u516B",
+          "\u4E8C\u5341\u4E5D",
+          "\u4E09\u5341",
+          "\u4E09\u5341\u4E00",
+          "\u4E09\u5341\u4E8C",
+          "\u4E09\u5341\u4E09",
+          "\u4E09\u5341\u56DB",
+          "\u4E09\u5341\u4E94",
+          "\u4E09\u5341\u516D",
+          "\u4E09\u5341\u4E03",
+          "\u4E09\u5341\u516B",
+          "\u4E09\u5341\u4E5D",
+          "\u56DB\u5341",
+          "\u56DB\u5341\u4E00",
+          "\u56DB\u5341\u4E8C",
+          "\u56DB\u5341\u4E09",
+          "\u56DB\u5341\u56DB",
+          "\u56DB\u5341\u4E94",
+          "\u56DB\u5341\u516D",
+          "\u56DB\u5341\u4E03",
+          "\u56DB\u5341\u516B",
+          "\u56DB\u5341\u4E5D",
+          "\u4E94\u5341",
+          "\u4E94\u5341\u4E00",
+          "\u4E94\u5341\u4E8C",
+          "\u4E94\u5341\u4E09",
+          "\u4E94\u5341\u56DB",
+          "\u4E94\u5341\u4E94",
+          "\u4E94\u5341\u516D",
+          "\u4E94\u5341\u4E03",
+          "\u4E94\u5341\u516B",
+          "\u4E94\u5341\u4E5D",
+          "\u516D\u5341",
+          "\u516D\u5341\u4E00",
+          "\u516D\u5341\u4E8C",
+          "\u516D\u5341\u4E09",
+          "\u516D\u5341\u56DB",
+          "\u516D\u5341\u4E94",
+          "\u516D\u5341\u516D",
+          "\u516D\u5341\u4E03",
+          "\u516D\u5341\u516B",
+          "\u516D\u5341\u4E5D",
+          "\u4E03\u5341",
+          "\u4E03\u5341\u4E00",
+          "\u4E03\u5341\u4E8C",
+          "\u4E03\u5341\u4E09",
+          "\u4E03\u5341\u56DB",
+          "\u4E03\u5341\u4E94",
+          "\u4E03\u5341\u516D",
+          "\u4E03\u5341\u4E03",
+          "\u4E03\u5341\u516B",
+          "\u4E03\u5341\u4E5D",
+          "\u516B\u5341",
+          "\u516B\u5341\u4E00"
+        ][parseInt(n)] || n;
+        const isNumTarget = /^\d+$/.test(target.trim());
+        const targetCN = isNumTarget ? numToCN(target.trim()) : "";
+        const hasChinese = /[一-鿿]/.test(target);
+        const phonetic = card.phonetic || "";
+        const normalize = (s) => s.toLowerCase().replace(/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/g, (c) => "aaaaeeeeiiiioooounnuu"["\u0101\xE1\u01CE\xE0\u0113\xE9\u011B\xE8\u012B\xED\u01D0\xEC\u014D\xF3\u01D2\xF2\u016B\xFA\u01D4\xF9\u01D6\u01D8\u01DA\u01DC".indexOf(c)] || c).replace(/[^a-z一-鿿0-9]/g, "");
+        const spokenNorm = normalize(spokenText);
+        const targetNorm = normalize(target);
+        const phoneticNorm = normalize(phonetic);
+        const targetCNNorm = normalize(targetCN);
+        const dist = levenshtein2(targetNorm, spokenNorm);
+        let score = Math.max(0, Math.round((1 - dist / Math.max(targetNorm.length || 1, spokenNorm.length || 1)) * 100));
+        let numMatch = false;
+        if (isNumTarget && targetCN) {
+          const distCN = levenshtein2(targetCNNorm, spokenNorm);
+          const scoreCN = Math.max(0, Math.round((1 - distCN / Math.max(targetCNNorm.length || 1, spokenNorm.length || 1)) * 100));
+          if (scoreCN >= 70 || spokenNorm.includes(targetCNNorm)) {
+            numMatch = true;
+            score = Math.max(score, scoreCN);
+          }
+          if (spokenNorm === targetNorm) {
+            numMatch = true;
+            score = 100;
+          }
+        }
+        let phoneticMatch = false;
+        if (hasChinese && phonetic) {
+          const distPy = levenshtein2(phoneticNorm, spokenNorm);
+          const scorePy = Math.max(0, Math.round((1 - distPy / Math.max(phoneticNorm.length || 1, spokenNorm.length || 1)) * 100));
+          if (scorePy >= 70) {
+            phoneticMatch = true;
+            score = Math.max(score, scorePy);
+          }
+        }
+        let frontMatch = false;
+        if (App.cardDirection !== "reverse" && frontText && /[一-鿿]/.test(frontText)) {
+          const frontNorm = normalize(frontText);
+          if (frontNorm === spokenNorm || spokenNorm.includes(frontNorm)) frontMatch = true;
+        }
+        const isCorrect = score >= 65 || targetNorm.length > 1 && spokenNorm.includes(targetNorm.slice(0, 2)) || phoneticMatch || numMatch || frontMatch;
         const resultEl = $4("voice-answer-result");
-        $4("voice-answer-text").textContent = `"${spokenText}" ${isCorrect ? "\u2713" : "\u2717"}`;
-        if (resultEl) {
-          resultEl.style.background = isCorrect ? "#D1FAE5" : "#FEE2E2";
-          resultEl.style.color = isCorrect ? "#065F46" : "#991B1B";
-          show3(resultEl);
+        const isEnglish = /^[a-zA-Z\s'-]+$/.test(target);
+        if (isEnglish && card.subject === "english") {
+          const profile = App.currentProfile;
+          const azureConfig = profile?.azureKey ? { key: profile.azureKey, region: profile.azureRegion } : null;
+          const pronResult = await scorePronunciation(target, spokenText, spokenConf, azureConfig, null);
+          $4("voice-answer-text").textContent = `"${spokenText}" ${isCorrect ? "\u2713" : "\u2717"} | \u53D1\u97F3\uFF1A${pronResult.score}\u5206`;
+          if (resultEl) {
+            const color = pronResult.score >= 80 ? "#D1FAE5" : pronResult.score >= 60 ? "#FEF3C7" : "#FEE2E2";
+            const textColor = pronResult.score >= 80 ? "#065F46" : pronResult.score >= 60 ? "#92400E" : "#991B1B";
+            resultEl.style.background = color;
+            resultEl.style.color = textColor;
+            const feedEl = document.createElement("div");
+            feedEl.style.cssText = "font-size:11px;margin-top:3px;opacity:0.8";
+            feedEl.textContent = pronResult.feedback;
+            resultEl.appendChild(feedEl);
+            show3(resultEl);
+          }
+        } else {
+          $4("voice-answer-text").textContent = `"${spokenText}" ${isCorrect ? "\u2713" : "\u2717"}`;
+          if (resultEl) {
+            resultEl.style.background = isCorrect ? "#D1FAE5" : "#FEE2E2";
+            resultEl.style.color = isCorrect ? "#065F46" : "#991B1B";
+            show3(resultEl);
+          }
         }
         if (isCorrect) {
           playSound("correct");
@@ -5639,12 +5958,29 @@
     renderCard();
   }
   var BUILTIN_DECKS = [
-    { file: "data/builtin/english/primary/grade3_words.json", name: "\u5C0F\u5B66\u4E09\u5E74\u7EA7\u82F1\u8BED", subject: "english", grade: "primary" },
-    { file: "data/builtin/english/primary/grade4_words.json", name: "\u5C0F\u5B66\u56DB\u5E74\u7EA7\u82F1\u8BED", subject: "english", grade: "primary" },
-    { file: "data/builtin/english/primary/grade5_words.json", name: "\u5C0F\u5B66\u4E94\u5E74\u7EA7\u82F1\u8BED", subject: "english", grade: "primary" },
-    { file: "data/builtin/english/primary/grade6_words.json", name: "\u5C0F\u5B66\u516D\u5E74\u7EA7\u82F1\u8BED", subject: "english", grade: "primary" },
-    { file: "data/builtin/english/middle/middle_vocab.json", name: "\u521D\u4E2D\u6838\u5FC3\u8BCD\u6C47", subject: "english", grade: "middle" },
-    { file: "data/builtin/english/middle/middle_grammar.json", name: "\u521D\u4E2D\u82F1\u8BED\u8BED\u6CD5", subject: "english", grade: "middle" },
+    // 英语词汇（分年级）
+    { file: "data/builtin/english/primary/grade1_2_words.json", name: "\u5C0F\u5B66\u4E00\u4E8C\u5E74\u7EA7\u82F1\u8BED\u8BCD\u6C47", subject: "english", grade: "primary1" },
+    { file: "data/builtin/english/primary/grade3_words.json", name: "\u5C0F\u5B66\u4E09\u5E74\u7EA7\u82F1\u8BED\u8BCD\u6C47", subject: "english", grade: "primary3" },
+    { file: "data/builtin/english/primary/grade4_words.json", name: "\u5C0F\u5B66\u56DB\u5E74\u7EA7\u82F1\u8BED\u8BCD\u6C47", subject: "english", grade: "primary4" },
+    { file: "data/builtin/english/primary/grade5_words.json", name: "\u5C0F\u5B66\u4E94\u5E74\u7EA7\u82F1\u8BED\u8BCD\u6C47", subject: "english", grade: "primary5" },
+    { file: "data/builtin/english/primary/grade6_words.json", name: "\u5C0F\u5B66\u516D\u5E74\u7EA7\u82F1\u8BED\u8BCD\u6C47", subject: "english", grade: "primary6" },
+    { file: "data/builtin/english/middle/middle_vocab.json", name: "\u521D\u4E2D\u82F1\u8BED\u6838\u5FC3\u8BCD\u6C47", subject: "english", grade: "middle" },
+    { file: "data/builtin/english/primary/primary_grammar.json", name: "\u5C0F\u5B66\u82F1\u8BED\u8BED\u6CD5\u8981\u70B9", subject: "english", grade: "primary" },
+    { file: "data/builtin/english/middle/middle_grammar.json", name: "\u521D\u4E2D\u82F1\u8BED\u8BED\u6CD5\u8981\u70B9", subject: "english", grade: "middle" },
+    // 数学（分年级）
+    { file: "data/builtin/math/primary/grade1_2_math.json", name: "\u5C0F\u5B66\u4E00\u4E8C\u5E74\u7EA7\u6570\u5B66", subject: "math", grade: "primary1" },
+    { file: "data/builtin/math/primary/grade3_4_math.json", name: "\u5C0F\u5B66\u4E09\u56DB\u5E74\u7EA7\u6570\u5B66", subject: "math", grade: "primary3" },
+    { file: "data/builtin/math/primary/grade5_6_math.json", name: "\u5C0F\u5B66\u4E94\u516D\u5E74\u7EA7\u6570\u5B66", subject: "math", grade: "primary5" },
+    // 小学生字词（分年级）
+    { file: "data/builtin/chinese/primary/grade1_chars_words.json", name: "\u4E00\u5E74\u7EA7\u751F\u5B57\u8BCD", subject: "chinese", grade: "primary1" },
+    { file: "data/builtin/chinese/primary/grade2_chars_words.json", name: "\u4E8C\u5E74\u7EA7\u751F\u5B57\u8BCD", subject: "chinese", grade: "primary2" },
+    { file: "data/builtin/chinese/primary/grade3_chars_words.json", name: "\u4E09\u5E74\u7EA7\u751F\u5B57\u8BCD", subject: "chinese", grade: "primary3" },
+    { file: "data/builtin/chinese/primary/grade4_chars_words.json", name: "\u56DB\u5E74\u7EA7\u751F\u5B57\u8BCD", subject: "chinese", grade: "primary4" },
+    { file: "data/builtin/chinese/primary/grade5_chars_words.json", name: "\u4E94\u5E74\u7EA7\u751F\u5B57\u8BCD", subject: "chinese", grade: "primary5" },
+    { file: "data/builtin/chinese/primary/grade6_chars_words.json", name: "\u516D\u5E74\u7EA7\u751F\u5B57\u8BCD", subject: "chinese", grade: "primary6" },
+    // 日积月累
+    { file: "data/builtin/chinese/primary/daily_accumulation.json", name: "\u65E5\u79EF\u6708\u7D2F\uFF08\u540D\u8A00\u8C1A\u8BED\uFF09", subject: "chinese", grade: "primary" },
+    // 旧版生字（保留兼容）
     { file: "data/builtin/chinese/primary/primary_chars_words.json", name: "\u5C0F\u5B66\u751F\u5B57\uFF08\u542B\u504F\u65C1\u7B14\u753B\uFF09", subject: "chinese", grade: "primary" },
     { file: "data/builtin/chinese/primary/primary_words.json", name: "\u5C0F\u5B66\u8BED\u6587\u8BCD\u8BED\uFF08\u8DDF\u8BFB\uFF09", subject: "chinese", grade: "primary" },
     { file: "data/builtin/chinese/primary/primary_poems.json", name: "\u5C0F\u5B66\u5FC5\u80CC\u53E4\u8BD775\u9996", subject: "chinese", grade: "primary" },
@@ -6376,25 +6712,28 @@
       overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:flex-end";
       overlay.innerHTML = `
       <div style="background:var(--color-surface);border-radius:20px 20px 0 0;width:100%;max-height:85vh;display:flex;flex-direction:column;padding:20px">
-        <div style="font-size:20px;font-weight:800;text-align:center;margin-bottom:4px">\u{1F4CB} \u9690\u79C1\u653F\u7B56</div>
-        <div style="font-size:12px;color:var(--color-text-hint);text-align:center;margin-bottom:12px">\u8BF7\u5728\u4F7F\u7528\u524D\u9605\u8BFB\u5E76\u540C\u610F\u4EE5\u4E0B\u653F\u7B56</div>
+        <div style="font-size:20px;font-weight:800;text-align:center;margin-bottom:4px">\u{1F4CB} \u7528\u6237\u9690\u79C1\u653F\u7B56</div>
+        <div style="font-size:12px;color:var(--color-text-hint);text-align:center;margin-bottom:12px">\u9996\u6B21\u4F7F\u7528\u524D\u8BF7\u9605\u8BFB\u5E76\u540C\u610F</div>
         <div style="flex:1;overflow-y:auto;font-size:13px;line-height:1.8;color:var(--color-text-sub);margin-bottom:16px">
           <p><strong>\u5C0F\u8BB0\u5FC6</strong>\u975E\u5E38\u91CD\u89C6\u60A8\u548C\u5B69\u5B50\u7684\u9690\u79C1\u4FDD\u62A4\u3002</p>
           <p style="margin-top:8px"><strong>\u{1F4CC} \u6211\u4EEC\u627F\u8BFA\uFF1A</strong></p>
           <p>\u2022 \u6240\u6709\u5B66\u4E60\u6570\u636E\u4EC5\u5B58\u50A8\u5728\u672C\u8BBE\u5907\uFF0C\u4E0D\u4E0A\u4F20\u4EFB\u4F55\u670D\u52A1\u5668</p>
           <p>\u2022 \u4E0D\u6536\u96C6\u4EFB\u4F55\u4E2A\u4EBA\u8EAB\u4EFD\u4FE1\u606F</p>
           <p>\u2022 \u4E0D\u542B\u4EFB\u4F55\u5E7F\u544A\u548C\u7B2C\u4E09\u65B9\u8FFD\u8E2A</p>
-          <p style="margin-top:8px"><strong>\u{1F3A4} \u9EA6\u514B\u98CE\u6743\u9650\uFF1A</strong>\u4EC5\u5728\u60A8\u4E3B\u52A8\u4F7F\u7528\u8BED\u97F3\u8DDF\u8BFB\u6216\u80CC\u8BF5\u8BC4\u5206\u529F\u80FD\u65F6\u7533\u8BF7\uFF0C\u5F55\u97F3\u5904\u7406\u5B8C\u6BD5\u540E\u7ACB\u5373\u9500\u6BC1</p>
-          <p style="margin-top:8px"><strong>\u{1F4F7} \u76F8\u673A\u6743\u9650\uFF1A</strong>\u4EC5\u5728\u60A8\u4E3B\u52A8\u62CD\u7167\u5BFC\u5165\u9898\u76EE\u65F6\u7533\u8BF7\uFF0C\u7167\u7247\u89E3\u6790\u540E\u7ACB\u5373\u9500\u6BC1</p>
-          <p style="margin-top:8px"><strong>\u{1F476} \u513F\u7AE5\u9690\u79C1\uFF1A</strong>\u672C\u5E94\u7528\u4E13\u4E3A\u513F\u7AE5\u8BBE\u8BA1\uFF0C\u4E25\u683C\u9075\u5B88\u300A\u513F\u7AE5\u4E2A\u4EBA\u4FE1\u606F\u7F51\u7EDC\u4FDD\u62A4\u89C4\u5B9A\u300B\uFF0C\u4E0D\u6536\u96C6\u4EFB\u4F55\u513F\u7AE5\u4E2A\u4EBA\u4FE1\u606F</p>
-          <p style="margin-top:8px">\u5B8C\u6574\u9690\u79C1\u653F\u7B56\uFF1A<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">\u70B9\u51FB\u67E5\u770B</a></p>
+          <p style="margin-top:8px"><strong>\u{1F3A4} \u9EA6\u514B\u98CE\u6743\u9650\uFF1A</strong>\u4EC5\u5728\u60A8\u4E3B\u52A8\u70B9\u51FB\u8BED\u97F3\u529F\u80FD\u65F6\u7533\u8BF7\uFF0C\u5F55\u97F3\u5904\u7406\u5B8C\u6BD5\u540E\u7ACB\u5373\u9500\u6BC1\uFF0C\u4E0D\u5B58\u50A8\u4E0D\u4E0A\u4F20</p>
+          <p style="margin-top:8px"><strong>\u{1F4F7} \u76F8\u673A\u6743\u9650\uFF1A</strong>\u4EC5\u5728\u60A8\u4E3B\u52A8\u62CD\u7167\u5BFC\u5165\u9898\u76EE\u65F6\u7533\u8BF7\uFF0C\u7167\u7247\u89E3\u6790\u540E\u7ACB\u5373\u9500\u6BC1\uFF0C\u4E0D\u5B58\u50A8\u4E0D\u4E0A\u4F20</p>
+          <p style="margin-top:8px"><strong>\u{1F476} \u513F\u7AE5\u9690\u79C1\u4FDD\u62A4\uFF1A</strong>\u672C\u5E94\u7528\u4E13\u4E3A\u513F\u7AE5\u8BBE\u8BA1\uFF0C\u4E25\u683C\u9075\u5B88\u300A\u513F\u7AE5\u4E2A\u4EBA\u4FE1\u606F\u7F51\u7EDC\u4FDD\u62A4\u89C4\u5B9A\u300B\uFF0C\u4E0D\u6536\u96C6\u4EFB\u4F55\u513F\u7AE5\u4E2A\u4EBA\u4FE1\u606F\uFF0C\u65E0\u5E7F\u544A\u3001\u65E0\u8D26\u53F7\u6CE8\u518C</p>
+          <p style="margin-top:8px"><strong>\u{1F4E2} \u6295\u8BC9\u4E3E\u62A5\uFF1A</strong>\u5982\u53D1\u73B0\u4EFB\u4F55\u95EE\u9898\uFF0C\u53EF\u53D1\u9001\u90AE\u4EF6\u81F3 <strong>zihua.liang@outlook.com</strong>\uFF0C\u6211\u4EEC\u627F\u8BFA48\u5C0F\u65F6\u5185\u54CD\u5E94</p>
+          <p style="margin-top:8px">
+            <a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">\u67E5\u770B\u5B8C\u6574\u9690\u79C1\u653F\u7B56\u4E0E\u513F\u7AE5\u4E13\u9879\u9690\u79C1\u653F\u7B56 \u2192</a>
+          </p>
         </div>
-        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--color-border)">
-          <input type="checkbox" id="privacy-check" style="width:18px;height:18px;flex-shrink:0">
-          <label for="privacy-check" style="font-size:13px;color:var(--color-text)">\u6211\u5DF2\u9605\u8BFB\u5E76\u540C\u610F<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">\u300A\u9690\u79C1\u653F\u7B56\u300B</a>\u548C<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">\u300A\u513F\u7AE5\u9690\u79C1\u653F\u7B56\u300B</a></label>
+        <div style="display:flex;align-items:flex-start;gap:8px;padding:10px 0;border-top:1px solid var(--color-border)">
+          <input type="checkbox" id="privacy-check" style="width:20px;height:20px;flex-shrink:0;margin-top:2px">
+          <label for="privacy-check" style="font-size:13px;color:var(--color-text);line-height:1.5">\u6211\u5DF2\u9605\u8BFB\u5E76\u540C\u610F<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">\u300A\u9690\u79C1\u653F\u7B56\u300B</a>\u548C<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">\u300A\u513F\u7AE5\u9690\u79C1\u653F\u7B56\u300B</a>\uFF0C\u5E76\u540C\u610F\u6309\u7167\u653F\u7B56\u5904\u7406\u76F8\u5173\u6743\u9650</label>
         </div>
-        <button id="privacy-agree-btn" style="width:100%;padding:14px;background:#ccc;color:white;border-radius:12px;font-size:15px;font-weight:700;margin-top:10px;transition:background 0.2s" disabled>\u540C\u610F\u5E76\u7EE7\u7EED</button>
-        <button id="privacy-reject-btn" style="width:100%;padding:10px;background:none;color:var(--color-text-hint);font-size:13px;margin-top:6px">\u4E0D\u540C\u610F\uFF08\u9000\u51FA\u5E94\u7528\uFF09</button>
+        <button id="privacy-agree-btn" style="width:100%;padding:14px;background:#ccc;color:white;border-radius:12px;font-size:16px;font-weight:700;margin-top:10px;transition:background 0.2s" disabled>\u540C\u610F\u5E76\u7EE7\u7EED\u4F7F\u7528</button>
+        <button id="privacy-reject-btn" style="width:100%;padding:10px;background:none;color:var(--color-text-hint);font-size:12px;margin-top:4px">\u4E0D\u540C\u610F\uFF0C\u9000\u51FA\u5E94\u7528</button>
       </div>`;
       document.body.appendChild(overlay);
       const check = overlay.querySelector("#privacy-check");
@@ -6409,10 +6748,34 @@
         resolve();
       });
       overlay.querySelector("#privacy-reject-btn").addEventListener("click", () => {
-        agreeBtn.textContent = "\u8BF7\u540C\u610F\u9690\u79C1\u653F\u7B56\u624D\u80FD\u4F7F\u7528";
+        agreeBtn.textContent = "\u8BF7\u5148\u52FE\u9009\u540C\u610F\u9690\u79C1\u653F\u7B56\u624D\u80FD\u4F7F\u7528";
         agreeBtn.style.background = "var(--color-error)";
         agreeBtn.disabled = false;
+        check.checked = false;
       });
+    });
+  }
+  function showReportDialog() {
+    const overlay = document.createElement("div");
+    overlay.className = "modal-overlay";
+    overlay.innerHTML = `<div class="modal">
+    <h3>\u{1F4E2} \u6295\u8BC9\u4E0E\u4E3E\u62A5</h3>
+    <p style="font-size:13px;color:var(--color-text-sub);line-height:1.8;margin:8px 0">
+      \u5982\u60A8\u53D1\u73B0\u672C\u5E94\u7528\u5B58\u5728\u8FDD\u89C4\u5185\u5BB9\uFF0C\u6216\u9700\u8981\u6295\u8BC9\u6D89\u53CA\u672A\u6210\u5E74\u4EBA\u7684\u76F8\u5173\u95EE\u9898\uFF0C\u8BF7\u901A\u8FC7\u4EE5\u4E0B\u65B9\u5F0F\u8054\u7CFB\u6211\u4EEC\uFF1A
+    </p>
+    <div style="background:var(--color-surface2);border-radius:10px;padding:14px;margin:8px 0">
+      <div style="font-size:13px;margin-bottom:6px">\u{1F4E7} <strong>\u8054\u7CFB\u90AE\u7BB1</strong></div>
+      <div style="font-size:15px;color:var(--color-primary);font-weight:700">zihua.liang@outlook.com</div>
+    </div>
+    <p style="font-size:12px;color:var(--color-text-hint);margin-top:8px">
+      \u6211\u4EEC\u627F\u8BFA\u5728\u6536\u5230\u6295\u8BC9\u540E <strong>48\u5C0F\u65F6\u5185</strong> \u54CD\u5E94\u5904\u7406\uFF0C\u6D89\u53CA\u672A\u6210\u5E74\u4EBA\u4FDD\u62A4\u7684\u6295\u8BC9\u5C06\u4F18\u5148\u5904\u7406\u3002
+    </p>
+    <button class="btn-primary" style="margin-top:16px;width:100%" id="btn-report-close">\u77E5\u9053\u4E86</button>
+  </div>`;
+    document.body.appendChild(overlay);
+    overlay.querySelector("#btn-report-close").addEventListener("click", () => overlay.remove());
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) overlay.remove();
     });
   }
   init();

@@ -1,45 +1,791 @@
 {
-  "meta": { "subject": "english", "grade": "primary", "name": "小学四年级英语词汇", "version": "2024", "count": 40 },
+  "meta": {
+    "subject": "english",
+    "grade": "primary4",
+    "name": "小学四年级英语词汇",
+    "version": "2024",
+    "count": 60
+  },
   "cards": [
-    { "id": "ep4_001", "type": "word", "front": "spring", "back": "春天", "phonetic": "/sprɪŋ/", "hint": "花开的季节", "tags": ["季节","小学四年级"] },
-    { "id": "ep4_002", "type": "word", "front": "summer", "back": "夏天", "phonetic": "/ˈsʌmər/", "hint": "最热的季节", "tags": ["季节","小学四年级"] },
-    { "id": "ep4_003", "type": "word", "front": "autumn", "back": "秋天", "phonetic": "/ˈɔːtəm/", "hint": "收获的季节，也叫fall", "tags": ["季节","小学四年级"] },
-    { "id": "ep4_004", "type": "word", "front": "winter", "back": "冬天", "phonetic": "/ˈwɪntər/", "hint": "最冷的季节", "tags": ["季节","小学四年级"] },
-    { "id": "ep4_005", "type": "word", "front": "Monday", "back": "星期一", "phonetic": "/ˈmʌndeɪ/", "hint": "一周的第一天（工作日）", "tags": ["星期","小学四年级"] },
-    { "id": "ep4_006", "type": "word", "front": "Tuesday", "back": "星期二", "phonetic": "/ˈtjuːzdeɪ/", "hint": "一周的第二天", "tags": ["星期","小学四年级"] },
-    { "id": "ep4_007", "type": "word", "front": "Wednesday", "back": "星期三", "phonetic": "/ˈwenzdeɪ/", "hint": "d不发音，注意拼写", "tags": ["星期","小学四年级"] },
-    { "id": "ep4_008", "type": "word", "front": "Thursday", "back": "星期四", "phonetic": "/ˈθɜːrzdeɪ/", "hint": "注意th发音", "tags": ["星期","小学四年级"] },
-    { "id": "ep4_009", "type": "word", "front": "Friday", "back": "星期五", "phonetic": "/ˈfraɪdeɪ/", "hint": "快乐星期五", "tags": ["星期","小学四年级"] },
-    { "id": "ep4_010", "type": "word", "front": "Saturday", "back": "星期六", "phonetic": "/ˈsætərdeɪ/", "hint": "周末开始", "tags": ["星期","小学四年级"] },
-    { "id": "ep4_011", "type": "word", "front": "Sunday", "back": "星期日", "phonetic": "/ˈsʌndeɪ/", "hint": "太阳的日子", "tags": ["星期","小学四年级"] },
-    { "id": "ep4_012", "type": "word", "front": "breakfast", "back": "早餐", "phonetic": "/ˈbrekfəst/", "hint": "早上的第一顿饭", "tags": ["餐食","小学四年级"] },
-    { "id": "ep4_013", "type": "word", "front": "lunch", "back": "午餐", "phonetic": "/lʌntʃ/", "hint": "中午吃的饭", "tags": ["餐食","小学四年级"] },
-    { "id": "ep4_014", "type": "word", "front": "dinner", "back": "晚餐", "phonetic": "/ˈdɪnər/", "hint": "一天中最重要的一餐", "tags": ["餐食","小学四年级"] },
-    { "id": "ep4_015", "type": "word", "front": "bread", "back": "面包", "phonetic": "/bred/", "hint": "烤出来的食物", "tags": ["食物","小学四年级"] },
-    { "id": "ep4_016", "type": "word", "front": "milk", "back": "牛奶", "phonetic": "/mɪlk/", "hint": "白色的液体食物", "tags": ["饮料","食物","小学四年级"] },
-    { "id": "ep4_017", "type": "word", "front": "rice", "back": "米饭；大米", "phonetic": "/raɪs/", "hint": "中国人的主食", "tags": ["食物","小学四年级"] },
-    { "id": "ep4_018", "type": "word", "front": "vegetable", "back": "蔬菜", "phonetic": "/ˈvedʒtəbəl/", "hint": "健康的绿色食物", "tags": ["食物","小学四年级"] },
-    { "id": "ep4_019", "type": "word", "front": "meat", "back": "肉", "phonetic": "/miːt/", "hint": "动物的肉", "tags": ["食物","小学四年级"] },
-    { "id": "ep4_020", "type": "word", "front": "water", "back": "水", "phonetic": "/ˈwɔːtər/", "hint": "生命之源", "tags": ["饮料","小学四年级"] },
-    { "id": "ep4_021", "type": "word", "front": "bedroom", "back": "卧室", "phonetic": "/ˈbedruːm/", "hint": "睡觉的房间", "tags": ["房间","小学四年级"] },
-    { "id": "ep4_022", "type": "word", "front": "kitchen", "back": "厨房", "phonetic": "/ˈkɪtʃɪn/", "hint": "做饭的地方", "tags": ["房间","小学四年级"] },
-    { "id": "ep4_023", "type": "word", "front": "bathroom", "back": "浴室；卫生间", "phonetic": "/ˈbæθruːm/", "hint": "洗澡的地方", "tags": ["房间","小学四年级"] },
-    { "id": "ep4_024", "type": "word", "front": "living room", "back": "客厅", "phonetic": "/ˈlɪvɪŋ ruːm/", "hint": "一家人聚在一起的地方", "tags": ["房间","小学四年级"] },
-    { "id": "ep4_025", "type": "word", "front": "hospital", "back": "医院", "phonetic": "/ˈhɒspɪtəl/", "hint": "看病的地方", "tags": ["场所","小学四年级"] },
-    { "id": "ep4_026", "type": "word", "front": "library", "back": "图书馆", "phonetic": "/ˈlaɪbreri/", "hint": "借书的地方", "tags": ["场所","小学四年级"] },
-    { "id": "ep4_027", "type": "word", "front": "park", "back": "公园", "phonetic": "/pɑːrk/", "hint": "可以玩耍的地方", "tags": ["场所","小学四年级"] },
-    { "id": "ep4_028", "type": "word", "front": "supermarket", "back": "超市", "phonetic": "/ˈsuːpərmɑːrkɪt/", "hint": "买东西的大商店", "tags": ["场所","小学四年级"] },
-    { "id": "ep4_029", "type": "word", "front": "swim", "back": "游泳", "phonetic": "/swɪm/", "hint": "在水里的运动", "tags": ["运动","动词","小学四年级"] },
-    { "id": "ep4_030", "type": "word", "front": "jump", "back": "跳", "phonetic": "/dʒʌmp/", "hint": "离开地面的动作", "tags": ["运动","动词","小学四年级"] },
-    { "id": "ep4_031", "type": "word", "front": "sing", "back": "唱歌", "phonetic": "/sɪŋ/", "hint": "用声音表演", "tags": ["动词","小学四年级"] },
-    { "id": "ep4_032", "type": "word", "front": "dance", "back": "跳舞", "phonetic": "/dæns/", "hint": "随音乐运动", "tags": ["动词","小学四年级"] },
-    { "id": "ep4_033", "type": "word", "front": "draw", "back": "画画；绘制", "phonetic": "/drɔː/", "hint": "用笔在纸上画", "tags": ["动词","小学四年级"] },
-    { "id": "ep4_034", "type": "word", "front": "ride", "back": "骑（自行车）；乘坐", "phonetic": "/raɪd/", "hint": "骑自行车或马", "tags": ["动词","小学四年级"] },
-    { "id": "ep4_035", "type": "word", "front": "play", "back": "玩；演奏", "phonetic": "/pleɪ/", "hint": "play football / play piano", "tags": ["动词","小学四年级"] },
-    { "id": "ep4_036", "type": "word", "front": "cloudy", "back": "多云的", "phonetic": "/ˈklaʊdi/", "hint": "有云的天气", "tags": ["天气","小学四年级"] },
-    { "id": "ep4_037", "type": "word", "front": "sunny", "back": "晴朗的；阳光明媚", "phonetic": "/ˈsʌni/", "hint": "有太阳的好天气", "tags": ["天气","小学四年级"] },
-    { "id": "ep4_038", "type": "word", "front": "rainy", "back": "多雨的；下雨的", "phonetic": "/ˈreɪni/", "hint": "下雨的天气", "tags": ["天气","小学四年级"] },
-    { "id": "ep4_039", "type": "word", "front": "windy", "back": "有风的；刮风的", "phonetic": "/ˈwɪndi/", "hint": "刮风的天气", "tags": ["天气","小学四年级"] },
-    { "id": "ep4_040", "type": "word", "front": "snowy", "back": "下雪的；积雪的", "phonetic": "/ˈsnoʊi/", "hint": "下雪的冬天", "tags": ["天气","小学四年级"] }
+    {
+      "id": "pe4_001",
+      "type": "word",
+      "front": "subject",
+      "back": "科目；主题",
+      "phonetic": "/ˈsʌbdʒɪkt/",
+      "hint": "学校里学的课",
+      "example": "My favourite subject is art.",
+      "tags": [
+        "科目",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_002",
+      "type": "word",
+      "front": "maths",
+      "back": "数学",
+      "phonetic": "/mæθs/",
+      "hint": "mathematics的简写",
+      "example": "I am good at maths.",
+      "tags": [
+        "科目",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_003",
+      "type": "word",
+      "front": "science",
+      "back": "科学",
+      "phonetic": "/ˈsaɪəns/",
+      "hint": "研究自然规律的学科",
+      "example": "Science is interesting.",
+      "tags": [
+        "科目",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_004",
+      "type": "word",
+      "front": "music",
+      "back": "音乐",
+      "phonetic": "/ˈmjuːzɪk/",
+      "hint": "用声音表达的艺术",
+      "example": "I love music.",
+      "tags": [
+        "科目",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_005",
+      "type": "word",
+      "front": "art",
+      "back": "美术；艺术",
+      "phonetic": "/ɑːt/",
+      "hint": "用颜色形状表达的艺术",
+      "example": "She is good at art.",
+      "tags": [
+        "科目",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_006",
+      "type": "word",
+      "front": "history",
+      "back": "历史",
+      "phonetic": "/ˈhɪstri/",
+      "hint": "研究过去的学科",
+      "example": "History is important.",
+      "tags": [
+        "科目",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_007",
+      "type": "word",
+      "front": "favourite",
+      "back": "最喜欢的",
+      "phonetic": "/ˈfeɪvərɪt/",
+      "hint": "最中意的",
+      "example": "What is your favourite colour?",
+      "tags": [
+        "形容词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_008",
+      "type": "word",
+      "front": "difficult",
+      "back": "困难的",
+      "phonetic": "/ˈdɪfɪkəlt/",
+      "hint": "不容易的",
+      "example": "Maths is difficult for me.",
+      "tags": [
+        "形容词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_009",
+      "type": "word",
+      "front": "interesting",
+      "back": "有趣的",
+      "phonetic": "/ˈɪntrəstɪŋ/",
+      "hint": "引起兴趣的",
+      "example": "The story is interesting.",
+      "tags": [
+        "形容词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_010",
+      "type": "word",
+      "front": "supermarket",
+      "back": "超市",
+      "phonetic": "/ˈsuːpəmɑːkɪt/",
+      "hint": "大型购物场所",
+      "example": "Mum shops at the supermarket.",
+      "tags": [
+        "场所",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_011",
+      "type": "word",
+      "front": "library",
+      "back": "图书馆",
+      "phonetic": "/ˈlaɪbrəri/",
+      "hint": "借书看书的地方",
+      "example": "I go to the library.",
+      "tags": [
+        "场所",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_012",
+      "type": "word",
+      "front": "hospital",
+      "back": "医院",
+      "phonetic": "/ˈhɒspɪtl/",
+      "hint": "治病救人的地方",
+      "example": "Doctors work in hospitals.",
+      "tags": [
+        "场所",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_013",
+      "type": "word",
+      "front": "restaurant",
+      "back": "餐厅",
+      "phonetic": "/ˈrestrɒnt/",
+      "hint": "在外面吃饭的地方",
+      "example": "We eat at the restaurant.",
+      "tags": [
+        "场所",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_014",
+      "type": "word",
+      "front": "cinema",
+      "back": "电影院",
+      "phonetic": "/ˈsɪnɪmə/",
+      "hint": "看电影的地方",
+      "example": "Let us go to the cinema.",
+      "tags": [
+        "场所",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_015",
+      "type": "word",
+      "front": "museum",
+      "back": "博物馆",
+      "phonetic": "/mjuˈziːəm/",
+      "hint": "展示历史文物的地方",
+      "example": "We visited the museum.",
+      "tags": [
+        "场所",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_016",
+      "type": "word",
+      "front": "buy",
+      "back": "买",
+      "phonetic": "/baɪ/",
+      "hint": "用钱换取物品",
+      "example": "I want to buy a book.",
+      "tags": [
+        "动作",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_017",
+      "type": "word",
+      "front": "sell",
+      "back": "卖",
+      "phonetic": "/sel/",
+      "hint": "用物品换取金钱",
+      "example": "They sell fruits here.",
+      "tags": [
+        "动作",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_018",
+      "type": "word",
+      "front": "cheap",
+      "back": "便宜的",
+      "phonetic": "/tʃiːp/",
+      "hint": "价格低",
+      "example": "This shirt is cheap.",
+      "tags": [
+        "形容词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_019",
+      "type": "word",
+      "front": "expensive",
+      "back": "昂贵的",
+      "phonetic": "/ɪkˈspensɪv/",
+      "hint": "价格高",
+      "example": "This watch is expensive.",
+      "tags": [
+        "形容词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_020",
+      "type": "word",
+      "front": "January",
+      "back": "一月",
+      "phonetic": "/ˈdʒænjuəri/",
+      "hint": "一年中的第一个月",
+      "example": "January is the first month.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_021",
+      "type": "word",
+      "front": "February",
+      "back": "二月",
+      "phonetic": "/ˈfebruəri/",
+      "hint": "最短的月份",
+      "example": "February has 28 days.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_022",
+      "type": "word",
+      "front": "March",
+      "back": "三月",
+      "phonetic": "/mɑːtʃ/",
+      "hint": "春天开始的月份",
+      "example": "Spring starts in March.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_023",
+      "type": "word",
+      "front": "April",
+      "back": "四月",
+      "phonetic": "/ˈeɪprəl/",
+      "hint": "四月",
+      "example": "April is warm.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_024",
+      "type": "word",
+      "front": "May",
+      "back": "五月",
+      "phonetic": "/meɪ/",
+      "hint": "五月",
+      "example": "May Day is on May 1st.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_025",
+      "type": "word",
+      "front": "June",
+      "back": "六月",
+      "phonetic": "/dʒuːn/",
+      "hint": "儿童节所在月份",
+      "example": "Children Day is in June.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_026",
+      "type": "word",
+      "front": "July",
+      "back": "七月",
+      "phonetic": "/dʒuˈlaɪ/",
+      "hint": "暑假开始的月份",
+      "example": "Summer holiday starts in July.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_027",
+      "type": "word",
+      "front": "August",
+      "back": "八月",
+      "phonetic": "/ˈɔːɡəst/",
+      "hint": "最热的夏季月份",
+      "example": "August is very hot.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_028",
+      "type": "word",
+      "front": "September",
+      "back": "九月",
+      "phonetic": "/sepˈtembə/",
+      "hint": "开学月份",
+      "example": "School starts in September.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_029",
+      "type": "word",
+      "front": "October",
+      "back": "十月",
+      "phonetic": "/ɒkˈtəʊbə/",
+      "hint": "国庆节所在月份",
+      "example": "National Day is in October.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_030",
+      "type": "word",
+      "front": "November",
+      "back": "十一月",
+      "phonetic": "/nəʊˈvembə/",
+      "hint": "秋末月份",
+      "example": "It gets cold in November.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_031",
+      "type": "word",
+      "front": "December",
+      "back": "十二月",
+      "phonetic": "/dɪˈsembə/",
+      "hint": "圣诞节所在月份",
+      "example": "Christmas is in December.",
+      "tags": [
+        "月份",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_032",
+      "type": "word",
+      "front": "birthday",
+      "back": "生日",
+      "phonetic": "/ˈbɜːθdeɪ/",
+      "hint": "出生的那一天",
+      "example": "Happy birthday to you!",
+      "tags": [
+        "节日",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_033",
+      "type": "word",
+      "front": "festival",
+      "back": "节日",
+      "phonetic": "/ˈfestɪvl/",
+      "hint": "有特殊意义的日子",
+      "example": "Spring Festival is in January.",
+      "tags": [
+        "节日",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_034",
+      "type": "word",
+      "front": "travel",
+      "back": "旅行",
+      "phonetic": "/ˈtrævl/",
+      "hint": "去不同地方游览",
+      "example": "I like to travel.",
+      "tags": [
+        "动作",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_035",
+      "type": "word",
+      "front": "ticket",
+      "back": "票；门票",
+      "phonetic": "/ˈtɪkɪt/",
+      "hint": "进入某处的凭证",
+      "example": "I have a train ticket.",
+      "tags": [
+        "名词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_036",
+      "type": "word",
+      "front": "taller",
+      "back": "更高的",
+      "phonetic": "/ˈtɔːlə/",
+      "hint": "tall的比较级",
+      "example": "Tom is taller than Tim.",
+      "tags": [
+        "比较级",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_037",
+      "type": "word",
+      "front": "faster",
+      "back": "更快的",
+      "phonetic": "/ˈfɑːstə/",
+      "hint": "fast的比较级",
+      "example": "He runs faster.",
+      "tags": [
+        "比较级",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_038",
+      "type": "word",
+      "front": "better",
+      "back": "更好的",
+      "phonetic": "/ˈbetə/",
+      "hint": "good的比较级",
+      "example": "This is better than that.",
+      "tags": [
+        "比较级",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_039",
+      "type": "word",
+      "front": "best",
+      "back": "最好的",
+      "phonetic": "/best/",
+      "hint": "good的最高级",
+      "example": "She is the best student.",
+      "tags": [
+        "最高级",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_040",
+      "type": "word",
+      "front": "beautiful",
+      "back": "美丽的",
+      "phonetic": "/ˈbjuːtɪfl/",
+      "hint": "非常好看的",
+      "example": "The flowers are beautiful.",
+      "tags": [
+        "形容词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_041",
+      "type": "word",
+      "front": "wonderful",
+      "back": "精彩的",
+      "phonetic": "/ˈwʌndəfl/",
+      "hint": "令人惊叹的",
+      "example": "What a wonderful day!",
+      "tags": [
+        "形容词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_042",
+      "type": "word",
+      "front": "clever",
+      "back": "聪明的",
+      "phonetic": "/ˈklevə/",
+      "hint": "脑子好使的",
+      "example": "The fox is clever.",
+      "tags": [
+        "形容词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_043",
+      "type": "word",
+      "front": "brave",
+      "back": "勇敢的",
+      "phonetic": "/breɪv/",
+      "hint": "不怕危险的",
+      "example": "The soldier is brave.",
+      "tags": [
+        "形容词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_044",
+      "type": "word",
+      "front": "kind",
+      "back": "善良的",
+      "phonetic": "/kaɪnd/",
+      "hint": "对人好的",
+      "example": "She is very kind.",
+      "tags": [
+        "形容词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_045",
+      "type": "word",
+      "front": "polite",
+      "back": "有礼貌的",
+      "phonetic": "/pəˈlaɪt/",
+      "hint": "言行有礼节的",
+      "example": "Be polite to others.",
+      "tags": [
+        "形容词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_046",
+      "type": "word",
+      "front": "hour",
+      "back": "小时",
+      "phonetic": "/aʊə/",
+      "hint": "60分钟",
+      "example": "I study for two hours.",
+      "tags": [
+        "时间",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_047",
+      "type": "word",
+      "front": "minute",
+      "back": "分钟",
+      "phonetic": "/ˈmɪnɪt/",
+      "hint": "60秒为一分钟",
+      "example": "Wait five minutes.",
+      "tags": [
+        "时间",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_048",
+      "type": "word",
+      "front": "week",
+      "back": "星期；周",
+      "phonetic": "/wiːk/",
+      "hint": "七天为一周",
+      "example": "There are seven days in a week.",
+      "tags": [
+        "时间",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_049",
+      "type": "word",
+      "front": "month",
+      "back": "月份",
+      "phonetic": "/mʌnθ/",
+      "hint": "十二个月一年",
+      "example": "January is the first month.",
+      "tags": [
+        "时间",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_050",
+      "type": "word",
+      "front": "year",
+      "back": "年",
+      "phonetic": "/jɪə/",
+      "hint": "365天为一年",
+      "example": "Happy New Year!",
+      "tags": [
+        "时间",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_051",
+      "type": "word",
+      "front": "party",
+      "back": "聚会；派对",
+      "phonetic": "/ˈpɑːti/",
+      "hint": "一群人一起庆祝",
+      "example": "I am having a birthday party.",
+      "tags": [
+        "活动",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_052",
+      "type": "word",
+      "front": "present",
+      "back": "礼物",
+      "phonetic": "/ˈpreznt/",
+      "hint": "送给别人的礼物",
+      "example": "I got a nice present.",
+      "tags": [
+        "名词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_053",
+      "type": "word",
+      "front": "always",
+      "back": "总是",
+      "phonetic": "/ˈɔːlweɪz/",
+      "hint": "频率最高的副词",
+      "example": "I always brush my teeth.",
+      "tags": [
+        "副词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_054",
+      "type": "word",
+      "front": "usually",
+      "back": "通常",
+      "phonetic": "/ˈjuːʒuəli/",
+      "hint": "大多数情况下",
+      "example": "I usually get up at 7.",
+      "tags": [
+        "副词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_055",
+      "type": "word",
+      "front": "sometimes",
+      "back": "有时候",
+      "phonetic": "/ˈsʌmtaɪmz/",
+      "hint": "偶尔发生",
+      "example": "I sometimes play football.",
+      "tags": [
+        "副词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_056",
+      "type": "word",
+      "front": "never",
+      "back": "从不",
+      "phonetic": "/ˈnevə/",
+      "hint": "从来不",
+      "example": "I never eat junk food.",
+      "tags": [
+        "副词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_057",
+      "type": "word",
+      "front": "often",
+      "back": "经常",
+      "phonetic": "/ˈɒfn/",
+      "hint": "频繁地",
+      "example": "I often read books.",
+      "tags": [
+        "副词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_058",
+      "type": "word",
+      "front": "together",
+      "back": "一起",
+      "phonetic": "/təˈɡeðə/",
+      "hint": "共同，联合",
+      "example": "Let us work together.",
+      "tags": [
+        "副词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_059",
+      "type": "word",
+      "front": "again",
+      "back": "再次；又",
+      "phonetic": "/əˈɡen/",
+      "hint": "重复做",
+      "example": "Say it again, please.",
+      "tags": [
+        "副词",
+        "四年级"
+      ]
+    },
+    {
+      "id": "pe4_060",
+      "type": "word",
+      "front": "already",
+      "back": "已经",
+      "phonetic": "/ɔːlˈredi/",
+      "hint": "在某时间之前完成",
+      "example": "I have already done it.",
+      "tags": [
+        "副词",
+        "四年级"
+      ]
+    }
   ]
 }

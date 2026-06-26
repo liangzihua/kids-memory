@@ -1,25 +1,431 @@
 {
-  "meta": { "subject": "english", "grade": "middle", "name": "初中英语语法要点", "version": "2024", "count": 30 },
+  "meta": {
+    "subject": "english",
+    "grade": "middle",
+    "name": "初中英语语法要点",
+    "version": "2024",
+    "count": 30
+  },
   "cards": [
-    { "id": "gram_001", "type": "qa", "front": "一般现在时第三人称单数规则", "back": "动词+s/es\n特殊：have→has，be→is\n以s/x/ch/sh/o结尾+es\n辅音+y结尾，y→ies", "example": "go→goes，study→studies，have→has", "tags": ["语法","时态"] },
-    { "id": "gram_002", "type": "qa", "front": "现在进行时结构", "back": "be动词（am/is/are）+ 动词-ing", "example": "I am studying. / She is running.", "tags": ["语法","时态"] },
-    { "id": "gram_003", "type": "qa", "front": "一般过去时规则动词变化", "back": "动词+ed\n末尾e：+d\n辅音+y：y→i+ed\n辅元辅（重读）：双写末辅音+ed", "example": "stop→stopped，study→studied，love→loved", "tags": ["语法","时态"] },
-    { "id": "gram_004", "type": "qa", "front": "常见不规则动词（过去式）", "back": "go→went，have→had，do→did\ncome→came，see→saw，take→took\nbuy→bought，bring→brought\nbegin→began，write→wrote", "tags": ["语法","不规则动词"] },
-    { "id": "gram_005", "type": "qa", "front": "一般将来时结构", "back": "will + 动词原形（表示预测/意愿）\nbe going to + 动词原形（表示计划/已有迹象）", "example": "It will rain tomorrow. / I'm going to study.", "tags": ["语法","时态"] },
-    { "id": "gram_006", "type": "qa", "front": "现在完成时结构", "back": "have/has + 过去分词\nyet（否定/疑问）/already（肯定）/just/ever/never", "example": "I have already finished. / Have you eaten yet?", "tags": ["语法","时态"] },
-    { "id": "gram_007", "type": "qa", "front": "被动语态结构", "back": "be动词 + 过去分词\n时态通过be动词体现", "example": "The book was written by Tolstoy.\nEnglish is spoken worldwide.", "tags": ["语法","被动语态"] },
-    { "id": "gram_008", "type": "qa", "front": "情态动词 can/could/may/might/must 区别", "back": "can=能力/许可；could=过去式/更礼貌\nmay=可以/可能；might=更小的可能\nmust=必须/一定（肯定推断）\nmust not=禁止；don't have to=不必要", "example": "You must study. / You don't have to come.", "tags": ["语法","情态动词"] },
-    { "id": "gram_009", "type": "qa", "front": "宾语从句连接词", "back": "that（陈述句）：I think that...\nif/whether（一般疑问句）：I wonder if...\n疑问词（特殊疑问句）：I know where he lives.", "hint": "宾语从句用陈述语序！", "example": "I don't know what time it is.", "tags": ["语法","从句"] },
-    { "id": "gram_010", "type": "qa", "front": "定语从句：which/that/who/whom/whose", "back": "先行词是物：which/that\n先行词是人：who/that（主语）；whom（宾语）\n表示所属：whose", "example": "The book which I read was great. / The man who helped me is kind.", "tags": ["语法","从句"] },
-    { "id": "gram_011", "type": "qa", "front": "状语从句：时间/条件/原因/结果", "back": "时间：when/while/after/before/until\n条件：if/unless（unless=if not）\n原因：because/since/as\n结果：so...that/such...that", "example": "If it rains, I'll stay home. / It was so cold that I stayed inside.", "tags": ["语法","从句"] },
-    { "id": "gram_012", "type": "qa", "front": "反身代词", "back": "myself/yourself/himself/herself/itself\nourselves/yourselves/themselves\n用法：①强调 ②做宾语（主宾同一人）", "example": "I did it myself. / Please help yourself.", "tags": ["语法","代词"] },
-    { "id": "gram_013", "type": "qa", "front": "比较级和最高级构成规则", "back": "单音节：+er/est\ne结尾：+r/st\n辅元辅：双写+er/est\n多音节：more/most + 形容词\n不规则：good→better→best；bad→worse→worst", "example": "tall→taller→tallest；beautiful→more beautiful→most beautiful", "tags": ["语法","形容词"] },
-    { "id": "gram_014", "type": "qa", "front": "there be句型注意", "back": "there is + 单数/不可数名词\nthere are + 复数名词\n就近原则：最近的名词决定be动词形式", "example": "There is a cat and two dogs. (近的是cat，用is)", "tags": ["语法","句型"] },
-    { "id": "gram_015", "type": "qa", "front": "不定代词：some/any/no/every + 复合词", "back": "some：something/someone/somebody（肯定句/疑问句请求）\nany：anything/anyone/anybody（否定句/疑问句）\nevery：everything/everyone（每个）\nno：nothing/nobody（没有）", "example": "Is anyone there? / I have something to tell you.", "tags": ["语法","代词"] },
-    { "id": "gram_016", "type": "qa", "front": "动名词 (V-ing) 的用法", "back": "①做主语：Swimming is fun.\n②做宾语（特定动词后）：enjoy/mind/keep/finish + doing\n③介词后：be good at doing", "example": "I enjoy reading. / She is good at singing.", "tags": ["语法","非谓语动词"] },
-    { "id": "gram_017", "type": "qa", "front": "动词不定式 (to do) 的用法", "back": "①做主语：To learn English is fun.\n②做宾语：want/hope/decide/plan + to do\n③做目的状语：I came to help.\n④形容词后：happy/glad/ready to do", "example": "I want to eat. / She decided to leave.", "tags": ["语法","非谓语动词"] },
-    { "id": "gram_018", "type": "qa", "front": "可数名词与不可数名词", "back": "不可数名词常见：water/milk/food/money/news/advice/information/weather\n量化不可数：a glass of water / a piece of advice\n不可数不加s，不用a/an", "example": "Some information（✓）/ An information（✗）", "tags": ["语法","名词"] },
-    { "id": "gram_019", "type": "qa", "front": "冠词 a/an/the 用法", "back": "a/an：不定冠词，泛指，第一次提到\na+辅音音素；an+元音音素\nthe：定冠词，特指，上文提到过，独一无二", "example": "I saw a dog. The dog was brown. / the sun/moon/earth", "tags": ["语法","冠词"] },
-    { "id": "gram_020", "type": "qa", "front": "感叹句结构", "back": "What + a/an + 形容词 + 单数可数名词！\nWhat + 形容词 + 不可数/复数名词！\nHow + 形容词/副词！", "example": "What a beautiful day! / How clever she is!", "tags": ["语法","句型"] }
+    {
+      "id": "mg_001",
+      "type": "grammar",
+      "front": "一般现在时第三人称单数规则",
+      "back": "动词+s/es\n以s/x/ch/sh结尾+es：teaches\n辅音+y→ies：studies\n特殊：have→has，be→is",
+      "phonetic": "",
+      "hint": "三单变化：规律同名词复数",
+      "example": "She teaches English. He studies hard. He has a dog.",
+      "tags": [
+        "语法",
+        "时态",
+        "七年级"
+      ]
+    },
+    {
+      "id": "mg_002",
+      "type": "grammar",
+      "front": "现在进行时",
+      "back": "am/is/are + 动词-ing\n表示正在进行的动作\n时间标志：now, at the moment, look, listen",
+      "phonetic": "",
+      "hint": "be+ing，表示正在做",
+      "example": "Look! She is dancing. They are watching TV now.",
+      "tags": [
+        "语法",
+        "时态",
+        "七年级"
+      ]
+    },
+    {
+      "id": "mg_003",
+      "type": "grammar",
+      "front": "一般过去时规则动词",
+      "back": "动词+ed\n末尾e：+d（liked）\n辅音+y→i+ed（studied）\n辅元辅（重读）：双写+ed（stopped）",
+      "phonetic": "",
+      "hint": "ed变化规律",
+      "example": "I played football. She studied last night. He stopped running.",
+      "tags": [
+        "语法",
+        "时态",
+        "七年级"
+      ]
+    },
+    {
+      "id": "mg_004",
+      "type": "grammar",
+      "front": "一般将来时 will/be going to",
+      "back": "will：临时决定，预测\nbe going to：有计划，根据迹象推断\n结构：will/be going to + 动词原形",
+      "phonetic": "",
+      "hint": "will临时，going to有计划",
+      "example": "I will help you. I am going to visit Beijing next week.",
+      "tags": [
+        "语法",
+        "时态",
+        "七年级"
+      ]
+    },
+    {
+      "id": "mg_005",
+      "type": "grammar",
+      "front": "现在完成时",
+      "back": "have/has + 过去分词\n表示：①过去动作对现在的影响 ②持续到现在的状态\n标志：already, yet, just, ever, never, since, for",
+      "phonetic": "",
+      "hint": "have/has+过去分词",
+      "example": "I have finished my homework. She has lived here for 5 years.",
+      "tags": [
+        "语法",
+        "时态",
+        "八年级"
+      ]
+    },
+    {
+      "id": "mg_006",
+      "type": "grammar",
+      "front": "过去进行时",
+      "back": "was/were + 动词-ing\n表示过去某时正在进行的动作\n常与when/while连用",
+      "phonetic": "",
+      "hint": "was/were+ing",
+      "example": "When he called, I was sleeping. While she was cooking, the phone rang.",
+      "tags": [
+        "语法",
+        "时态",
+        "八年级"
+      ]
+    },
+    {
+      "id": "mg_007",
+      "type": "grammar",
+      "front": "情态动词汇总",
+      "back": "can（能力/许可）may（许可/可能）\nmust（必须）should（应该）\nneed（需要）dare（敢于）\n共同特点：后接动词原形，没有人称变化",
+      "phonetic": "",
+      "hint": "情态动词+动词原形",
+      "example": "You can swim. You must study. You should exercise.",
+      "tags": [
+        "语法",
+        "情态动词",
+        "七年级"
+      ]
+    },
+    {
+      "id": "mg_008",
+      "type": "grammar",
+      "front": "被动语态",
+      "back": "be + 过去分词\n现在时：am/is/are done\n过去时：was/were done\n将来时：will be done\n完成时：have/has been done",
+      "phonetic": "",
+      "hint": "强调动作承受者",
+      "example": "The book was written by Lu Xun. English is spoken worldwide.",
+      "tags": [
+        "语法",
+        "被动",
+        "八年级"
+      ]
+    },
+    {
+      "id": "mg_009",
+      "type": "grammar",
+      "front": "宾语从句",
+      "back": "①that引导（陈述内容）\n②if/whether引导（是否）\n③what/who/when/where/why/how引导（特殊疑问）\n从句用陈述语序，时态与主句一致",
+      "phonetic": "",
+      "hint": "从句用陈述语序",
+      "example": "I know that he is right. I wonder if she will come.",
+      "tags": [
+        "语法",
+        "从句",
+        "八年级"
+      ]
+    },
+    {
+      "id": "mg_010",
+      "type": "grammar",
+      "front": "定语从句",
+      "back": "先行词是人：who/that\n先行词是物：which/that\n表所属：whose\n在句中作主语或宾语",
+      "phonetic": "",
+      "hint": "who修饰人，which修饰物",
+      "example": "The man who/that lives next door is a doctor.",
+      "tags": [
+        "语法",
+        "从句",
+        "九年级"
+      ]
+    },
+    {
+      "id": "mg_011",
+      "type": "grammar",
+      "front": "状语从句（时间）",
+      "back": "when：当…时\nwhile：正当…时（强调同时进行）\nbefore/after：在…之前/之后\nas soon as：一…就\nuntil/till：直到…为止",
+      "phonetic": "",
+      "hint": "主句用将来时，时间从句用现在时",
+      "example": "When I grow up, I will be a doctor. I will wait until you come back.",
+      "tags": [
+        "语法",
+        "从句",
+        "九年级"
+      ]
+    },
+    {
+      "id": "mg_012",
+      "type": "grammar",
+      "front": "状语从句（条件）",
+      "back": "if（如果）unless（除非=if not）\n真实条件：if+一般现在时，主句+will\n主句时态根据情况变化",
+      "phonetic": "",
+      "hint": "if从句现在时，主句用will",
+      "example": "If you study hard, you will pass the exam. Unless it rains, we will go.",
+      "tags": [
+        "语法",
+        "从句",
+        "九年级"
+      ]
+    },
+    {
+      "id": "mg_013",
+      "type": "grammar",
+      "front": "非谓语动词：不定式",
+      "back": "to + 动词原形\n作主语：To learn English is fun.\n作宾语：I want to go.\n作目的状语：I study to pass the exam.",
+      "phonetic": "",
+      "hint": "to do表目的或动词宾语",
+      "example": "I decided to study abroad. She went to the shop to buy milk.",
+      "tags": [
+        "语法",
+        "非谓语",
+        "八年级"
+      ]
+    },
+    {
+      "id": "mg_014",
+      "type": "grammar",
+      "front": "非谓语动词：动名词",
+      "back": "动词+ing作名词\n常接动名词的动词：enjoy/finish/mind/avoid/keep/suggest/practice",
+      "phonetic": "",
+      "hint": "enjoy/finish后接doing",
+      "example": "I enjoy listening to music. She finished writing the report.",
+      "tags": [
+        "语法",
+        "非谓语",
+        "八年级"
+      ]
+    },
+    {
+      "id": "mg_015",
+      "type": "grammar",
+      "front": "make/let/have使役动词",
+      "back": "make/let/have + 宾语 + 动词原形\nmake：让（强制）\nlet：让（允许）\nhave：让（安排）",
+      "phonetic": "",
+      "hint": "使役动词后+宾语+动词原形",
+      "example": "He made me laugh. She let me use her pen. I had him clean the room.",
+      "tags": [
+        "语法",
+        "动词",
+        "八年级"
+      ]
+    },
+    {
+      "id": "mg_016",
+      "type": "grammar",
+      "front": "感知动词（see/hear/watch）",
+      "back": "see/hear/watch/notice + 宾语 + 动词原形（完整动作）\n或 + 宾语 + doing（正在进行）",
+      "phonetic": "",
+      "hint": "感知动词+宾语+原形/doing",
+      "example": "I saw him run/running. She heard them sing/singing.",
+      "tags": [
+        "语法",
+        "动词",
+        "九年级"
+      ]
+    },
+    {
+      "id": "mg_017",
+      "type": "grammar",
+      "front": "虚拟语气",
+      "back": "与现在事实相反：if+过去时，would+动词原形\n与过去事实相反：if+过去完成时，would have+过去分词\nI wish + 从句（用过去时）",
+      "phonetic": "",
+      "hint": "if+过去，主句would",
+      "example": "If I were rich, I would travel the world. I wish I could fly.",
+      "tags": [
+        "语法",
+        "虚拟",
+        "九年级"
+      ]
+    },
+    {
+      "id": "mg_018",
+      "type": "grammar",
+      "front": "倒装句",
+      "back": "否定词开头倒装：Never/Seldom/Hardly…助动词+主语\nSo/Neither/Nor开头：So do I（我也是）\n地点状语开头：Here comes the bus.",
+      "phonetic": "",
+      "hint": "So do I=我也是，Neither do I=我也不",
+      "example": "So do I. Neither does she. Here comes the bus.",
+      "tags": [
+        "语法",
+        "倒装",
+        "九年级"
+      ]
+    },
+    {
+      "id": "mg_019",
+      "type": "grammar",
+      "front": "it作形式主语",
+      "back": "It is + 形容词 + to do sth\nIt is + 形容词 + that从句\nIt takes sb + 时间 + to do sth",
+      "phonetic": "",
+      "hint": "it替代后面的真正主语",
+      "example": "It is easy to learn English. It takes me an hour to get there.",
+      "tags": [
+        "语法",
+        "句型",
+        "八年级"
+      ]
+    },
+    {
+      "id": "mg_020",
+      "type": "grammar",
+      "front": "形容词/副词的比较级与最高级",
+      "back": "比较：A is +比较级+ than B\n最高级：A is the +最高级+ in/of\n等级：A is as +原级+ as B（与…一样）\nA is not as/so +原级+ as B（不如…）",
+      "phonetic": "",
+      "hint": "比较级+than，最高级+the",
+      "example": "She is smarter than him. He is the tallest in the class. I am as tall as you.",
+      "tags": [
+        "语法",
+        "形容词",
+        "七年级"
+      ]
+    },
+    {
+      "id": "mg_021",
+      "type": "grammar",
+      "front": "direct/indirect speech（直接/间接引语）",
+      "back": "直接→间接引语变化：\n人称：I→he/she，my→his/her\n时态退步：is→was，will→would，can→could\n时间：now→then，today→that day",
+      "phonetic": "",
+      "hint": "时态退一步，人称要变",
+      "example": "She said 'I am happy' → She said (that) she was happy.",
+      "tags": [
+        "语法",
+        "引语",
+        "九年级"
+      ]
+    },
+    {
+      "id": "mg_022",
+      "type": "grammar",
+      "front": "前缀和后缀",
+      "back": "常见前缀：un-(unhappy)，re-(redo)，dis-(dislike)，im/in-(impossible)\n常见后缀：-ful(helpful)，-less(useless)，-ness(kindness)，-tion(education)，-ly(quickly)",
+      "phonetic": "",
+      "hint": "通过词缀推测词义",
+      "example": "unhappy, rebuild, dislike, useful, happiness, quickly",
+      "tags": [
+        "语法",
+        "词汇",
+        "七年级"
+      ]
+    },
+    {
+      "id": "mg_023",
+      "type": "grammar",
+      "front": "句子基本成分",
+      "back": "主语（S）+ 谓语（V）+ 宾语（O）\n+ 表语（P）补足语（C）状语（A）\n五种基本句型：SV/SVP/SVO/SVOO/SVOC",
+      "phonetic": "",
+      "hint": "主谓宾是核心",
+      "example": "She sings. (SV) He is tall. (SVP) I love her. (SVO)",
+      "tags": [
+        "语法",
+        "句子结构",
+        "七年级"
+      ]
+    },
+    {
+      "id": "mg_024",
+      "type": "grammar",
+      "front": "反义疑问句",
+      "back": "肯定句 + 否定疑问？\n否定句 + 肯定疑问？\n原则：前肯后否，前否后肯，时态一致",
+      "phonetic": "",
+      "hint": "前肯后否，前否后肯",
+      "example": "It is hot, isn't it? She can't swim, can she?",
+      "tags": [
+        "语法",
+        "句型",
+        "八年级"
+      ]
+    },
+    {
+      "id": "mg_025",
+      "type": "grammar",
+      "front": "强调句 It is…that",
+      "back": "It is/was + 强调部分 + that + 其他\n强调人时，可用who代替that",
+      "phonetic": "",
+      "hint": "It is…that强调某一成分",
+      "example": "It was Tom that broke the window. It is in the park that I met her.",
+      "tags": [
+        "语法",
+        "强调句",
+        "九年级"
+      ]
+    },
+    {
+      "id": "mg_026",
+      "type": "grammar",
+      "front": "独立主格结构",
+      "back": "名词/代词 + 现在分词/过去分词/形容词/名词\n独立存在，修饰整个句子",
+      "phonetic": "",
+      "hint": "有自己的逻辑主语",
+      "example": "Weather permitting, we will go hiking. All things considered, it is a good plan.",
+      "tags": [
+        "语法",
+        "结构",
+        "九年级"
+      ]
+    },
+    {
+      "id": "mg_027",
+      "type": "grammar",
+      "front": "主谓一致",
+      "back": "就近原则：either…or/neither…nor/not only…but also\n就远原则：as well as/with/along with\n集合名词：team/class作整体用单数，作成员用复数",
+      "phonetic": "",
+      "hint": "谓语动词与主语在人称和数上保持一致",
+      "example": "Either you or he is right. The team is strong. The team are arguing.",
+      "tags": [
+        "语法",
+        "主谓一致",
+        "八年级"
+      ]
+    },
+    {
+      "id": "mg_028",
+      "type": "grammar",
+      "front": "关系副词",
+      "back": "where：表地点（先行词是地点）\nwhen：表时间（先行词是时间）\nwhy：表原因（先行词是reason）",
+      "phonetic": "",
+      "hint": "关系副词=介词+which",
+      "example": "I know the place where he was born. I remember the day when we met.",
+      "tags": [
+        "语法",
+        "从句",
+        "九年级"
+      ]
+    },
+    {
+      "id": "mg_029",
+      "type": "grammar",
+      "front": "as引导的从句",
+      "back": "as：①时间（当…时）②原因（因为）③方式（像…一样）\nas…as（同等比较）\nthe same…as（和…相同）",
+      "phonetic": "",
+      "hint": "as多种用法",
+      "example": "As she grew older, she became wiser. Do as I say. She is as tall as me.",
+      "tags": [
+        "语法",
+        "从句",
+        "九年级"
+      ]
+    },
+    {
+      "id": "mg_030",
+      "type": "grammar",
+      "front": "数词：基数词与序数词",
+      "back": "基数词：one/two/three…twenty/hundred/thousand\n序数词：first/second/third，第四开始+th\n特殊：five→fifth，twelve→twelfth，twenty→twentieth",
+      "phonetic": "",
+      "hint": "first/second/third特殊，其他加th",
+      "example": "the first lesson, the twenty-first century, May 1st",
+      "tags": [
+        "语法",
+        "数词",
+        "七年级"
+      ]
+    }
   ]
 }

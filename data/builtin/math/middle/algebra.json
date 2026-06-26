@@ -1,30 +1,271 @@
 {
-  "meta": { "subject": "math", "grade": "middle", "name": "初中代数公式", "version": "2024", "count": 25 },
+  "meta": {
+    "subject": "math",
+    "grade": "middle",
+    "name": "初中代数公式",
+    "version": "2024",
+    "count": 20
+  },
   "cards": [
-    { "id": "alg_001", "type": "formula", "front": "完全平方公式（和）", "back": "(a+b)² = a² + 2ab + b²", "example": "(x+3)² = x² + 6x + 9", "tags": ["乘法公式","因式分解"] },
-    { "id": "alg_002", "type": "formula", "front": "完全平方公式（差）", "back": "(a-b)² = a² - 2ab + b²", "example": "(x-4)² = x² - 8x + 16", "tags": ["乘法公式","因式分解"] },
-    { "id": "alg_003", "type": "formula", "front": "平方差公式", "back": "(a+b)(a-b) = a² - b²", "example": "(x+3)(x-3) = x² - 9", "tags": ["乘法公式","因式分解"] },
-    { "id": "alg_004", "type": "formula", "front": "一元一次方程", "back": "ax + b = 0（a≠0）\n解：x = -b/a", "example": "2x + 6 = 0 → x = -3", "tags": ["方程"] },
-    { "id": "alg_005", "type": "formula", "front": "一元二次方程求根公式", "back": "ax²+bx+c=0（a≠0）\nx = (-b ± √(b²-4ac)) / (2a)", "example": "x²-5x+6=0 → x=2或x=3", "tags": ["方程","重要公式"] },
-    { "id": "alg_006", "type": "concept", "front": "判别式 Δ", "back": "Δ = b² - 4ac\nΔ>0：两个不相等实数根\nΔ=0：两个相等实数根\nΔ<0：无实数根", "tags": ["方程","判别式"] },
-    { "id": "alg_007", "type": "formula", "front": "韦达定理（根与系数关系）", "back": "x₁+x₂ = -b/a\nx₁×x₂ = c/a", "example": "x²-5x+6=0 → x₁+x₂=5，x₁x₂=6", "tags": ["方程","韦达定理"] },
-    { "id": "alg_008", "type": "concept", "front": "一次函数", "back": "y = kx + b（k≠0）\nk>0：递增；k<0：递减\nk为斜率，b为y轴截距", "example": "y=2x+1，斜率2，截距1", "tags": ["函数"] },
-    { "id": "alg_009", "type": "concept", "front": "正比例函数", "back": "y = kx（k≠0）\n图像过原点的直线", "example": "y=3x，过(0,0)和(1,3)", "tags": ["函数"] },
-    { "id": "alg_010", "type": "concept", "front": "反比例函数", "back": "y = k/x（k≠0）\n图像为双曲线，分布在一三或二四象限", "example": "y=6/x，k=6>0，在一三象限", "tags": ["函数"] },
-    { "id": "alg_011", "type": "concept", "front": "二次函数", "back": "y = ax²+bx+c（a≠0）\n图像为抛物线\na>0开口向上；a<0开口向下", "hint": "顶点坐标：x=-b/(2a)，y=（代入）", "tags": ["函数","二次函数"] },
-    { "id": "alg_012", "type": "formula", "front": "二次函数顶点公式", "back": "顶点 (-b/2a, (4ac-b²)/4a)\n或写成 y=a(x-h)²+k，顶点(h,k)", "example": "y=x²-4x+3 → 顶点(2,-1)", "tags": ["函数","二次函数"] },
-    { "id": "alg_013", "type": "formula", "front": "指数运算法则", "back": "aᵐ×aⁿ = aᵐ⁺ⁿ\naᵐ÷aⁿ = aᵐ⁻ⁿ\n(aᵐ)ⁿ = aᵐⁿ\n(ab)ⁿ = aⁿbⁿ", "example": "2³×2⁴=2⁷=128", "tags": ["指数"] },
-    { "id": "alg_014", "type": "concept", "front": "科学记数法", "back": "a × 10ⁿ（1≤a<10，n为整数）\n大数：n>0；小数：n<0", "example": "3億=3×10⁸；0.0025=2.5×10⁻³", "tags": ["科学记数法"] },
-    { "id": "alg_015", "type": "formula", "front": "不等式基本性质", "back": "①a>b，则a+c>b+c（加减同号数不变）\n②a>b，c>0，则ac>bc\n③a>b，c<0，则ac<bc（乘除负数变号！）", "hint": "关键：乘除负数要变号", "tags": ["不等式"] },
-    { "id": "alg_016", "type": "concept", "front": "整式加减", "back": "合并同类项：系数相加减，字母部分不变\n同类项：字母相同且指数相同", "example": "3x²+2x-x²+x = 2x²+3x", "tags": ["整式"] },
-    { "id": "alg_017", "type": "formula", "front": "因式分解：提公因式", "back": "ab + ac = a(b+c)", "example": "6x²+9x = 3x(2x+3)", "tags": ["因式分解"] },
-    { "id": "alg_018", "type": "formula", "front": "分式基本性质", "back": "分子分母同乘/除以同一非零数，分式值不变\na/b = (a×c)/(b×c)（c≠0）", "tags": ["分式"] },
-    { "id": "alg_019", "type": "formula", "front": "分式的加减", "back": "同分母：分子加减，分母不变\n异分母：通分后计算", "example": "1/(x-1)+1/(x+1) = 2x/(x²-1)", "tags": ["分式"] },
-    { "id": "alg_020", "type": "concept", "front": "无理数与实数", "back": "无理数：无限不循环小数（√2,π,√3等）\n实数 = 有理数 + 无理数\n数轴上每个点对应一个实数", "tags": ["实数"] },
-    { "id": "alg_021", "type": "formula", "front": "算术平方根", "back": "√(a²) = |a|（a为任意实数）\n√a（a≥0）的结果是非负数", "example": "√9=3，√(-3)²=|-3|=3", "tags": ["实数","根式"] },
-    { "id": "alg_022", "type": "formula", "front": "根式运算法则", "back": "√a × √b = √(ab)（a,b≥0）\n√a ÷ √b = √(a/b)（a≥0,b>0）", "example": "√2×√8=√16=4", "tags": ["根式"] },
-    { "id": "alg_023", "type": "concept", "front": "二元一次方程组解法", "back": "①代入法：用一个方程表示一个未知数，代入另一个\n②加减法：两式加减消去一个未知数", "example": "x+y=5，x-y=1 → 加得2x=6，x=3，y=2", "tags": ["方程组"] },
-    { "id": "alg_024", "type": "concept", "front": "等差数列", "back": "aₙ = a₁ + (n-1)d（d为公差）\nSₙ = n(a₁+aₙ)/2 = na₁+n(n-1)d/2", "example": "1,3,5,7... → a₁=1，d=2，a₁₀=19", "tags": ["数列"] },
-    { "id": "alg_025", "type": "concept", "front": "等比数列", "back": "aₙ = a₁×qⁿ⁻¹（q为公比，q≠0）\nSₙ = a₁(1-qⁿ)/(1-q)（q≠1）", "example": "1,2,4,8... → a₁=1，q=2", "tags": ["数列"] }
+    {
+      "id": "alg_001",
+      "type": "formula",
+      "front": "整式加减",
+      "back": "合并同类项：系数相加，字母部分不变\n3x + 5x = 8x，2a - 7a = -5a",
+      "phonetic": "",
+      "hint": "字母相同的项才能合并",
+      "example": "3x+2y-x+4y = 2x+6y",
+      "tags": [
+        "整式",
+        "七年级"
+      ]
+    },
+    {
+      "id": "alg_002",
+      "type": "formula",
+      "front": "乘法公式：平方差",
+      "back": "a² - b² = (a+b)(a-b)",
+      "phonetic": "",
+      "hint": "两个数的平方差等于它们的和乘以差",
+      "example": "x²-4 = (x+2)(x-2)，25-9 = (5+3)(5-3)=16",
+      "tags": [
+        "因式分解",
+        "八年级"
+      ]
+    },
+    {
+      "id": "alg_003",
+      "type": "formula",
+      "front": "乘法公式：完全平方和",
+      "back": "(a+b)² = a² + 2ab + b²",
+      "phonetic": "",
+      "hint": "和的平方=两数平方和加两倍乘积",
+      "example": "(x+3)² = x²+6x+9",
+      "tags": [
+        "因式分解",
+        "八年级"
+      ]
+    },
+    {
+      "id": "alg_004",
+      "type": "formula",
+      "front": "乘法公式：完全平方差",
+      "back": "(a-b)² = a² - 2ab + b²",
+      "phonetic": "",
+      "hint": "差的平方=两数平方和减两倍乘积",
+      "example": "(x-2)² = x²-4x+4",
+      "tags": [
+        "因式分解",
+        "八年级"
+      ]
+    },
+    {
+      "id": "alg_005",
+      "type": "formula",
+      "front": "解一元一次方程",
+      "back": "目标：把x单独放在等号一边\n移项变号，合并同类项，系数化为1",
+      "phonetic": "",
+      "hint": "移项变号，系数变1",
+      "example": "2x+3=7，2x=4，x=2",
+      "tags": [
+        "方程",
+        "七年级"
+      ]
+    },
+    {
+      "id": "alg_006",
+      "type": "formula",
+      "front": "解一元二次方程：公式法",
+      "back": "ax²+bx+c=0（a≠0）\nx = (-b ± √(b²-4ac)) / 2a",
+      "phonetic": "",
+      "hint": "万能公式，b方-4ac是判别式",
+      "example": "x²-5x+6=0，a=1,b=-5,c=6，x=2或x=3",
+      "tags": [
+        "方程",
+        "九年级"
+      ]
+    },
+    {
+      "id": "alg_007",
+      "type": "concept",
+      "front": "一次函数",
+      "back": "y = kx + b（k≠0）\nk是斜率，b是y轴截距\nk>0递增，k<0递减",
+      "phonetic": "",
+      "hint": "y=kx+b，直线图像",
+      "example": "y=2x+1，k=2>0，函数递增",
+      "tags": [
+        "函数",
+        "八年级"
+      ]
+    },
+    {
+      "id": "alg_008",
+      "type": "concept",
+      "front": "二次函数",
+      "back": "y = ax² + bx + c（a≠0）\n图像是抛物线\na>0开口向上，a<0开口向下",
+      "phonetic": "",
+      "hint": "y=ax²+bx+c，抛物线图像",
+      "example": "y=x²，顶点(0,0)，开口向上",
+      "tags": [
+        "函数",
+        "九年级"
+      ]
+    },
+    {
+      "id": "alg_009",
+      "type": "formula",
+      "front": "二次函数的顶点坐标",
+      "back": "顶点 x = -b/(2a)\n顶点 y = c - b²/(4a)",
+      "phonetic": "",
+      "hint": "顶点x=-b/2a",
+      "example": "y=x²-4x+3，顶点x=4/2=2，y=3-4=−1",
+      "tags": [
+        "函数",
+        "九年级"
+      ]
+    },
+    {
+      "id": "alg_010",
+      "type": "formula",
+      "front": "不等式的性质",
+      "back": "两边加减同数，不等号不变\n两边乘除正数，不等号不变\n两边乘除负数，不等号改变方向",
+      "phonetic": "",
+      "hint": "乘除负数，不等号变向",
+      "example": "−2x>4，两边除以−2：x<−2（号变向）",
+      "tags": [
+        "不等式",
+        "七年级"
+      ]
+    },
+    {
+      "id": "alg_011",
+      "type": "formula",
+      "front": "解一元一次不等式",
+      "back": "与解方程类似，注意乘除负数变向\n最终写出解集如 x>3",
+      "phonetic": "",
+      "hint": "移项变号，除负数变号",
+      "example": "3x-1>5，3x>6，x>2",
+      "tags": [
+        "不等式",
+        "七年级"
+      ]
+    },
+    {
+      "id": "alg_012",
+      "type": "concept",
+      "front": "科学记数法",
+      "back": "将数写成 a × 10ⁿ 的形式\n1 ≤ a < 10，n为整数",
+      "phonetic": "",
+      "hint": "第一个因数在1到10之间",
+      "example": "3.6×10⁴=36000，5.2×10⁻³=0.0052",
+      "tags": [
+        "概念",
+        "七年级"
+      ]
+    },
+    {
+      "id": "alg_013",
+      "type": "formula",
+      "front": "整数指数幂运算",
+      "back": "aᵐ × aⁿ = aᵐ⁺ⁿ\naᵐ ÷ aⁿ = aᵐ⁻ⁿ（a≠0）\n(aᵐ)ⁿ = aᵐⁿ",
+      "phonetic": "",
+      "hint": "同底数幂相乘，指数相加",
+      "example": "2³×2⁴=2⁷=128",
+      "tags": [
+        "整式",
+        "七年级"
+      ]
+    },
+    {
+      "id": "alg_014",
+      "type": "formula",
+      "front": "分式的加减",
+      "back": "同分母：分子加减，分母不变\n异分母：通分（找最简公分母），再加减",
+      "phonetic": "",
+      "hint": "通分再加减",
+      "example": "1/x + 2/x = 3/x，1/2 + 1/3 = 5/6",
+      "tags": [
+        "分式",
+        "八年级"
+      ]
+    },
+    {
+      "id": "alg_015",
+      "type": "formula",
+      "front": "二元一次方程组（代入法）",
+      "back": "用其中一个方程解出一个未知数，代入另一个方程",
+      "phonetic": "",
+      "hint": "用一个方程解x，代入另一个",
+      "example": "x+y=5，x-y=1：由第一个x=5-y，代入得(5-y)-y=1，y=2，x=3",
+      "tags": [
+        "方程",
+        "七年级"
+      ]
+    },
+    {
+      "id": "alg_016",
+      "type": "formula",
+      "front": "二元一次方程组（加减法）",
+      "back": "把两个方程相加减，消去一个未知数",
+      "phonetic": "",
+      "hint": "两方程加减消去一个未知数",
+      "example": "x+y=5和x-y=1，两式相加：2x=6，x=3，y=2",
+      "tags": [
+        "方程",
+        "七年级"
+      ]
+    },
+    {
+      "id": "alg_017",
+      "type": "concept",
+      "front": "反比例函数",
+      "back": "y = k/x（k≠0，x≠0）\n图像是双曲线\nk>0时在一三象限，k<0时在二四象限",
+      "phonetic": "",
+      "hint": "y=k/x，双曲线图像",
+      "example": "y=6/x，k=6>0，在一三象限",
+      "tags": [
+        "函数",
+        "八年级"
+      ]
+    },
+    {
+      "id": "alg_018",
+      "type": "formula",
+      "front": "完全平方数的规律",
+      "back": "1²=1, 2²=4, 3²=9, 4²=16, 5²=25\n6²=36, 7²=49, 8²=64, 9²=81, 10²=100",
+      "phonetic": "",
+      "hint": "记住1到12的平方数",
+      "example": "9²=81，12²=144",
+      "tags": [
+        "概念",
+        "七年级"
+      ]
+    },
+    {
+      "id": "alg_019",
+      "type": "formula",
+      "front": "平方根",
+      "back": "若x²=a，则x=±√a（a≥0）\n√a是a的算术平方根",
+      "phonetic": "",
+      "hint": "平方根有正负两个",
+      "example": "x²=9，x=±3；√25=5",
+      "tags": [
+        "概念",
+        "七年级"
+      ]
+    },
+    {
+      "id": "alg_020",
+      "type": "formula",
+      "front": "立方根",
+      "back": "若x³=a，则x=∛a\n每个数只有一个立方根",
+      "phonetic": "",
+      "hint": "立方根只有一个",
+      "example": "∛8=2，∛−27=−3",
+      "tags": [
+        "概念",
+        "七年级"
+      ]
+    }
   ]
 }

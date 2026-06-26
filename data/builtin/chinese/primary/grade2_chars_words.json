@@ -1,0 +1,1232 @@
+{
+  "meta": {
+    "subject": "chinese",
+    "grade": "primary",
+    "name": "小学二年级生字词",
+    "version": "2024",
+    "count": 320,
+    "description": "小学小学二年级上下册生字、词语"
+  },
+  "cards": [
+    {
+      "id": "hz2_001",
+      "type": "char",
+      "front": "亮",
+      "back": "liàng｜明亮，发光",
+      "phonetic": "liàng",
+      "radical": "亠",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "高处发光，明亮",
+      "example": "明亮·闪亮·月亮",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_002",
+      "type": "char",
+      "front": "明",
+      "back": "míng｜明亮；明白",
+      "phonetic": "míng",
+      "radical": "日",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "日月同辉，明亮",
+      "example": "明天·明白·光明",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_003",
+      "type": "char",
+      "front": "晴",
+      "back": "qíng｜晴天，天气晴朗",
+      "phonetic": "qíng",
+      "radical": "日",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "日旁加青，晴天",
+      "example": "晴天·晴朗·放晴",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_004",
+      "type": "char",
+      "front": "阴",
+      "back": "yīn｜阴天；阴暗",
+      "phonetic": "yīn",
+      "radical": "阝",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "耳旁加今，阴暗",
+      "example": "阴天·阴暗·阴影",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_005",
+      "type": "char",
+      "front": "暖",
+      "back": "nuǎn｜温暖，不冷不热",
+      "phonetic": "nuǎn",
+      "radical": "日",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "日旁，有阳光的温度",
+      "example": "温暖·暖和·暖气",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_006",
+      "type": "char",
+      "front": "凉",
+      "back": "liáng｜凉，温度低",
+      "phonetic": "liáng",
+      "radical": "冫",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "冰旁加京，凉爽",
+      "example": "凉快·凉水·阴凉",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_007",
+      "type": "char",
+      "front": "热",
+      "back": "rè｜热，温度高",
+      "phonetic": "rè",
+      "radical": "灬",
+      "strokes": 10,
+      "structure": "上下",
+      "hint": "火旁，热的感觉",
+      "example": "炎热·热情·发热",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_008",
+      "type": "char",
+      "front": "冷",
+      "back": "lěng｜冷，温度低",
+      "phonetic": "lěng",
+      "radical": "冫",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "冰旁加令，寒冷",
+      "example": "寒冷·冷静·冷水",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_009",
+      "type": "char",
+      "front": "绿",
+      "back": "lǜ｜绿色",
+      "phonetic": "lǜ",
+      "radical": "纟",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "绞丝旁加彔，绿色",
+      "example": "绿色·绿叶·翠绿",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_010",
+      "type": "char",
+      "front": "红",
+      "back": "hóng｜红色",
+      "phonetic": "hóng",
+      "radical": "纟",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "绞丝旁加工，红色",
+      "example": "红色·红花·鲜红",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_011",
+      "type": "char",
+      "front": "黄",
+      "back": "huáng｜黄色；姓黄",
+      "phonetic": "huáng",
+      "radical": "黄",
+      "strokes": 11,
+      "structure": "上下",
+      "hint": "田字下，像稻谷成熟",
+      "example": "黄色·金黄·黄河",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_012",
+      "type": "char",
+      "front": "蓝",
+      "back": "lán｜蓝色",
+      "phonetic": "lán",
+      "radical": "艹",
+      "strokes": 13,
+      "structure": "上下",
+      "hint": "草字头加监，蓝色",
+      "example": "蓝色·蓝天·天蓝",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_013",
+      "type": "char",
+      "front": "白",
+      "back": "bái｜白色；清楚",
+      "phonetic": "bái",
+      "radical": "白",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "象形字，太阳刚出来",
+      "example": "白色·白天·明白",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_014",
+      "type": "char",
+      "front": "黑",
+      "back": "hēi｜黑色；黑暗",
+      "phonetic": "hēi",
+      "radical": "黑",
+      "strokes": 12,
+      "structure": "上下",
+      "hint": "象形字，烟熏火燎",
+      "example": "黑色·黑暗·漆黑",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_015",
+      "type": "char",
+      "front": "问",
+      "back": "wèn｜问，提出问题",
+      "phonetic": "wèn",
+      "radical": "门",
+      "strokes": 6,
+      "structure": "半包围",
+      "hint": "门里有口，问话",
+      "example": "问好·提问·学问",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_016",
+      "type": "char",
+      "front": "答",
+      "back": "dá｜回答；答案",
+      "phonetic": "dá",
+      "radical": "竹",
+      "strokes": 12,
+      "structure": "上下",
+      "hint": "竹字头下有合，回答",
+      "example": "回答·答案·答应",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_017",
+      "type": "char",
+      "front": "想",
+      "back": "xiǎng｜想，思考；希望",
+      "phonetic": "xiǎng",
+      "radical": "心",
+      "strokes": 13,
+      "structure": "上下",
+      "hint": "心字底，用心思考",
+      "example": "想法·想象·思想",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_018",
+      "type": "char",
+      "front": "知",
+      "back": "zhī｜知道；知识",
+      "phonetic": "zhī",
+      "radical": "矢",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "矢加口，说出来就知道",
+      "example": "知道·知识·求知",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_019",
+      "type": "char",
+      "front": "道",
+      "back": "dào｜道路；说",
+      "phonetic": "dào",
+      "radical": "辶",
+      "strokes": 12,
+      "structure": "半包围",
+      "hint": "走之旁，道路",
+      "example": "知道·道路·说道",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_020",
+      "type": "char",
+      "front": "找",
+      "back": "zhǎo｜找，寻找",
+      "phonetic": "zhǎo",
+      "radical": "扌",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "提手旁加戈，寻找",
+      "example": "找到·寻找·找人",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_021",
+      "type": "char",
+      "front": "放",
+      "back": "fàng｜放，使离开原位",
+      "phonetic": "fàng",
+      "radical": "攴",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "放字旁加方，放开",
+      "example": "放学·放心·开放",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_022",
+      "type": "char",
+      "front": "带",
+      "back": "dài｜带，携带；带领",
+      "phonetic": "dài",
+      "radical": "巾",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "巾字上，带子",
+      "example": "带来·带领·皮带",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_023",
+      "type": "char",
+      "front": "给",
+      "back": "gěi｜给，送给；使",
+      "phonetic": "gěi",
+      "radical": "纟",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "绞丝旁加合，给予",
+      "example": "给你·送给·给力",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_024",
+      "type": "char",
+      "front": "帮",
+      "back": "bāng｜帮，帮助",
+      "phonetic": "bāng",
+      "radical": "巾",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "巾字底加帮，帮助",
+      "example": "帮助·帮忙·帮手",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_025",
+      "type": "char",
+      "front": "助",
+      "back": "zhù｜帮助",
+      "phonetic": "zhù",
+      "radical": "力",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "力旁加且，助力",
+      "example": "帮助·助手·互助",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_026",
+      "type": "char",
+      "front": "朋",
+      "back": "péng｜朋友",
+      "phonetic": "péng",
+      "radical": "月",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "两个月，同类朋友",
+      "example": "朋友·好朋友·友朋",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_027",
+      "type": "char",
+      "front": "友",
+      "back": "yǒu｜朋友；友好",
+      "phonetic": "yǒu",
+      "radical": "又",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "右手相握，友好",
+      "example": "朋友·友好·好友",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_028",
+      "type": "char",
+      "front": "心",
+      "back": "xīn｜心脏；内心",
+      "phonetic": "xīn",
+      "radical": "心",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，像心脏形状",
+      "example": "心里·开心·用心",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_029",
+      "type": "char",
+      "front": "情",
+      "back": "qíng｜情感；情况",
+      "phonetic": "qíng",
+      "radical": "忄",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "竖心旁加青，感情",
+      "example": "感情·情况·友情",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_030",
+      "type": "char",
+      "front": "快",
+      "back": "kuài｜快，速度大；高兴",
+      "phonetic": "kuài",
+      "radical": "忄",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "竖心旁加夬，快乐",
+      "example": "快乐·快速·快来",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_031",
+      "type": "char",
+      "front": "乐",
+      "back": "lè｜快乐；yuè 音乐",
+      "phonetic": "lè",
+      "radical": "木",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "象形字，像弦乐器",
+      "example": "快乐·音乐·乐趣",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_032",
+      "type": "char",
+      "front": "高",
+      "back": "gāo｜高，位置偏上",
+      "phonetic": "gāo",
+      "radical": "高",
+      "strokes": 10,
+      "structure": "上下",
+      "hint": "象形字，像高楼",
+      "example": "高大·高兴·升高",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_033",
+      "type": "char",
+      "front": "兴",
+      "back": "xīng｜兴旺；xìng 高兴",
+      "phonetic": "xīng",
+      "radical": "八",
+      "strokes": 6,
+      "structure": "上下",
+      "hint": "同字框下，兴旺",
+      "example": "高兴·兴趣·兴旺",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_034",
+      "type": "char",
+      "front": "身",
+      "back": "shēn｜身体；自身",
+      "phonetic": "shēn",
+      "radical": "身",
+      "strokes": 7,
+      "structure": "独体字",
+      "hint": "象形字，像怀孕的女人",
+      "example": "身体·出身·身边",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_035",
+      "type": "char",
+      "front": "体",
+      "back": "tǐ｜身体；体育",
+      "phonetic": "tǐ",
+      "radical": "亻",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "人旁加本，身体",
+      "example": "身体·体育·体力",
+      "tags": [
+        "生字",
+        "二年级上"
+      ]
+    },
+    {
+      "id": "hz2_036",
+      "type": "char",
+      "front": "力",
+      "back": "lì｜力量；努力",
+      "phonetic": "lì",
+      "radical": "力",
+      "strokes": 2,
+      "structure": "独体字",
+      "hint": "象形字，像肌肉",
+      "example": "力气·努力·力量",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_037",
+      "type": "char",
+      "front": "气",
+      "back": "qì｜气，空气；生气",
+      "phonetic": "qì",
+      "radical": "气",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，像气流",
+      "example": "天气·空气·生气",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_038",
+      "type": "char",
+      "front": "声",
+      "back": "shēng｜声音",
+      "phonetic": "shēng",
+      "radical": "士",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "耳听声音",
+      "example": "声音·声调·大声",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_039",
+      "type": "char",
+      "front": "音",
+      "back": "yīn｜声音；音乐",
+      "phonetic": "yīn",
+      "radical": "音",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "日下有一横，声音",
+      "example": "声音·音乐·噪音",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_040",
+      "type": "char",
+      "front": "色",
+      "back": "sè｜颜色；色彩",
+      "phonetic": "sè",
+      "radical": "色",
+      "strokes": 6,
+      "structure": "上下",
+      "hint": "象形字，脸上有色",
+      "example": "颜色·色彩·特色",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_041",
+      "type": "char",
+      "front": "彩",
+      "back": "cǎi｜彩色；彩虹",
+      "phonetic": "cǎi",
+      "radical": "彡",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "三撇旁，色彩",
+      "example": "彩虹·色彩·精彩",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_042",
+      "type": "char",
+      "front": "光",
+      "back": "guāng｜光，发出的光线",
+      "phonetic": "guāng",
+      "radical": "儿",
+      "strokes": 6,
+      "structure": "上下",
+      "hint": "火在人上，光亮",
+      "example": "阳光·光明·灯光",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_043",
+      "type": "char",
+      "front": "影",
+      "back": "yǐng｜影子；影响",
+      "phonetic": "yǐng",
+      "radical": "彡",
+      "strokes": 15,
+      "structure": "左右",
+      "hint": "三撇旁，像影子",
+      "example": "影子·电影·影响",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_044",
+      "type": "char",
+      "front": "空",
+      "back": "kōng｜空，里面没有；kòng 空闲",
+      "phonetic": "kōng",
+      "radical": "穴",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "穴字头，空洞",
+      "example": "天空·空气·空间",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_045",
+      "type": "char",
+      "front": "间",
+      "back": "jiān｜中间；房间；jiàn 间隔",
+      "phonetic": "jiān",
+      "radical": "门",
+      "strokes": 7,
+      "structure": "半包围",
+      "hint": "门里有日，房间",
+      "example": "中间·时间·房间",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_046",
+      "type": "char",
+      "front": "时",
+      "back": "shí｜时间；时候",
+      "phonetic": "shí",
+      "radical": "日",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "日旁加寸，时间",
+      "example": "时间·时候·有时",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_047",
+      "type": "char",
+      "front": "候",
+      "back": "hòu｜等候；时候",
+      "phonetic": "hòu",
+      "radical": "亻",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "人旁，等候",
+      "example": "时候·等候·气候",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_048",
+      "type": "char",
+      "front": "到",
+      "back": "dào｜到，到达；到来",
+      "phonetic": "dào",
+      "radical": "刀",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "至加刀，到达",
+      "example": "到来·到达·来到",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_049",
+      "type": "char",
+      "front": "里",
+      "back": "lǐ｜里面；距离单位",
+      "phonetic": "lǐ",
+      "radical": "里",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "田土叠加，里面",
+      "example": "里面·心里·千里",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_050",
+      "type": "char",
+      "front": "面",
+      "back": "miàn｜脸；表面；面条",
+      "phonetic": "miàn",
+      "radical": "面",
+      "strokes": 9,
+      "structure": "半包围",
+      "hint": "象形字，像脸的轮廓",
+      "example": "面前·水面·面条",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_051",
+      "type": "char",
+      "front": "边",
+      "back": "biān｜边，旁边；边界",
+      "phonetic": "biān",
+      "radical": "辶",
+      "strokes": 5,
+      "structure": "半包围",
+      "hint": "走之旁加力，边界",
+      "example": "旁边·边上·水边",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_052",
+      "type": "char",
+      "front": "旁",
+      "back": "páng｜旁，旁边",
+      "phonetic": "páng",
+      "radical": "方",
+      "strokes": 10,
+      "structure": "上下",
+      "hint": "方字上，旁边",
+      "example": "旁边·旁人·身旁",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_053",
+      "type": "char",
+      "front": "前",
+      "back": "qián｜前，位置靠前",
+      "phonetic": "qián",
+      "radical": "刀",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "刀字底，向前",
+      "example": "前面·以前·向前",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_054",
+      "type": "char",
+      "front": "后",
+      "back": "hòu｜后，位置靠后",
+      "phonetic": "hòu",
+      "radical": "口",
+      "strokes": 6,
+      "structure": "半包围",
+      "hint": "口在下，后方",
+      "example": "后面·之后·前后",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_055",
+      "type": "char",
+      "front": "左",
+      "back": "zuǒ｜左，左边",
+      "phonetic": "zuǒ",
+      "radical": "工",
+      "strokes": 5,
+      "structure": "上下",
+      "hint": "工字旁，左手",
+      "example": "左边·左右·左手",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_056",
+      "type": "char",
+      "front": "右",
+      "back": "yòu｜右，右边",
+      "phonetic": "yòu",
+      "radical": "口",
+      "strokes": 5,
+      "structure": "上下",
+      "hint": "口字旁，右手",
+      "example": "右边·左右·右手",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_057",
+      "type": "char",
+      "front": "东",
+      "back": "dōng｜东，方向；东方",
+      "phonetic": "dōng",
+      "radical": "木",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "日出木中，东方",
+      "example": "东方·东边·东西",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_058",
+      "type": "char",
+      "front": "西",
+      "back": "xī｜西，方向；西方",
+      "phonetic": "xī",
+      "radical": "西",
+      "strokes": 6,
+      "structure": "独体字",
+      "hint": "象形字，鸟栖树上，落日西方",
+      "example": "西方·西边·东西",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_059",
+      "type": "char",
+      "front": "南",
+      "back": "nán｜南，方向；南方",
+      "phonetic": "nán",
+      "radical": "十",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "指南方向",
+      "example": "南方·南边·南北",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_060",
+      "type": "char",
+      "front": "北",
+      "back": "běi｜北，方向；北方",
+      "phonetic": "běi",
+      "radical": "匕",
+      "strokes": 5,
+      "structure": "左右",
+      "hint": "两人背对背，北方",
+      "example": "北方·北边·南北",
+      "tags": [
+        "生字",
+        "二年级下"
+      ]
+    },
+    {
+      "id": "hz2_061",
+      "type": "word",
+      "front": "明白",
+      "back": "míng bai",
+      "phonetic": "míng bai",
+      "hint": "清楚地了解或理解",
+      "example": "我明白了老师说的话。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_062",
+      "type": "word",
+      "front": "高兴",
+      "back": "gāo xìng",
+      "phonetic": "gāo xìng",
+      "hint": "心情愉快，感到快乐",
+      "example": "听到这个好消息，我很高兴。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_063",
+      "type": "word",
+      "front": "快乐",
+      "back": "kuài lè",
+      "phonetic": "kuài lè",
+      "hint": "感到幸福和愉快",
+      "example": "祝你生日快乐！",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_064",
+      "type": "word",
+      "front": "认真",
+      "back": "rèn zhēn",
+      "phonetic": "rèn zhēn",
+      "hint": "专心，不马虎",
+      "example": "他认真地做每一道题。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_065",
+      "type": "word",
+      "front": "努力",
+      "back": "nǔ lì",
+      "phonetic": "nǔ lì",
+      "hint": "尽全力去做某事",
+      "example": "我们要努力学习。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_066",
+      "type": "word",
+      "front": "帮助",
+      "back": "bāng zhù",
+      "phonetic": "bāng zhù",
+      "hint": "给予他人支持或协助",
+      "example": "我们要互相帮助。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_067",
+      "type": "word",
+      "front": "朋友",
+      "back": "péng you",
+      "phonetic": "péng you",
+      "hint": "关系亲近、互相友好的人",
+      "example": "他是我最好的朋友。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_068",
+      "type": "word",
+      "front": "温暖",
+      "back": "wēn nuǎn",
+      "phonetic": "wēn nuǎn",
+      "hint": "不冷不热，令人舒适",
+      "example": "春天的阳光温暖而柔和。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_069",
+      "type": "word",
+      "front": "美丽",
+      "back": "měi lì",
+      "phonetic": "měi lì",
+      "hint": "好看，令人愉悦",
+      "example": "公园里的花朵美丽极了。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_070",
+      "type": "word",
+      "front": "可爱",
+      "back": "kě ài",
+      "phonetic": "kě ài",
+      "hint": "让人喜爱的",
+      "example": "小狗真可爱。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_071",
+      "type": "word",
+      "front": "干净",
+      "back": "gān jìng",
+      "phonetic": "gān jìng",
+      "hint": "没有污垢，清洁",
+      "example": "教室打扫得很干净。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_072",
+      "type": "word",
+      "front": "安静",
+      "back": "ān jìng",
+      "phonetic": "ān jìng",
+      "hint": "没有声音，不吵闹",
+      "example": "图书馆里很安静。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_073",
+      "type": "word",
+      "front": "热闹",
+      "back": "rè nao",
+      "phonetic": "rè nao",
+      "hint": "人多，气氛活跃",
+      "example": "春节的街道非常热闹。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_074",
+      "type": "word",
+      "front": "勇敢",
+      "back": "yǒng gǎn",
+      "phonetic": "yǒng gǎn",
+      "hint": "不怕困难和危险",
+      "example": "消防员叔叔非常勇敢。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_075",
+      "type": "word",
+      "front": "聪明",
+      "back": "cōng míng",
+      "phonetic": "cōng míng",
+      "hint": "智力好，理解能力强",
+      "example": "这个孩子非常聪明。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_076",
+      "type": "word",
+      "front": "诚实",
+      "back": "chéng shí",
+      "phonetic": "chéng shí",
+      "hint": "说真话，不欺骗",
+      "example": "做人要诚实，不说谎。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_077",
+      "type": "word",
+      "front": "礼貌",
+      "back": "lǐ mào",
+      "phonetic": "lǐ mào",
+      "hint": "言行合乎礼节",
+      "example": "见到老师要有礼貌。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_078",
+      "type": "word",
+      "front": "节日",
+      "back": "jié rì",
+      "phonetic": "jié rì",
+      "hint": "有特殊意义的日子",
+      "example": "春节是中国最重要的节日。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_079",
+      "type": "word",
+      "front": "故乡",
+      "back": "gù xiāng",
+      "phonetic": "gù xiāng",
+      "hint": "出生或长大的地方",
+      "example": "我们都爱自己的故乡。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    },
+    {
+      "id": "hz2_080",
+      "type": "word",
+      "front": "祖国",
+      "back": "zǔ guó",
+      "phonetic": "zǔ guó",
+      "hint": "自己的国家",
+      "example": "我爱伟大的祖国。",
+      "tags": [
+        "词语",
+        "二年级"
+      ]
+    }
+  ]
+}

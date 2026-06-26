@@ -47,6 +47,7 @@ function toast(msg, duration = 2500) {
 
 const _pageHistory = [];
 let _isGoingBack = false;
+let _studyBackPage = 'home'; // 进入闪卡学习前的页面，返回时跳回
 
 function goBack() {
   const prev = _pageHistory.pop();
@@ -63,8 +64,11 @@ function showPage(pageId) {
   if (!_isGoingBack) {
     const cur = document.querySelector('.page.active')?.id?.replace('page-', '');
     if (cur && cur !== pageId && cur !== 'profiles') {
-      _pageHistory.push(cur);
-      if (_pageHistory.length > 30) _pageHistory.shift();
+      // 避免连续重复推入同一页
+      if (_pageHistory[_pageHistory.length - 1] !== cur) {
+        _pageHistory.push(cur);
+        if (_pageHistory.length > 30) _pageHistory.shift();
+      }
     }
   }
 
@@ -190,16 +194,36 @@ async function init() {
   $('btn-quick-chars-tab')?.addEventListener('click', () => openChineseTab('chars'));
   $('btn-quick-idioms-tab')?.addEventListener('click', () => openChineseTab('idioms'));
 
+  // 数学专项快捷按钮
+  $('btn-quick-multiply')?.addEventListener('click',  () => openMathTab('multiply'));
+  $('btn-quick-formula')?.addEventListener('click',   () => openMathTab('primary'));
+  $('btn-quick-geometry')?.addEventListener('click',  () => openMathTab('geometry'));
+  $('btn-quick-algebra')?.addEventListener('click',   () => openMathTab('algebra'));
+
   // 语文学习中心内部 Tab
-  document.querySelectorAll('.chinese-tab').forEach(btn => {
+  document.querySelectorAll('.chinese-tab[data-ctab]').forEach(btn => {
     btn.addEventListener('click', () => switchChineseTab(btn.dataset.ctab));
+  });
+  document.querySelectorAll('.chinese-tab[data-mtab]').forEach(btn => {
+    btn.addEventListener('click', () => openMathTab(btn.dataset.mtab));
   });
 
   // 语文学习中心各入口（生字/词语/成语/古诗题库走闪卡，其余内嵌）
   // 生字/成语/古诗题库已改为内嵌，旧按钮不再存在，无需绑定
 
-  $('btn-study-back')?.addEventListener('click', () => goBack());
-  $('btn-back-home')?.addEventListener('click', () => { hide($('session-complete')); goBack(); loadHomeData(); });
+  $('btn-study-back')?.addEventListener('click', () => {
+    const back = _studyBackPage || 'home';
+    _studyBackPage = null;
+    showPage(back);
+    if (back === 'home') loadHomeData();
+  });
+  $('btn-back-home')?.addEventListener('click', () => {
+    hide($('session-complete'));
+    const back = _studyBackPage || 'home';
+    _studyBackPage = null;
+    showPage(back);
+    if (_studyBackPage === 'home') loadHomeData();
+  });
   $('btn-continue')?.addEventListener('click', () => startStudySession());
 
   // 学科卡片（排除古诗文背诵，它单独处理）
@@ -227,6 +251,12 @@ async function init() {
     hide($('manage-profiles-modal'));
     openProfileEditModal(null);
   });
+
+  // 档案页底部链接
+  $('btn-profiles-privacy')?.addEventListener('click', () => {
+    $('privacy-overlay')?.classList.remove('hidden');
+  });
+  $('btn-profiles-report')?.addEventListener('click', () => showReportDialog());
 
   // 档案新建/编辑弹窗
   $('btn-profile-cancel').addEventListener('click', () => hide($('profile-edit-modal')));
@@ -398,27 +428,7 @@ async function init() {
   });
 
   // 投诉与举报
-  $('btn-show-report')?.addEventListener('click', () => {
-    const overlay = document.createElement('div');
-    overlay.className = 'modal-overlay';
-    overlay.innerHTML = `<div class="modal">
-      <h3>📢 投诉与举报</h3>
-      <p style="font-size:13px;color:var(--color-text-sub);line-height:1.8;margin:8px 0">
-        如您发现本应用存在违规内容，或需要投诉涉及未成年人的相关问题，请通过以下方式联系我们：
-      </p>
-      <div style="background:var(--color-surface2);border-radius:10px;padding:14px;margin:8px 0">
-        <div style="font-size:13px;margin-bottom:6px">📧 <strong>联系邮箱</strong></div>
-        <div style="font-size:14px;color:var(--color-primary);font-weight:600">zihua.liang@outlook.com</div>
-      </div>
-      <p style="font-size:12px;color:var(--color-text-hint);margin-top:8px">
-        我们承诺在收到投诉后 <strong>48小时内</strong> 响应处理，涉及未成年人保护的投诉将优先处理。
-      </p>
-      <button class="btn-primary" style="margin-top:16px;width:100%" id="btn-report-close">知道了</button>
-    </div>`;
-    document.body.appendChild(overlay);
-    overlay.querySelector('#btn-report-close').addEventListener('click', () => overlay.remove());
-    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
-  });
+  $('btn-show-report')?.addEventListener('click', () => showReportDialog());
 
   $('btn-add-profile')?.addEventListener('click', () => openProfileEditModal(null));
 
@@ -628,6 +638,7 @@ function closeVoiceSwitch() {
 async function startStudySession(subject) {
   const profile = App.currentProfile;
   if (!profile) return;
+  _studyBackPage = document.querySelector('.page.active')?.id?.replace('page-', '') || 'home';
 
   // 确保卡片列表是最新的
   App.allProfileCards = await CardManager.getByProfile(profile.id);
@@ -690,6 +701,99 @@ async function startStudySession(subject) {
   renderCard();
 }
 
+// ===== 数学学习中心 =====
+
+function openMathTab(tab) {
+  showPage('math-learning');
+  document.querySelectorAll('.chinese-tab[data-mtab]').forEach(b => b.classList.toggle('active', b.dataset.mtab === tab));
+  document.querySelectorAll('#page-math-learning .chinese-section').forEach(s => {
+    s.classList.toggle('active', s.id === `mtab-${tab}`);
+    s.classList.toggle('hidden', s.id !== `mtab-${tab}`);
+  });
+  renderMathTab(tab);
+}
+
+async function renderMathTab(tab) {
+  const body = document.getElementById(`mtab-${tab}-body`);
+  if (!body) return;
+  if (body.children.length > 0) return;
+  body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">加载中…</p>';
+
+  const deckMap = {
+    multiply: '乘法口诀',
+    primary:  '小学数学公式',
+    geometry: '初中几何公式',
+    algebra:  '初中代数公式',
+  };
+  const deckName = deckMap[tab];
+  const cards = await loadBuiltinCardsInline('math', deckName);
+
+  if (!cards.length) {
+    body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">暂无数据</p>';
+    return;
+  }
+
+  if (tab === 'multiply') {
+    // 乘法口诀：渲染成完整表格 + 闪卡按钮
+    const rowColors = ['#FEE2E2','#FEF3C7','#D1FAE5','#DBEAFE','#EDE9FE','#FCE7F3','#FFEDD5','#ECFDF5','#E0F2FE'];
+    let tableHtml = '<div style="overflow-x:auto">';
+    tableHtml += '<table class="multiply-table">';
+    tableHtml += '<tr><th class="mt-header">×</th>';
+    for (let i = 1; i <= 9; i++) tableHtml += `<th class="mt-header">${i}</th>`;
+    tableHtml += '</tr>';
+
+    for (let row = 1; row <= 9; row++) {
+      tableHtml += `<tr>`;
+      tableHtml += `<th class="mt-row-header" style="background:${rowColors[row-1]}">${row}</th>`;
+      for (let col = 1; col <= 9; col++) {
+        if (col < row) {
+          tableHtml += `<td class="mt-cell mt-empty"></td>`;
+        } else {
+          const result = row * col;
+          const formula = `${row}×${col}=${result}`;
+          tableHtml += `<td class="mt-cell" style="background:${rowColors[row-1]}" data-formula="${escapeHtml(formula)}">${result}</td>`;
+        }
+      }
+      tableHtml += '</tr>';
+    }
+    tableHtml += '</table></div>';
+
+    body.innerHTML = `
+      <div style="margin-bottom:12px">
+        <button class="btn-primary" style="width:100%" data-math-study="${escapeHtml(deckName)}">▶ 进入闪卡练习（${cards.length}组口诀）</button>
+      </div>
+      <div style="font-size:12px;color:var(--color-text-hint);text-align:center;margin-bottom:8px">点击格子查看口诀</div>
+      ${tableHtml}
+      <div id="mt-tooltip" style="display:none;margin-top:12px;background:white;border-radius:12px;padding:12px 16px;text-align:center;border:2px solid var(--color-math);font-size:18px;font-weight:700;color:var(--color-math)"></div>
+    `;
+
+    // 点击格子显示口诀
+    body.querySelectorAll('.mt-cell[data-formula]').forEach(cell => {
+      cell.addEventListener('click', () => {
+        const tt = document.getElementById('mt-tooltip');
+        if (tt) { tt.textContent = cell.dataset.formula; tt.style.display = 'block'; tt.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+      });
+    });
+  } else {
+    // 其他数学内容：卡片列表
+    let html = `<button class="btn-primary" style="width:100%;margin-bottom:12px"
+      data-math-study="${escapeHtml(deckName)}">▶ 进入闪卡练习（共${cards.length}题）</button>`;
+
+    html += cards.map(c => `
+      <div class="ctab-card-item ctab-math-item">
+        <div class="ctab-math-front">${escapeHtml(c.front)}</div>
+        <div class="ctab-math-back">${escapeHtml(c.back || '')}</div>
+        ${c.example ? `<div class="ctab-math-example">例：${escapeHtml(c.example)}</div>` : ''}
+      </div>`).join('');
+
+    body.innerHTML = html;
+  }
+
+  body.querySelectorAll('[data-math-study]').forEach(btn => {
+    btn.addEventListener('click', () => startStudyFromSubjectDeck('math', btn.dataset.mathStudy));
+  });
+}
+
 // ===== 语文学习中心 =====
 
 function openChineseLearningPage() {
@@ -716,6 +820,7 @@ function switchChineseTab(tab) {
   if (tab === 'pinyin') initCtabPinyin();
   if (tab === 'chars')  initCtabChars();
   if (tab === 'idioms') initCtabIdioms();
+  if (tab === 'daily')  initCtabDaily();
   if (tab === 'poems')  initCtabPoems();
 }
 
@@ -854,7 +959,8 @@ function renderCtabPinyin() {
 async function startStudyFromSubjectDeck(subject, deckNameKeyword) {
   const profile = App.currentProfile;
   if (!profile) return;
-  App._studyFromPage = 'chinese-learning';
+  // 记录来源页，用于学习页返回
+  _studyBackPage = document.querySelector('.page.active')?.id?.replace('page-', '') || 'home';
   const decks = await DeckManager.getByProfile(profile.id);
   const deck = decks.find(d => d.subject === subject && d.name.includes(deckNameKeyword));
   if (deck) {
@@ -882,19 +988,31 @@ async function openHomeRecitation() {
   openRecitationListPage();
 }
 
-// ===== 生字词语内嵌 =====
-let _ctabCharsTab = 'chars';
+// ===== 生字词语内嵌（按年级 Tab）=====
+let _ctabCharsTab   = 'all';
+let _ctabCharsGrade = 'all';
 
 async function initCtabChars() {
-  // 绑定子 tab
-  const tabs = document.getElementById('ctab-chars-tabs');
-  if (tabs && !tabs.dataset.bound) {
-    tabs.dataset.bound = '1';
-    tabs.querySelectorAll('.py-mode-btn').forEach(btn => {
+  const typeTabs = document.getElementById('ctab-chars-tabs');
+  if (typeTabs && !typeTabs.dataset.bound) {
+    typeTabs.dataset.bound = '1';
+    typeTabs.querySelectorAll('.py-mode-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        tabs.querySelectorAll('.py-mode-btn').forEach(b => b.classList.remove('active'));
+        typeTabs.querySelectorAll('.py-mode-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         _ctabCharsTab = btn.dataset.charstab;
+        renderCtabChars();
+      });
+    });
+  }
+  const gradeTabs = document.getElementById('ctab-chars-grades');
+  if (gradeTabs && !gradeTabs.dataset.bound) {
+    gradeTabs.dataset.bound = '1';
+    gradeTabs.querySelectorAll('.py-grade-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        gradeTabs.querySelectorAll('.py-grade-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        _ctabCharsGrade = btn.dataset.chargrade;
         renderCtabChars();
       });
     });
@@ -907,30 +1025,61 @@ async function renderCtabChars() {
   if (!body) return;
   body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">加载中…</p>';
 
-  const deckName = _ctabCharsTab === 'chars' ? '小学生字' : '小学语文词语';
-  const cards = await loadBuiltinCardsInline('chinese', deckName);
-  if (!cards.length) { body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">暂无数据，首次使用需加载</p>'; return; }
+  const gradeLabel = { primary1:'一年级', primary2:'二年级', primary3:'三年级',
+                       primary4:'四年级', primary5:'五年级', primary6:'六年级', primary:'通用' };
+  const gradeFiles = [
+    { name:'一年级生字词', grade:'primary1' },
+    { name:'二年级生字词', grade:'primary2' },
+    { name:'三年级生字词', grade:'primary3' },
+    { name:'四年级生字词', grade:'primary4' },
+    { name:'五年级生字词', grade:'primary5' },
+    { name:'六年级生字词', grade:'primary6' },
+    { name:'小学生字', grade:'primary' },
+    { name:'小学语文词语', grade:'primary' },
+  ];
 
-  body.innerHTML = cards.slice(0, 100).map(c => `
+  const filesToLoad = _ctabCharsGrade === 'all' ? gradeFiles
+    : gradeFiles.filter(f => f.grade === _ctabCharsGrade);
+
+  let allCards = [];
+  for (const gf of filesToLoad) {
+    const cards = await loadBuiltinCardsInline('chinese', gf.name);
+    allCards.push(...cards.map(c => ({ ...c, _grade: gf.grade, _deckName: gf.name })));
+  }
+
+  if (_ctabCharsTab === 'chars') allCards = allCards.filter(c => c.type === 'char');
+  else if (_ctabCharsTab === 'words') allCards = allCards.filter(c => c.type === 'word');
+
+  if (!allCards.length) {
+    body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">暂无数据</p>';
+    return;
+  }
+
+  const deckNameForStudy = _ctabCharsGrade === 'all' ? null
+    : gradeFiles.find(f => f.grade === _ctabCharsGrade)?.name;
+
+  let html = '';
+  if (deckNameForStudy) {
+    html += `<button class="btn-primary ctab-grade-study" data-deckname="${deckNameForStudy}"
+      style="width:100%;margin-bottom:12px">▶ 进入${gradeLabel[_ctabCharsGrade]||''}闪卡练习（共${allCards.length}张）</button>`;
+  }
+
+  html += allCards.slice(0, 80).map(c => `
     <div class="ctab-card-item">
       <div class="ctab-card-front">${escapeHtml(c.front)}</div>
-      <div class="ctab-card-back">${escapeHtml((c.back || '').split('｜')[0])}</div>
+      <div class="ctab-card-back">${escapeHtml((c.back||'').split('｜')[0])}</div>
       ${c.phonetic ? `<div class="ctab-card-phonetic">${escapeHtml(c.phonetic)}</div>` : ''}
+      ${c.hint ? `<div style="font-size:11px;color:var(--color-text-hint)">${escapeHtml(c.hint)}</div>` : ''}
       <button class="ctab-card-speak" data-text="${escapeHtml(c.front)}">🔊</button>
     </div>`).join('');
 
+  body.innerHTML = html;
   body.querySelectorAll('.ctab-card-speak').forEach(btn => {
     btn.addEventListener('click', e => { e.stopPropagation(); speakChinese(btn.dataset.text, 0.8); });
   });
-
-  if (cards.length > 100) {
-    const moreBtn = document.createElement('button');
-    moreBtn.className = 'btn-secondary';
-    moreBtn.style.cssText = 'width:100%;margin-top:8px';
-    moreBtn.textContent = `▶ 进入闪卡练习（共${cards.length}张）`;
-    moreBtn.addEventListener('click', () => startStudyFromSubjectDeck('chinese', deckName));
-    body.appendChild(moreBtn);
-  }
+  body.querySelectorAll('.ctab-grade-study').forEach(btn => {
+    btn.addEventListener('click', () => startStudyFromSubjectDeck('chinese', btn.dataset.deckname));
+  });
 }
 
 // ===== 成语内嵌 =====
@@ -979,6 +1128,58 @@ async function renderCtabIdioms(query = '') {
     moreBtn.addEventListener('click', () => startStudyFromSubjectDeck('chinese', '小学成语'));
     body.appendChild(moreBtn);
   }
+}
+
+// ===== 日积月累内嵌 =====
+let _ctabDailyFilter = 'all';
+
+async function initCtabDaily() {
+  const tabs = document.getElementById('ctab-daily-tabs');
+  if (tabs && !tabs.dataset.bound) {
+    tabs.dataset.bound = '1';
+    tabs.querySelectorAll('.py-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.querySelectorAll('.py-mode-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        _ctabDailyFilter = btn.dataset.dailytab;
+        renderCtabDaily();
+      });
+    });
+  }
+  const search = document.getElementById('ctab-daily-search');
+  if (search && !search.dataset.bound) {
+    search.dataset.bound = '1';
+    let timer;
+    search.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => renderCtabDaily(search.value.trim()), 250);
+    });
+  }
+  renderCtabDaily();
+}
+
+async function renderCtabDaily(query = '') {
+  const body = document.getElementById('ctab-daily-body');
+  if (!body) return;
+  body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">加载中…</p>';
+
+  let cards = await loadBuiltinCardsInline('chinese', '日积月累');
+  if (_ctabDailyFilter !== 'all') cards = cards.filter(c => (c.tags||[]).some(t => t.includes(_ctabDailyFilter)));
+  if (query) cards = cards.filter(c => c.front?.includes(query) || c.back?.includes(query));
+
+  if (!cards.length) { body.innerHTML = '<p style="text-align:center;padding:20px;color:var(--color-text-sub)">暂无数据</p>'; return; }
+
+  body.innerHTML = cards.map(c => `
+    <div class="ctab-card-item ctab-daily-item">
+      <div class="ctab-daily-text">${escapeHtml(c.front)}</div>
+      <div class="ctab-card-back">${escapeHtml(c.back || '')}</div>
+      ${c.hint ? `<div style="font-size:11px;color:var(--color-primary);margin-top:4px">💡 ${escapeHtml(c.hint)}</div>` : ''}
+      <button class="ctab-card-speak" data-text="${escapeHtml(c.front)}">🔊</button>
+    </div>`).join('');
+
+  body.querySelectorAll('.ctab-card-speak').forEach(btn => {
+    btn.addEventListener('click', e => { e.stopPropagation(); speakChinese(btn.dataset.text, 0.8); });
+  });
 }
 
 // ===== 古诗题库内嵌 =====
@@ -1146,6 +1347,11 @@ async function openSubjectDecksPage(subject) {
 
 async function startStudyFromDeck(deckId, subject) {
   const profile  = App.currentProfile;
+  // _studyBackPage 由调用者（startStudyFromSubjectDeck/startStudySession）设置
+  // 若为空则取当前页（直接从题库列表进入的情况）
+  if (!_studyBackPage) {
+    _studyBackPage = document.querySelector('.page.active')?.id?.replace('page-', '') || 'home';
+  }
   const deckCards = App.allProfileCards.filter(c => c.deckId === deckId);
   const due       = deckCards.filter(c => c.nextReview <= todayStr());
   const newCards  = deckCards.filter(c => c.reviewCount === 0);
@@ -1159,6 +1365,11 @@ async function startStudyFromDeck(deckId, subject) {
   App.studyQueue     = queue;
   App.studyIndex     = 0;
   App.sessionResults = [];
+
+  // 显示题库名称
+  const decks = await DeckManager.getByProfile(profile.id);
+  const deck  = decks.find(d => d.id === deckId);
+  if ($('study-deck-name')) $('study-deck-name').textContent = deck?.name || '';
 
   hide($('session-complete'));
   showPage('study');
@@ -1319,18 +1530,93 @@ async function startVoiceAnswer() {
       _voiceAnswerStop = null;
       if (!spokenText) return;
 
-      // 反向模式时，正面显示的是 back，用户应该回答 front
-      const target     = App.cardDirection === 'reverse' ? card.front : card.back;
-      const dist       = levenshtein(target.toLowerCase(), spokenText.toLowerCase());
-      const score      = Math.max(0, Math.round((1 - dist / Math.max(target.length, spokenText.length)) * 100));
-      const isCorrect  = score >= 65 || spokenText.toLowerCase().includes(target.toLowerCase().slice(0, 4));
+      // 正向：显示front，用户回答back（或front本身）
+      // 反向：显示back，用户回答front
+      const target = App.cardDirection === 'reverse' ? card.front : card.back;
+      // 中文卡片额外允许直接说出正面（如"白云"）
+      const frontText = card.front || '';
+
+      // 数字转中文（用于乘法口诀等数字答案）
+      const numToCN = n => ['零','一','二','三','四','五','六','七','八','九','十',
+        '十一','十二','十三','十四','十五','十六','十七','十八','十九','二十',
+        '二十一','二十二','二十三','二十四','二十五','二十六','二十七','二十八','二十九','三十',
+        '三十一','三十二','三十三','三十四','三十五','三十六','三十七','三十八','三十九','四十',
+        '四十一','四十二','四十三','四十四','四十五','四十六','四十七','四十八','四十九','五十',
+        '五十一','五十二','五十三','五十四','五十五','五十六','五十七','五十八','五十九','六十',
+        '六十一','六十二','六十三','六十四','六十五','六十六','六十七','六十八','六十九','七十',
+        '七十一','七十二','七十三','七十四','七十五','七十六','七十七','七十八','七十九','八十',
+        '八十一'][parseInt(n)] || n;
+      const isNumTarget = /^\d+$/.test(target.trim());
+      const targetCN = isNumTarget ? numToCN(target.trim()) : '';
+
+      // 中文卡片：同时接受汉字和拼音回答
+      const hasChinese = /[一-鿿]/.test(target);
+      const phonetic = card.phonetic || '';
+      const normalize = s => s.toLowerCase().replace(/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/g, c =>
+        'aaaaeeeeiiiioooounnuu'['āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ'.indexOf(c)] || c).replace(/[^a-z一-鿿0-9]/g,'');
+      const spokenNorm   = normalize(spokenText);
+      const targetNorm   = normalize(target);
+      const phoneticNorm = normalize(phonetic);
+      const targetCNNorm = normalize(targetCN);
+
+      const dist = levenshtein(targetNorm, spokenNorm);
+      let score  = Math.max(0, Math.round((1 - dist / Math.max(targetNorm.length || 1, spokenNorm.length || 1)) * 100));
+
+      // 数字：中文读法匹配
+      let numMatch = false;
+      if (isNumTarget && targetCN) {
+        const distCN = levenshtein(targetCNNorm, spokenNorm);
+        const scoreCN = Math.max(0, Math.round((1 - distCN / Math.max(targetCNNorm.length || 1, spokenNorm.length || 1)) * 100));
+        if (scoreCN >= 70 || spokenNorm.includes(targetCNNorm)) { numMatch = true; score = Math.max(score, scoreCN); }
+        // 也接受直接说数字
+        if (spokenNorm === targetNorm) { numMatch = true; score = 100; }
+      }
+
+      // 拼音匹配
+      let phoneticMatch = false;
+      if (hasChinese && phonetic) {
+        const distPy = levenshtein(phoneticNorm, spokenNorm);
+        const scorePy = Math.max(0, Math.round((1 - distPy / Math.max(phoneticNorm.length || 1, spokenNorm.length || 1)) * 100));
+        if (scorePy >= 70) { phoneticMatch = true; score = Math.max(score, scorePy); }
+      }
+
+      // 中文卡片：允许直接说出正面词语（如正面"白云"，说"白云"也算对）
+      let frontMatch = false;
+      if (App.cardDirection !== 'reverse' && frontText && /[一-鿿]/.test(frontText)) {
+        const frontNorm = normalize(frontText);
+        if (frontNorm === spokenNorm || spokenNorm.includes(frontNorm)) frontMatch = true;
+      }
+
+      const isCorrect = score >= 65 || (targetNorm.length > 1 && spokenNorm.includes(targetNorm.slice(0, 2))) || phoneticMatch || numMatch || frontMatch;
 
       const resultEl = $('voice-answer-result');
-      $('voice-answer-text').textContent = `"${spokenText}" ${isCorrect ? '✓' : '✗'}`;
-      if (resultEl) {
-        resultEl.style.background = isCorrect ? '#D1FAE5' : '#FEE2E2';
-        resultEl.style.color      = isCorrect ? '#065F46' : '#991B1B';
-        show(resultEl);
+      const isEnglish = /^[a-zA-Z\s'-]+$/.test(target);
+
+      // 英文单词额外做发音评分
+      if (isEnglish && card.subject === 'english') {
+        const profile = App.currentProfile;
+        const azureConfig = profile?.azureKey ? { key: profile.azureKey, region: profile.azureRegion } : null;
+        const pronResult = await scorePronunciation(target, spokenText, spokenConf, azureConfig, null);
+        $('voice-answer-text').textContent = `"${spokenText}" ${isCorrect ? '✓' : '✗'} | 发音：${pronResult.score}分`;
+        if (resultEl) {
+          const color = pronResult.score >= 80 ? '#D1FAE5' : pronResult.score >= 60 ? '#FEF3C7' : '#FEE2E2';
+          const textColor = pronResult.score >= 80 ? '#065F46' : pronResult.score >= 60 ? '#92400E' : '#991B1B';
+          resultEl.style.background = color;
+          resultEl.style.color = textColor;
+          // 显示发音反馈
+          const feedEl = document.createElement('div');
+          feedEl.style.cssText = 'font-size:11px;margin-top:3px;opacity:0.8';
+          feedEl.textContent = pronResult.feedback;
+          resultEl.appendChild(feedEl);
+          show(resultEl);
+        }
+      } else {
+        $('voice-answer-text').textContent = `"${spokenText}" ${isCorrect ? '✓' : '✗'}`;
+        if (resultEl) {
+          resultEl.style.background = isCorrect ? '#D1FAE5' : '#FEE2E2';
+          resultEl.style.color      = isCorrect ? '#065F46' : '#991B1B';
+          show(resultEl);
+        }
       }
 
       if (isCorrect) {
@@ -2186,22 +2472,39 @@ async function studyDeck(deckId) {
 // ===== 内置知识库加载 =====
 
 const BUILTIN_DECKS = [
-  { file: 'data/builtin/english/primary/grade3_words.json',        name: '小学三年级英语',       subject: 'english', grade: 'primary' },
-  { file: 'data/builtin/english/primary/grade4_words.json',        name: '小学四年级英语',       subject: 'english', grade: 'primary' },
-  { file: 'data/builtin/english/primary/grade5_words.json',        name: '小学五年级英语',       subject: 'english', grade: 'primary' },
-  { file: 'data/builtin/english/primary/grade6_words.json',        name: '小学六年级英语',       subject: 'english', grade: 'primary' },
-  { file: 'data/builtin/english/middle/middle_vocab.json',         name: '初中核心词汇',         subject: 'english', grade: 'middle'  },
-  { file: 'data/builtin/english/middle/middle_grammar.json',       name: '初中英语语法',         subject: 'english', grade: 'middle'  },
+  // 英语词汇（分年级）
+  { file: 'data/builtin/english/primary/grade1_2_words.json', name: '小学一二年级英语词汇', subject: 'english', grade: 'primary1' },
+  { file: 'data/builtin/english/primary/grade3_words.json',   name: '小学三年级英语词汇',   subject: 'english', grade: 'primary3' },
+  { file: 'data/builtin/english/primary/grade4_words.json',   name: '小学四年级英语词汇',   subject: 'english', grade: 'primary4' },
+  { file: 'data/builtin/english/primary/grade5_words.json',   name: '小学五年级英语词汇',   subject: 'english', grade: 'primary5' },
+  { file: 'data/builtin/english/primary/grade6_words.json',   name: '小学六年级英语词汇',   subject: 'english', grade: 'primary6' },
+  { file: 'data/builtin/english/middle/middle_vocab.json',    name: '初中英语核心词汇',     subject: 'english', grade: 'middle'  },
+  { file: 'data/builtin/english/primary/primary_grammar.json', name: '小学英语语法要点', subject: 'english', grade: 'primary' },
+  { file: 'data/builtin/english/middle/middle_grammar.json',  name: '初中英语语法要点',   subject: 'english', grade: 'middle'  },
+  // 数学（分年级）
+  { file: 'data/builtin/math/primary/grade1_2_math.json',    name: '小学一二年级数学',     subject: 'math',    grade: 'primary1' },
+  { file: 'data/builtin/math/primary/grade3_4_math.json',    name: '小学三四年级数学',     subject: 'math',    grade: 'primary3' },
+  { file: 'data/builtin/math/primary/grade5_6_math.json',    name: '小学五六年级数学',     subject: 'math',    grade: 'primary5' },
+  // 小学生字词（分年级）
+  { file: 'data/builtin/chinese/primary/grade1_chars_words.json',  name: '一年级生字词', subject: 'chinese', grade: 'primary1' },
+  { file: 'data/builtin/chinese/primary/grade2_chars_words.json',  name: '二年级生字词', subject: 'chinese', grade: 'primary2' },
+  { file: 'data/builtin/chinese/primary/grade3_chars_words.json',  name: '三年级生字词', subject: 'chinese', grade: 'primary3' },
+  { file: 'data/builtin/chinese/primary/grade4_chars_words.json',  name: '四年级生字词', subject: 'chinese', grade: 'primary4' },
+  { file: 'data/builtin/chinese/primary/grade5_chars_words.json',  name: '五年级生字词', subject: 'chinese', grade: 'primary5' },
+  { file: 'data/builtin/chinese/primary/grade6_chars_words.json',  name: '六年级生字词', subject: 'chinese', grade: 'primary6' },
+  // 日积月累
+  { file: 'data/builtin/chinese/primary/daily_accumulation.json',  name: '日积月累（名言谚语）',   subject: 'chinese', grade: 'primary' },
+  // 旧版生字（保留兼容）
   { file: 'data/builtin/chinese/primary/primary_chars_words.json', name: '小学生字（含偏旁笔画）', subject: 'chinese', grade: 'primary' },
-  { file: 'data/builtin/chinese/primary/primary_words.json',       name: '小学语文词语（跟读）',  subject: 'chinese', grade: 'primary' },
-  { file: 'data/builtin/chinese/primary/primary_poems.json',       name: '小学必背古诗75首',     subject: 'chinese', grade: 'primary' },
-  { file: 'data/builtin/chinese/primary/primary_idioms.json',      name: '小学成语',             subject: 'chinese', grade: 'primary' },
-  { file: 'data/builtin/chinese/middle/middle_poems.json',         name: '初中必背古诗文',       subject: 'chinese', grade: 'middle'  },
-  { file: 'data/builtin/math/primary/multiplication.json',         name: '乘法口诀',             subject: 'math',    grade: 'primary' },
-  { file: 'data/builtin/math/primary/primary_formulas.json',       name: '小学数学公式',         subject: 'math',    grade: 'primary' },
-  { file: 'data/builtin/math/primary/primary_concepts.json',       name: '小学数学概念',         subject: 'math',    grade: 'primary' },
-  { file: 'data/builtin/math/middle/geometry.json',                name: '初中几何公式',         subject: 'math',    grade: 'middle'  },
-  { file: 'data/builtin/math/middle/algebra.json',                 name: '初中代数公式',         subject: 'math',    grade: 'middle'  },
+  { file: 'data/builtin/chinese/primary/primary_words.json',       name: '小学语文词语（跟读）',   subject: 'chinese', grade: 'primary' },
+  { file: 'data/builtin/chinese/primary/primary_poems.json',       name: '小学必背古诗75首',      subject: 'chinese', grade: 'primary' },
+  { file: 'data/builtin/chinese/primary/primary_idioms.json',      name: '小学成语',              subject: 'chinese', grade: 'primary' },
+  { file: 'data/builtin/chinese/middle/middle_poems.json',         name: '初中必背古诗文',        subject: 'chinese', grade: 'middle'  },
+  { file: 'data/builtin/math/primary/multiplication.json',         name: '乘法口诀',              subject: 'math',    grade: 'primary' },
+  { file: 'data/builtin/math/primary/primary_formulas.json',       name: '小学数学公式',          subject: 'math',    grade: 'primary' },
+  { file: 'data/builtin/math/primary/primary_concepts.json',       name: '小学数学概念',          subject: 'math',    grade: 'primary' },
+  { file: 'data/builtin/math/middle/geometry.json',                name: '初中几何公式',          subject: 'math',    grade: 'middle'  },
+  { file: 'data/builtin/math/middle/algebra.json',                 name: '初中代数公式',          subject: 'math',    grade: 'middle'  },
 ];
 
 // 自动加载内置题库并开始学习
@@ -3077,25 +3380,28 @@ function showPrivacyDialog(storageKey) {
     overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:flex-end';
     overlay.innerHTML = `
       <div style="background:var(--color-surface);border-radius:20px 20px 0 0;width:100%;max-height:85vh;display:flex;flex-direction:column;padding:20px">
-        <div style="font-size:20px;font-weight:800;text-align:center;margin-bottom:4px">📋 隐私政策</div>
-        <div style="font-size:12px;color:var(--color-text-hint);text-align:center;margin-bottom:12px">请在使用前阅读并同意以下政策</div>
+        <div style="font-size:20px;font-weight:800;text-align:center;margin-bottom:4px">📋 用户隐私政策</div>
+        <div style="font-size:12px;color:var(--color-text-hint);text-align:center;margin-bottom:12px">首次使用前请阅读并同意</div>
         <div style="flex:1;overflow-y:auto;font-size:13px;line-height:1.8;color:var(--color-text-sub);margin-bottom:16px">
           <p><strong>小记忆</strong>非常重视您和孩子的隐私保护。</p>
           <p style="margin-top:8px"><strong>📌 我们承诺：</strong></p>
           <p>• 所有学习数据仅存储在本设备，不上传任何服务器</p>
           <p>• 不收集任何个人身份信息</p>
           <p>• 不含任何广告和第三方追踪</p>
-          <p style="margin-top:8px"><strong>🎤 麦克风权限：</strong>仅在您主动使用语音跟读或背诵评分功能时申请，录音处理完毕后立即销毁</p>
-          <p style="margin-top:8px"><strong>📷 相机权限：</strong>仅在您主动拍照导入题目时申请，照片解析后立即销毁</p>
-          <p style="margin-top:8px"><strong>👶 儿童隐私：</strong>本应用专为儿童设计，严格遵守《儿童个人信息网络保护规定》，不收集任何儿童个人信息</p>
-          <p style="margin-top:8px">完整隐私政策：<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">点击查看</a></p>
+          <p style="margin-top:8px"><strong>🎤 麦克风权限：</strong>仅在您主动点击语音功能时申请，录音处理完毕后立即销毁，不存储不上传</p>
+          <p style="margin-top:8px"><strong>📷 相机权限：</strong>仅在您主动拍照导入题目时申请，照片解析后立即销毁，不存储不上传</p>
+          <p style="margin-top:8px"><strong>👶 儿童隐私保护：</strong>本应用专为儿童设计，严格遵守《儿童个人信息网络保护规定》，不收集任何儿童个人信息，无广告、无账号注册</p>
+          <p style="margin-top:8px"><strong>📢 投诉举报：</strong>如发现任何问题，可发送邮件至 <strong>zihua.liang@outlook.com</strong>，我们承诺48小时内响应</p>
+          <p style="margin-top:8px">
+            <a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">查看完整隐私政策与儿童专项隐私政策 →</a>
+          </p>
         </div>
-        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--color-border)">
-          <input type="checkbox" id="privacy-check" style="width:18px;height:18px;flex-shrink:0">
-          <label for="privacy-check" style="font-size:13px;color:var(--color-text)">我已阅读并同意<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">《隐私政策》</a>和<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">《儿童隐私政策》</a></label>
+        <div style="display:flex;align-items:flex-start;gap:8px;padding:10px 0;border-top:1px solid var(--color-border)">
+          <input type="checkbox" id="privacy-check" style="width:20px;height:20px;flex-shrink:0;margin-top:2px">
+          <label for="privacy-check" style="font-size:13px;color:var(--color-text);line-height:1.5">我已阅读并同意<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">《隐私政策》</a>和<a href="https://liangzihua.github.io/kids-memory-privacy/" target="_blank" style="color:var(--color-primary)">《儿童隐私政策》</a>，并同意按照政策处理相关权限</label>
         </div>
-        <button id="privacy-agree-btn" style="width:100%;padding:14px;background:#ccc;color:white;border-radius:12px;font-size:15px;font-weight:700;margin-top:10px;transition:background 0.2s" disabled>同意并继续</button>
-        <button id="privacy-reject-btn" style="width:100%;padding:10px;background:none;color:var(--color-text-hint);font-size:13px;margin-top:6px">不同意（退出应用）</button>
+        <button id="privacy-agree-btn" style="width:100%;padding:14px;background:#ccc;color:white;border-radius:12px;font-size:16px;font-weight:700;margin-top:10px;transition:background 0.2s" disabled>同意并继续使用</button>
+        <button id="privacy-reject-btn" style="width:100%;padding:10px;background:none;color:var(--color-text-hint);font-size:12px;margin-top:4px">不同意，退出应用</button>
       </div>`;
 
     document.body.appendChild(overlay);
@@ -3115,12 +3421,34 @@ function showPrivacyDialog(storageKey) {
     });
 
     overlay.querySelector('#privacy-reject-btn').addEventListener('click', () => {
-      // 在 WebView 里无法真正退出，显示提示
-      agreeBtn.textContent = '请同意隐私政策才能使用';
+      agreeBtn.textContent = '请先勾选同意隐私政策才能使用';
       agreeBtn.style.background = 'var(--color-error)';
       agreeBtn.disabled = false;
+      check.checked = false;
     });
   });
+}
+
+function showReportDialog() {
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  overlay.innerHTML = `<div class="modal">
+    <h3>📢 投诉与举报</h3>
+    <p style="font-size:13px;color:var(--color-text-sub);line-height:1.8;margin:8px 0">
+      如您发现本应用存在违规内容，或需要投诉涉及未成年人的相关问题，请通过以下方式联系我们：
+    </p>
+    <div style="background:var(--color-surface2);border-radius:10px;padding:14px;margin:8px 0">
+      <div style="font-size:13px;margin-bottom:6px">📧 <strong>联系邮箱</strong></div>
+      <div style="font-size:15px;color:var(--color-primary);font-weight:700">zihua.liang@outlook.com</div>
+    </div>
+    <p style="font-size:12px;color:var(--color-text-hint);margin-top:8px">
+      我们承诺在收到投诉后 <strong>48小时内</strong> 响应处理，涉及未成年人保护的投诉将优先处理。
+    </p>
+    <button class="btn-primary" style="margin-top:16px;width:100%" id="btn-report-close">知道了</button>
+  </div>`;
+  document.body.appendChild(overlay);
+  overlay.querySelector('#btn-report-close').addEventListener('click', () => overlay.remove());
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
 }
 
 init();

@@ -3778,3 +3778,47 @@ input:focus, textarea:focus, select:focus {
 }
 .english-quick-btn span:first-child { font-size: 20px; }
 .english-quick-btn:active { background: var(--color-surface2); transform: scale(0.97); }
+
+/* 日积月累卡片 */
+.ctab-daily-item { border-left: 3px solid var(--color-primary); }
+.ctab-daily-text { font-size: 15px; font-weight: 700; color: var(--color-text); font-family: serif; margin-bottom: 6px; line-height: 1.6; }
+
+/* 数学学习中心 */
+#page-math-learning { background: linear-gradient(180deg, #f5f0ff 0%, var(--color-bg) 120px); }
+.math-quick-btn { border-color: rgba(139,92,246,0.3) !important; color: var(--color-math) !important; }
+.math-quick-btn:active { background: rgba(139,92,246,0.08) !important; }
+.ctab-math-item { border-left: 3px solid var(--color-math); }
+.ctab-math-front { font-size: 15px; font-weight: 700; color: var(--color-math); margin-bottom: 6px; }
+.ctab-math-back { font-size: 13px; color: var(--color-text-sub); line-height: 1.7; white-space: pre-line; }
+.ctab-math-example { font-size: 12px; color: var(--color-text-hint); margin-top: 4px; font-style: italic; }
+
+/* 乘法口诀表 */
+.multiply-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13px; margin-bottom: 8px;
+}
+.multiply-table th, .multiply-table td {
+  width: 11%; text-align: center;
+  padding: 6px 2px; border: 1px solid rgba(139,92,246,0.15);
+}
+.mt-header {
+  background: var(--color-math); color: white;
+  font-weight: 700; font-size: 13px;
+}
+.mt-row-header { font-weight: 700; color: var(--color-text); }
+.mt-cell {
+  font-weight: 700; font-size: 14px; cursor: pointer;
+  border-radius: 4px; transition: transform 0.1s;
+}
+.mt-cell:active { transform: scale(0.9); }
+.mt-empty { background: var(--color-surface2) !important; }
+
+/* 学习页：固定高度不滚动，卡片区垂直居中 */
+#page-study {
+  overflow: hidden;
+}
+#page-study .card-container {
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}

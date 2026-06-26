@@ -1,0 +1,1872 @@
+{
+  "meta": {
+    "subject": "chinese",
+    "grade": "primary",
+    "name": "小学三年级生字词",
+    "version": "2024",
+    "count": 350,
+    "description": "小学小学三年级上下册生字、词语"
+  },
+  "cards": [
+    {
+      "id": "hz3_001",
+      "type": "char",
+      "front": "汉",
+      "back": "hàn｜汉族；汉字",
+      "phonetic": "hàn",
+      "radical": "氵",
+      "strokes": 5,
+      "structure": "左右",
+      "hint": "三点水加又，汉族",
+      "example": "汉字·汉族·汉语",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_002",
+      "type": "char",
+      "front": "字",
+      "back": "zì｜文字；字体",
+      "phonetic": "zì",
+      "radical": "宀",
+      "strokes": 6,
+      "structure": "上下",
+      "hint": "宝盖头加子，文字",
+      "example": "汉字·字体·生字",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_003",
+      "type": "char",
+      "front": "词",
+      "back": "cí｜词语；词汇",
+      "phonetic": "cí",
+      "radical": "讠",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "言字旁加司，词语",
+      "example": "词语·词典·成词",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_004",
+      "type": "char",
+      "front": "句",
+      "back": "jù｜句子",
+      "phonetic": "jù",
+      "radical": "口",
+      "strokes": 5,
+      "structure": "半包围",
+      "hint": "口字旁加勾，句子",
+      "example": "句子·一句·造句",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_005",
+      "type": "char",
+      "front": "段",
+      "back": "duàn｜段落；一段",
+      "phonetic": "duàn",
+      "radical": "殳",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "段字，分段",
+      "example": "段落·一段·分段",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_006",
+      "type": "char",
+      "front": "篇",
+      "back": "piān｜篇章；一篇",
+      "phonetic": "piān",
+      "radical": "竹",
+      "strokes": 15,
+      "structure": "上下",
+      "hint": "竹字头，篇章",
+      "example": "篇章·一篇·篇幅",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_007",
+      "type": "char",
+      "front": "背",
+      "back": "bèi｜背诵；背后｜bēi 背负",
+      "phonetic": "bèi",
+      "radical": "月",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "北字下加月，背部",
+      "example": "背诵·背书·后背",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_008",
+      "type": "char",
+      "front": "记",
+      "back": "jì｜记录；记住",
+      "phonetic": "jì",
+      "radical": "讠",
+      "strokes": 5,
+      "structure": "左右",
+      "hint": "言字旁加己，记录",
+      "example": "记住·日记·记忆",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_009",
+      "type": "char",
+      "front": "忆",
+      "back": "yì｜回忆；记忆",
+      "phonetic": "yì",
+      "radical": "忄",
+      "strokes": 4,
+      "structure": "左右",
+      "hint": "竖心旁加乙，记忆",
+      "example": "回忆·记忆·忆起",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_010",
+      "type": "char",
+      "front": "思",
+      "back": "sī｜思考；思念",
+      "phonetic": "sī",
+      "radical": "心",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "心字底，用心思考",
+      "example": "思考·思念·思想",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_011",
+      "type": "char",
+      "front": "考",
+      "back": "kǎo｜考试；考虑",
+      "phonetic": "kǎo",
+      "radical": "耂",
+      "strokes": 6,
+      "structure": "上下",
+      "hint": "老字头加丂，考查",
+      "example": "考试·考虑·考察",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_012",
+      "type": "char",
+      "front": "试",
+      "back": "shì｜试验；考试",
+      "phonetic": "shì",
+      "radical": "讠",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "言字旁加式，试验",
+      "example": "考试·试验·尝试",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_013",
+      "type": "char",
+      "front": "题",
+      "back": "tí｜题目；问题",
+      "phonetic": "tí",
+      "radical": "页",
+      "strokes": 15,
+      "structure": "左右",
+      "hint": "是字旁加页，题目",
+      "example": "题目·问题·出题",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_014",
+      "type": "char",
+      "front": "目",
+      "back": "mù｜眼睛；目标",
+      "phonetic": "mù",
+      "radical": "目",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "象形字，眼睛",
+      "example": "目标·注目·题目",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_015",
+      "type": "char",
+      "front": "标",
+      "back": "biāo｜标准；目标",
+      "phonetic": "biāo",
+      "radical": "木",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "木旁加票，标记",
+      "example": "目标·标准·标志",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_016",
+      "type": "char",
+      "front": "准",
+      "back": "zhǔn｜准确；标准",
+      "phonetic": "zhǔn",
+      "radical": "冫",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "冰旁加隹，准确",
+      "example": "准确·标准·准备",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_017",
+      "type": "char",
+      "front": "确",
+      "back": "què｜确实；确定",
+      "phonetic": "què",
+      "radical": "石",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "石旁加角，确实",
+      "example": "确实·准确·确定",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_018",
+      "type": "char",
+      "front": "定",
+      "back": "dìng｜确定；规定",
+      "phonetic": "dìng",
+      "radical": "宀",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "宝盖头加正，确定",
+      "example": "确定·规定·一定",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_019",
+      "type": "char",
+      "front": "规",
+      "back": "guī｜规则；规定",
+      "phonetic": "guī",
+      "radical": "夫",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "夫旁加见，规则",
+      "example": "规则·规定·规律",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_020",
+      "type": "char",
+      "front": "则",
+      "back": "zé｜规则；法则",
+      "phonetic": "zé",
+      "radical": "刀",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "贝旁加刀，法则",
+      "example": "规则·法则·否则",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_021",
+      "type": "char",
+      "front": "法",
+      "back": "fǎ｜方法；法律",
+      "phonetic": "fǎ",
+      "radical": "氵",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "三点水加去，法律",
+      "example": "方法·法律·用法",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_022",
+      "type": "char",
+      "front": "律",
+      "back": "lǜ｜规律；法律",
+      "phonetic": "lǜ",
+      "radical": "彳",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "双人旁加聿，规律",
+      "example": "规律·法律·纪律",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_023",
+      "type": "char",
+      "front": "纪",
+      "back": "jì｜纪律；世纪",
+      "phonetic": "jì",
+      "radical": "纟",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "绞丝旁加己，纪律",
+      "example": "纪律·世纪·纪念",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_024",
+      "type": "char",
+      "front": "念",
+      "back": "niàn｜念书；思念",
+      "phonetic": "niàn",
+      "radical": "心",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "今字底加心，思念",
+      "example": "念书·思念·纪念",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_025",
+      "type": "char",
+      "front": "诗",
+      "back": "shī｜诗歌；诗人",
+      "phonetic": "shī",
+      "radical": "讠",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "言字旁加寺，诗歌",
+      "example": "诗歌·古诗·诗人",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_026",
+      "type": "char",
+      "front": "歌",
+      "back": "gē｜歌曲；唱歌",
+      "phonetic": "gē",
+      "radical": "欠",
+      "strokes": 14,
+      "structure": "左右",
+      "hint": "哥字旁加欠，歌唱",
+      "example": "歌曲·唱歌·歌声",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_027",
+      "type": "char",
+      "front": "曲",
+      "back": "qū｜歌曲；弯曲｜qǔ 曲子",
+      "phonetic": "qū",
+      "radical": "曰",
+      "strokes": 6,
+      "structure": "独体字",
+      "hint": "象形字，弯曲",
+      "example": "歌曲·弯曲·曲折",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_028",
+      "type": "char",
+      "front": "舞",
+      "back": "wǔ｜舞蹈；跳舞",
+      "phonetic": "wǔ",
+      "radical": "舛",
+      "strokes": 14,
+      "structure": "上下",
+      "hint": "两足相对舞动",
+      "example": "舞蹈·跳舞·舞台",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_029",
+      "type": "char",
+      "front": "蹈",
+      "back": "dǎo｜舞蹈；步蹈",
+      "phonetic": "dǎo",
+      "radical": "足",
+      "strokes": 17,
+      "structure": "左右",
+      "hint": "足旁，踏步舞动",
+      "example": "舞蹈·步蹈",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_030",
+      "type": "char",
+      "front": "乐",
+      "back": "lè｜快乐；yuè 音乐",
+      "phonetic": "lè",
+      "radical": "木",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "象形字，像弦乐器",
+      "example": "快乐·音乐·乐趣",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_031",
+      "type": "char",
+      "front": "器",
+      "back": "qì｜器具；乐器",
+      "phonetic": "qì",
+      "radical": "口",
+      "strokes": 16,
+      "structure": "品字形",
+      "hint": "四口加犬，器具",
+      "example": "乐器·器具·武器",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_032",
+      "type": "char",
+      "front": "演",
+      "back": "yǎn｜演出；演讲",
+      "phonetic": "yǎn",
+      "radical": "氵",
+      "strokes": 14,
+      "structure": "左右",
+      "hint": "三点水加寅，演出",
+      "example": "演出·表演·演讲",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_033",
+      "type": "char",
+      "front": "出",
+      "back": "chū｜出来；出现",
+      "phonetic": "chū",
+      "radical": "凵",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "从土地里长出来",
+      "example": "出来·出现·出发",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_034",
+      "type": "char",
+      "front": "现",
+      "back": "xiàn｜现在；出现",
+      "phonetic": "xiàn",
+      "radical": "王",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "王旁加见，出现",
+      "example": "现在·出现·发现",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_035",
+      "type": "char",
+      "front": "表",
+      "back": "biǎo｜表示；表面；手表",
+      "phonetic": "biǎo",
+      "radical": "衣",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "毛衣合并，表示",
+      "example": "表示·表面·手表",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_036",
+      "type": "char",
+      "front": "示",
+      "back": "shì｜显示；示范",
+      "phonetic": "shì",
+      "radical": "礻",
+      "strokes": 5,
+      "structure": "上下",
+      "hint": "神字旁，展示",
+      "example": "显示·示范·示意",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_037",
+      "type": "char",
+      "front": "范",
+      "back": "fàn｜范围；示范",
+      "phonetic": "fàn",
+      "radical": "艹",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "草字头加车，示范",
+      "example": "示范·范围·模范",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_038",
+      "type": "char",
+      "front": "围",
+      "back": "wéi｜围绕；范围",
+      "phonetic": "wéi",
+      "radical": "囗",
+      "strokes": 7,
+      "structure": "全包围",
+      "hint": "国字框加韦，围绕",
+      "example": "范围·围绕·周围",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_039",
+      "type": "char",
+      "front": "绕",
+      "back": "rào｜围绕；绕道",
+      "phonetic": "rào",
+      "radical": "纟",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "绞丝旁加尧，绕行",
+      "example": "围绕·绕道·绕行",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_040",
+      "type": "char",
+      "front": "圆",
+      "back": "yuán｜圆形；圆满",
+      "phonetic": "yuán",
+      "radical": "囗",
+      "strokes": 10,
+      "structure": "全包围",
+      "hint": "国字框加员，圆形",
+      "example": "圆形·圆满·画圆",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_041",
+      "type": "char",
+      "front": "形",
+      "back": "xíng｜形状；形容",
+      "phonetic": "xíng",
+      "radical": "彡",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "三撇旁，形状",
+      "example": "形状·形容·图形",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_042",
+      "type": "char",
+      "front": "状",
+      "back": "zhuàng｜形状；状态",
+      "phonetic": "zhuàng",
+      "radical": "犬",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "犬旁加爿，形状",
+      "example": "形状·状态·症状",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_043",
+      "type": "char",
+      "front": "态",
+      "back": "tài｜态度；状态",
+      "phonetic": "tài",
+      "radical": "心",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "能字底加心，态度",
+      "example": "态度·状态·形态",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_044",
+      "type": "char",
+      "front": "度",
+      "back": "dù｜程度；度过；dúo揣度",
+      "phonetic": "dù",
+      "radical": "广",
+      "strokes": 9,
+      "structure": "半包围",
+      "hint": "广字头加又，程度",
+      "example": "程度·度过·态度",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_045",
+      "type": "char",
+      "front": "程",
+      "back": "chéng｜程度；路程",
+      "phonetic": "chéng",
+      "radical": "禾",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "禾旁加呈，程度",
+      "example": "程度·路程·工程",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_046",
+      "type": "char",
+      "front": "路",
+      "back": "lù｜道路；路程",
+      "phonetic": "lù",
+      "radical": "足",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "足旁加各，道路",
+      "example": "道路·路程·出路",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_047",
+      "type": "char",
+      "front": "途",
+      "back": "tú｜途中；用途",
+      "phonetic": "tú",
+      "radical": "辶",
+      "strokes": 10,
+      "structure": "半包围",
+      "hint": "走之旁加余，途中",
+      "example": "途中·用途·前途",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_048",
+      "type": "char",
+      "front": "用",
+      "back": "yòng｜使用；用处",
+      "phonetic": "yòng",
+      "radical": "用",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "象形字，桶的形状",
+      "example": "使用·用处·用途",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_049",
+      "type": "char",
+      "front": "处",
+      "back": "chù｜地方；处所｜chǔ 处理",
+      "phonetic": "chù",
+      "radical": "几",
+      "strokes": 5,
+      "structure": "半包围",
+      "hint": "夂字旁加几，处所",
+      "example": "处所·到处·处理",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_050",
+      "type": "char",
+      "front": "所",
+      "back": "suǒ｜地方；所以",
+      "phonetic": "suǒ",
+      "radical": "户",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "户旁加斤，处所",
+      "example": "所以·处所·所有",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_051",
+      "type": "char",
+      "front": "以",
+      "back": "yǐ｜以便；所以",
+      "phonetic": "yǐ",
+      "radical": "人",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "人字旁，以此",
+      "example": "所以·以前·可以",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_052",
+      "type": "char",
+      "front": "便",
+      "back": "biàn｜方便；便利",
+      "phonetic": "biàn",
+      "radical": "亻",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "人旁加更，方便",
+      "example": "方便·便利·顺便",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_053",
+      "type": "char",
+      "front": "利",
+      "back": "lì｜利益；锋利",
+      "phonetic": "lì",
+      "radical": "刀",
+      "strokes": 7,
+      "structure": "左右",
+      "hint": "禾旁加刀，割禾锋利",
+      "example": "利益·锋利·便利",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_054",
+      "type": "char",
+      "front": "益",
+      "back": "yì｜利益；有益",
+      "phonetic": "yì",
+      "radical": "皿",
+      "strokes": 10,
+      "structure": "上下",
+      "hint": "皿字上有水，益处",
+      "example": "利益·有益·益处",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_055",
+      "type": "char",
+      "front": "害",
+      "back": "hài｜害处；害怕",
+      "phonetic": "hài",
+      "radical": "宀",
+      "strokes": 10,
+      "structure": "上下",
+      "hint": "宝盖头下，有害",
+      "example": "害怕·害处·伤害",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_056",
+      "type": "char",
+      "front": "怕",
+      "back": "pà｜害怕；恐怕",
+      "phonetic": "pà",
+      "radical": "忄",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "竖心旁加白，害怕",
+      "example": "害怕·恐怕·不怕",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_057",
+      "type": "char",
+      "front": "恐",
+      "back": "kǒng｜恐怕；恐惧",
+      "phonetic": "kǒng",
+      "radical": "心",
+      "strokes": 10,
+      "structure": "上下",
+      "hint": "心字底，恐惧",
+      "example": "恐怕·恐惧·恐龙",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_058",
+      "type": "char",
+      "front": "惧",
+      "back": "jù｜惧怕；恐惧",
+      "phonetic": "jù",
+      "radical": "忄",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "竖心旁加瞿，惧怕",
+      "example": "恐惧·惧怕·无惧",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_059",
+      "type": "char",
+      "front": "勇",
+      "back": "yǒng｜勇敢；勇气",
+      "phonetic": "yǒng",
+      "radical": "力",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "力字底，勇气",
+      "example": "勇敢·勇气·英勇",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_060",
+      "type": "char",
+      "front": "敢",
+      "back": "gǎn｜勇敢；敢于",
+      "phonetic": "gǎn",
+      "radical": "攴",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "攴字旁，敢于",
+      "example": "勇敢·敢于·大胆",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_061",
+      "type": "char",
+      "front": "胆",
+      "back": "dǎn｜胆量；胆子",
+      "phonetic": "dǎn",
+      "radical": "月",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "月旁加旦，胆量",
+      "example": "胆量·胆子·大胆",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_062",
+      "type": "char",
+      "front": "量",
+      "back": "liàng｜数量；liáng 量一量",
+      "phonetic": "liàng",
+      "radical": "里",
+      "strokes": 12,
+      "structure": "上下",
+      "hint": "日字上加重，量度",
+      "example": "数量·重量·量力",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_063",
+      "type": "char",
+      "front": "数",
+      "back": "shù｜数量；shǔ 数数",
+      "phonetic": "shù",
+      "radical": "攴",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "攴字旁，数量",
+      "example": "数量·数字·无数",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_064",
+      "type": "char",
+      "front": "算",
+      "back": "suàn｜计算；打算",
+      "phonetic": "suàn",
+      "radical": "竹",
+      "strokes": 14,
+      "structure": "上下",
+      "hint": "竹字头下，算盘",
+      "example": "计算·打算·算术",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_065",
+      "type": "char",
+      "front": "计",
+      "back": "jì｜计划；计算",
+      "phonetic": "jì",
+      "radical": "讠",
+      "strokes": 4,
+      "structure": "左右",
+      "hint": "言字旁加十，计算",
+      "example": "计划·计算·设计",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_066",
+      "type": "char",
+      "front": "划",
+      "back": "huà｜计划；划船｜huá 划水",
+      "phonetic": "huà",
+      "radical": "刀",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "刀字旁，划行",
+      "example": "计划·划船·规划",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_067",
+      "type": "char",
+      "front": "方",
+      "back": "fāng｜方向；方法；方形",
+      "phonetic": "fāng",
+      "radical": "方",
+      "strokes": 4,
+      "structure": "独体字",
+      "hint": "象形字，船上的帆",
+      "example": "方向·方法·地方",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_068",
+      "type": "char",
+      "front": "向",
+      "back": "xiàng｜方向；向着",
+      "phonetic": "xiàng",
+      "radical": "口",
+      "strokes": 6,
+      "structure": "半包围",
+      "hint": "口字上加一撇，方向",
+      "example": "方向·向上·朝向",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_069",
+      "type": "char",
+      "front": "朝",
+      "back": "cháo｜朝向；朝代｜zhāo 朝阳",
+      "phonetic": "cháo",
+      "radical": "月",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "月旁加十干，朝向",
+      "example": "朝向·朝代·朝阳",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_070",
+      "type": "char",
+      "front": "代",
+      "back": "dài｜代替；时代",
+      "phonetic": "dài",
+      "radical": "亻",
+      "strokes": 5,
+      "structure": "左右",
+      "hint": "人旁加弋，代替",
+      "example": "时代·代替·现代",
+      "tags": [
+        "生字",
+        "三年级上"
+      ]
+    },
+    {
+      "id": "hz3_071",
+      "type": "char",
+      "front": "替",
+      "back": "tì｜代替；替换",
+      "phonetic": "tì",
+      "radical": "日",
+      "strokes": 12,
+      "structure": "上下",
+      "hint": "夫字底加日，代替",
+      "example": "代替·替换·顶替",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_072",
+      "type": "char",
+      "front": "换",
+      "back": "huàn｜交换；换取",
+      "phonetic": "huàn",
+      "radical": "扌",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "提手旁加奂，交换",
+      "example": "交换·替换·更换",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_073",
+      "type": "char",
+      "front": "变",
+      "back": "biàn｜变化；改变",
+      "phonetic": "biàn",
+      "radical": "攴",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "攴字底，变化",
+      "example": "变化·改变·变形",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_074",
+      "type": "char",
+      "front": "化",
+      "back": "huà｜变化；化学",
+      "phonetic": "huà",
+      "radical": "亻",
+      "strokes": 4,
+      "structure": "左右",
+      "hint": "人字旁加匕，变化",
+      "example": "变化·化学·文化",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_075",
+      "type": "char",
+      "front": "学",
+      "back": "xué｜学习；学校",
+      "phonetic": "xué",
+      "radical": "子",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "子字底，学习",
+      "example": "学习·学校·学生",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_076",
+      "type": "char",
+      "front": "校",
+      "back": "xiào｜学校；校对",
+      "phonetic": "xiào",
+      "radical": "木",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "木旁加交，学校",
+      "example": "学校·校长·校园",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_077",
+      "type": "char",
+      "front": "园",
+      "back": "yuán｜园子；公园",
+      "phonetic": "yuán",
+      "radical": "囗",
+      "strokes": 7,
+      "structure": "全包围",
+      "hint": "国字框加元，园子",
+      "example": "公园·园地·花园",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_078",
+      "type": "char",
+      "front": "林",
+      "back": "lín｜树林；森林",
+      "phonetic": "lín",
+      "radical": "木",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "两棵树，树林",
+      "example": "树林·森林·竹林",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_079",
+      "type": "char",
+      "front": "森",
+      "back": "sēn｜森林；阴森",
+      "phonetic": "sēn",
+      "radical": "木",
+      "strokes": 12,
+      "structure": "品字形",
+      "hint": "三棵树，森林茂密",
+      "example": "森林·阴森·森严",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_080",
+      "type": "char",
+      "front": "原",
+      "back": "yuán｜原来；高原；原因",
+      "phonetic": "yuán",
+      "radical": "厂",
+      "strokes": 10,
+      "structure": "半包围",
+      "hint": "厂字头下，原野",
+      "example": "原来·原因·高原",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_081",
+      "type": "char",
+      "front": "野",
+      "back": "yě｜野外；野生",
+      "phonetic": "yě",
+      "radical": "里",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "里旁加予，野外",
+      "example": "野外·野生·野花",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_082",
+      "type": "char",
+      "front": "生",
+      "back": "shēng｜生命；生活；出生",
+      "phonetic": "shēng",
+      "radical": "生",
+      "strokes": 5,
+      "structure": "独体字",
+      "hint": "象形字，草木生长",
+      "example": "生活·生命·出生",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_083",
+      "type": "char",
+      "front": "活",
+      "back": "huó｜生活；活动",
+      "phonetic": "huó",
+      "radical": "氵",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "三点水加舌，活泼",
+      "example": "生活·活动·活泼",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_084",
+      "type": "char",
+      "front": "泼",
+      "back": "pō｜活泼；泼水",
+      "phonetic": "pō",
+      "radical": "氵",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "三点水加发，泼水",
+      "example": "活泼·泼水·泼辣",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_085",
+      "type": "char",
+      "front": "命",
+      "back": "mìng｜生命；命令",
+      "phonetic": "mìng",
+      "radical": "口",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "口字底加令，命令",
+      "example": "生命·命令·使命",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_086",
+      "type": "char",
+      "front": "令",
+      "back": "lìng｜命令；令人",
+      "phonetic": "lìng",
+      "radical": "人",
+      "strokes": 5,
+      "structure": "上下",
+      "hint": "人字底加一，命令",
+      "example": "命令·令人·指令",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_087",
+      "type": "char",
+      "front": "指",
+      "back": "zhǐ｜手指；指向",
+      "phonetic": "zhǐ",
+      "radical": "扌",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "提手旁加旨，手指",
+      "example": "手指·指向·指导",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_088",
+      "type": "char",
+      "front": "导",
+      "back": "dǎo｜导向；导师",
+      "phonetic": "dǎo",
+      "radical": "寸",
+      "strokes": 6,
+      "structure": "上下",
+      "hint": "寸字底，引导",
+      "example": "指导·向导·领导",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_089",
+      "type": "char",
+      "front": "领",
+      "back": "lǐng｜领导；领取",
+      "phonetic": "lǐng",
+      "radical": "页",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "页旁加令，领取",
+      "example": "领导·领取·领先",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_090",
+      "type": "char",
+      "front": "先",
+      "back": "xiān｜先后；优先",
+      "phonetic": "xiān",
+      "radical": "儿",
+      "strokes": 6,
+      "structure": "上下",
+      "hint": "儿字底，先行",
+      "example": "先后·优先·先生",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_091",
+      "type": "char",
+      "front": "后",
+      "back": "hòu｜后面；以后",
+      "phonetic": "hòu",
+      "radical": "口",
+      "strokes": 6,
+      "structure": "半包围",
+      "hint": "口字下，后方",
+      "example": "后面·以后·前后",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_092",
+      "type": "char",
+      "front": "追",
+      "back": "zhuī｜追赶；追求",
+      "phonetic": "zhuī",
+      "radical": "辶",
+      "strokes": 9,
+      "structure": "半包围",
+      "hint": "走之旁加隹，追赶",
+      "example": "追赶·追求·追上",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_093",
+      "type": "char",
+      "front": "求",
+      "back": "qiú｜追求；请求",
+      "phonetic": "qiú",
+      "radical": "水",
+      "strokes": 7,
+      "structure": "独体字",
+      "hint": "水字变形，求取",
+      "example": "追求·请求·要求",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_094",
+      "type": "char",
+      "front": "请",
+      "back": "qǐng｜请求；邀请",
+      "phonetic": "qǐng",
+      "radical": "讠",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "言字旁加青，请求",
+      "example": "请求·邀请·请客",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_095",
+      "type": "char",
+      "front": "邀",
+      "back": "yāo｜邀请",
+      "phonetic": "yāo",
+      "radical": "辶",
+      "strokes": 16,
+      "structure": "半包围",
+      "hint": "走之旁加敫，邀请",
+      "example": "邀请·应邀",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_096",
+      "type": "char",
+      "front": "客",
+      "back": "kè｜客人；顾客",
+      "phonetic": "kè",
+      "radical": "宀",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "宝盖头加各，客人",
+      "example": "客人·顾客·旅客",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_097",
+      "type": "char",
+      "front": "旅",
+      "back": "lǚ｜旅行；旅游",
+      "phonetic": "lǚ",
+      "radical": "方",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "方旁加旅，旅行",
+      "example": "旅行·旅游·旅客",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_098",
+      "type": "char",
+      "front": "游",
+      "back": "yóu｜游泳；游览",
+      "phonetic": "yóu",
+      "radical": "氵",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "三点水加斿，游泳",
+      "example": "游泳·游览·旅游",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_099",
+      "type": "char",
+      "front": "览",
+      "back": "lǎn｜游览；阅览",
+      "phonetic": "lǎn",
+      "radical": "见",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "见字底，观览",
+      "example": "游览·阅览·展览",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_100",
+      "type": "char",
+      "front": "展",
+      "back": "zhǎn｜展开；展览",
+      "phonetic": "zhǎn",
+      "radical": "尸",
+      "strokes": 10,
+      "structure": "半包围",
+      "hint": "尸字头，展开",
+      "example": "展览·展开·发展",
+      "tags": [
+        "生字",
+        "三年级下"
+      ]
+    },
+    {
+      "id": "hz3_101",
+      "type": "word",
+      "front": "认识",
+      "back": "rèn shi",
+      "phonetic": "rèn shi",
+      "hint": "知道，了解某人或某物",
+      "example": "我们来相互认识一下。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_102",
+      "type": "word",
+      "front": "理解",
+      "back": "lǐ jiě",
+      "phonetic": "lǐ jiě",
+      "hint": "明白其中道理和含义",
+      "example": "我理解了这道题的意思。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_103",
+      "type": "word",
+      "front": "观察",
+      "back": "guān chá",
+      "phonetic": "guān chá",
+      "hint": "仔细地看，留意",
+      "example": "我仔细观察了蚂蚁的生活。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_104",
+      "type": "word",
+      "front": "发现",
+      "back": "fā xiàn",
+      "phonetic": "fā xiàn",
+      "hint": "找到之前不知道的事物",
+      "example": "科学家发现了新星球。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_105",
+      "type": "word",
+      "front": "实验",
+      "back": "shí yàn",
+      "phonetic": "shí yàn",
+      "hint": "用实际操作来验证",
+      "example": "我们在课堂上做了一个实验。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_106",
+      "type": "word",
+      "front": "探索",
+      "back": "tàn suǒ",
+      "phonetic": "tàn suǒ",
+      "hint": "多方寻求答案，研究",
+      "example": "我们要不断探索未知的领域。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_107",
+      "type": "word",
+      "front": "创造",
+      "back": "chuàng zào",
+      "phonetic": "chuàng zào",
+      "hint": "开创，制造出新的",
+      "example": "人类不断创造美好的生活。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_108",
+      "type": "word",
+      "front": "想象",
+      "back": "xiǎng xiàng",
+      "phonetic": "xiǎng xiàng",
+      "hint": "对不在眼前的事物进行设想",
+      "example": "我想象着未来的世界。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_109",
+      "type": "word",
+      "front": "仔细",
+      "back": "zǐ xì",
+      "phonetic": "zǐ xì",
+      "hint": "认真细心，不马虎",
+      "example": "做题要仔细，不要粗心。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_110",
+      "type": "word",
+      "front": "认真",
+      "back": "rèn zhēn",
+      "phonetic": "rèn zhēn",
+      "hint": "专心，做事不草率",
+      "example": "他认真地完成了作业。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_111",
+      "type": "word",
+      "front": "积累",
+      "back": "jī lěi",
+      "phonetic": "jī lěi",
+      "hint": "逐渐集聚，不断增加",
+      "example": "学习要一点一点积累。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_112",
+      "type": "word",
+      "front": "丰富",
+      "back": "fēng fù",
+      "phonetic": "fēng fù",
+      "hint": "数量多，种类多",
+      "example": "他的经验非常丰富。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_113",
+      "type": "word",
+      "front": "生动",
+      "back": "shēng dòng",
+      "phonetic": "shēng dòng",
+      "hint": "形象活泼，不死板",
+      "example": "老师讲课生动有趣。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_114",
+      "type": "word",
+      "front": "有趣",
+      "back": "yǒu qù",
+      "phonetic": "yǒu qù",
+      "hint": "令人感到有意思",
+      "example": "这本书非常有趣。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_115",
+      "type": "word",
+      "front": "精彩",
+      "back": "jīng cǎi",
+      "phonetic": "jīng cǎi",
+      "hint": "出色，令人叫绝",
+      "example": "这场演出真是精彩极了！",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_116",
+      "type": "word",
+      "front": "感谢",
+      "back": "gǎn xiè",
+      "phonetic": "gǎn xiè",
+      "hint": "对他人的帮助表示谢意",
+      "example": "我感谢老师的耐心教导。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_117",
+      "type": "word",
+      "front": "保护",
+      "back": "bǎo hù",
+      "phonetic": "bǎo hù",
+      "hint": "爱护，不使受损害",
+      "example": "我们要保护环境。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_118",
+      "type": "word",
+      "front": "环境",
+      "back": "huán jìng",
+      "phonetic": "huán jìng",
+      "hint": "周围的自然和社会条件",
+      "example": "我们要保护好自然环境。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_119",
+      "type": "word",
+      "front": "珍惜",
+      "back": "zhēn xī",
+      "phonetic": "zhēn xī",
+      "hint": "重视，不浪费",
+      "example": "我们要珍惜时间。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    },
+    {
+      "id": "hz3_120",
+      "type": "word",
+      "front": "付出",
+      "back": "fù chū",
+      "phonetic": "fù chū",
+      "hint": "花费精力或代价",
+      "example": "成功需要付出努力。",
+      "tags": [
+        "词语",
+        "三年级"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1072 @@
+{
+  "meta": {
+    "subject": "chinese",
+    "grade": "primary",
+    "name": "小学六年级生字词",
+    "version": "2024",
+    "count": 300,
+    "description": "小学小学六年级上下册生字、词语"
+  },
+  "cards": [
+    {
+      "id": "hz6_001",
+      "type": "char",
+      "front": "凛",
+      "back": "lǐn｜凛然；凛冽",
+      "phonetic": "lǐn",
+      "radical": "冫",
+      "strokes": 15,
+      "structure": "左右",
+      "hint": "冰旁加禀，凛冽",
+      "example": "凛然·凛冽·凛凛",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_002",
+      "type": "char",
+      "front": "凌",
+      "back": "líng｜凌云；凌晨",
+      "phonetic": "líng",
+      "radical": "冫",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "冰旁加夌，凌驾",
+      "example": "凌云·凌晨·凌驾",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_003",
+      "type": "char",
+      "front": "毅",
+      "back": "yì｜毅力；坚毅",
+      "phonetic": "yì",
+      "radical": "殳",
+      "strokes": 15,
+      "structure": "左右",
+      "hint": "殳旁加豙，毅力",
+      "example": "毅力·坚毅·毅然",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_004",
+      "type": "char",
+      "front": "魄",
+      "back": "pò｜魄力；气魄",
+      "phonetic": "pò",
+      "radical": "鬼",
+      "strokes": 14,
+      "structure": "左右",
+      "hint": "鬼旁加白，魄力",
+      "example": "魄力·气魄·雄魄",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_005",
+      "type": "char",
+      "front": "璀",
+      "back": "cuǐ｜璀璨",
+      "phonetic": "cuǐ",
+      "radical": "王",
+      "strokes": 16,
+      "structure": "左右",
+      "hint": "王旁加崔，璀璨",
+      "example": "璀璨·璀璨夺目",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_006",
+      "type": "char",
+      "front": "璨",
+      "back": "càn｜璀璨",
+      "phonetic": "càn",
+      "radical": "王",
+      "strokes": 18,
+      "structure": "左右",
+      "hint": "王旁加粲，璀璨",
+      "example": "璀璨·光彩璀璨",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_007",
+      "type": "char",
+      "front": "熠",
+      "back": "yì｜熠熠",
+      "phonetic": "yì",
+      "radical": "火",
+      "strokes": 15,
+      "structure": "左右",
+      "hint": "火旁加翕，熠熠发光",
+      "example": "熠熠·熠熠生辉",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_008",
+      "type": "char",
+      "front": "卓",
+      "back": "zhuó｜卓越；卓然",
+      "phonetic": "zhuó",
+      "radical": "十",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "十字底，超卓",
+      "example": "卓越·卓然·卓有成效",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_009",
+      "type": "char",
+      "front": "越",
+      "back": "yuè｜卓越；超越",
+      "phonetic": "yuè",
+      "radical": "走",
+      "strokes": 12,
+      "structure": "半包围",
+      "hint": "走字旁加戉，超越",
+      "example": "卓越·超越·越来越",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_010",
+      "type": "char",
+      "front": "杰",
+      "back": "jié｜杰出；豪杰",
+      "phonetic": "jié",
+      "radical": "木",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "木字底加灬，杰出",
+      "example": "杰出·豪杰·英杰",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_011",
+      "type": "char",
+      "front": "萃",
+      "back": "cuì｜荟萃；出类拔萃",
+      "phonetic": "cuì",
+      "radical": "艹",
+      "strokes": 11,
+      "structure": "上下",
+      "hint": "草字头加卒，荟萃",
+      "example": "荟萃·出类拔萃·精萃",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_012",
+      "type": "char",
+      "front": "拔",
+      "back": "bá｜出类拔萃；拔除",
+      "phonetic": "bá",
+      "radical": "扌",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "提手旁加友，拔出",
+      "example": "拔除·出类拔萃·拔高",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_013",
+      "type": "char",
+      "front": "超",
+      "back": "chāo｜超越；超级",
+      "phonetic": "chāo",
+      "radical": "走",
+      "strokes": 12,
+      "structure": "半包围",
+      "hint": "走字旁加召，超越",
+      "example": "超越·超级·超出",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_014",
+      "type": "char",
+      "front": "群",
+      "back": "qún｜群体；超群",
+      "phonetic": "qún",
+      "radical": "羊",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "羊旁加君，群体",
+      "example": "群体·超群·群众",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_015",
+      "type": "char",
+      "front": "坚",
+      "back": "jiān｜坚定；坚强",
+      "phonetic": "jiān",
+      "radical": "土",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "土字底，坚固",
+      "example": "坚定·坚强·坚持",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_016",
+      "type": "char",
+      "front": "韧",
+      "back": "rèn｜坚韧；韧性",
+      "phonetic": "rèn",
+      "radical": "韦",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "韦旁加刃，坚韧",
+      "example": "坚韧·韧性·柔韧",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_017",
+      "type": "char",
+      "front": "锲",
+      "back": "qiè｜锲而不舍",
+      "phonetic": "qiè",
+      "radical": "钅",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "金字旁加契，锲刻",
+      "example": "锲而不舍·锲刻",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_018",
+      "type": "char",
+      "front": "舍",
+      "back": "shě｜舍得；锲而不舍｜shè 宿舍",
+      "phonetic": "shě",
+      "radical": "舌",
+      "strokes": 8,
+      "structure": "上下",
+      "hint": "舌字底，舍弃",
+      "example": "舍得·锲而不舍·宿舍",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_019",
+      "type": "char",
+      "front": "涓",
+      "back": "juān｜涓涓细流",
+      "phonetic": "juān",
+      "radical": "氵",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "三点水加肙，涓涓",
+      "example": "涓涓·涓涓细流",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_020",
+      "type": "char",
+      "front": "滴",
+      "back": "dī｜水滴；滴落",
+      "phonetic": "dī",
+      "radical": "氵",
+      "strokes": 14,
+      "structure": "左右",
+      "hint": "三点水加啇，水滴",
+      "example": "水滴·滴落·一滴",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_021",
+      "type": "char",
+      "front": "汇",
+      "back": "huì｜汇合；汇聚",
+      "phonetic": "huì",
+      "radical": "氵",
+      "strokes": 5,
+      "structure": "左右",
+      "hint": "三点水加彙，汇集",
+      "example": "汇合·汇聚·汇集",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_022",
+      "type": "char",
+      "front": "聚",
+      "back": "jù｜聚集；汇聚",
+      "phonetic": "jù",
+      "radical": "耳",
+      "strokes": 14,
+      "structure": "上下",
+      "hint": "耳字上，聚集",
+      "example": "聚集·汇聚·团聚",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_023",
+      "type": "char",
+      "front": "融",
+      "back": "róng｜融合；融化",
+      "phonetic": "róng",
+      "radical": "虫",
+      "strokes": 16,
+      "structure": "左右",
+      "hint": "虫旁加鬲，融化",
+      "example": "融合·融化·融洽",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_024",
+      "type": "char",
+      "front": "洽",
+      "back": "qià｜融洽；洽谈",
+      "phonetic": "qià",
+      "radical": "氵",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "三点水加合，融洽",
+      "example": "融洽·洽谈·洽商",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_025",
+      "type": "char",
+      "front": "矗",
+      "back": "chù｜矗立",
+      "phonetic": "chù",
+      "radical": "直",
+      "strokes": 24,
+      "structure": "上下",
+      "hint": "三个直，矗立高耸",
+      "example": "矗立·高楼矗立",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_026",
+      "type": "char",
+      "front": "雄",
+      "back": "xióng｜雄壮；英雄",
+      "phonetic": "xióng",
+      "radical": "隹",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "隹旁加厶，雄壮",
+      "example": "雄壮·英雄·雄伟",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_027",
+      "type": "char",
+      "front": "阔",
+      "back": "kuò｜宽阔；辽阔",
+      "phonetic": "kuò",
+      "radical": "门",
+      "strokes": 12,
+      "structure": "半包围",
+      "hint": "门里加活，宽阔",
+      "example": "宽阔·辽阔·广阔",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_028",
+      "type": "char",
+      "front": "辽",
+      "back": "liáo｜辽阔；辽远",
+      "phonetic": "liáo",
+      "radical": "辶",
+      "strokes": 5,
+      "structure": "半包围",
+      "hint": "走之旁加了，辽阔",
+      "example": "辽阔·辽远·辽宁",
+      "tags": [
+        "生字",
+        "六年级上"
+      ]
+    },
+    {
+      "id": "hz6_029",
+      "type": "char",
+      "front": "壮",
+      "back": "zhuàng｜壮丽；壮观",
+      "phonetic": "zhuàng",
+      "radical": "士",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "士旁加爿，壮丽",
+      "example": "壮丽·壮观·雄壮",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_030",
+      "type": "char",
+      "front": "丽",
+      "back": "lì｜美丽；壮丽",
+      "phonetic": "lì",
+      "radical": "鹿",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "鹿字上，华美",
+      "example": "美丽·壮丽·秀丽",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_031",
+      "type": "char",
+      "front": "秀",
+      "back": "xiù｜秀丽；优秀",
+      "phonetic": "xiù",
+      "radical": "禾",
+      "strokes": 7,
+      "structure": "上下",
+      "hint": "禾字下，秀美",
+      "example": "秀丽·优秀·秀气",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_032",
+      "type": "char",
+      "front": "幽",
+      "back": "yōu｜幽静；幽深",
+      "phonetic": "yōu",
+      "radical": "山",
+      "strokes": 9,
+      "structure": "上下",
+      "hint": "山字底，幽静深处",
+      "example": "幽静·幽深·幽幽",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_033",
+      "type": "char",
+      "front": "雅",
+      "back": "yǎ｜优雅；高雅",
+      "phonetic": "yǎ",
+      "radical": "隹",
+      "strokes": 12,
+      "structure": "左右",
+      "hint": "隹旁加牙，优雅",
+      "example": "优雅·高雅·文雅",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_034",
+      "type": "char",
+      "front": "致",
+      "back": "zhì｜精致；致力",
+      "phonetic": "zhì",
+      "radical": "攴",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "攴字旁，精致",
+      "example": "精致·致力·别致",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_035",
+      "type": "char",
+      "front": "韵",
+      "back": "yùn｜韵味；押韵",
+      "phonetic": "yùn",
+      "radical": "音",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "音旁加匀，韵律",
+      "example": "韵味·押韵·韵律",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_036",
+      "type": "char",
+      "front": "馥",
+      "back": "fù｜馥郁；芳馥",
+      "phonetic": "fù",
+      "radical": "香",
+      "strokes": 21,
+      "structure": "上下",
+      "hint": "香字底，馥郁芳香",
+      "example": "馥郁·馥香·芳馥",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_037",
+      "type": "char",
+      "front": "郁",
+      "back": "yù｜馥郁；忧郁",
+      "phonetic": "yù",
+      "radical": "阝",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "耳旁加有，馥郁",
+      "example": "馥郁·忧郁·郁郁葱葱",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_038",
+      "type": "char",
+      "front": "葱",
+      "back": "cōng｜葱绿；大葱",
+      "phonetic": "cōng",
+      "radical": "艹",
+      "strokes": 12,
+      "structure": "上下",
+      "hint": "草字头，大葱，葱绿",
+      "example": "葱绿·大葱·郁郁葱葱",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_039",
+      "type": "char",
+      "front": "蓬",
+      "back": "péng｜蓬勃；蓬松",
+      "phonetic": "péng",
+      "radical": "艹",
+      "strokes": 13,
+      "structure": "上下",
+      "hint": "草字头加逢，蓬勃",
+      "example": "蓬勃·蓬松·蓬蓬",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_040",
+      "type": "char",
+      "front": "勃",
+      "back": "bó｜蓬勃；勃然",
+      "phonetic": "bó",
+      "radical": "力",
+      "strokes": 9,
+      "structure": "左右",
+      "hint": "力字旁，勃发",
+      "example": "蓬勃·勃然·勃勃生机",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_041",
+      "type": "char",
+      "front": "颂",
+      "back": "sòng｜颂扬；歌颂",
+      "phonetic": "sòng",
+      "radical": "页",
+      "strokes": 10,
+      "structure": "左右",
+      "hint": "页旁加公，颂扬",
+      "example": "颂扬·歌颂·称颂",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_042",
+      "type": "char",
+      "front": "扬",
+      "back": "yáng｜颂扬；扬帆",
+      "phonetic": "yáng",
+      "radical": "扌",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "提手旁加易，扬帆",
+      "example": "颂扬·扬帆·飞扬",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_043",
+      "type": "char",
+      "front": "誓",
+      "back": "shì｜誓言；发誓",
+      "phonetic": "shì",
+      "radical": "言",
+      "strokes": 14,
+      "structure": "上下",
+      "hint": "言字底，誓言",
+      "example": "誓言·发誓·誓不罢休",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_044",
+      "type": "char",
+      "front": "帜",
+      "back": "zhì｜旗帜",
+      "phonetic": "zhì",
+      "radical": "巾",
+      "strokes": 8,
+      "structure": "左右",
+      "hint": "巾旁加只，旗帜",
+      "example": "旗帜·鲜明旗帜",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_045",
+      "type": "char",
+      "front": "铭",
+      "back": "míng｜铭记；座右铭",
+      "phonetic": "míng",
+      "radical": "钅",
+      "strokes": 11,
+      "structure": "左右",
+      "hint": "金字旁加名，铭记",
+      "example": "铭记·座右铭·铭心",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_046",
+      "type": "char",
+      "front": "魂",
+      "back": "hún｜灵魂；魂魄",
+      "phonetic": "hún",
+      "radical": "鬼",
+      "strokes": 13,
+      "structure": "左右",
+      "hint": "鬼旁加云，灵魂",
+      "example": "灵魂·魂魄·国魂",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_047",
+      "type": "char",
+      "front": "魄",
+      "back": "pò｜魄力；气魄",
+      "phonetic": "pò",
+      "radical": "鬼",
+      "strokes": 14,
+      "structure": "左右",
+      "hint": "鬼旁加白，魄力",
+      "example": "魄力·气魄·灵魄",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_048",
+      "type": "char",
+      "front": "屹",
+      "back": "yì｜屹立；屹然",
+      "phonetic": "yì",
+      "radical": "山",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "山旁加乙，屹立",
+      "example": "屹立·屹然·巍然屹立",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_049",
+      "type": "char",
+      "front": "巍",
+      "back": "wēi｜巍然；巍峨",
+      "phonetic": "wēi",
+      "radical": "山",
+      "strokes": 21,
+      "structure": "上下",
+      "hint": "山字底，巍峨",
+      "example": "巍然·巍峨·巍巍",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_050",
+      "type": "char",
+      "front": "屹",
+      "back": "yì｜巍然屹立",
+      "phonetic": "yì",
+      "radical": "山",
+      "strokes": 6,
+      "structure": "左右",
+      "hint": "山旁加乙，屹立",
+      "example": "屹立·巍然屹立",
+      "tags": [
+        "生字",
+        "六年级下"
+      ]
+    },
+    {
+      "id": "hz6_051",
+      "type": "word",
+      "front": "卓越不凡",
+      "back": "zhuó yuè bù fán",
+      "phonetic": "zhuó yuè bù fán",
+      "hint": "超出一般，不平凡",
+      "example": "他取得了卓越不凡的成就。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_052",
+      "type": "word",
+      "front": "出类拔萃",
+      "back": "chū lèi bá cuì",
+      "phonetic": "chū lèi bá cuì",
+      "hint": "超出同类，特别突出",
+      "example": "她在众多选手中出类拔萃。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_053",
+      "type": "word",
+      "front": "锲而不舍",
+      "back": "qiè ér bù shě",
+      "phonetic": "qiè ér bù shě",
+      "hint": "坚持不懈，不放弃",
+      "example": "学习要锲而不舍，才能成功。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_054",
+      "type": "word",
+      "front": "璀璨夺目",
+      "back": "cuǐ càn duó mù",
+      "phonetic": "cuǐ càn duó mù",
+      "hint": "光彩耀眼，引人注目",
+      "example": "夜空中的星星璀璨夺目。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_055",
+      "type": "word",
+      "front": "巍然屹立",
+      "back": "wēi rán yì lì",
+      "phonetic": "wēi rán yì lì",
+      "hint": "高大稳固地立着",
+      "example": "长城巍然屹立，历经千年。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_056",
+      "type": "word",
+      "front": "勃勃生机",
+      "back": "bó bó shēng jī",
+      "phonetic": "bó bó shēng jī",
+      "hint": "充满旺盛的生命力",
+      "example": "春天的大地充满勃勃生机。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_057",
+      "type": "word",
+      "front": "气贯长虹",
+      "back": "qì guàn cháng hóng",
+      "phonetic": "qì guàn cháng hóng",
+      "hint": "正气高扬，贯穿长虹",
+      "example": "英雄的事迹气贯长虹。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_058",
+      "type": "word",
+      "front": "郁郁葱葱",
+      "back": "yù yù cōng cōng",
+      "phonetic": "yù yù cōng cōng",
+      "hint": "形容树木茂盛，碧绿",
+      "example": "山上郁郁葱葱，绿意盎然。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_059",
+      "type": "word",
+      "front": "铭记于心",
+      "back": "míng jì yú xīn",
+      "phonetic": "míng jì yú xīn",
+      "hint": "深刻记在心里，永不忘记",
+      "example": "老师的教诲我铭记于心。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_060",
+      "type": "word",
+      "front": "魄力",
+      "back": "pò lì",
+      "phonetic": "pò lì",
+      "hint": "魄力，做事果断的气概",
+      "example": "领导者要有魄力，敢于决断。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_061",
+      "type": "word",
+      "front": "坚韧不拔",
+      "back": "jiān rèn bù bá",
+      "phonetic": "jiān rèn bù bá",
+      "hint": "意志坚强，不可动摇",
+      "example": "他以坚韧不拔的精神克服了困难。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_062",
+      "type": "word",
+      "front": "融洽",
+      "back": "róng qià",
+      "phonetic": "róng qià",
+      "hint": "关系和谐融合",
+      "example": "班级同学之间相处融洽。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_063",
+      "type": "word",
+      "front": "馥郁",
+      "back": "fù yù",
+      "phonetic": "fù yù",
+      "hint": "香气浓郁",
+      "example": "玫瑰花馥郁芬芳。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_064",
+      "type": "word",
+      "front": "韵味",
+      "back": "yùn wèi",
+      "phonetic": "yùn wèi",
+      "hint": "情调和趣味",
+      "example": "这首古诗韵味悠长。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_065",
+      "type": "word",
+      "front": "凌云壮志",
+      "back": "líng yún zhuàng zhì",
+      "phonetic": "líng yún zhuàng zhì",
+      "hint": "志向高远，像直冲云霄",
+      "example": "少年要有凌云壮志，努力拼搏。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_066",
+      "type": "word",
+      "front": "意气风发",
+      "back": "yì qì fēng fā",
+      "phonetic": "yì qì fēng fā",
+      "hint": "精神饱满，充满朝气",
+      "example": "同学们意气风发地走向考场。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_067",
+      "type": "word",
+      "front": "豪情壮志",
+      "back": "háo qíng zhuàng zhì",
+      "phonetic": "háo qíng zhuàng zhì",
+      "hint": "豪壮的情感和志向",
+      "example": "青年人要有豪情壮志。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_068",
+      "type": "word",
+      "front": "革故鼎新",
+      "back": "gé gù dǐng xīn",
+      "phonetic": "gé gù dǐng xīn",
+      "hint": "去掉旧的，建立新的",
+      "example": "改革就是革故鼎新，不断进步。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_069",
+      "type": "word",
+      "front": "薪火相传",
+      "back": "xīn huǒ xiāng chuán",
+      "phonetic": "xīn huǒ xiāng chuán",
+      "hint": "比喻文化和精神一代代传承",
+      "example": "中华文化薪火相传，生生不息。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    },
+    {
+      "id": "hz6_070",
+      "type": "word",
+      "front": "继往开来",
+      "back": "jì wǎng kāi lái",
+      "phonetic": "jì wǎng kāi lái",
+      "hint": "继承前人，开创未来",
+      "example": "我们要继往开来，建设美好家园。",
+      "tags": [
+        "词语",
+        "六年级"
+      ]
+    }
+  ]
+}
